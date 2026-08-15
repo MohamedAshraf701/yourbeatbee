@@ -39,6 +39,19 @@ export function touchPresence(): PresenceState {
   return next
 }
 
+/** Mark UI gone immediately (tab close / pagehide) so auto-stop can run. */
+export function leavePresence(): PresenceState {
+  ensureDataDirs()
+  mkdirSync(dataPaths().data, { recursive: true })
+  const next: PresenceState = {
+    // Age this past the idle threshold so maybeAutoStopEngine() fires now.
+    lastSeenAt: new Date(Date.now() - PRESENCE_IDLE_MS - 1000).toISOString(),
+    clients: 0,
+  }
+  writeAtomic(presencePath(), next)
+  return next
+}
+
 export function readPresence(): PresenceState | null {
   try {
     return JSON.parse(readFileSync(presencePath(), "utf8")) as PresenceState

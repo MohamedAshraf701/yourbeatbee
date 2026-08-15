@@ -4,6 +4,7 @@ from compose import (
     clip_lyrics,
     job_to_params,
     lyrics_budget,
+    normalize_lyrics_for_model,
     vocal_language,
 )
 
@@ -13,6 +14,110 @@ def test_clip_caption_word_boundary():
     clipped = clip_caption(text, 40)
     assert len(clipped) <= 40
     assert not clipped.endswith(" ")
+
+
+def test_normalize_lyrics_keeps_ellipsis_words():
+    raw = (
+        "[Verse]\n"
+        "Tum bin…\n"
+        "Tum bin… main adhoora sa hoon,\n"
+        "Hmm...\n"
+        "…\n"
+        "Dil yeh kahe..."
+    )
+    cleaned = normalize_lyrics_for_model(raw)
+    assert "Tum bin" in cleaned
+    assert "main adhoora sa hoon" in cleaned
+    assert "Hmm" in cleaned
+    assert "Dil yeh kahe" in cleaned
+    assert "…" not in cleaned
+    assert "..." not in cleaned
+    assert cleaned.startswith("[Verse]")
+    # No duplicated echo lines
+    assert cleaned.count("Tum bin.") == 1
+
+
+def test_normalize_user_ballad_skips():
+    """Incomplete endings become full stops; no dual echo lines."""
+    raw = """[Intro]
+
+Hmm…
+Tere baad bhi…
+Tera intezaar hai…
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai…
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain…
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai…"""
+    cleaned = normalize_lyrics_for_model(raw)
+    assert "Tere baad bhi." in cleaned
+    assert "Tera intezaar hai." in cleaned
+    assert "Aaj bhi tujhse pyaar hai." in cleaned
+    assert "Yaadein beh jaati hain." in cleaned
+    # Trailing commas were being skipped like ellipsis
+    assert "Woh aaj bhi zinda hain." in cleaned
+    assert "Jaane kyun dil ko." in cleaned
+    assert "Jo khwaab tere sang dekhe." in cleaned
+    assert "…" not in cleaned
+    assert cleaned.count("Tere baad bhi.") == 1
+    assert "Tere baad bhi, tera intezaar hai" not in cleaned
+
+
+def test_job_to_params_normalizes_ellipsis_lyrics():
+    params = job_to_params(
+        {
+            "style": "bollywood ballad",
+            "lyrics": "[Chorus]\nTum bin… ye dil nahi lagta,",
+            "voice": "female",
+            "duration": 30,
+        }
+    )
+    assert "Tum bin" in params["lyrics"]
+    assert "ye dil nahi lagta" in params["lyrics"]
+    assert "…" not in params["lyrics"]
+    assert "..." not in params["lyrics"]
+    # User lyrics → no LM audio codes (better word adherence)
+    assert params["thinking"] is False
+    assert params["guidance_scale"] >= 10.0
+    assert params["duration"] == 30.0
+
+
+def test_auto_duration_scales_with_lyric_density():
+    verse = "\n".join(f"line number {i} here," for i in range(40))
+    params = job_to_params(
+        {
+            "style": "ballad",
+            "lyrics": f"[Verse]\n{verse}",
+            "voice": "male",
+            "duration": -1,
+            "tight_memory": True,
+        }
+    )
+    assert params["duration"] >= 90.0
+    assert "line number 20 here." in params["lyrics"]
+    assert params["duration"] <= MPS_MAX_DURATION
+
+
+def test_no_lyrics_still_uses_thinking():
+    params = job_to_params(
+        {
+            "style": "indie pop",
+            "lyrics": "",
+            "voice": "female",
+            "duration": 30,
+        }
+    )
+    assert params["needs_sample"] is True
+    assert params["thinking"] is True
 
 
 def test_clip_lyrics_keeps_complete_sections():
@@ -97,11 +202,11 @@ def test_custom_voice_maps_rvc():
     assert params["rvc_model_path"] == "/tmp/model.pth"
     assert params["rvc_index_path"] == "/tmp/model.index"
     assert params["reference_audio"] is None
-    assert params["thinking"] is True
+    assert params["thinking"] is False
     assert "lead vocal" in params["caption"].lower()
 
 
-def test_non_custom_still_thinks():
+def test_non_custom_user_lyrics_skips_thinking():
     params = job_to_params(
         {
             "style": "indie pop",
@@ -110,18 +215,23 @@ def test_non_custom_still_thinks():
             "duration": 30,
         }
     )
-    assert params["thinking"] is True
+    assert params["thinking"] is False
     assert params["apply_rvc"] is False
     assert params["rvc_model_path"] is None
 
 
 if __name__ == "__main__":
     test_clip_caption_word_boundary()
+    test_normalize_lyrics_keeps_ellipsis_words()
+    test_normalize_user_ballad_skips()
+    test_job_to_params_normalizes_ellipsis_lyrics()
+    test_auto_duration_scales_with_lyric_density()
+    test_no_lyrics_still_uses_thinking()
     test_clip_lyrics_keeps_complete_sections()
     test_devanagari_language()
     test_allows_five_minute_songs()
     test_auto_duration_not_forced_to_cap()
     test_custom_voice_requires_rvc_model()
     test_custom_voice_maps_rvc()
-    test_non_custom_still_thinks()
+    test_non_custom_user_lyrics_skips_thinking()
     print("ok")

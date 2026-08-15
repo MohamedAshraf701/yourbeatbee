@@ -15,7 +15,8 @@
     "download:models": "bash scripts/download-models.sh",
     "repair:text-encoder": "bash scripts/repair-text-encoder.sh",
     "engine": "bash scripts/start-engine.sh",
-    "studio": "concurrently -n web,engine -c cyan,magenta \"npm run dev\" \"npm run engine\""
+    "engine:stop": "bash scripts/kill-engine.sh",
+    "studio": "bash scripts/studio.sh"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

@@ -95,14 +95,22 @@ export function stopEngineProcess(): SupervisorState {
       }
     }
   }
-  // Also stop engines started outside the supervisor (e.g. npm run studio)
+  // Prefer the shared kill script (pidfile + pkill + heartbeat clear).
   try {
-    execSync("pkill -f '[e]ngine/worker.py' || true", {
+    const script = path.join(projectRoot(), "scripts", "kill-engine.sh")
+    execSync(`bash "${script}"`, {
       stdio: "ignore",
-      timeout: 5000,
+      timeout: 15_000,
     })
   } catch {
-    // ignore
+    try {
+      execSync("pkill -f '[e]ngine/worker.py' || true", {
+        stdio: "ignore",
+        timeout: 5000,
+      })
+    } catch {
+      // ignore
+    }
   }
   const next: SupervisorState = {
     pid: null,

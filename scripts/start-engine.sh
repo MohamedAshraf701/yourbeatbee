@@ -78,5 +78,8 @@ echo "[musicai] config=${ACESTEP_CONFIG_PATH} lm=${ACESTEP_LM_MODEL_PATH:-auto} 
 echo "[musicai] If weights are missing, files download one-by-one with a progress bar."
 echo "[musicai] Ctrl+C is safe — the next start resumes."
 
+# Never stack multiple workers (each holds tens of GB). Kill leftovers first.
+bash "$ROOT/scripts/kill-engine.sh" || true
+
 cd "$VENDOR"
 exec uv run python "$ROOT/engine/worker.py"

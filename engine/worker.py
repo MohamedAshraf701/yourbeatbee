@@ -20,6 +20,7 @@ DATA = ROOT / "data"
 JOBS = DATA / "jobs"
 SONGS = DATA / "songs"
 ENGINE_FILE = DATA / "engine.json"
+PID_FILE = DATA / "engine.pid"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from compose import (  # noqa: E402
@@ -31,6 +32,23 @@ from compose import (  # noqa: E402
 )
 from download import ensure_checkpoints, ensure_lm  # noqa: E402
 from settings_loader import load_settings  # noqa: E402
+
+_SHUTDOWN = threading.Event()
+
+
+def write_pid_file() -> None:
+    DATA.mkdir(parents=True, exist_ok=True)
+    PID_FILE.write_text(str(os.getpid()), encoding="utf-8")
+
+
+def clear_pid_file() -> None:
+    try:
+        if PID_FILE.is_file():
+            current = PID_FILE.read_text(encoding="utf-8").strip()
+            if current == str(os.getpid()):
+                PID_FILE.unlink(missing_ok=True)
+    except OSError:
+        pass
 
 
 def ensure_reference_audio(path_str: str) -> str:
@@ -97,6 +115,38 @@ _HB_STATE: dict[str, object] = {
     "lm": None,
 }
 _HB_STOP: threading.Event | None = None
+
+
+def request_shutdown(signum: int | None = None, _frame: object = None) -> None:
+    """SIGTERM/SIGINT — unload ASAP so stacked studio runs do not keep RAM."""
+    tag = f"signal {signum}" if signum is not None else "shutdown"
+    print(f"[musicai] {tag} — unloading engine to free memory.", flush=True)
+    _SHUTDOWN.set()
+    try:
+        update_heartbeat(
+            ready=False,
+            busy=False,
+            phase="stopped",
+            progress=0,
+            message="Engine stopped.",
+            error=None,
+            pid=None,
+        )
+    except Exception:
+        pass
+    clear_pid_file()
+    # Hard-exit when idle so MPS/MLX arenas return to the OS immediately.
+    if not _HB_STATE.get("busy"):
+        os._exit(0)
+
+
+def install_signal_handlers() -> None:
+    import signal
+
+    signal.signal(signal.SIGTERM, request_shutdown)
+    signal.signal(signal.SIGINT, request_shutdown)
+    if hasattr(signal, "SIGHUP"):
+        signal.signal(signal.SIGHUP, request_shutdown)
 
 
 def utc_now() -> str:
@@ -600,6 +650,11 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
             f"[musicai] {job_id}: clipped lyrics {len(original_lyrics)} → {len(lyrics)} chars "
             "to fit Apple Silicon memory"
         )
+    if not mapped["thinking"] and lyrics.strip():
+        print(
+            f"[musicai] {job_id}: thinking=off for user lyrics "
+            "(DiT follows words more closely)"
+        )
     if (
         job["tight_memory"]
         and original_duration not in (None, -1, 0, "auto", "", "30", 30)
@@ -801,6 +856,8 @@ def studio_idle_should_exit() -> bool:
 def main() -> int:
     JOBS.mkdir(parents=True, exist_ok=True)
     SONGS.mkdir(parents=True, exist_ok=True)
+    install_signal_handlers()
+    write_pid_file()
     reset_stale_jobs()
 
     try:
@@ -809,11 +866,13 @@ def main() -> int:
         update_heartbeat(ready=False, busy=False, phase="error", error=str(exc))
         print(f"[musicai] failed to load model: {exc}", file=sys.stderr)
         traceback.print_exc()
+        clear_pid_file()
         return 1
 
     while True:
-        if studio_idle_should_exit():
-            print("[musicai] Studio UI idle — unloading engine to free memory.")
+        if _SHUTDOWN.is_set() or studio_idle_should_exit():
+            why = "signal" if _SHUTDOWN.is_set() else "studio idle"
+            print(f"[musicai] Unloading engine ({why}) to free memory.")
             update_heartbeat(
                 ready=False,
                 busy=False,
@@ -822,6 +881,7 @@ def main() -> int:
                 message="Engine stopped (studio closed).",
                 error=None,
             )
+            clear_pid_file()
             return 0
 
         update_heartbeat(

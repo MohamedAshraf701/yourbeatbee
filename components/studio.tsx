@@ -129,11 +129,30 @@ export function Studio({ initialSongs = [] }: { initialSongs?: Song[] }) {
     function onVisible() {
       if (document.visibilityState === "visible") void ping()
     }
+    function onLeave() {
+      // Tab close / refresh — ask the server to unload the engine now.
+      const body = JSON.stringify({ leave: true })
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(
+          "/api/setup/presence?leave=1",
+          new Blob([body], { type: "application/json" })
+        )
+      } else {
+        void fetch("/api/setup/presence?leave=1", {
+          method: "POST",
+          body,
+          headers: { "Content-Type": "application/json" },
+          keepalive: true,
+        })
+      }
+    }
     document.addEventListener("visibilitychange", onVisible)
+    window.addEventListener("pagehide", onLeave)
     return () => {
       cancelled = true
       clearInterval(timer)
       document.removeEventListener("visibilitychange", onVisible)
+      window.removeEventListener("pagehide", onLeave)
     }
   }, [])
 

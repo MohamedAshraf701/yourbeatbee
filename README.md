@@ -7,7 +7,7 @@ Built for open-source users who want studio-quality text-to-music without sendin
 **Repository:** [github.com/MohamedAshraf701/yourbeatbee](https://github.com/MohamedAshraf701/yourbeatbee)
 
 <p align="center">
-  <img src="public/brand/logo-wordmark-dark.png" alt="YourBeatBee" width="420" />
+  <img src="public/brand/banner-light Medium.jpeg" alt="YourBeatBee" width="420" />
 </p>
 
 <p align="center">
@@ -125,7 +125,7 @@ npm run studio
 3. Wait until the engine badge shows **ready**  
 4. Go to **Create** and generate your first song  
 
-`npm run studio` starts the Next.js UI and the Python engine together.
+`npm run studio` starts the Next.js UI and the Python engine together. Stopping it (Ctrl+C) unloads the engine so model RAM is freed. Starting studio again first clears any leftover workers so memory does not stack.
 
 ### Optional CLI setup
 
@@ -149,7 +149,9 @@ npm run dev       # terminal B — UI only
 - The first weight download can take a while; you should see per-file progress.  
 - Avoid `HF_HUB_ENABLE_HF_TRANSFER=1` — it often looks stuck with no logs.  
 - Ctrl+C and re-run downloads are safe (resumable).  
-- Closing the studio tab unloads the engine after ~90s idle (frees RAM).
+- Closing the studio tab unloads the engine (page leave + ~90s idle fallback).
+- Ctrl+C on `npm run studio` always runs `npm run engine:stop` and frees RAM.
+- Only one engine worker is allowed — a new start kills orphans first.
 
 ---
 
@@ -175,9 +177,10 @@ musicai/
 
 | Script | What it does |
 |--------|----------------|
-| `npm run studio` | UI + engine together |
+| `npm run studio` | UI + engine together (unloads engine on exit) |
 | `npm run dev` | Next.js only |
 | `npm run engine` | Start ACE-Step worker |
+| `npm run engine:stop` | Force-unload engine / free RAM |
 | `npm run setup:engine` | Clone ACE-Step, sync deps, setup RVC |
 | `npm run setup:rvc` | RVC / Demucs env only |
 | `npm run download:models` | Download DiT / LM weights |

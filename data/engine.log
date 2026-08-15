@@ -444,3 +444,1318 @@ Using precomputed LM hints
 [musicai] d93d9d59-75c4-4966-87c6-32ff3775c428: wrote /Users/ashraf/Documents/WorkSpace/musicai/data/songs/d93d9d59-75c4-4966-87c6-32ff3775c428.mp3
 /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[musicai] Starting local ACE-Step engine (loads model into RAM)...
+[musicai] config=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B backend=mlx
+[musicai] If weights are missing, files download one-by-one with a progress bar.
+[musicai] Ctrl+C is safe — the next start resumes.
+W0816 03:23:25.040000 30287 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+2026-08-16 03:23:26.092 | WARNING  | acestep.training.trainer:<module>:40 - bitsandbytes not installed. Using standard AdamW.
+[musicai] device=mps backend=mlx model=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B ram≈18.0GB
+[musicai] Checkpoints already on disk and valid.
+[musicai] LM acestep-5Hz-lm-0.6B already on disk (1.28 GB).
+[musicai] Loading DiT / VAE / text encoder into RAM...
+2026-08-16 03:23:26.126 | INFO     | acestep.gpu_config:get_gpu_config:846 - macOS MPS detected (13.3 GB unified memory, tier=tier5). Applying Apple Silicon optimizations: no compile, no quantization, mlx backend, no CPU offload.
+2026-08-16 03:23:26.126 | INFO     | acestep.gpu_config:get_global_gpu_config:1574 - [gpu_config] Save-memory mode enabled via ACESTEP_SAVE_MEMORY=1
+2026-08-16 03:23:26.128 | INFO     | acestep.core.generation.handler.init_service_loader:_load_main_model_from_checkpoint:174 - [initialize_service] Attempting to load model with attention implementation: sdpa
+2026-08-16 03:24:28.124 | INFO     | acestep.core.generation.handler.mlx_dit_init:_init_mlx_dit:34 - [MLX-DiT] Native MLX DiT decoder initialized successfully (mx.compile=False).
+2026-08-16 03:24:43.548 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:75 - [MLX-VAE] Decode/encode compiled with mx.compile().
+2026-08-16 03:24:43.551 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:85 - [MLX-VAE] Native MLX VAE initialized (dtype=mlx.core.float32, compiled=True).
+[musicai] DiT ready. [OK] Model initialized successfully on mps
+[musicai] Loading LM (acestep-5Hz-lm-0.6B, backend=mlx)...
+2026-08-16 03:24:43.648 | INFO     | acestep.llm_inference:initialize:609 - loading 5Hz LM tokenizer... it may take 80~90s
+2026-08-16 03:24:56.398 | INFO     | acestep.llm_inference:initialize:613 - 5Hz LM tokenizer loaded successfully in 12.75 seconds
+2026-08-16 03:24:56.399 | INFO     | acestep.llm_inference:initialize:618 - Initializing constrained decoding processor...
+2026-08-16 03:24:56.400 | INFO     | acestep.llm_inference:initialize:624 - Setting constrained decoding max_duration to 480s based on GPU config (tier: tier5)
+2026-08-16 03:24:57.028 | DEBUG    | acestep.constrained_logits_processor:_precompute_audio_code_tokens:577 - Found 1535 audio code tokens with values outside valid range [0, 63999]
+2026-08-16 03:24:59.548 | INFO     | acestep.llm_inference:initialize:632 - Constrained processor initialized in 3.15 seconds
+2026-08-16 03:24:59.548 | INFO     | acestep.llm_inference:initialize:659 - flash_attn not installed: disabling CUDA graph capture for nano-vllm (SDPA fallback uses .item() calls in paged-cache decode that are incompatible with CUDA graph capture)
+2026-08-16 03:24:59.548 | INFO     | acestep.llm_inference:initialize:671 - Triton not available: disabling CUDA graph capture for nano-vllm (CUDA graphs require torch.compile which depends on Triton)
+2026-08-16 03:24:59.568 | INFO     | acestep.llm_inference:initialize:681 - Attempting MLX backend for Apple Silicon acceleration...
+2026-08-16 03:24:59.568 | INFO     | acestep.llm_inference:_load_mlx_model:2947 - Loading MLX model from /Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-0.6B
+2026-08-16 03:25:13.644 | INFO     | acestep.llm_inference:_load_mlx_model:3003 - MLX model loaded successfully in 14.08s
+[musicai] LM ready. ✅ 5Hz LM initialized successfully
+[musicai] Model loaded. Watching data/jobs/
+[musicai] 2d87545c-413d-4a9e-b3af-36b7e77fbd5e: generate_music duration=-1.0s lyrics=1807 chars voice=male rvc=no caption='Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained'
+mx.metal.clear_cache is deprecated and will be removed in a future version. Use mx.clear_cache instead.
+2026-08-16 03:26:05.337 | INFO     | acestep.inference:generate_music:641 - [generate_music] LLM usage decision: thinking=True, use_cot_caption=False, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=True, use_lm=True
+2026-08-16 03:26:05.338 | INFO     | acestep.inference:generate_music:699 - LM chunk 1/1 (infer_type=llm_dit) (size: 1, seeds: [717887345])
+2026-08-16 03:26:05.338 | INFO     | acestep.llm_inference:generate_with_stop_condition:1371 - Phase 1: Generating CoT metadata...
+2026-08-16 03:26:05.350 | INFO     | acestep.llm_inference:generate_with_stop_condition:1377 - generate_with_stop_condition: formatted_prompt=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko, aaj bhi tujhse pyaar hai.
+<|im_end|>
+<|im_start|>assistant
+
+2026-08-16 03:26:05.736 | INFO     | acestep.llm_inference:_run_mlx_single_native:3595 - MLX native prefill: 835 tokens in 0.37s (2245.3 tok/s)
+Python(33129) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+MLX Gen (native):   0%|          | 0/3500 [00:00<?, ?tok/s]MLX Gen (native):   0%|          | 4/3500 [00:00<01:33, 37.34tok/s]MLX Gen (native):   0%|          | 10/3500 [00:00<01:15, 46.27tok/s]MLX Gen (native):   0%|          | 16/3500 [00:00<01:08, 51.04tok/s]MLX Gen (native):   1%|          | 23/3500 [00:00<01:00, 57.77tok/s]MLX Gen (native):   1%|          | 30/3500 [00:00<00:57, 60.44tok/s]MLX Gen (native):   1%|          | 35/3500 [00:00<01:00, 56.82tok/s]
+2026-08-16 03:26:06.368 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 35 tokens in 0.63s (55.5 tok/s) | prefill 0.37s + decode 0.63s = 1.00s total
+2026-08-16 03:26:06.369 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <think>
+bpm: 30
+duration: 230
+keyscale: B♭ minor
+language: hi
+timesignature: 4
+<|im_end|>
+2026-08-16 03:26:06.369 | INFO     | acestep.llm_inference:generate_with_stop_condition:1422 - Phase 1 completed in 1.03s. Generated metadata: ['bpm', 'duration', 'keyscale', 'language', 'timesignature']
+2026-08-16 03:26:06.369 | INFO     | acestep.llm_inference:generate_with_stop_condition:1441 - Using CoT-generated duration (230.0s) as Phase 2 target_duration (original was None/unset)
+2026-08-16 03:26:06.369 | INFO     | acestep.llm_inference:generate_with_stop_condition:1482 - Phase 2: Generating audio codes...
+2026-08-16 03:26:06.371 | INFO     | acestep.llm_inference:generate_with_stop_condition:1490 - generate_with_stop_condition: formatted_prompt_with_cot=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko, aaj bhi tujhse pyaar hai.
+<|im_end|>
+<|im_start|>assistant
+<think>
+bpm: 30
+duration: 230
+keyscale: B♭ minor
+language: hi
+timesignature: 4
+</think>
+
+
+2026-08-16 03:26:06.373 | INFO     | acestep.llm_inference:_run_mlx_single_native:3514 - MLX native: pre-transitioned FSM to CODES_GENERATION (native fast path)
+2026-08-16 03:26:06.374 | INFO     | acestep.llm_inference:_build_unconditional_prompt:395 - CFG unconditional prompt (phase=codes, is_batch=False, negative_prompt='NO USER INPUT'):
+<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+NO USER INPUT<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+
+2026-08-16 03:26:06.644 | INFO     | acestep.llm_inference:_run_mlx_single_native:3571 - MLX native prefill: 904 tokens (cond=871, uncond=33) in 0.27s (3336.8 tok/s)
+MLX CFG Gen (native):   0%|          | 0/1160 [00:00<?, ?tok/s]MLX CFG Gen (native):   1%|          | 6/1160 [00:00<00:22, 51.00tok/s]MLX CFG Gen (native):   1%|          | 12/1160 [00:00<00:23, 47.92tok/s]MLX CFG Gen (native):   1%|▏         | 17/1160 [00:00<00:24, 46.74tok/s]MLX CFG Gen (native):   2%|▏         | 22/1160 [00:00<00:24, 46.88tok/s]MLX CFG Gen (native):   2%|▏         | 27/1160 [00:00<00:23, 47.23tok/s]MLX CFG Gen (native):   3%|▎         | 32/1160 [00:00<00:24, 46.75tok/s]MLX CFG Gen (native):   3%|▎         | 37/1160 [00:00<00:23, 46.82tok/s]MLX CFG Gen (native):   4%|▎         | 42/1160 [00:00<00:24, 46.30tok/s]MLX CFG Gen (native):   4%|▍         | 47/1160 [00:01<00:24, 45.93tok/s]MLX CFG Gen (native):   4%|▍         | 52/1160 [00:01<00:24, 45.70tok/s]MLX CFG Gen (native):   5%|▍         | 57/1160 [00:01<00:24, 45.84tok/s]MLX CFG Gen (native):   5%|▌         | 62/1160 [00:01<00:23, 46.20tok/s]MLX CFG Gen (native):   6%|▌         | 67/1160 [00:01<00:23, 46.50tok/s]MLX CFG Gen (native):   6%|▌         | 72/1160 [00:01<00:23, 46.05tok/s]MLX CFG Gen (native):   7%|▋         | 77/1160 [00:01<00:23, 45.51tok/s]MLX CFG Gen (native):   7%|▋         | 82/1160 [00:01<00:23, 44.96tok/s]MLX CFG Gen (native):   8%|▊         | 87/1160 [00:01<00:23, 44.92tok/s]MLX CFG Gen (native):   8%|▊         | 92/1160 [00:02<00:24, 44.26tok/s]MLX CFG Gen (native):   8%|▊         | 97/1160 [00:02<00:24, 44.24tok/s]MLX CFG Gen (native):   9%|▉         | 102/1160 [00:02<00:23, 44.54tok/s]MLX CFG Gen (native):   9%|▉         | 107/1160 [00:02<00:23, 44.72tok/s]MLX CFG Gen (native):  10%|▉         | 112/1160 [00:02<00:23, 44.62tok/s]MLX CFG Gen (native):  10%|█         | 117/1160 [00:02<00:23, 44.29tok/s]MLX CFG Gen (native):  11%|█         | 122/1160 [00:02<00:23, 44.62tok/s]MLX CFG Gen (native):  11%|█         | 127/1160 [00:02<00:22, 45.15tok/s]MLX CFG Gen (native):  11%|█▏        | 132/1160 [00:02<00:22, 45.31tok/s]MLX CFG Gen (native):  12%|█▏        | 137/1160 [00:03<00:22, 45.72tok/s]MLX CFG Gen (native):  12%|█▏        | 142/1160 [00:03<00:22, 45.94tok/s]MLX CFG Gen (native):  13%|█▎        | 147/1160 [00:03<00:21, 46.17tok/s]MLX CFG Gen (native):  13%|█▎        | 152/1160 [00:03<00:21, 46.32tok/s]MLX CFG Gen (native):  14%|█▎        | 157/1160 [00:03<00:22, 44.54tok/s]MLX CFG Gen (native):  14%|█▍        | 162/1160 [00:03<00:22, 44.04tok/s]MLX CFG Gen (native):  14%|█▍        | 167/1160 [00:03<00:22, 43.85tok/s]MLX CFG Gen (native):  15%|█▍        | 172/1160 [00:03<00:22, 44.02tok/s]MLX CFG Gen (native):  15%|█▌        | 177/1160 [00:03<00:22, 43.68tok/s]MLX CFG Gen (native):  16%|█▌        | 182/1160 [00:04<00:22, 43.83tok/s]MLX CFG Gen (native):  16%|█▌        | 187/1160 [00:04<00:22, 44.05tok/s]MLX CFG Gen (native):  17%|█▋        | 192/1160 [00:04<00:21, 44.11tok/s]MLX CFG Gen (native):  17%|█▋        | 197/1160 [00:04<00:21, 44.35tok/s]MLX CFG Gen (native):  17%|█▋        | 202/1160 [00:04<00:21, 43.84tok/s]MLX CFG Gen (native):  18%|█▊        | 207/1160 [00:04<00:22, 43.25tok/s]MLX CFG Gen (native):  18%|█▊        | 212/1160 [00:04<00:21, 43.36tok/s]MLX CFG Gen (native):  19%|█▊        | 217/1160 [00:04<00:21, 43.67tok/s]MLX CFG Gen (native):  19%|█▉        | 222/1160 [00:04<00:21, 43.35tok/s]MLX CFG Gen (native):  20%|█▉        | 227/1160 [00:05<00:21, 42.68tok/s]MLX CFG Gen (native):  20%|██        | 232/1160 [00:05<00:21, 43.07tok/s]MLX CFG Gen (native):  20%|██        | 237/1160 [00:05<00:21, 42.96tok/s]MLX CFG Gen (native):  21%|██        | 242/1160 [00:05<00:21, 43.34tok/s]MLX CFG Gen (native):  21%|██▏       | 247/1160 [00:05<00:20, 43.55tok/s]MLX CFG Gen (native):  22%|██▏       | 252/1160 [00:05<00:21, 41.52tok/s]MLX CFG Gen (native):  22%|██▏       | 257/1160 [00:05<00:21, 42.15tok/s]MLX CFG Gen (native):  23%|██▎       | 262/1160 [00:05<00:21, 42.34tok/s]MLX CFG Gen (native):  23%|██▎       | 267/1160 [00:05<00:21, 42.43tok/s]MLX CFG Gen (native):  23%|██▎       | 272/1160 [00:06<00:20, 42.90tok/s]MLX CFG Gen (native):  24%|██▍       | 277/1160 [00:06<00:20, 42.77tok/s]MLX CFG Gen (native):  24%|██▍       | 282/1160 [00:06<00:20, 43.08tok/s]MLX CFG Gen (native):  25%|██▍       | 287/1160 [00:06<00:20, 43.24tok/s]MLX CFG Gen (native):  25%|██▌       | 292/1160 [00:06<00:20, 43.26tok/s]MLX CFG Gen (native):  26%|██▌       | 297/1160 [00:06<00:19, 43.24tok/s]MLX CFG Gen (native):  26%|██▌       | 302/1160 [00:06<00:19, 43.23tok/s]MLX CFG Gen (native):  26%|██▋       | 307/1160 [00:06<00:19, 43.15tok/s]MLX CFG Gen (native):  27%|██▋       | 312/1160 [00:07<00:19, 43.38tok/s]MLX CFG Gen (native):  27%|██▋       | 317/1160 [00:07<00:19, 43.38tok/s]MLX CFG Gen (native):  28%|██▊       | 322/1160 [00:07<00:19, 43.50tok/s]MLX CFG Gen (native):  28%|██▊       | 327/1160 [00:07<00:19, 43.47tok/s]MLX CFG Gen (native):  29%|██▊       | 332/1160 [00:07<00:18, 43.58tok/s]MLX CFG Gen (native):  29%|██▉       | 337/1160 [00:07<00:19, 43.27tok/s]MLX CFG Gen (native):  29%|██▉       | 342/1160 [00:07<00:18, 43.19tok/s]MLX CFG Gen (native):  30%|██▉       | 347/1160 [00:07<00:18, 43.47tok/s]MLX CFG Gen (native):  30%|███       | 352/1160 [00:07<00:18, 43.33tok/s]MLX CFG Gen (native):  31%|███       | 357/1160 [00:08<00:18, 42.75tok/s]MLX CFG Gen (native):  31%|███       | 362/1160 [00:08<00:18, 43.05tok/s]MLX CFG Gen (native):  32%|███▏      | 367/1160 [00:08<00:18, 43.20tok/s]MLX CFG Gen (native):  32%|███▏      | 372/1160 [00:08<00:18, 43.33tok/s]MLX CFG Gen (native):  32%|███▎      | 377/1160 [00:08<00:18, 43.49tok/s]MLX CFG Gen (native):  33%|███▎      | 382/1160 [00:08<00:18, 43.21tok/s]MLX CFG Gen (native):  33%|███▎      | 387/1160 [00:08<00:17, 43.24tok/s]MLX CFG Gen (native):  34%|███▍      | 392/1160 [00:08<00:17, 42.92tok/s]MLX CFG Gen (native):  34%|███▍      | 397/1160 [00:09<00:18, 42.29tok/s]MLX CFG Gen (native):  35%|███▍      | 402/1160 [00:09<00:17, 42.42tok/s]MLX CFG Gen (native):  35%|███▌      | 407/1160 [00:09<00:17, 42.50tok/s]MLX CFG Gen (native):  36%|███▌      | 412/1160 [00:09<00:17, 41.92tok/s]MLX CFG Gen (native):  36%|███▌      | 417/1160 [00:09<00:17, 42.34tok/s]MLX CFG Gen (native):  36%|███▋      | 422/1160 [00:09<00:17, 42.46tok/s]MLX CFG Gen (native):  37%|███▋      | 427/1160 [00:09<00:17, 41.89tok/s]MLX CFG Gen (native):  37%|███▋      | 432/1160 [00:09<00:17, 42.09tok/s]MLX CFG Gen (native):  38%|███▊      | 437/1160 [00:09<00:17, 42.39tok/s]MLX CFG Gen (native):  38%|███▊      | 442/1160 [00:10<00:17, 42.04tok/s]MLX CFG Gen (native):  39%|███▊      | 447/1160 [00:10<00:16, 42.55tok/s]MLX CFG Gen (native):  39%|███▉      | 452/1160 [00:10<00:16, 42.70tok/s]MLX CFG Gen (native):  39%|███▉      | 457/1160 [00:10<00:16, 42.89tok/s]MLX CFG Gen (native):  40%|███▉      | 462/1160 [00:10<00:16, 42.93tok/s]MLX CFG Gen (native):  40%|████      | 467/1160 [00:10<00:16, 42.59tok/s]MLX CFG Gen (native):  41%|████      | 472/1160 [00:10<00:16, 42.29tok/s]MLX CFG Gen (native):  41%|████      | 477/1160 [00:10<00:16, 42.40tok/s]MLX CFG Gen (native):  42%|████▏     | 482/1160 [00:11<00:16, 40.85tok/s]MLX CFG Gen (native):  42%|████▏     | 487/1160 [00:11<00:16, 41.39tok/s]MLX CFG Gen (native):  42%|████▏     | 492/1160 [00:11<00:16, 41.73tok/s]MLX CFG Gen (native):  43%|████▎     | 497/1160 [00:11<00:15, 42.13tok/s]MLX CFG Gen (native):  43%|████▎     | 502/1160 [00:11<00:15, 42.42tok/s]MLX CFG Gen (native):  44%|████▎     | 507/1160 [00:11<00:15, 42.57tok/s]MLX CFG Gen (native):  44%|████▍     | 512/1160 [00:11<00:15, 42.13tok/s]MLX CFG Gen (native):  45%|████▍     | 517/1160 [00:11<00:15, 41.94tok/s]MLX CFG Gen (native):  45%|████▌     | 522/1160 [00:11<00:15, 41.85tok/s]MLX CFG Gen (native):  45%|████▌     | 527/1160 [00:12<00:15, 41.87tok/s]MLX CFG Gen (native):  46%|████▌     | 532/1160 [00:12<00:14, 42.02tok/s]MLX CFG Gen (native):  46%|████▋     | 537/1160 [00:12<00:14, 42.34tok/s]MLX CFG Gen (native):  47%|████▋     | 542/1160 [00:12<00:14, 42.50tok/s]MLX CFG Gen (native):  47%|████▋     | 547/1160 [00:12<00:14, 42.69tok/s]MLX CFG Gen (native):  48%|████▊     | 552/1160 [00:12<00:14, 42.64tok/s]MLX CFG Gen (native):  48%|████▊     | 557/1160 [00:12<00:14, 42.01tok/s]MLX CFG Gen (native):  48%|████▊     | 562/1160 [00:12<00:14, 42.32tok/s]MLX CFG Gen (native):  49%|████▉     | 567/1160 [00:13<00:14, 42.08tok/s]MLX CFG Gen (native):  49%|████▉     | 572/1160 [00:13<00:13, 42.16tok/s]MLX CFG Gen (native):  50%|████▉     | 577/1160 [00:13<00:13, 42.14tok/s]MLX CFG Gen (native):  50%|█████     | 582/1160 [00:13<00:13, 42.56tok/s]MLX CFG Gen (native):  51%|█████     | 587/1160 [00:13<00:13, 42.67tok/s]MLX CFG Gen (native):  51%|█████     | 592/1160 [00:13<00:13, 42.60tok/s]MLX CFG Gen (native):  51%|█████▏    | 597/1160 [00:13<00:13, 42.09tok/s]MLX CFG Gen (native):  52%|█████▏    | 602/1160 [00:13<00:13, 41.52tok/s]MLX CFG Gen (native):  52%|█████▏    | 607/1160 [00:13<00:13, 41.84tok/s]MLX CFG Gen (native):  53%|█████▎    | 612/1160 [00:14<00:13, 41.51tok/s]MLX CFG Gen (native):  53%|█████▎    | 617/1160 [00:14<00:12, 41.90tok/s]MLX CFG Gen (native):  54%|█████▎    | 622/1160 [00:14<00:12, 42.26tok/s]MLX CFG Gen (native):  54%|█████▍    | 627/1160 [00:14<00:12, 42.45tok/s]MLX CFG Gen (native):  54%|█████▍    | 632/1160 [00:14<00:12, 42.55tok/s]MLX CFG Gen (native):  55%|█████▍    | 637/1160 [00:14<00:12, 42.62tok/s]MLX CFG Gen (native):  55%|█████▌    | 642/1160 [00:14<00:12, 41.50tok/s]MLX CFG Gen (native):  56%|█████▌    | 647/1160 [00:14<00:12, 41.64tok/s]MLX CFG Gen (native):  56%|█████▌    | 652/1160 [00:15<00:12, 41.97tok/s]MLX CFG Gen (native):  57%|█████▋    | 657/1160 [00:15<00:11, 42.11tok/s]MLX CFG Gen (native):  57%|█████▋    | 662/1160 [00:15<00:11, 42.12tok/s]MLX CFG Gen (native):  57%|█████▊    | 667/1160 [00:15<00:11, 41.30tok/s]MLX CFG Gen (native):  58%|█████▊    | 672/1160 [00:15<00:11, 41.80tok/s]MLX CFG Gen (native):  58%|█████▊    | 677/1160 [00:15<00:11, 42.05tok/s]MLX CFG Gen (native):  59%|█████▉    | 682/1160 [00:15<00:11, 41.30tok/s]MLX CFG Gen (native):  59%|█████▉    | 687/1160 [00:15<00:11, 40.43tok/s]MLX CFG Gen (native):  60%|█████▉    | 692/1160 [00:16<00:11, 40.71tok/s]MLX CFG Gen (native):  60%|██████    | 697/1160 [00:16<00:11, 40.69tok/s]MLX CFG Gen (native):  61%|██████    | 702/1160 [00:16<00:11, 41.00tok/s]MLX CFG Gen (native):  61%|██████    | 707/1160 [00:16<00:10, 41.46tok/s]MLX CFG Gen (native):  61%|██████▏   | 712/1160 [00:16<00:10, 41.78tok/s]MLX CFG Gen (native):  62%|██████▏   | 717/1160 [00:16<00:10, 42.02tok/s]MLX CFG Gen (native):  62%|██████▏   | 722/1160 [00:16<00:10, 42.05tok/s]MLX CFG Gen (native):  63%|██████▎   | 727/1160 [00:16<00:10, 41.56tok/s]MLX CFG Gen (native):  63%|██████▎   | 732/1160 [00:16<00:10, 41.72tok/s]MLX CFG Gen (native):  64%|██████▎   | 737/1160 [00:17<00:10, 40.52tok/s]MLX CFG Gen (native):  64%|██████▍   | 742/1160 [00:17<00:10, 40.85tok/s]MLX CFG Gen (native):  64%|██████▍   | 747/1160 [00:17<00:10, 41.12tok/s]MLX CFG Gen (native):  65%|██████▍   | 752/1160 [00:17<00:09, 41.28tok/s]MLX CFG Gen (native):  65%|██████▌   | 757/1160 [00:17<00:09, 41.39tok/s]MLX CFG Gen (native):  66%|██████▌   | 762/1160 [00:17<00:09, 41.03tok/s]MLX CFG Gen (native):  66%|██████▌   | 767/1160 [00:17<00:09, 41.15tok/s]MLX CFG Gen (native):  67%|██████▋   | 772/1160 [00:17<00:09, 40.64tok/s]MLX CFG Gen (native):  67%|██████▋   | 777/1160 [00:18<00:09, 41.01tok/s]MLX CFG Gen (native):  67%|██████▋   | 782/1160 [00:18<00:09, 41.27tok/s]MLX CFG Gen (native):  68%|██████▊   | 787/1160 [00:18<00:08, 41.51tok/s]MLX CFG Gen (native):  68%|██████▊   | 792/1160 [00:18<00:08, 41.64tok/s]MLX CFG Gen (native):  69%|██████▊   | 797/1160 [00:18<00:08, 41.74tok/s]MLX CFG Gen (native):  69%|██████▉   | 802/1160 [00:18<00:08, 41.75tok/s]MLX CFG Gen (native):  70%|██████▉   | 807/1160 [00:18<00:08, 41.38tok/s]MLX CFG Gen (native):  70%|███████   | 812/1160 [00:18<00:08, 41.14tok/s]MLX CFG Gen (native):  70%|███████   | 817/1160 [00:19<00:08, 41.44tok/s]MLX CFG Gen (native):  71%|███████   | 822/1160 [00:19<00:08, 41.28tok/s]MLX CFG Gen (native):  71%|███████▏  | 827/1160 [00:19<00:08, 41.43tok/s]MLX CFG Gen (native):  72%|███████▏  | 832/1160 [00:19<00:07, 41.70tok/s]MLX CFG Gen (native):  72%|███████▏  | 837/1160 [00:19<00:07, 41.87tok/s]MLX CFG Gen (native):  73%|███████▎  | 842/1160 [00:19<00:07, 41.70tok/s]MLX CFG Gen (native):  73%|███████▎  | 847/1160 [00:19<00:07, 41.79tok/s]MLX CFG Gen (native):  73%|███████▎  | 852/1160 [00:19<00:07, 41.38tok/s]MLX CFG Gen (native):  74%|███████▍  | 857/1160 [00:20<00:07, 41.20tok/s]MLX CFG Gen (native):  74%|███████▍  | 862/1160 [00:20<00:07, 41.30tok/s]MLX CFG Gen (native):  75%|███████▍  | 867/1160 [00:20<00:07, 41.35tok/s]MLX CFG Gen (native):  75%|███████▌  | 872/1160 [00:20<00:06, 41.63tok/s]MLX CFG Gen (native):  76%|███████▌  | 877/1160 [00:20<00:06, 41.50tok/s]MLX CFG Gen (native):  76%|███████▌  | 882/1160 [00:20<00:06, 41.63tok/s]MLX CFG Gen (native):  76%|███████▋  | 887/1160 [00:20<00:06, 41.82tok/s]MLX CFG Gen (native):  77%|███████▋  | 892/1160 [00:20<00:06, 41.61tok/s]MLX CFG Gen (native):  77%|███████▋  | 897/1160 [00:20<00:06, 41.47tok/s]MLX CFG Gen (native):  78%|███████▊  | 902/1160 [00:21<00:06, 41.62tok/s]MLX CFG Gen (native):  78%|███████▊  | 907/1160 [00:21<00:06, 41.29tok/s]MLX CFG Gen (native):  79%|███████▊  | 912/1160 [00:21<00:06, 41.17tok/s]MLX CFG Gen (native):  79%|███████▉  | 917/1160 [00:21<00:05, 40.94tok/s]MLX CFG Gen (native):  79%|███████▉  | 922/1160 [00:21<00:05, 40.75tok/s]MLX CFG Gen (native):  80%|███████▉  | 927/1160 [00:21<00:05, 40.53tok/s]MLX CFG Gen (native):  80%|████████  | 932/1160 [00:21<00:05, 40.72tok/s]MLX CFG Gen (native):  81%|████████  | 937/1160 [00:21<00:05, 40.62tok/s]MLX CFG Gen (native):  81%|████████  | 942/1160 [00:22<00:05, 40.92tok/s]MLX CFG Gen (native):  82%|████████▏ | 947/1160 [00:22<00:05, 40.66tok/s]MLX CFG Gen (native):  82%|████████▏ | 952/1160 [00:22<00:05, 40.88tok/s]MLX CFG Gen (native):  82%|████████▎ | 957/1160 [00:22<00:04, 40.92tok/s]MLX CFG Gen (native):  83%|████████▎ | 962/1160 [00:22<00:04, 41.12tok/s]MLX CFG Gen (native):  83%|████████▎ | 967/1160 [00:22<00:04, 41.37tok/s]MLX CFG Gen (native):  84%|████████▍ | 972/1160 [00:22<00:04, 41.05tok/s]MLX CFG Gen (native):  84%|████████▍ | 977/1160 [00:22<00:04, 40.14tok/s]MLX CFG Gen (native):  85%|████████▍ | 982/1160 [00:23<00:04, 39.79tok/s]MLX CFG Gen (native):  85%|████████▌ | 986/1160 [00:23<00:04, 39.32tok/s]MLX CFG Gen (native):  85%|████████▌ | 990/1160 [00:23<00:04, 39.06tok/s]MLX CFG Gen (native):  86%|████████▌ | 994/1160 [00:23<00:04, 38.49tok/s]MLX CFG Gen (native):  86%|████████▌ | 999/1160 [00:23<00:04, 39.12tok/s]MLX CFG Gen (native):  87%|████████▋ | 1004/1160 [00:23<00:03, 39.50tok/s]MLX CFG Gen (native):  87%|████████▋ | 1009/1160 [00:23<00:03, 39.92tok/s]MLX CFG Gen (native):  87%|████████▋ | 1014/1160 [00:23<00:03, 40.08tok/s]MLX CFG Gen (native):  88%|████████▊ | 1019/1160 [00:24<00:03, 39.99tok/s]MLX CFG Gen (native):  88%|████████▊ | 1024/1160 [00:24<00:03, 40.35tok/s]MLX CFG Gen (native):  89%|████████▊ | 1029/1160 [00:24<00:03, 39.20tok/s]MLX CFG Gen (native):  89%|████████▉ | 1034/1160 [00:24<00:03, 39.64tok/s]MLX CFG Gen (native):  90%|████████▉ | 1039/1160 [00:24<00:03, 39.94tok/s]MLX CFG Gen (native):  90%|█████████ | 1044/1160 [00:24<00:02, 40.35tok/s]MLX CFG Gen (native):  90%|█████████ | 1049/1160 [00:24<00:02, 40.61tok/s]MLX CFG Gen (native):  91%|█████████ | 1054/1160 [00:24<00:02, 40.49tok/s]MLX CFG Gen (native):  91%|█████████▏| 1059/1160 [00:24<00:02, 40.16tok/s]MLX CFG Gen (native):  92%|█████████▏| 1064/1160 [00:25<00:02, 40.48tok/s]MLX CFG Gen (native):  92%|█████████▏| 1069/1160 [00:25<00:02, 39.97tok/s]MLX CFG Gen (native):  93%|█████████▎| 1074/1160 [00:25<00:02, 40.16tok/s]MLX CFG Gen (native):  93%|█████████▎| 1079/1160 [00:25<00:02, 40.24tok/s]MLX CFG Gen (native):  93%|█████████▎| 1084/1160 [00:25<00:01, 40.44tok/s]MLX CFG Gen (native):  94%|█████████▍| 1089/1160 [00:25<00:01, 40.66tok/s]MLX CFG Gen (native):  94%|█████████▍| 1094/1160 [00:25<00:01, 40.98tok/s]MLX CFG Gen (native):  95%|█████████▍| 1099/1160 [00:25<00:01, 40.38tok/s]MLX CFG Gen (native):  95%|█████████▌| 1104/1160 [00:26<00:01, 39.98tok/s]MLX CFG Gen (native):  96%|█████████▌| 1109/1160 [00:26<00:01, 40.05tok/s]MLX CFG Gen (native):  96%|█████████▌| 1114/1160 [00:26<00:01, 40.02tok/s]MLX CFG Gen (native):  96%|█████████▋| 1119/1160 [00:26<00:01, 40.11tok/s]MLX CFG Gen (native):  97%|█████████▋| 1124/1160 [00:26<00:00, 40.45tok/s]MLX CFG Gen (native):  97%|█████████▋| 1129/1160 [00:26<00:00, 40.61tok/s]MLX CFG Gen (native):  98%|█████████▊| 1134/1160 [00:26<00:00, 40.69tok/s]MLX CFG Gen (native):  98%|█████████▊| 1139/1160 [00:26<00:00, 40.26tok/s]MLX CFG Gen (native):  99%|█████████▊| 1144/1160 [00:27<00:00, 39.90tok/s]MLX CFG Gen (native):  99%|█████████▉| 1149/1160 [00:27<00:00, 40.10tok/s]MLX CFG Gen (native):  99%|█████████▉| 1151/1160 [00:27<00:00, 42.19tok/s]
+2026-08-16 03:26:33.927 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 1151 tokens in 27.28s (42.2 tok/s) | prefill 0.27s + decode 27.28s = 27.55s total
+2026-08-16 03:26:33.929 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <|audio_code_25319|><|audio_code_35847|><|audio_code_35855|><|audio_code_25543|><|audio_code_53552|><|audio_code_28544|><|audio_code_36839|><|audio_code_15583|><|audio_code_9729|><|audio_code_22849|><|audio_code_9531|><|audio_code_52057|><|audio_code_25581|><|audio_code_50631|><|audio_code_5303|><|audio_code_35329|><|audio_code_17118|><|audio_code_11756|><|audio_code_31159|><|audio_code_37779|><|audio_code_25339|><|audio_code_3899|><|audio_code_52001|><|audio_code_13440|><|audio_code_48636|><|audio_code_49575|><|audio_code_48175|><|audio_code_51740|><|audio_code_15561|><|audio_code_12578|><|audio_code_12976|><|audio_code_33262|><|audio_code_1383|><|audio_code_11887|><|audio_code_43580|><|audio_code_13735|><|audio_code_56268|><|audio_code_39934|><|audio_code_2339|><|audio_code_53626|><|audio_code_35722|><|audio_code_35836|><|audio_code_2360|><|audio_code_6111|><|audio_code_15671|><|audio_code_63935|><|audio_code_2003|><|audio_code_12218|><|audio_code_33278|><|audio_code_14175|><|audio_code_24557|><|audio_code_32767|><|audio_code_40199|><|audio_code_21998|><|audio_code_20423|><|audio_code_50127|><|audio_code_25706|><|audio_code_46500|><|audio_code_340|><|audio_code_62309|><|audio_code_12935|><|audio_code_22695|><|audio_code_9164|><|audio_code_63670|><|audio_code_5062|><|audio_code_43464|><|audio_code_4481|><|audio_code_16369|><|audio_code_63968|><|audio_code_22144|><|audio_code_57648|><|audio_code_51432|><|audio_code_18632|><|audio_code_47904|><|audio_code_2296|><|audio_code_3336|><|audio_code_51040|><|audio_code_25408|><|audio_code_6512|><|audio_code_51568|><|audio_code_36240|><|audio_code_60893|><|audio_code_38136|><|audio_code_37343|><|audio_code_12951|><|audio_code_2087|><|audio_code_31871|><|audio_code_11191|><|audio_code_2438|><|audio_code_22305|><|audio_code_54061|><|audio_code_25814|><|audio_code_47877|><|audio_code_2806|><|audio_code_25774|><|audio_code_63477|><|audio_code_56840|><|audio_code_56063|><|audio_code_4928|><|audio_code_56223|><|audio_code_38359|><|audio_code_39775|><|audio_code_18920|><|audio_code_12223|><|audio_code_29062|><|audio_code_63930|><|audio_code_19712|><|audio_code_9976|><|audio_code_41704|><|audio_code_38168|><|audio_code_19712|><|audio_code_3888|><|audio_code_39136|><|audio_code_38160|><|audio_code_22328|><|audio_code_3376|><|audio_code_58831|><|audio_code_25147|><|audio_code_18816|><|audio_code_24013|><|audio_code_44757|><|audio_code_24878|><|audio_code_19015|><|audio_code_12733|><|audio_code_50814|><|audio_code_30475|><|audio_code_1958|><|audio_code_37596|><|audio_code_19479|><|audio_code_63935|><|audio_code_18050|><|audio_code_63744|><|audio_code_55237|><|audio_code_52711|><|audio_code_40919|><|audio_code_52174|><|audio_code_30772|><|audio_code_10738|><|audio_code_12615|><|audio_code_53032|><|audio_code_22976|><|audio_code_3891|><|audio_code_46440|><|audio_code_48066|><|audio_code_17280|><|audio_code_54704|><|audio_code_36248|><|audio_code_25472|><|audio_code_3960|><|audio_code_51560|><|audio_code_25488|><|audio_code_22336|><|audio_code_55152|><|audio_code_51624|><|audio_code_22928|><|audio_code_7097|><|audio_code_52136|><|audio_code_36240|><|audio_code_4749|><|audio_code_38072|><|audio_code_3279|><|audio_code_19999|><|audio_code_63966|><|audio_code_45530|><|audio_code_38776|><|audio_code_27062|><|audio_code_16527|><|audio_code_49391|><|audio_code_24532|><|audio_code_19446|><|audio_code_6647|><|audio_code_2271|><|audio_code_43918|><|audio_code_40032|><|audio_code_40919|><|audio_code_25511|><|audio_code_42167|><|audio_code_12495|><|audio_code_18492|><|audio_code_27888|><|audio_code_49093|><|audio_code_40232|><|audio_code_47644|><|audio_code_62933|><|audio_code_18926|><|audio_code_41430|><|audio_code_3511|><|audio_code_50204|><|audio_code_40088|><|audio_code_25455|><|audio_code_63578|><|audio_code_12734|><|audio_code_39430|><|audio_code_55008|><|audio_code_47927|><|audio_code_14481|><|audio_code_52883|><|audio_code_46329|><|audio_code_13770|><|audio_code_55519|><|audio_code_33773|><|audio_code_2304|><|audio_code_17255|><|audio_code_11238|><|audio_code_52639|><|audio_code_2608|><|audio_code_36865|><|audio_code_52719|><|audio_code_45031|><|audio_code_46023|><|audio_code_24467|><|audio_code_9129|><|audio_code_31126|><|audio_code_26471|><|audio_code_46830|><|audio_code_31284|><|audio_code_40406|><|audio_code_15289|><|audio_code_50060|><|audio_code_27761|><|audio_code_18486|><|audio_code_185|><|audio_code_21997|><|audio_code_56083|><|audio_code_17709|><|audio_code_49092|><|audio_code_53880|><|audio_code_53567|><|audio_code_5688|><|audio_code_63031|><|audio_code_40138|><|audio_code_36417|><|audio_code_52629|><|audio_code_20722|><|audio_code_28473|><|audio_code_40839|><|audio_code_28519|><|audio_code_12263|><|audio_code_25589|><|audio_code_54439|><|audio_code_43586|><|audio_code_40882|><|audio_code_53002|><|audio_code_37785|><|audio_code_2446|><|audio_code_61946|><|audio_code_15511|><|audio_code_56269|><|audio_code_6759|><|audio_code_52766|><|audio_code_30432|><|audio_code_1333|><|audio_code_10162|><|audio_code_50480|><|audio_code_53191|><|audio_code_5943|><|audio_code_49094|><|audio_code_31967|><|audio_code_43559|><|audio_code_25659|><|audio_code_23441|><|audio_code_41484|><|audio_code_43016|><|audio_code_30905|><|audio_code_20156|><|audio_code_19463|><|audio_code_4151|><|audio_code_38771|><|audio_code_56624|><|audio_code_20104|><|audio_code_55908|><|audio_code_17815|><|audio_code_1034|><|audio_code_21049|><|audio_code_53275|><|audio_code_58584|><|audio_code_9848|><|audio_code_25993|><|audio_code_1744|><|audio_code_12328|><|audio_code_28220|><|audio_code_175|><|audio_code_30775|><|audio_code_14535|><|audio_code_37487|><|audio_code_26239|><|audio_code_25303|><|audio_code_52204|><|audio_code_61751|><|audio_code_112|><|audio_code_51936|><|audio_code_13264|><|audio_code_22465|><|audio_code_5043|><|audio_code_11832|><|audio_code_28200|><|audio_code_63799|><|audio_code_2437|><|audio_code_2584|><|audio_code_63437|><|audio_code_12320|><|audio_code_48688|><|audio_code_55298|><|audio_code_12528|><|audio_code_23490|><|audio_code_16992|><|audio_code_10220|><|audio_code_60223|><|audio_code_15032|><|audio_code_49888|><|audio_code_8641|><|audio_code_3217|><|audio_code_63444|><|audio_code_357|><|audio_code_5051|><|audio_code_10735|><|audio_code_50015|><|audio_code_27344|><|audio_code_7192|><|audio_code_2608|><|audio_code_26228|><|audio_code_36600|><|audio_code_53152|><|audio_code_24688|><|audio_code_48176|><|audio_code_8347|><|audio_code_59070|><|audio_code_4055|><|audio_code_25327|><|audio_code_26160|><|audio_code_13353|><|audio_code_57343|><|audio_code_24311|><|audio_code_43026|><|audio_code_7934|><|audio_code_39949|><|audio_code_56943|><|audio_code_58519|><|audio_code_47621|><|audio_code_32982|><|audio_code_36607|><|audio_code_3087|><|audio_code_6164|><|audio_code_56356|><|audio_code_20538|><|audio_code_1599|><|audio_code_37639|><|audio_code_15359|><|audio_code_33972|><|audio_code_32769|><|audio_code_29375|><|audio_code_29159|><|audio_code_40903|><|audio_code_29574|><|audio_code_30191|><|audio_code_41559|><|audio_code_9557|><|audio_code_51112|><|audio_code_33216|><|audio_code_6608|><|audio_code_53748|><|audio_code_39364|><|audio_code_52161|><|audio_code_30935|><|audio_code_18568|><|audio_code_52376|><|audio_code_23496|><|audio_code_7107|><|audio_code_1523|><|audio_code_11057|><|audio_code_16016|><|audio_code_30927|><|audio_code_38854|><|audio_code_16010|><|audio_code_50472|><|audio_code_4915|><|audio_code_6066|><|audio_code_46592|><|audio_code_9768|><|audio_code_23232|><|audio_code_5664|><|audio_code_5099|><|audio_code_62783|><|audio_code_15032|><|audio_code_50344|><|audio_code_896|><|audio_code_31441|><|audio_code_52694|><|audio_code_10172|><|audio_code_38200|><|audio_code_63735|><|audio_code_56262|><|audio_code_20978|><|audio_code_2312|><|audio_code_14164|><|audio_code_1874|><|audio_code_30905|><|audio_code_52928|><|audio_code_12336|><|audio_code_60987|><|audio_code_35538|><|audio_code_46|><|audio_code_23871|><|audio_code_27147|><|audio_code_44731|><|audio_code_43578|><|audio_code_28975|><|audio_code_54463|><|audio_code_25633|><|audio_code_1036|><|audio_code_60469|><|audio_code_34839|><|audio_code_2671|><|audio_code_37922|><|audio_code_52233|><|audio_code_44054|><|audio_code_23877|><|audio_code_53278|><|audio_code_49971|><|audio_code_55816|><|audio_code_35351|><|audio_code_27077|><|audio_code_63987|><|audio_code_51666|><|audio_code_10355|><|audio_code_32343|><|audio_code_27647|><|audio_code_55751|><|audio_code_10079|><|audio_code_24023|><|audio_code_51701|><|audio_code_25144|><|audio_code_25136|><|audio_code_20416|><|audio_code_7104|><|audio_code_53739|><|audio_code_37369|><|audio_code_3066|><|audio_code_15952|><|audio_code_15096|><|audio_code_2681|><|audio_code_15682|><|audio_code_30607|><|audio_code_11767|><|audio_code_13637|><|audio_code_27833|><|audio_code_19047|><|audio_code_51848|><|audio_code_10585|><|audio_code_6492|><|audio_code_36146|><|audio_code_36838|><|audio_code_27596|><|audio_code_62959|><|audio_code_30233|><|audio_code_33182|><|audio_code_1543|><|audio_code_63096|><|audio_code_14786|><|audio_code_22023|><|audio_code_5752|><|audio_code_18894|><|audio_code_2386|><|audio_code_5245|><|audio_code_6662|><|audio_code_20667|><|audio_code_39236|><|audio_code_55959|><|audio_code_63036|><|audio_code_53175|><|audio_code_42243|><|audio_code_62949|><|audio_code_45526|><|audio_code_3111|><|audio_code_55336|><|audio_code_18919|><|audio_code_53337|><|audio_code_24584|><|audio_code_23506|><|audio_code_19912|><|audio_code_47047|><|audio_code_13764|><|audio_code_6634|><|audio_code_21156|><|audio_code_58820|><|audio_code_24736|><|audio_code_22689|><|audio_code_33896|><|audio_code_50087|><|audio_code_28447|><|audio_code_62935|><|audio_code_1020|><|audio_code_13953|><|audio_code_49799|><|audio_code_4128|><|audio_code_12809|><|audio_code_22927|><|audio_code_54791|><|audio_code_28978|><|audio_code_4471|><|audio_code_5451|><|audio_code_20358|><|audio_code_54197|><|audio_code_20431|><|audio_code_1788|><|audio_code_12731|><|audio_code_24022|><|audio_code_6835|><|audio_code_33111|><|audio_code_32992|><|audio_code_12711|><|audio_code_53262|><|audio_code_34848|><|audio_code_16322|><|audio_code_45542|><|audio_code_38521|><|audio_code_7655|><|audio_code_25086|><|audio_code_863|><|audio_code_20430|><|audio_code_38151|><|audio_code_20525|><|audio_code_14648|><|audio_code_16261|><|audio_code_6186|><|audio_code_697|><|audio_code_37369|><|audio_code_4383|><|audio_code_63994|><|audio_code_42495|><|audio_code_26267|><|audio_code_51733|><|audio_code_25210|><|audio_code_59892|><|audio_code_33384|><|audio_code_1427|><|audio_code_1415|><|audio_code_10559|><|audio_code_8678|><|audio_code_11197|><|audio_code_25612|><|audio_code_38336|><|audio_code_14853|><|audio_code_18581|><|audio_code_15873|><|audio_code_10164|><|audio_code_26143|><|audio_code_49215|><|audio_code_18487|><|audio_code_15057|><|audio_code_44160|><|audio_code_22708|><|audio_code_55820|><|audio_code_23084|><|audio_code_9256|><|audio_code_36472|><|audio_code_39904|><|audio_code_9256|><|audio_code_14857|><|audio_code_39809|><|audio_code_17120|><|audio_code_2623|><|audio_code_24047|><|audio_code_41863|><|audio_code_12479|><|audio_code_254|><|audio_code_46967|><|audio_code_487|><|audio_code_39821|><|audio_code_27799|><|audio_code_26464|><|audio_code_11074|><|audio_code_29664|><|audio_code_60401|><|audio_code_62418|><|audio_code_40761|><|audio_code_13057|><|audio_code_31094|><|audio_code_36826|><|audio_code_12123|><|audio_code_36350|><|audio_code_24633|><|audio_code_53808|><|audio_code_8857|><|audio_code_63464|><|audio_code_7472|><|audio_code_11456|><|audio_code_36792|><|audio_code_38647|><|audio_code_18696|><|audio_code_52016|><|audio_code_63936|><|audio_code_58259|><|audio_code_55750|><|audio_code_17830|><|audio_code_28472|><|audio_code_28615|><|audio_code_38853|><|audio_code_18771|><|audio_code_47881|><|audio_code_57640|><|audio_code_48177|><|audio_code_29186|><|audio_code_36857|><|audio_code_5016|><|audio_code_1552|><|audio_code_53738|><|audio_code_14884|><|audio_code_12798|><|audio_code_35031|><|audio_code_35881|><|audio_code_26640|><|audio_code_11183|><|audio_code_51903|><|audio_code_34835|><|audio_code_31237|><|audio_code_43528|><|audio_code_38207|><|audio_code_8871|><|audio_code_15900|><|audio_code_29678|><|audio_code_30724|><|audio_code_42519|><|audio_code_14383|><|audio_code_47672|><|audio_code_43024|><|audio_code_9742|><|audio_code_25367|><|audio_code_28975|><|audio_code_44044|><|audio_code_13867|><|audio_code_13039|><|audio_code_436|><|audio_code_4543|><|audio_code_32158|><|audio_code_53055|><|audio_code_27735|><|audio_code_56183|><|audio_code_13570|><|audio_code_25554|><|audio_code_1394|><|audio_code_49642|><|audio_code_60876|><|audio_code_30185|><|audio_code_35487|><|audio_code_2312|><|audio_code_29585|><|audio_code_38304|><|audio_code_7098|><|audio_code_52675|><|audio_code_27776|><|audio_code_37088|><|audio_code_12590|><|audio_code_24047|><|audio_code_40611|><|audio_code_2745|><|audio_code_10449|><|audio_code_33088|><|audio_code_47672|><|audio_code_9320|><|audio_code_12472|><|audio_code_14464|><|audio_code_23936|><|audio_code_63167|><|audio_code_4856|><|audio_code_52448|><|audio_code_320|><|audio_code_16802|><|audio_code_55767|><|audio_code_15729|><|audio_code_60584|><|audio_code_19479|><|audio_code_18875|><|audio_code_15721|><|audio_code_1875|><|audio_code_48110|><|audio_code_62442|><|audio_code_49152|><|audio_code_4744|><|audio_code_25922|><|audio_code_7211|><|audio_code_15234|><|audio_code_44044|><|audio_code_4319|><|audio_code_2583|><|audio_code_10248|><|audio_code_50756|><|audio_code_7598|><|audio_code_12527|><|audio_code_13334|><|audio_code_40465|><|audio_code_48142|><|audio_code_56959|><|audio_code_8775|><|audio_code_40464|><|audio_code_25148|><|audio_code_25648|><|audio_code_42175|><|audio_code_1031|><|audio_code_43524|><|audio_code_30721|><|audio_code_54399|><|audio_code_49863|><|audio_code_13874|><|audio_code_34059|><|audio_code_32769|><|audio_code_14615|><|audio_code_775|><|audio_code_13247|><|audio_code_28150|><|audio_code_16039|><|audio_code_32180|><|audio_code_8232|><|audio_code_49336|><|audio_code_12755|><|audio_code_52145|><|audio_code_10721|><|audio_code_22003|><|audio_code_40448|><|audio_code_26656|><|audio_code_54017|><|audio_code_46028|><|audio_code_2360|><|audio_code_60200|><|audio_code_2681|><|audio_code_53552|><|audio_code_35409|><|audio_code_61501|><|audio_code_30202|><|audio_code_15321|><|audio_code_4264|><|audio_code_50352|><|audio_code_52801|><|audio_code_41336|><|audio_code_61264|><|audio_code_6320|><|audio_code_37930|><|audio_code_13705|><|audio_code_26561|><|audio_code_4824|><|audio_code_63664|><|audio_code_7327|><|audio_code_26140|><|audio_code_4663|><|audio_code_43029|><|audio_code_15415|><|audio_code_47111|><|audio_code_1536|><|audio_code_35642|><|audio_code_38386|><|audio_code_56760|><|audio_code_26554|><|audio_code_51705|><|audio_code_36280|><|audio_code_13779|><|audio_code_39913|><|audio_code_51698|><|audio_code_54254|><|audio_code_16185|><|audio_code_25120|><|audio_code_0|><|audio_code_22056|><|audio_code_1875|><|audio_code_63970|><|audio_code_23640|><|audio_code_2385|><|audio_code_23489|><|audio_code_4960|><|audio_code_12545|><|audio_code_22823|><|audio_code_38568|><|audio_code_9778|><|audio_code_9209|><|audio_code_1664|><|audio_code_25536|><|audio_code_2394|><|audio_code_63624|><|audio_code_52481|><|audio_code_60720|><|audio_code_20873|><|audio_code_15299|><|audio_code_14785|><|audio_code_59891|><|audio_code_53704|><|audio_code_21497|><|audio_code_14305|><|audio_code_51184|><|audio_code_11729|><|audio_code_57809|><|audio_code_25563|><|audio_code_1465|><|audio_code_61897|><|audio_code_10141|><|audio_code_36211|><|audio_code_52018|><|audio_code_7184|><|audio_code_49848|><|audio_code_40443|><|audio_code_24551|><|audio_code_54351|><|audio_code_50140|><|audio_code_1240|><|audio_code_48637|><|audio_code_27943|><|audio_code_44806|><|audio_code_16820|><|audio_code_56936|><|audio_code_36335|><|audio_code_60351|><|audio_code_375|><|audio_code_40898|><|audio_code_51148|><|audio_code_14311|><|audio_code_39319|><|audio_code_63550|><|audio_code_28607|><|audio_code_27985|><|audio_code_2525|><|audio_code_12724|><|audio_code_42519|><|audio_code_45703|><|audio_code_39968|><|audio_code_9191|><|audio_code_49190|><|audio_code_45503|><|audio_code_63549|><|audio_code_48825|><|audio_code_2000|><|audio_code_36344|><|audio_code_26571|><|audio_code_9117|><|audio_code_53234|><|audio_code_5052|><|audio_code_15609|><|audio_code_24193|><|audio_code_40232|><|audio_code_8678|><|audio_code_26447|><|audio_code_12679|><|audio_code_26659|><|audio_code_49479|><|audio_code_20727|><|audio_code_10655|><|audio_code_17488|><|audio_code_50232|><|audio_code_7808|><|audio_code_44905|><|audio_code_1906|><|audio_code_36769|><|audio_code_63992|><|audio_code_2455|><|audio_code_62854|><|audio_code_38720|><|audio_code_20224|><|audio_code_3505|><|audio_code_36333|><|audio_code_24785|><|audio_code_53196|><|audio_code_12780|><|audio_code_25542|><|audio_code_56278|><|audio_code_59825|><|audio_code_13584|><|audio_code_37608|><|audio_code_9782|><|audio_code_25849|><|audio_code_6936|><|audio_code_62648|><|audio_code_26242|><|audio_code_43016|><|audio_code_30975|><|audio_code_12759|><|audio_code_9030|><|audio_code_7804|><|audio_code_7169|><|audio_code_51167|><|audio_code_46077|><|audio_code_39840|><|audio_code_12246|><|audio_code_57970|><|audio_code_450|><|audio_code_40760|><|audio_code_433|><|audio_code_35280|><|audio_code_5049|><|audio_code_29656|><|audio_code_320|><|audio_code_29656|><|audio_code_376|><|audio_code_19416|><|audio_code_27920|><|audio_code_22909|><|audio_code_12790|><|audio_code_63308|><|audio_code_24584|><|audio_code_7559|><|audio_code_54959|><|audio_code_40910|><|audio_code_56232|><|audio_code_5824|><|audio_code_5296|><|audio_code_28368|><|audio_code_9729|><|audio_code_11632|><|audio_code_36289|><|audio_code_34346|><|audio_code_1167|><|audio_code_61903|><|audio_code_4447|><|audio_code_12887|><|audio_code_36027|><|audio_code_25748|><|audio_code_2223|><|audio_code_23875|><|audio_code_55236|><|audio_code_59176|><|audio_code_25208|><|audio_code_62213|><|audio_code_42906|><|audio_code_53560|><|audio_code_16266|><|audio_code_51180|><|audio_code_13697|><|audio_code_48104|><|audio_code_953|><|audio_code_17823|><|audio_code_37779|><|audio_code_57145|><|audio_code_61728|><|audio_code_23505|><|audio_code_24012|><|audio_code_26305|><|audio_code_38376|><|audio_code_5304|><|audio_code_48517|><|audio_code_50062|><|audio_code_15793|><|audio_code_40296|><|audio_code_9776|><|audio_code_25349|><|audio_code_1768|><|audio_code_23208|><|audio_code_39808|><|audio_code_57530|><|audio_code_27351|><|audio_code_39200|><|audio_code_11648|><|audio_code_63792|><|audio_code_54075|><|audio_code_7995|><|audio_code_38241|><|audio_code_27392|><|audio_code_29071|><|audio_code_53727|><|audio_code_56302|><|audio_code_54016|><|audio_code_8744|><|audio_code_41008|><|audio_code_51280|><|audio_code_9904|><|audio_code_23490|><|audio_code_16672|><|audio_code_53768|><|audio_code_33796|><|audio_code_28407|><|audio_code_7007|><|audio_code_30786|><|audio_code_1747|><|audio_code_56869|><|audio_code_26086|><|audio_code_32642|><|audio_code_49210|><|audio_code_45571|><|audio_code_58451|><|audio_code_49343|><|audio_code_23030|><|audio_code_44855|><|audio_code_13352|><|audio_code_39175|><|audio_code_53911|><|audio_code_61541|><|audio_code_35885|><|audio_code_38838|><|audio_code_54304|><|audio_code_9570|><|audio_code_16330|><|audio_code_7198|><|audio_code_10430|><|audio_code_10164|><|audio_code_22847|><|audio_code_25610|><|audio_code_26658|><|audio_code_58527|><|audio_code_46076|><|audio_code_14168|><|audio_code_63416|><|audio_code_5800|><|audio_code_50784|><|audio_code_13634|><|audio_code_8621|><|audio_code_28671|><|audio_code_55471|><|audio_code_43058|><|audio_code_25545|><|audio_code_4481|><|audio_code_52136|><|audio_code_25581|><|audio_code_38071|><|audio_code_53079|><|audio_code_30244|><|audio_code_36295|><|audio_code_46077|><|audio_code_3887|><|audio_code_49050|><|audio_code_22409|><|audio_code_3897|><|audio_code_51690|><|audio_code_18704|><|audio_code_33222|><|audio_code_44415|><|audio_code_30229|><|audio_code_28793|><|audio_code_386|><|audio_code_40384|><|audio_code_53688|><|audio_code_31695|><|audio_code_2383|><|audio_code_33805|><|audio_code_12343|><|audio_code_48519|><|audio_code_10733|><|audio_code_13772|><|audio_code_63929|><|audio_code_13697|><|audio_code_61425|><|audio_code_13708|><|audio_code_35248|><|audio_code_23503|><|audio_code_51623|><|audio_code_24030|><|audio_code_54221|><|audio_code_24037|><|audio_code_19911|><|audio_code_40910|><|audio_code_11749|><|audio_code_14847|><|audio_code_46078|><|audio_code_11239|><|audio_code_2503|><|audio_code_50115|><|audio_code_20732|><|audio_code_42845|><|audio_code_12621|><|audio_code_46862|><|audio_code_2239|><|audio_code_16783|><|audio_code_7591|><|audio_code_41614|><|audio_code_53246|><|audio_code_25569|><|audio_code_7105|><|audio_code_54761|><|audio_code_38360|><|audio_code_9472|><|audio_code_57648|><|audio_code_51496|><|audio_code_23312|><|audio_code_22400|><|audio_code_3896|><|audio_code_39328|><|audio_code_25480|><|audio_code_19840|><|audio_code_52144|><|audio_code_13136|><|audio_code_35792|><|audio_code_40210|><|audio_code_17650|><|audio_code_25524|><|audio_code_25759|><|audio_code_21679|><|audio_code_4783|><|audio_code_16351|><|audio_code_47316|><|audio_code_53560|><|audio_code_38756|><|audio_code_38164|><|audio_code_22332|><|audio_code_54572|><|audio_code_38692|><|audio_code_11610|><|audio_code_20834|><|audio_code_51983|><|audio_code_28544|><|audio_code_25679|><|audio_code_27487|><|audio_code_39890|><|audio_code_16363|><|audio_code_12742|><|audio_code_26511|><|audio_code_53755|><|audio_code_18768|><|audio_code_12664|><|audio_code_29008|><|audio_code_63920|><|audio_code_26448|><|audio_code_63928|><|audio_code_26512|><|audio_code_63984|><|audio_code_26504|><|audio_code_12787|><|audio_code_13719|><|audio_code_49914|><|audio_code_8699|><|audio_code_40959|><|audio_code_0|><|audio_code_42207|><|audio_code_559|><|audio_code_16165|><|audio_code_4812|><|audio_code_21443|><|audio_code_36861|><|audio_code_15947|><|audio_code_19471|><|audio_code_39829|><|audio_code_48454|><|audio_code_28025|><|audio_code_12275|><|audio_code_24038|><|audio_code_36203|><|audio_code_2322|><|audio_code_60022|><|audio_code_10236|><|audio_code_1967|><|audio_code_4392|><|audio_code_20441|><|audio_code_6978|><|audio_code_52139|><|audio_code_36313|><|audio_code_22400|><|audio_code_55224|><|audio_code_38816|><|audio_code_25488|><|audio_code_7097|><|audio_code_52208|><|audio_code_36312|><|audio_code_9664|><|audio_code_55280|><|audio_code_49121|><|audio_code_25545|><|audio_code_45563|><|im_end|>
+2026-08-16 03:26:33.929 | INFO     | acestep.llm_inference:generate_with_stop_condition:1650 - Phase 2 completed in 27.56s. Generated 1150 audio codes
+2026-08-16 03:26:34.112 | INFO     | acestep.core.generation.handler.generate_music:generate_music:289 - [generate_music] Turbo model detected: overriding guidance_scale 8.0 -> 1.0 (turbo does not use CFG).
+2026-08-16 03:26:34.112 | INFO     | acestep.core.generation.handler.generate_music:generate_music:304 - [generate_music] Starting generation...
+2026-08-16 03:26:34.112 | INFO     | acestep.core.generation.handler.generate_music:generate_music:307 - [generate_music] Preparing inputs...
+2026-08-16 03:26:34.115 | INFO     | acestep.core.generation.handler.generate_music_request:_prepare_reference_and_source_audio:179 - [generate_music] cover task: no src_audio but audio codes provided, proceeding with codes
+2026-08-16 03:26:37.300 | INFO     | acestep.core.generation.handler.conditioning_target:_prepare_target_latents_and_wavs:78 - [generate_music] Decoding audio codes for item 0...
+2026-08-16 03:26:38.322 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_precomputed_lm_hints:31 - [generate_music] Decoding audio codes for LM hints for item 0...
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - 
+======================================================================
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Metas
+- bpm: 30
+- timesignature: 4
+- keyscale: B♭ minor
+- duration: 230 seconds
+<|endoftext|>
+
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:
+# Languages
+unknown
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi, tera intezaar hai.
+Jaane kyun dil ko, aaj bhi tujhse pyaar hai.<|endoftext|>
+2026-08-16 03:26:38.340 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================
+
+2026-08-16 03:26:38.785 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...
+2026-08-16 03:26:41.094 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...
+2026-08-16 03:26:41.101 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:122 - [preprocess_batch] Inferring non-cover text embeddings...
+2026-08-16 03:26:41.168 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
+Using precomputed LM hints
+MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [00:35<04:08, 35.54s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [00:40<01:46, 17.83s/it]MLX DiT diffusion:  38%|███▊      | 3/8 [00:47<01:04, 12.82s/it]MLX DiT diffusion:  50%|█████     | 4/8 [00:52<00:38,  9.51s/it]MLX DiT diffusion:  62%|██████▎   | 5/8 [00:55<00:21,  7.31s/it]MLX DiT diffusion:  75%|███████▌  | 6/8 [00:59<00:11,  5.99s/it]MLX DiT diffusion:  88%|████████▊ | 7/8 [01:02<00:05,  5.14s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:05<00:00,  4.57s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:05<00:00,  8.23s/it]
+2026-08-16 03:27:59.068 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:254 - [service_generate] DiT diffusion complete via MLX (65.86s total, 8.233s/step).
+2026-08-16 03:27:59.133 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...
+2026-08-16 03:27:59.143 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 5750, 64]), dtype=torch.float32
+2026-08-16 03:27:59.143 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'diffusion_time_cost': 65.86256575584412, 'diffusion_per_step_time_cost': 8.232820719480515, 'total_time_cost': 65.86766576766968, 'sampler_mode': 'euler', 'offload_time_cost': 0.0}
+2026-08-16 03:27:59.613 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...
+2026-08-16 03:27:59.723 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 03:27:59.723 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...
+2026-08-16 03:28:36.964 | INFO     | acestep.core.generation.handler.mlx_vae_decode_native:_mlx_vae_decode:66 - [MLX-VAE] Decoded 1 sample(s), 5750 latent frames -> audio in 37.24s (convert=0.005s, decode=37.22s, dtype=mlx.core.float32)
+2026-08-16 03:28:36.965 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 03:28:38.422 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...
+2026-08-16 03:28:38.423 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.
+2026-08-16 03:28:38.635 | INFO     | acestep.inference:generate_music:981 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB
+2026-08-16 03:28:38.749 | INFO     | acestep.inference:generate_music:986 - [Normalization] Audio 0 AFTER: Peak=0.8913
+Python(35880) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+2026-08-16 03:28:41.401 | DEBUG    | acestep.audio_utils:_save_mp3:183 - [AudioSaver] Saved audio to /Users/ashraf/Documents/WorkSpace/musicai/data/songs/2fd9907d-d16c-4bcd-922d-b00b09f8ddbf.mp3 (mp3, 48000Hz, 128k)
+[musicai] 2d87545c-413d-4a9e-b3af-36b7e77fbd5e: wrote /Users/ashraf/Documents/WorkSpace/musicai/data/songs/2d87545c-413d-4a9e-b3af-36b7e77fbd5e.mp3
+[musicai] Studio UI idle — unloading engine to free memory.
+[musicai] Starting local ACE-Step engine (loads model into RAM)...
+[musicai] config=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B backend=mlx
+[musicai] If weights are missing, files download one-by-one with a progress bar.
+[musicai] Ctrl+C is safe — the next start resumes.
+W0816 03:56:52.441000 65052 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+2026-08-16 03:56:53.504 | WARNING  | acestep.training.trainer:<module>:40 - bitsandbytes not installed. Using standard AdamW.
+[musicai] device=mps backend=mlx model=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B ram≈18.0GB
+[musicai] Checkpoints already on disk and valid.
+[musicai] LM acestep-5Hz-lm-0.6B already on disk (1.28 GB).
+[musicai] Loading DiT / VAE / text encoder into RAM...
+2026-08-16 03:56:53.537 | INFO     | acestep.gpu_config:get_gpu_config:846 - macOS MPS detected (13.3 GB unified memory, tier=tier5). Applying Apple Silicon optimizations: no compile, no quantization, mlx backend, no CPU offload.
+2026-08-16 03:56:53.537 | INFO     | acestep.gpu_config:get_global_gpu_config:1574 - [gpu_config] Save-memory mode enabled via ACESTEP_SAVE_MEMORY=1
+2026-08-16 03:56:53.537 | INFO     | acestep.core.generation.handler.init_service_loader:_load_main_model_from_checkpoint:174 - [initialize_service] Attempting to load model with attention implementation: sdpa
+2026-08-16 03:57:38.278 | INFO     | acestep.core.generation.handler.mlx_dit_init:_init_mlx_dit:34 - [MLX-DiT] Native MLX DiT decoder initialized successfully (mx.compile=False).
+2026-08-16 03:57:50.816 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:75 - [MLX-VAE] Decode/encode compiled with mx.compile().
+2026-08-16 03:57:50.817 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:85 - [MLX-VAE] Native MLX VAE initialized (dtype=mlx.core.float32, compiled=True).
+[musicai] DiT ready. [OK] Model initialized successfully on mps
+[musicai] Loading LM (acestep-5Hz-lm-0.6B, backend=mlx)...
+2026-08-16 03:57:50.829 | INFO     | acestep.llm_inference:initialize:609 - loading 5Hz LM tokenizer... it may take 80~90s
+2026-08-16 03:58:03.446 | INFO     | acestep.llm_inference:initialize:613 - 5Hz LM tokenizer loaded successfully in 12.62 seconds
+2026-08-16 03:58:03.446 | INFO     | acestep.llm_inference:initialize:618 - Initializing constrained decoding processor...
+2026-08-16 03:58:03.447 | INFO     | acestep.llm_inference:initialize:624 - Setting constrained decoding max_duration to 480s based on GPU config (tier: tier5)
+2026-08-16 03:58:04.146 | DEBUG    | acestep.constrained_logits_processor:_precompute_audio_code_tokens:577 - Found 1535 audio code tokens with values outside valid range [0, 63999]
+2026-08-16 03:58:06.444 | INFO     | acestep.llm_inference:initialize:632 - Constrained processor initialized in 3.00 seconds
+2026-08-16 03:58:06.445 | INFO     | acestep.llm_inference:initialize:659 - flash_attn not installed: disabling CUDA graph capture for nano-vllm (SDPA fallback uses .item() calls in paged-cache decode that are incompatible with CUDA graph capture)
+2026-08-16 03:58:06.445 | INFO     | acestep.llm_inference:initialize:671 - Triton not available: disabling CUDA graph capture for nano-vllm (CUDA graphs require torch.compile which depends on Triton)
+2026-08-16 03:58:06.462 | INFO     | acestep.llm_inference:initialize:681 - Attempting MLX backend for Apple Silicon acceleration...
+2026-08-16 03:58:06.462 | INFO     | acestep.llm_inference:_load_mlx_model:2947 - Loading MLX model from /Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-0.6B
+2026-08-16 03:58:20.626 | INFO     | acestep.llm_inference:_load_mlx_model:3003 - MLX model loaded successfully in 14.16s
+[musicai] LM ready. ✅ 5Hz LM initialized successfully
+[musicai] Model loaded. Watching data/jobs/
+[musicai] 27e24e35-5852-4371-8df4-bef52e44043f: thinking=off for user lyrics (DiT follows words more closely)
+[musicai] 27e24e35-5852-4371-8df4-bef52e44043f: generate_music duration=-1.0s lyrics=1807 chars voice=male rvc=no caption='Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained'
+mx.metal.clear_cache is deprecated and will be removed in a future version. Use mx.clear_cache instead.
+2026-08-16 03:59:19.400 | INFO     | acestep.inference:generate_music:641 - [generate_music] LLM usage decision: thinking=False, use_cot_caption=False, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=True, use_lm=True
+2026-08-16 03:59:19.400 | INFO     | acestep.inference:generate_music:699 - LM chunk 1/1 (infer_type=dit) (size: 1, seeds: [4101395714])
+2026-08-16 03:59:19.400 | INFO     | acestep.llm_inference:generate_with_stop_condition:1371 - Phase 1: Generating CoT metadata...
+2026-08-16 03:59:19.411 | INFO     | acestep.llm_inference:generate_with_stop_condition:1377 - generate_with_stop_condition: formatted_prompt=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.
+<|im_end|>
+<|im_start|>assistant
+
+2026-08-16 03:59:19.752 | INFO     | acestep.llm_inference:_run_mlx_single_native:3595 - MLX native prefill: 835 tokens in 0.33s (2545.7 tok/s)
+MLX Gen (native):   0%|          | 0/3500 [00:00<?, ?tok/s]MLX Gen (native):   0%|          | 1/3500 [00:00<25:24,  2.30tok/s]MLX Gen (native):   0%|          | 8/3500 [00:00<03:08, 18.53tok/s]MLX Gen (native):   0%|          | 15/3500 [00:00<01:52, 30.90tok/s]MLX Gen (native):   1%|          | 22/3500 [00:00<01:27, 39.92tok/s]MLX Gen (native):   1%|          | 28/3500 [00:00<01:18, 44.19tok/s]MLX Gen (native):   1%|          | 35/3500 [00:00<01:08, 50.41tok/s]MLX Gen (native):   1%|          | 35/3500 [00:00<01:37, 35.59tok/s]
+2026-08-16 03:59:20.752 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 35 tokens in 1.00s (35.0 tok/s) | prefill 0.33s + decode 1.00s = 1.33s total
+2026-08-16 03:59:20.753 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <think>
+bpm: 188
+duration: 247
+keyscale: G minor
+language: hi
+timesignature: 4
+<|im_end|>
+2026-08-16 03:59:20.753 | INFO     | acestep.llm_inference:generate_with_stop_condition:1422 - Phase 1 completed in 1.35s. Generated metadata: ['bpm', 'duration', 'keyscale', 'language', 'timesignature']
+2026-08-16 03:59:20.753 | INFO     | acestep.llm_inference:generate_with_stop_condition:1441 - Using CoT-generated duration (247.0s) as Phase 2 target_duration (original was None/unset)
+2026-08-16 03:59:20.930 | INFO     | acestep.core.generation.handler.generate_music:generate_music:289 - [generate_music] Turbo model detected: overriding guidance_scale 10.5 -> 1.0 (turbo does not use CFG).
+2026-08-16 03:59:20.930 | INFO     | acestep.core.generation.handler.generate_music:generate_music:304 - [generate_music] Starting generation...
+2026-08-16 03:59:20.930 | INFO     | acestep.core.generation.handler.generate_music:generate_music:307 - [generate_music] Preparing inputs...
+2026-08-16 03:59:24.132 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - 
+======================================================================
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:
+# Instruction
+Fill the audio semantic mask based on the given conditions:
+
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Metas
+- bpm: 188
+- timesignature: 4
+- keyscale: G minor
+- duration: 247 seconds
+<|endoftext|>
+
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:
+# Languages
+unknown
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.<|endoftext|>
+2026-08-16 03:59:24.133 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================
+
+2026-08-16 03:59:26.658 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...
+2026-08-16 03:59:27.023 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...
+2026-08-16 03:59:27.026 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:122 - [preprocess_batch] Inferring non-cover text embeddings...
+2026-08-16 03:59:27.098 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
+MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [00:40<04:41, 40.16s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [00:47<02:03, 20.59s/it]MLX DiT diffusion:  38%|███▊      | 3/8 [00:53<01:09, 13.98s/it]MLX DiT diffusion:  50%|█████     | 4/8 [00:57<00:39,  9.99s/it]MLX DiT diffusion:  62%|██████▎   | 5/8 [01:00<00:23,  7.80s/it]MLX DiT diffusion:  75%|███████▌  | 6/8 [01:04<00:12,  6.44s/it]MLX DiT diffusion:  88%|████████▊ | 7/8 [01:08<00:05,  5.53s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:12<00:00,  4.94s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:12<00:00,  9.01s/it]
+2026-08-16 04:00:55.961 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:254 - [service_generate] DiT diffusion complete via MLX (72.10s total, 9.013s/step).
+2026-08-16 04:00:55.983 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...
+2026-08-16 04:00:55.993 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 6175, 64]), dtype=torch.float32
+2026-08-16 04:00:55.993 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'diffusion_time_cost': 72.1007912158966, 'diffusion_per_step_time_cost': 9.012598901987076, 'total_time_cost': 72.10896921157837, 'sampler_mode': 'euler', 'offload_time_cost': 0.0}
+2026-08-16 04:00:56.142 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...
+2026-08-16 04:00:56.225 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 04:00:56.225 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...
+2026-08-16 04:01:37.938 | INFO     | acestep.core.generation.handler.mlx_vae_decode_native:_mlx_vae_decode:66 - [MLX-VAE] Decoded 1 sample(s), 6175 latent frames -> audio in 41.71s (convert=0.006s, decode=41.70s, dtype=mlx.core.float32)
+2026-08-16 04:01:37.940 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 04:01:39.383 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...
+2026-08-16 04:01:39.385 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.
+2026-08-16 04:01:39.593 | INFO     | acestep.inference:generate_music:981 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB
+2026-08-16 04:01:39.713 | INFO     | acestep.inference:generate_music:986 - [Normalization] Audio 0 AFTER: Peak=0.8913
+2026-08-16 04:01:42.618 | DEBUG    | acestep.audio_utils:_save_mp3:183 - [AudioSaver] Saved audio to /Users/ashraf/Documents/WorkSpace/musicai/data/songs/c88e0cb5-bba7-cc9c-efbe-58cfe385c868.mp3 (mp3, 48000Hz, 128k)
+[musicai] 27e24e35-5852-4371-8df4-bef52e44043f: wrote /Users/ashraf/Documents/WorkSpace/musicai/data/songs/27e24e35-5852-4371-8df4-bef52e44043f.mp3
+[musicai] c4275411-67e1-444f-8f52-13deb5151a12: thinking=off for user lyrics (DiT follows words more closely)
+[musicai] c4275411-67e1-444f-8f52-13deb5151a12: generate_music duration=-1.0s lyrics=1807 chars voice=male rvc=no caption='Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained'
+2026-08-16 04:13:56.922 | INFO     | acestep.inference:generate_music:641 - [generate_music] LLM usage decision: thinking=False, use_cot_caption=False, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=True, use_lm=True
+2026-08-16 04:13:57.022 | INFO     | acestep.inference:generate_music:699 - LM chunk 1/1 (infer_type=dit) (size: 1, seeds: [540675561])
+2026-08-16 04:13:57.022 | INFO     | acestep.llm_inference:generate_with_stop_condition:1371 - Phase 1: Generating CoT metadata...
+2026-08-16 04:13:57.033 | INFO     | acestep.llm_inference:generate_with_stop_condition:1377 - generate_with_stop_condition: formatted_prompt=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.
+<|im_end|>
+<|im_start|>assistant
+
+2026-08-16 04:14:16.128 | INFO     | acestep.llm_inference:_run_mlx_single_native:3595 - MLX native prefill: 835 tokens in 18.95s (44.1 tok/s)
+MLX Gen (native):   0%|          | 0/3500 [00:00<?, ?tok/s]MLX Gen (native):   0%|          | 4/3500 [00:00<01:31, 38.38tok/s]MLX Gen (native):   0%|          | 10/3500 [00:00<01:08, 50.75tok/s]MLX Gen (native):   0%|          | 17/3500 [00:00<01:02, 56.09tok/s]MLX Gen (native):   1%|          | 24/3500 [00:00<00:59, 58.75tok/s]MLX Gen (native):   1%|          | 30/3500 [00:00<01:00, 57.20tok/s]MLX Gen (native):   1%|          | 35/3500 [00:00<01:01, 56.52tok/s]
+2026-08-16 04:14:16.751 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 35 tokens in 0.62s (56.4 tok/s) | prefill 18.95s + decode 0.62s = 19.58s total
+2026-08-16 04:14:16.751 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <think>
+bpm: 30
+duration: 222
+keyscale: B♭ minor
+language: hi
+timesignature: 4
+<|im_end|>
+2026-08-16 04:14:16.751 | INFO     | acestep.llm_inference:generate_with_stop_condition:1422 - Phase 1 completed in 19.73s. Generated metadata: ['bpm', 'duration', 'keyscale', 'language', 'timesignature']
+2026-08-16 04:14:16.751 | INFO     | acestep.llm_inference:generate_with_stop_condition:1441 - Using CoT-generated duration (222.0s) as Phase 2 target_duration (original was None/unset)
+2026-08-16 04:14:16.981 | INFO     | acestep.core.generation.handler.generate_music:generate_music:289 - [generate_music] Turbo model detected: overriding guidance_scale 10.0 -> 1.0 (turbo does not use CFG).
+2026-08-16 04:14:16.990 | INFO     | acestep.core.generation.handler.generate_music:generate_music:304 - [generate_music] Starting generation...
+2026-08-16 04:14:16.990 | INFO     | acestep.core.generation.handler.generate_music:generate_music:307 - [generate_music] Preparing inputs...
+2026-08-16 04:14:47.119 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - 
+======================================================================
+2026-08-16 04:14:47.122 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)
+2026-08-16 04:14:47.122 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================
+2026-08-16 04:14:47.123 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:
+# Instruction
+Fill the audio semantic mask based on the given conditions:
+
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Metas
+- bpm: 30
+- timesignature: 4
+- keyscale: B♭ minor
+- duration: 222 seconds
+<|endoftext|>
+
+2026-08-16 04:14:47.123 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================
+2026-08-16 04:14:47.123 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:
+# Languages
+unknown
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.<|endoftext|>
+2026-08-16 04:14:47.123 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================
+
+2026-08-16 04:14:57.145 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...
+2026-08-16 04:15:29.055 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...
+2026-08-16 04:15:29.069 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:122 - [preprocess_batch] Inferring non-cover text embeddings...
+2026-08-16 04:15:29.381 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
+MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [01:02<07:15, 62.21s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [01:14<03:18, 33.11s/it]MLX DiT diffusion:  38%|███▊      | 3/8 [01:18<01:37, 19.50s/it]MLX DiT diffusion:  50%|█████     | 4/8 [01:21<00:52, 13.10s/it]MLX DiT diffusion:  62%|██████▎   | 5/8 [01:24<00:28,  9.56s/it]MLX DiT diffusion:  75%|███████▌  | 6/8 [01:28<00:14,  7.45s/it]MLX DiT diffusion:  88%|████████▊ | 7/8 [01:31<00:06,  6.10s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:34<00:00,  5.20s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:34<00:00, 11.85s/it]
+2026-08-16 04:17:44.903 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:254 - [service_generate] DiT diffusion complete via MLX (94.80s total, 11.850s/step).
+2026-08-16 04:17:44.921 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...
+2026-08-16 04:17:44.927 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 5550, 64]), dtype=torch.float32
+2026-08-16 04:17:44.928 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'diffusion_time_cost': 94.7999198436737, 'diffusion_per_step_time_cost': 11.849989980459213, 'total_time_cost': 94.81568789482117, 'sampler_mode': 'euler', 'offload_time_cost': 0.0}
+2026-08-16 04:17:48.149 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...
+2026-08-16 04:17:48.244 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 04:17:48.244 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...
+2026-08-16 04:18:26.577 | INFO     | acestep.core.generation.handler.mlx_vae_decode_native:_mlx_vae_decode:66 - [MLX-VAE] Decoded 1 sample(s), 5550 latent frames -> audio in 38.33s (convert=0.006s, decode=38.30s, dtype=mlx.core.float32)
+2026-08-16 04:18:26.736 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-16 04:18:36.847 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...
+2026-08-16 04:18:36.854 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.
+2026-08-16 04:18:37.072 | INFO     | acestep.inference:generate_music:981 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB
+2026-08-16 04:18:37.210 | INFO     | acestep.inference:generate_music:986 - [Normalization] Audio 0 AFTER: Peak=0.8913
+Python(88586) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+2026-08-16 04:18:40.694 | DEBUG    | acestep.audio_utils:_save_mp3:183 - [AudioSaver] Saved audio to /Users/ashraf/Documents/WorkSpace/musicai/data/songs/51e66b57-77ab-a3aa-f8bf-28f0aa272a66.mp3 (mp3, 48000Hz, 128k)
+[musicai] c4275411-67e1-444f-8f52-13deb5151a12: wrote /Users/ashraf/Documents/WorkSpace/musicai/data/songs/c4275411-67e1-444f-8f52-13deb5151a12.mp3
+[musicai] 678bd9d0-2b2e-4a02-9986-bbd005a13488: thinking=off for user lyrics (DiT follows words more closely)
+[musicai] 678bd9d0-2b2e-4a02-9986-bbd005a13488: generate_music duration=-1.0s lyrics=1807 chars voice=female rvc=no caption='Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained'
+2026-08-16 04:28:15.416 | INFO     | acestep.inference:generate_music:641 - [generate_music] LLM usage decision: thinking=False, use_cot_caption=False, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=True, use_lm=True
+2026-08-16 04:28:15.416 | INFO     | acestep.inference:generate_music:699 - LM chunk 1/1 (infer_type=dit) (size: 1, seeds: [3398418233])
+2026-08-16 04:28:15.416 | INFO     | acestep.llm_inference:generate_with_stop_condition:1371 - Phase 1: Generating CoT metadata...
+2026-08-16 04:28:15.419 | INFO     | acestep.llm_inference:generate_with_stop_condition:1377 - generate_with_stop_condition: formatted_prompt=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.
+<|im_end|>
+<|im_start|>assistant
+
+2026-08-16 04:28:29.561 | INFO     | acestep.llm_inference:_run_mlx_single_native:3595 - MLX native prefill: 835 tokens in 14.06s (59.4 tok/s)
+MLX Gen (native):   0%|          | 0/3500 [00:00<?, ?tok/s]MLX Gen (native):   0%|          | 1/3500 [00:00<27:41,  2.11tok/s]MLX Gen (native):   0%|          | 7/3500 [00:00<03:49, 15.22tok/s]MLX Gen (native):   0%|          | 14/3500 [00:00<02:06, 27.62tok/s]MLX Gen (native):   1%|          | 20/3500 [00:00<01:38, 35.34tok/s]MLX Gen (native):   1%|          | 26/3500 [00:00<01:23, 41.72tok/s]MLX Gen (native):   1%|          | 32/3500 [00:01<01:34, 36.69tok/s]MLX Gen (native):   1%|          | 35/3500 [00:01<01:55, 29.96tok/s]
+2026-08-16 04:28:30.731 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 35 tokens in 1.17s (29.9 tok/s) | prefill 14.06s + decode 1.17s = 15.23s total
+2026-08-16 04:28:30.733 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <think>
+bpm: 140
+duration: 243
+keyscale: D minor
+language: hi
+timesignature: 4
+<|im_end|>
+2026-08-16 04:28:30.733 | INFO     | acestep.llm_inference:generate_with_stop_condition:1422 - Phase 1 completed in 15.32s. Generated metadata: ['bpm', 'duration', 'keyscale', 'language', 'timesignature']
+2026-08-16 04:28:30.733 | INFO     | acestep.llm_inference:generate_with_stop_condition:1441 - Using CoT-generated duration (243.0s) as Phase 2 target_duration (original was None/unset)
+2026-08-16 04:28:31.051 | INFO     | acestep.core.generation.handler.generate_music:generate_music:289 - [generate_music] Turbo model detected: overriding guidance_scale 10.4 -> 1.0 (turbo does not use CFG).
+2026-08-16 04:28:31.052 | INFO     | acestep.core.generation.handler.generate_music:generate_music:304 - [generate_music] Starting generation...
+2026-08-16 04:28:31.052 | INFO     | acestep.core.generation.handler.generate_music:generate_music:307 - [generate_music] Preparing inputs...
+2026-08-16 04:28:46.807 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - 
+======================================================================
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:
+# Instruction
+Fill the audio semantic mask based on the given conditions:
+
+# Caption
+Emotional Hindi Bollywood heartbreak ballad, solo male vocalist, warm soulful baritone, intimate breathy verses, vulnerable emotional delivery, slow tempo around 72 BPM, melancholic piano, soft acoustic guitar, subtle strings, gentle tabla and cinematic percussion, deep atmospheric pads, spacious reverb, expressive vocal dynamics, poetic Hindi lyrics, longing and heartbreak, gradual build from quiet intimate verses into a powerful emotional chorus, beautiful sustained notes, restrained
+
+# Metas
+- bpm: 140
+- timesignature: 4
+- keyscale: D minor
+- duration: 243 seconds
+<|endoftext|>
+
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:
+# Languages
+unknown
+
+# Lyric
+[Intro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko,
+Aaj bhi tujhse pyaar hai.
+
+[Verse 1]
+
+Raaton mein teri baatein,
+Chupke se aa jaati hain,
+Aankhon ke in raaston se,
+Yaadein beh jaati hain.
+
+Jo khwaab tere sang dekhe,
+Woh aaj bhi zinda hain,
+Tu paas nahi hai mere,
+Phir bhi tu mere andar hai.
+
+[Pre-Chorus]
+
+Main khud se poochhta hoon,
+Kyun tujhko bhool na paaya,
+Dil ne har baar mujhe,
+Tera hi raasta dikhaya.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Verse 2]
+
+Teri galiyon se guzrun,
+Toh kadam ruk jaate hain,
+Tere diye hue khat,
+Aaj bhi muskuraate hain.
+
+Ek tasveer teri hai,
+Jo dil se mita nahi paaya,
+Hazaar baar khud ko samjhaya,
+Par tujhko bhula nahi paaya.
+
+[Pre-Chorus]
+
+Kuch baatein adhuri reh gayi,
+Kuch vaade toot gaye,
+Hum saath toh the kabhi,
+Phir kyun itne door ho gaye.
+
+[Chorus]
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon,
+Tu chhod gaya jo haath mera,
+Main aaj bhi wahin khada hoon.
+
+Tum bin, ye dil nahi lagta,
+Tum bin, kuch bhi nahi sajta,
+Tu laut ke aaye na aaye,
+Dil tera intezaar karta.
+
+[Bridge]
+
+Agar kabhi meri yaad aaye,
+Toh laut aana.
+Jo keh na sake hum dono,
+Woh keh jaana.
+
+Main shikayat nahi karunga,
+Na koi sawaal karunga,
+Bas ek baar gale lag jaana,
+Phir tujhe jaane nahi dunga.
+
+[Final Chorus]
+
+Tum bin, saansein toh chalti hain,
+Par zindagi nahi chalti.
+Tere bina ye aankhein meri,
+Khushiyon se nahi milti.
+
+Tum bin, main adhoora sa hoon,
+Tum bin, jaise khud se juda hoon.
+Aakhri saans tak dil kahe,
+Main tera tha, aur tera hi rahunga.
+
+[Outro]
+
+Hmm.
+Tere baad bhi.
+Tera intezaar hai.
+Jaane kyun dil ko.
+Aaj bhi tujhse pyaar hai.<|endoftext|>
+2026-08-16 04:28:46.808 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================
+
+2026-08-16 04:28:51.572 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...
+2026-08-16 04:29:08.134 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...
+2026-08-16 04:29:08.147 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:122 - [preprocess_batch] Inferring non-cover text embeddings...
+2026-08-16 04:29:08.705 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
+MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [01:59<13:59, 119.92s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [03:41<10:56, 109.42s/it]/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

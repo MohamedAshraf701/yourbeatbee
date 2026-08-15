@@ -64,7 +64,7 @@ export function LyricsEditor({
           onChange={(e) => onChange(e.target.value)}
           rows={12}
           placeholder={
-            "[Verse]\nTum paas ho…\naur waqt thehra sa lage…\n\n[Chorus]\n…"
+            "[Verse]\nTum paas ho\naur waqt thehra sa lage\n\n[Chorus]\nDil yeh kahe, tu hi meri manzil"
           }
           className="min-h-[280px] w-full resize-y border-0 border-y border-border bg-transparent px-0 py-8 text-lg leading-[1.7] text-foreground placeholder:text-text-muted/60 focus:outline-none"
         />
