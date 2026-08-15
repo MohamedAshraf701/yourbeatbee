@@ -1,0 +1,3078 @@
+{
+  "/Users/ashraf/Documents/WorkSpace/musicai/postcss.config.mjs": {
+    "mtime": 1786653213.2585998,
+    "hash": "a32d7b7ea32bacdef41803f34daf384a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/next-env.d.ts": {
+    "mtime": 1786653755.468486,
+    "hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/eslint.config.mjs": {
+    "mtime": 1786653213.2577682,
+    "hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/next.config.ts": {
+    "mtime": 1786801456.4740286,
+    "hash": "36e686c42135038437bd4bc1c9708682"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/layout.tsx": {
+    "mtime": 1786653669.3108525,
+    "hash": "31702514cf8c88c6d3bf8f52002f06e3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/page.tsx": {
+    "mtime": 1786653669.3010015,
+    "hash": "d3351f6e1ef4b656563b9c83b91d373f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/songs/route.ts": {
+    "mtime": 1786653669.301148,
+    "hash": "01021981284f5a80527a9b527dc5499c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/songs/[id]/audio/route.ts": {
+    "mtime": 1786800028.553996,
+    "hash": "38683416754926e8ca06bea3d90e4368"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/health/route.ts": {
+    "mtime": 1786653669.301034,
+    "hash": "078a10f35b0d8e549616de813ed1bf8c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/voice/route.ts": {
+    "mtime": 1786801363.217217,
+    "hash": "231bbf5bd488404715e60ce06171d01c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/voice/audio/route.ts": {
+    "mtime": 1786801372.6070445,
+    "hash": "4911f2b81c4493991242604a477581c6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/generate/route.ts": {
+    "mtime": 1786801363.2157826,
+    "hash": "15339b93f5c2eb7321a16161b0e5ed92"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/jobs/[id]/route.ts": {
+    "mtime": 1786653669.3138895,
+    "hash": "0c3902a7b8411b58e28f83d9f17abd19"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/theme-provider.tsx": {
+    "mtime": 1786653213.2576659,
+    "hash": "676cb26b1b800af72a249a4adfab205a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/voice-setup.tsx": {
+    "mtime": 1786801656.8682475,
+    "hash": "477203a94d7e1a310456459e74b12bce"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio.tsx": {
+    "mtime": 1786801700.915951,
+    "hash": "33e3750876b5389524272ce64e46346c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/card.tsx": {
+    "mtime": 1786653330.9835055,
+    "hash": "bd5f88ad2d983dd6c4561d63824c80ba"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/slider.tsx": {
+    "mtime": 1786653331.100062,
+    "hash": "1ddc476cffc083f68378a07276c64546"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/progress.tsx": {
+    "mtime": 1786653331.3305361,
+    "hash": "aa71e8ceb68b33af5ed5799f42cd873e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/field.tsx": {
+    "mtime": 1786653331.4565508,
+    "hash": "1b038d62623c29946f57e746fb89cc7e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/scroll-area.tsx": {
+    "mtime": 1786653331.3065152,
+    "hash": "ac8fc719d0fd13c77c933474827337da"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/label.tsx": {
+    "mtime": 1786653331.3761256,
+    "hash": "a70440da86bfc6a07f15197cca48cb08"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/sonner.tsx": {
+    "mtime": 1786653331.1829414,
+    "hash": "f46214bc2a6a5153a6e04fad523d5587"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/empty.tsx": {
+    "mtime": 1786653331.207544,
+    "hash": "ca7063724c4b1e81d8f1337e8236a1d8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/alert.tsx": {
+    "mtime": 1786653331.28296,
+    "hash": "739c28799fae98b4fa01132494788e85"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/toggle-group.tsx": {
+    "mtime": 1786653331.483835,
+    "hash": "9a382f5aca3a8a877f6c1d3020f2722c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/dialog.tsx": {
+    "mtime": 1786801624.330336,
+    "hash": "d9618a63d34473ec512321cc12d43692"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/badge.tsx": {
+    "mtime": 1786653331.125585,
+    "hash": "e4ec840217040d5630ee6ed7213a1d72"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/separator.tsx": {
+    "mtime": 1786653331.1496365,
+    "hash": "3de2dca3e47ab29c4b1f632671545628"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/button.tsx": {
+    "mtime": 1786653285.2646165,
+    "hash": "e04ce5251d6b0dd04020988126c905e9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/toggle.tsx": {
+    "mtime": 1786653331.424835,
+    "hash": "775016af4d4f4640e58a91fdd7d4d126"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/spinner.tsx": {
+    "mtime": 1786653331.2583938,
+    "hash": "9014b12e7fc3678b4b04696640650d96"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/select.tsx": {
+    "mtime": 1786653331.0719204,
+    "hash": "ab95f478cb74d1906b07425c15b124cc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/textarea.tsx": {
+    "mtime": 1786653331.0116096,
+    "hash": "d448d2a90e48542e51b93a1189127bf2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/input.tsx": {
+    "mtime": 1786653331.3534458,
+    "hash": "0607b02d99a2e92f9509223f36ccc6ec"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/skeleton.tsx": {
+    "mtime": 1786653331.2336178,
+    "hash": "0e6e825c43d858d98c9903f4da975382"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/utils.ts": {
+    "mtime": 1786653285.2696009,
+    "hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/engine.ts": {
+    "mtime": 1786653669.3108504,
+    "hash": "2c0e631a8748c046bef11eface5ebee8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/jobs.ts": {
+    "mtime": 1786801372.6071677,
+    "hash": "ee4281e9433d8b40cdc71b8af6962a83"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/voices.ts": {
+    "mtime": 1786801666.7063487,
+    "hash": "50be150da60d82a3c37e09797e83af9e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/types.ts": {
+    "mtime": 1786801342.2583022,
+    "hash": "056043a292c3cd79df004d36a4219e1c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/songs.ts": {
+    "mtime": 1786653669.2860446,
+    "hash": "2cbb0c4803f5523251ef0c2153e5e837"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/paths.ts": {
+    "mtime": 1786801339.5845566,
+    "hash": "cf8843c1eeaf4a6cf59f4ef0ae0bec39"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/voice-scripts.ts": {
+    "mtime": 1786801622.5533884,
+    "hash": "a4dd8e881eed5402a89c66489a6570ea"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/chips.ts": {
+    "mtime": 1786653669.2848132,
+    "hash": "c5354e43afe9a09c5ac8dfbab6105d9e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/worker.py": {
+    "mtime": 1786801409.8834856,
+    "hash": "bca6fd3edf4e6fa9e22c935e73e24a58"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/test_compose.py": {
+    "mtime": 1786801469.6898978,
+    "hash": "d6ccc884a193b6d6808eeb071864b7f1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/compose.py": {
+    "mtime": 1786801404.5813243,
+    "hash": "ea2f1d55b60400f4619c1a940fb4c3a6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/download.py": {
+    "mtime": 1786734922.6714196,
+    "hash": "7b672e94fcae71b9dff024ad9fef2189"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/__init__.py": {
+    "mtime": 1786653669.284748,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/profile_inference.py": {
+    "mtime": 1786653716.125268,
+    "hash": "1239a1c41a088722cf255ecffd7a19c1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/cli.py": {
+    "mtime": 1786653716.072879,
+    "hash": "7fa6d9a42331ace6109f81aa9b6a64fa"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/train.py": {
+    "mtime": 1786653716.1301498,
+    "hash": "a2f170057ec53efa4909610b05d6e4c7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/run_generate_test.py": {
+    "mtime": 1786653716.1262996,
+    "hash": "a75219db2a856b51a4f61068bb7c3fac"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/generate_examples.py": {
+    "mtime": 1786653716.1240773,
+    "hash": "d73b3d1af4b84906ee5844480fbdf2e1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/openrouter/__init__.py": {
+    "mtime": 1786653716.124515,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/openrouter/stress_test.py": {
+    "mtime": 1786653716.1249409,
+    "hash": "c0b983823d30de1d6820f25e6af58045"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/openrouter/openrouter_api_server.py": {
+    "mtime": 1786653716.1248152,
+    "hash": "d65eb47bafe0d801de8508363b8fa922"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/openrouter/client_test.py": {
+    "mtime": 1786653716.1246493,
+    "hash": "7815064bc222e71ab1281af930a9585b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/gpu_config_effective_free_vram_test.py": {
+    "mtime": 1786653715.9874153,
+    "hash": "2474123dad4384e62856ce904e31122b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/launcher_compat_test.py": {
+    "mtime": 1786653715.995026,
+    "hash": "274da91685f23e630f7e9bbbaca33425"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/local_cache.py": {
+    "mtime": 1786653715.9999561,
+    "hash": "f530d58c6810273c15f9499865cad23a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_backend_compat.py": {
+    "mtime": 1786653715.9953587,
+    "hash": "9fe5d4ab799dbc3cd812711b2b8e2653"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/cli_args.py": {
+    "mtime": 1786653715.9526935,
+    "hash": "00cd4376b7a0340213e69d728cc6ccd8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/audio_utils_uuid_test.py": {
+    "mtime": 1786653715.9525864,
+    "hash": "e7e34ee0ac580f9786620b0a73c17478"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/inference_repaint_cache_test.py": {
+    "mtime": 1786653715.9943283,
+    "hash": "ee690e205d5f8abbbc81c5a2c266821b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/handler.py": {
+    "mtime": 1786653715.991637,
+    "hash": "5fbeb0c8efd603007ca7377b13937ad7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/openrouter_adapter.py": {
+    "mtime": 1786653716.0145042,
+    "hash": "11998857cc642c1351e5dace19d17a69"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_inference_cfg_fixes_test.py": {
+    "mtime": 1786653715.9982808,
+    "hash": "0046391f650ac0e8e32affd5f7d1d020"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/gpu_config.py": {
+    "mtime": 1786653715.9872084,
+    "hash": "d8a24d7f9ed576dbf4c805efeafedd97"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/openrouter_models.py": {
+    "mtime": 1786653716.0146303,
+    "hash": "71bea9cf6664f99769680b1aa3dab678"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/constants.py": {
+    "mtime": 1786653715.9531822,
+    "hash": "6721e0c4d4907c0b0179a8663b42290a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_backend_compat_test.py": {
+    "mtime": 1786653715.9956486,
+    "hash": "14ae9bc1deada0c16d39d855ac9f56f4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/__init__.py": {
+    "mtime": 1786653715.9334826,
+    "hash": "3f590ac38f4823814a728090d2cedab7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_inference.py": {
+    "mtime": 1786653715.996939,
+    "hash": "4e0a3fde826889ff4b88e1187b0b5cf8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/model_downloader.py": {
+    "mtime": 1786653716.0013945,
+    "hash": "4b2d1577b73d196503fcd4657fbdb305"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/acestep_v15_pipeline_test.py": {
+    "mtime": 1786653715.933723,
+    "hash": "9d67a490a7be8250f738341f02cf8b60"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_inference_enforce_eager_test.py": {
+    "mtime": 1786653715.9995074,
+    "hash": "0764fbee8d46c496bc9d5c55d268a44c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/audio_utils_test.py": {
+    "mtime": 1786653715.9524453,
+    "hash": "8f40d98d5b419b7e8b1a22234a7b91d1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/audio_utils.py": {
+    "mtime": 1786653715.9523106,
+    "hash": "8a34859d6d7038f64c5f7dfc08598a2f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api_server.py": {
+    "mtime": 1786653715.9521277,
+    "hash": "c80e6954bce3b033b8298d06b144618b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/acestep_v15_pipeline.py": {
+    "mtime": 1786653715.9335878,
+    "hash": "131acb1d517db91a21bb99e77a75ec0d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/cli_args_test.py": {
+    "mtime": 1786653715.9527955,
+    "hash": "98fbae1fa55cb107cee728b138120156"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/inference.py": {
+    "mtime": 1786653715.9920123,
+    "hash": "e0da79ca8a7bfd4acb36720dad31b748"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/model_downloader_test.py": {
+    "mtime": 1786653716.001607,
+    "hash": "63cfc7905d6cc1843173a767d4cc40d0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/launcher_compat.py": {
+    "mtime": 1786653715.9944491,
+    "hash": "50fb8fc4d808e0b0f5be412180519fc9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/constrained_logits_processor.py": {
+    "mtime": 1786653715.9535582,
+    "hash": "f5b65f91d9dbc822dd9139673bf751e4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/local_cache_thread_safety_test.py": {
+    "mtime": 1786653716.0007355,
+    "hash": "8dced23fefae465d549bf2b488491c16"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/launcher_legacy_torch_fix_test.py": {
+    "mtime": 1786653715.9951162,
+    "hash": "cc730629c355c715f1598c012d05b435"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/dataset_handler.py": {
+    "mtime": 1786653715.9755635,
+    "hash": "2e5ce36c9999bcd864724e94a2f162c6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/null_duration_fixes_test.py": {
+    "mtime": 1786653716.014392,
+    "hash": "25c50fb89840b41e195a072554f1f73c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_inference_dist_cleanup_test.py": {
+    "mtime": 1786653715.999177,
+    "hash": "53c1bfff41624dd911835b29a1bb93c7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text2music_src_audio_test.py": {
+    "mtime": 1786653716.014827,
+    "hash": "4437902e22a24e499f6fc73d2ec7be02"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/llm_inference_cache_cleanup_test.py": {
+    "mtime": 1786653715.997257,
+    "hash": "7fa9c47f529cec3703b634343dfa2bc7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/gpu_config_test.py": {
+    "mtime": 1786653715.9875357,
+    "hash": "81e4adc3ccdea18417494a3172d5c45c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/debug_utils.py": {
+    "mtime": 1786653715.9759116,
+    "hash": "c392a5f79b3b539d44fcf6df0baee6b5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/__init__.py": {
+    "mtime": 1786653716.0379403,
+    "hash": "2c50b57b7608beda4e19f0e311595f83"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content_test.py": {
+    "mtime": 1786653716.048002,
+    "hash": "0bd50acd73304e317dc5ee76bdb54ff4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content_misc_test.py": {
+    "mtime": 1786653716.0479083,
+    "hash": "37299803ae1ed3b5be6f51784d81efe3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content_md_test.py": {
+    "mtime": 1786653716.0476694,
+    "hash": "6c0e8b63cfd552a32a64451c648b2bf2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/__init__.py": {
+    "mtime": 1786653716.0380814,
+    "hash": "ae0119ba3b29a7ab77b9d8cfa9ced2e8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content.py": {
+    "mtime": 1786653716.0474663,
+    "hash": "d885150c64de5ba554d8b09c1a1427a4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content_test_helpers.py": {
+    "mtime": 1786653716.0480886,
+    "hash": "d02d7340e0766763236c6b36790b830b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/help_content_i18n_test.py": {
+    "mtime": 1786653716.0475774,
+    "hash": "35353ee07e00543dc48a3493d97c944a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/api/__init__.py": {
+    "mtime": 1786653716.0381992,
+    "hash": "b71ac4f769aa6c7a2acc594c58dd6bbe"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/api/api_routes.py": {
+    "mtime": 1786653716.0382955,
+    "hash": "dec8a49f70cf2f7a785b84de6bb60fb6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/api/api_routes_thread_safety_test.py": {
+    "mtime": 1786653716.038443,
+    "hash": "9fa347d754d84a574791916cb4ac4db5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/api/api_routes_resource_test.py": {
+    "mtime": 1786653716.038373,
+    "hash": "e26a27b4c88d0d0098870eb8ad993904"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results_handlers.py": {
+    "mtime": 1786653716.0435338,
+    "hash": "de2e1d098c84c279933c38e66175be73"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/dcw_defaults.py": {
+    "mtime": 1786653716.038797,
+    "hash": "0b6736341e2ac07581d85b11a5d10dd2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation_handlers.py": {
+    "mtime": 1786653716.0408022,
+    "hash": "7311edd1b170aded2c453878b5e84877"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/__init__.py": {
+    "mtime": 1786653716.038723,
+    "hash": "62a850c36f4b2dbdd0798c7cbb78c90e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results_handlers_facade_test.py": {
+    "mtime": 1786653716.043602,
+    "hash": "4b5dadc8e9f745fb07735d658ffb7e3f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training_handlers.py": {
+    "mtime": 1786653716.044543,
+    "hash": "4ee7d58277cca09644144d5d6838d544"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation_handlers_test.py": {
+    "mtime": 1786653716.040899,
+    "hash": "536594889a1ed36cb453a51e58c9e01b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/lokr_training.py": {
+    "mtime": 1786653716.0440025,
+    "hash": "23d3b075965411c1a287a79d92fdd0d2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/training_facade_test.py": {
+    "mtime": 1786653716.0443175,
+    "hash": "218bbdbeb15b811ce7b20df844012dfe"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/lora_training.py": {
+    "mtime": 1786653716.0441072,
+    "hash": "141a261cb80719638db345c25a5b6716"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/preprocess.py": {
+    "mtime": 1786653716.0441797,
+    "hash": "d9844209deef1f438802643b4a3460c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/__init__.py": {
+    "mtime": 1786653716.0437171,
+    "hash": "cb2ecc4359268abd25eed6206ca29c91"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/preprocess_test.py": {
+    "mtime": 1786653716.0442472,
+    "hash": "df5f093d62bb022f2ba199f888608562"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/training_utils.py": {
+    "mtime": 1786653716.0443878,
+    "hash": "ee1b996d2dbfc609d409681119354533"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/training_utils_test.py": {
+    "mtime": 1786653716.0444653,
+    "hash": "2c70e10fca11af82155d19423640d892"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/dataset_ops_test.py": {
+    "mtime": 1786653716.043896,
+    "hash": "d91435b3082d53330469fa687a097f7b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/training/dataset_ops.py": {
+    "mtime": 1786653716.0438125,
+    "hash": "2387ab746635cb04a34ecd7e5e80c9a6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/decomposition_contract_training_test.py": {
+    "mtime": 1786653716.0450895,
+    "hash": "00a1dfd1d382cf5fb4801f4d8b4f7210"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_service_wiring.py": {
+    "mtime": 1786653716.04578,
+    "hash": "1bbcda95c0996f9dafd91d98c3b870d0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_batch_navigation_wiring.py": {
+    "mtime": 1786653716.04526,
+    "hash": "295f673eb69dc2e5a56df026a0254385"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/results_aux_wiring.py": {
+    "mtime": 1786653716.0460255,
+    "hash": "c795a3ead082a71cfc7ee198a5c23409"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/training_lokr_wiring.py": {
+    "mtime": 1786653716.0472565,
+    "hash": "cfef525090c04e285e0a57d4cd04c164"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/__init__.py": {
+    "mtime": 1786653716.0446792,
+    "hash": "bc074f06000c37a76627358fbda4a920"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/decomposition_contract_helpers.py": {
+    "mtime": 1786653716.0450265,
+    "hash": "4268ab670331dfb5f05ba2673bc8041f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/training_dataset_preprocess_wiring.py": {
+    "mtime": 1786653716.0471678,
+    "hash": "221f8c77c7103ff2c9fdbe3cc4ad83f9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/training_dataset_builder_wiring.py": {
+    "mtime": 1786653716.0470474,
+    "hash": "977f3fcdadd98ba0c53ccf58bf5c9077"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_metadata_file_wiring.py": {
+    "mtime": 1786653716.0453444,
+    "hash": "91b12ff437b8b5485b7e9af245a2d9bf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/context.py": {
+    "mtime": 1786653716.0448108,
+    "hash": "6721e1c2b0020cd280cf254745b70b5e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/ast_test_utils.py": {
+    "mtime": 1786653716.044746,
+    "hash": "f16b426cffd4d3a7c68be5bded3c472c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/docstring_coverage_test.py": {
+    "mtime": 1786653716.0451605,
+    "hash": "1497fb3befffcef746ffd9ca690ba202"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_mode_wiring.py": {
+    "mtime": 1786653716.045576,
+    "hash": "653e56e7a8cc58c53c8cdc616349180e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_service_wiring_test.py": {
+    "mtime": 1786653716.04586,
+    "hash": "12ffed0f0145488ac201fa00130a903d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_metadata_file_wiring_test.py": {
+    "mtime": 1786653716.045411,
+    "hash": "3a04d3522c4d2ddaef78de92125a30b5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/context_test.py": {
+    "mtime": 1786653716.0448773,
+    "hash": "7c5c4666bd57e83f8835548d937974f5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/decomposition_contract_generation_test.py": {
+    "mtime": 1786653716.044962,
+    "hash": "0235a116856de9ccdc7ca8947852554d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/results_display_wiring.py": {
+    "mtime": 1786653716.0460975,
+    "hash": "9c508b21f519fe9f3b3d2c1848c04274"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_text_format_wiring.py": {
+    "mtime": 1786653716.0459437,
+    "hash": "2b1b3ecee1c2b286fc33192648826a2f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_run_wiring.py": {
+    "mtime": 1786653716.045688,
+    "hash": "87c0b7266448acb8aeeb6a25f74ce57e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/results_display_wiring_test.py": {
+    "mtime": 1786653716.0461776,
+    "hash": "49aba97e0c6e4024c7df89c0857e7b30"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/generation_metadata_wiring.py": {
+    "mtime": 1786653716.0454767,
+    "hash": "84b225035e1eec6d4ee08e6d7ec34bb6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/wiring/training_run_wiring.py": {
+    "mtime": 1786653716.0473537,
+    "hash": "300c419737240e8bf3ce94f7d25a302d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_task_type_test.py": {
+    "mtime": 1786653716.0428545,
+    "hash": "4c934c2321c3a6e827a4a6402b96af3a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/scoring_test.py": {
+    "mtime": 1786653716.043204,
+    "hash": "b978d34a9c7eac6b3ede3102dfeedadd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/session_artifacts_usage_test.py": {
+    "mtime": 1786653716.0434537,
+    "hash": "b0fd2180e0a629812b51bce0b69e4e32"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_queue_test.py": {
+    "mtime": 1786653716.04234,
+    "hash": "bc5c847261aa64d628a802563ed91753"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_helpers_test.py": {
+    "mtime": 1786653716.0418441,
+    "hash": "41bd244ac396b1fff93528666afba84f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_background.py": {
+    "mtime": 1786653716.041582,
+    "hash": "742d95295185143836a4edf9a8196c36"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/session_artifacts.py": {
+    "mtime": 1786653716.043278,
+    "hash": "454e7bdfa1704e87aa5ab12aeb14c52e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_wrapper.py": {
+    "mtime": 1786653716.0420244,
+    "hash": "0a46eb07fecce28e86cc75048469df05"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_background_test.py": {
+    "mtime": 1786653716.041673,
+    "hash": "ff050b7f27477f06c0562926b502b980"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/scoring.py": {
+    "mtime": 1786653716.0431275,
+    "hash": "0de20a6f0efc36c0addac68e74d2ccd5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_navigation_test.py": {
+    "mtime": 1786653716.0421581,
+    "hash": "a101b1bac0b80d386e371d98108e96ce"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/audio_transfer.py": {
+    "mtime": 1786653716.0413353,
+    "hash": "a5907f0f7798783073f8986123ffd222"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/__init__.py": {
+    "mtime": 1786653716.0410168,
+    "hash": "1038295fa498e24153010c56d3de0692"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/audio_playback_updates_test.py": {
+    "mtime": 1786653716.0412488,
+    "hash": "c5dca773aa5c383288d6c8c3f864e1f8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/lrc_utils.py": {
+    "mtime": 1786653716.0429533,
+    "hash": "220e04b2c4ef13a08714f31d7f9d467f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_info_test.py": {
+    "mtime": 1786653716.0425124,
+    "hash": "79d06ba9236cde769f6949a7defb0ea7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_progress_repaint_cache_test.py": {
+    "mtime": 1786653716.042701,
+    "hash": "c5122a3db44b070289933d0b013d40a5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/session_artifacts_test.py": {
+    "mtime": 1786653716.0433555,
+    "hash": "1ce510c50fc843e4f3ec18d93d1ab29e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_test.py": {
+    "mtime": 1786653716.041936,
+    "hash": "c6c0a8d3a98a37aba6b3b84b0806b338"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/lrc_utils_test.py": {
+    "mtime": 1786653716.043034,
+    "hash": "e33d37a48fcd48d174c7f769e5926372"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/audio_playback_updates.py": {
+    "mtime": 1786653716.0411677,
+    "hash": "6a9070c296a698b240fedd38ad4d11ed"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_navigation.py": {
+    "mtime": 1786653716.042095,
+    "hash": "c94b4ce4ca14df9d949b89c1b14435c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management_helpers.py": {
+    "mtime": 1786653716.0417655,
+    "hash": "e29e692f5d0819c97a9dcc952573eb8f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_management.py": {
+    "mtime": 1786653716.0414855,
+    "hash": "ea808bc2a887d069de77534853851752"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/audio_transfer_test.py": {
+    "mtime": 1786653716.0414133,
+    "hash": "5f74e3d6071dd820b79111597b1f2748"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/_batch_management_test_support.py": {
+    "mtime": 1786653716.041103,
+    "hash": "b2a44ebe99b279ca3d31fbc9e4e32dad"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/batch_queue.py": {
+    "mtime": 1786653716.0422392,
+    "hash": "30753e01a7defd386d3c4065b86abe7b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_task_type.py": {
+    "mtime": 1786653716.0427752,
+    "hash": "5220149aad593ae62bbebd8ff8c45d42"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_info.py": {
+    "mtime": 1786653716.0424263,
+    "hash": "2c6c4d16d9e83b208a3a1ff3da9c5d6a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/results/generation_progress.py": {
+    "mtime": 1786653716.0426207,
+    "hash": "a764d61c89d259bd3171563dce60e06a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/mode_ui.py": {
+    "mtime": 1786653716.0398507,
+    "hash": "1bebbb2c1e625a6e052a00a57f4f16e8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/mode_ui_helpers.py": {
+    "mtime": 1786653716.0399249,
+    "hash": "4ecc8aa100f8ce00b690b244f8cea804"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/ui_helpers.py": {
+    "mtime": 1786653716.0405502,
+    "hash": "1c81f2c52a71aa72ad65a848c0ca8eb5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/model_config.py": {
+    "mtime": 1786653716.0401366,
+    "hash": "0d95da0ed2692c3b29833e90a9198929"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/llm_format_actions.py": {
+    "mtime": 1786653716.0395482,
+    "hash": "14192ba4569a0d0af983546b2aaf08cf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/llm_sample_actions.py": {
+    "mtime": 1786653716.0396366,
+    "hash": "51e7d9a729127f8401a8bf8f4d79e4bc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/__init__.py": {
+    "mtime": 1786653716.0389013,
+    "hash": "9ab4f9bef00bebbd853990b9d0fcff8c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/llm_action_params.py": {
+    "mtime": 1786653716.03898,
+    "hash": "97a58910c7324cb92f867c9c6a8acff1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/model_config_test.py": {
+    "mtime": 1786653716.0402317,
+    "hash": "a53ee7bfc8d462bc2e5484885ae5ef9b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/service_init_test.py": {
+    "mtime": 1786653716.040443,
+    "hash": "29bcfb3ad561d9bf9f51218fabf2b1ab"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/ui_helpers_test.py": {
+    "mtime": 1786653716.0406363,
+    "hash": "03778af40be4dbccc2b2691bd9a5ca4d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/metadata_loading.py": {
+    "mtime": 1786653716.0397403,
+    "hash": "6d7b2e1db2370004110ac2d68305dd1f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/service_init.py": {
+    "mtime": 1786653716.0403337,
+    "hash": "cd147f4ae801594d69b1be639db1b0af"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/llm_analysis_actions.py": {
+    "mtime": 1786653716.039464,
+    "hash": "28193441f52ab7238ce55a0a3b3777f2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/mode_ui_test.py": {
+    "mtime": 1786653716.0400314,
+    "hash": "f8777209386434aabeb0b0f3005f4a0a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/llm_actions.py": {
+    "mtime": 1786653716.0390606,
+    "hash": "bc79c1e7c4bc6f8eb98b57b362fd9e6e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/events/generation/validation.py": {
+    "mtime": 1786653716.040719,
+    "hash": "95ac52afde858e78bf435a6c83f83a6a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/i18n/__init__.py": {
+    "mtime": 1786653716.0482318,
+    "hash": "79443ff2890702dce2224941951c8082"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/i18n/i18n.py": {
+    "mtime": 1786653716.048812,
+    "hash": "fdbc056d9b6cce3faffff677d9a55589"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/i18n/i18n_thread_safety_test.py": {
+    "mtime": 1786653716.04892,
+    "hash": "82ea00086edf75b2d95cb010e6be7046"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lora_tab_dataset.py": {
+    "mtime": 1786653716.0549676,
+    "hash": "7241989a8ec9641fbfc0b692d6bd39cc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_decomposition_contract_test.py": {
+    "mtime": 1786653716.0546455,
+    "hash": "b0d0a64111a14e07ff1cc676b2d8c497"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_secondary_controls.py": {
+    "mtime": 1786653716.0537803,
+    "hash": "b092a8a486b5b7926c5498b852d62945"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/user_preferences.py": {
+    "mtime": 1786653716.0551991,
+    "hash": "51a4cbfae34da45920ef725a542d7f50"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_dataset_tab_save_preprocess.py": {
+    "mtime": 1786653716.0544932,
+    "hash": "a316cdd84e6f448a2858b5fe0c87ff17"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation.py": {
+    "mtime": 1786653716.052228,
+    "hash": "099672b2241e09797dcf895d7b8ea266"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_advanced_settings.py": {
+    "mtime": 1786653716.052692,
+    "hash": "33bcbba835a52c98d7ec4e8ea7b71edf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_dataset_tab_scan_settings.py": {
+    "mtime": 1786653716.0545704,
+    "hash": "c6f47a89853b5758e1022b0e09723655"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lokr_tab_run_export.py": {
+    "mtime": 1786653716.0548322,
+    "hash": "a6403bd8f2fe5377081f157d72624ce9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_optional_controls.py": {
+    "mtime": 1786653716.053499,
+    "hash": "b0a99eea0921c05907beb32db81dbcb3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_generate_controls.py": {
+    "mtime": 1786653716.0534258,
+    "hash": "df5ede5f17019e3589e661308642b3c6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/user_preferences.js": {
+    "mtime": 1786653716.0551088,
+    "hash": "ae237ab4f472a2caa5c8d5b3897547c5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lokr_tab_dataset.py": {
+    "mtime": 1786653716.0547655,
+    "hash": "c7818319f9a12dba45540e5e1bcffb41"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_service_config_toggles.py": {
+    "mtime": 1786653716.053352,
+    "hash": "6b685135b1dfb25fe63f3d5d4f1d6dae"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/__init__.py": {
+    "mtime": 1786653716.0506065,
+    "hash": "5996ed3d59625df29173fffb662e9614"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_simple_controls.py": {
+    "mtime": 1786653716.0539136,
+    "hash": "069a74b91ee35cac4d1752cb47b1cf10"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_variation_morph_controls.py": {
+    "mtime": 1786653716.0540524,
+    "hash": "51d0df4942563cb11eae1831501bc466"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/audio_player_preferences_test.py": {
+    "mtime": 1786653716.051098,
+    "hash": "9b69712870dca199bfaac6a6c2e67a0a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_runtime_controls.py": {
+    "mtime": 1786653716.0537124,
+    "hash": "b2b5feceff3eca6a57552b565256dfcd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_service_config_rows_test.py": {
+    "mtime": 1786653716.053256,
+    "hash": "4eb66383f65716006b619938f1285664"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_section.py": {
+    "mtime": 1786653716.0538452,
+    "hash": "be86f41a07442d3402a0b869fdcfbe75"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/dataset.py": {
+    "mtime": 1786653716.052056,
+    "hash": "436d5eafd22eda2b2cb73870beff063e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/audio_player_preferences.js": {
+    "mtime": 1786653716.050709,
+    "hash": "560865a5a0634f6d7014208987823b27"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/result.py": {
+    "mtime": 1786653716.0541203,
+    "hash": "454afafb7bad653c7b63abd9a7972aa6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_defaults.py": {
+    "mtime": 1786653716.052975,
+    "hash": "0b6554c9bfd6c63cf65b549de1570828"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_contract_ast_utils.py": {
+    "mtime": 1786653716.0542676,
+    "hash": "c34c165766ae7083b3b41832f6c6eed7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_service_config_rows.py": {
+    "mtime": 1786653716.0531564,
+    "hash": "f5ac087b49417add05b4c1c077bcc918"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_dataset_tab_label_preview.py": {
+    "mtime": 1786653716.0544186,
+    "hash": "81fb6b9b2c93b81545be2151e8d13ce1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_contract_ast_utils.py": {
+    "mtime": 1786653716.0527933,
+    "hash": "e6ca3aa9498ddf8ad7278c6704753aaf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_optional_controls_test.py": {
+    "mtime": 1786653716.053576,
+    "hash": "69908f9326cdf7cd8acc60fd8c2a2e37"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_primary_controls.py": {
+    "mtime": 1786653716.0536497,
+    "hash": "f709f0bfee5510297274f5491ab2d952"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_advanced_primary_controls.py": {
+    "mtime": 1786653716.0526102,
+    "hash": "ec3502056f2212c4f33bf840a9525a1f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lora_tab.py": {
+    "mtime": 1786653716.0548959,
+    "hash": "0d310a2deff3cd5865e4d74a348e4613"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_dataset_builder_tab.py": {
+    "mtime": 1786653716.0543458,
+    "hash": "6b0a43f2105076dd9ef87ad1ee9a1e3f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lora_tab_run_export.py": {
+    "mtime": 1786653716.0550423,
+    "hash": "87e04254a2532df0bb001cfb451e05f1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/user_preferences_test.py": {
+    "mtime": 1786653716.0553012,
+    "hash": "d286be0269d25f9c66dae21d7102153a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/audio_player_preferences.py": {
+    "mtime": 1786653716.0507975,
+    "hash": "d472fa8a3fc54ebf56759b2b9af95ec9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_advanced_dit_controls.py": {
+    "mtime": 1786653716.0523808,
+    "hash": "ffb674ac1ea9ad8cee8d6dbcc778ff2d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_tab_source_controls.py": {
+    "mtime": 1786653716.0539832,
+    "hash": "7270bb58aa269af9da130d2d72054d32"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training_lokr_tab.py": {
+    "mtime": 1786653716.0547035,
+    "hash": "409d205669fe52c82ca54600df24e240"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/training.py": {
+    "mtime": 1786653716.05419,
+    "hash": "1af3414e383377d1f137f7f7228eb181"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_decomposition_contract_test.py": {
+    "mtime": 1786653716.052885,
+    "hash": "0d222567c70e5af319e3221fb4e1cc25"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_advanced_output_controls.py": {
+    "mtime": 1786653716.0525105,
+    "hash": "81ed0ae0769ff1150ddbed2fdea04328"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/ui/gradio/interfaces/generation_service_config.py": {
+    "mtime": 1786653716.0530498,
+    "hash": "18fec0386ba6f823495904be2aa1c719"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/bench.py": {
+    "mtime": 1786653716.0200768,
+    "hash": "e948aa7b219f6661f192d1a26128820a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/example.py": {
+    "mtime": 1786653716.020165,
+    "hash": "53acb47b6a7dcc8735bad87628ea5a86"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/config.py": {
+    "mtime": 1786653716.0204039,
+    "hash": "d47c6fcee0ed2b4d52ba48455ebb5e84"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/sampling_params.py": {
+    "mtime": 1786653716.0256493,
+    "hash": "8bf6c4170d032934b524c0c698a31337"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/__init__.py": {
+    "mtime": 1786653716.0203073,
+    "hash": "0d268229ac1680ec630f425f8e60a123"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/llm.py": {
+    "mtime": 1786653716.0253367,
+    "hash": "9c236fdf829ebaca6a5277edf754bb2d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/distributed.py": {
+    "mtime": 1786653716.0204852,
+    "hash": "0f26eaa724737d14fadb83831e5af37e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/attention.py": {
+    "mtime": 1786653716.0242648,
+    "hash": "cf4b8f25c9f16714e59ce02c306d22af"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/layernorm.py": {
+    "mtime": 1786653716.0247362,
+    "hash": "6dacffe859b21a7b87d2f80183976a48"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/embed_head.py": {
+    "mtime": 1786653716.0243428,
+    "hash": "f4144d23755857f4cb5572febe04fad4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/linear.py": {
+    "mtime": 1786653716.0250447,
+    "hash": "fdf490180211d5beec4f11d357b0da2a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/activation.py": {
+    "mtime": 1786653716.024158,
+    "hash": "9040f7e1eb7ac88af6ee0134957ae40d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/rotary_embedding.py": {
+    "mtime": 1786653716.0251436,
+    "hash": "2aad5b9103a6a0645041fbb68ea3e472"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/layers/sampler.py": {
+    "mtime": 1786653716.025234,
+    "hash": "7046686f2369ef88602fbfe236033ad9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/utils/compat.py": {
+    "mtime": 1786653716.0257678,
+    "hash": "8bf4d1007e77f8bf522123ce79d86d5e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/utils/context.py": {
+    "mtime": 1786653716.0259094,
+    "hash": "81bee07b9b403b8af81a6ac64d9488bb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/utils/loader.py": {
+    "mtime": 1786653716.0259788,
+    "hash": "f25fe7a8ade9f9629c376a9d81634767"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/utils/compat_test.py": {
+    "mtime": 1786653716.025845,
+    "hash": "a8a7e5ae396f4381c3a9e456789fe08b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/models/qwen3.py": {
+    "mtime": 1786653716.0255418,
+    "hash": "95d1ea0b0895b987befd2f1b41f573b4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/model_runner.py": {
+    "mtime": 1786653716.0210211,
+    "hash": "f2dd7b370a664bca007af305a99a8624"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/block_manager.py": {
+    "mtime": 1786653716.0206957,
+    "hash": "0fa860832a355edb82b9789f2b785e26"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/sequence.py": {
+    "mtime": 1786653716.0240047,
+    "hash": "eda64b46097bd12616d00ad3455d4ae6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/model_runner_shm_test.py": {
+    "mtime": 1786653716.022948,
+    "hash": "69c00669de7cd7beae280c396f78832f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/llm_engine.py": {
+    "mtime": 1786653716.0208364,
+    "hash": "aff9306bb671267d04e68fc01e798196"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/nanovllm/engine/scheduler.py": {
+    "mtime": 1786653716.0239093,
+    "hash": "d18c512c85458b679f8c9afb7c544839"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/__init__.py": {
+    "mtime": 1786653715.9537313,
+    "hash": "a73c6d3e94d49ad083231cdfb8b7427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/llm/__init__.py": {
+    "mtime": 1786653715.9725664,
+    "hash": "a68dcfe324079fba6f60ea26a12c6a4d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/system/__init__.py": {
+    "mtime": 1786653715.9751244,
+    "hash": "1e639da553c20ea416c1f1de103a362d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/audio/__init__.py": {
+    "mtime": 1786653715.953859,
+    "hash": "675cdf920f929fd45c5ac350e3faedf8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/lm_score_test.py": {
+    "mtime": 1786653715.9746554,
+    "hash": "28f8cc0d757d2cea7cb0c8e47d913214"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/scoring_test.py": {
+    "mtime": 1786653715.9750006,
+    "hash": "c04cf59deeeea832421c248735e6c147"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/_dtw.py": {
+    "mtime": 1786653715.9739962,
+    "hash": "e54e512d45fd5711af771925175ca1e2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/dit_alignment.py": {
+    "mtime": 1786653715.974125,
+    "hash": "a6fdfd91f7b5d87f28f74b105ca813d2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/__init__.py": {
+    "mtime": 1786653715.973899,
+    "hash": "5c05fdd6af4223ba16dda769479ff471"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/dit_score.py": {
+    "mtime": 1786653715.974261,
+    "hash": "a63c421925cd27108d43f118370c7b0b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/scoring/lm_score.py": {
+    "mtime": 1786653715.9744425,
+    "hash": "19249e24bf8a9c2397fcfa50a79c4b49"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/scaling.py": {
+    "mtime": 1786653715.9733644,
+    "hash": "5537b22067445eb094980a279606cbc8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/service.py": {
+    "mtime": 1786653715.9735334,
+    "hash": "9b7c342144ecc3f98a19109a889d7e50"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/registry.py": {
+    "mtime": 1786653715.9730563,
+    "hash": "7c09c48cafc787bd88823736c9cca41f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/__init__.py": {
+    "mtime": 1786653715.972722,
+    "hash": "39c4a7f8bacefba5028379ca2e1917c3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/service_test.py": {
+    "mtime": 1786653715.9737117,
+    "hash": "bdd40b049b4448ee1a84f25c8153cb75"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/lora/introspection.py": {
+    "mtime": 1786653715.9729517,
+    "hash": "3ce783e9cfaec972a97bd329d824a59e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/__init__.py": {
+    "mtime": 1786653715.9540055,
+    "hash": "aa55c5b84ce31bc4c51c75e335807f64"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/retake_test.py": {
+    "mtime": 1786653715.9685516,
+    "hash": "d0c272828401e17557a97fee32659ba0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate.py": {
+    "mtime": 1786653715.968682,
+    "hash": "61164ccbc1028b63d13c3de3be1c4ee6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_decode_chunks.py": {
+    "mtime": 1786653715.9712555,
+    "hash": "78f45eee7fbf29abd30c25f36058f5f5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_encode.py": {
+    "mtime": 1786653715.9717872,
+    "hash": "7a360845be7f13bee6b880556a316d37"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_outputs.py": {
+    "mtime": 1786653715.9697437,
+    "hash": "ae5b445f9fbdc431b492070c6c59c5c6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/task_utils_test.py": {
+    "mtime": 1786653715.970548,
+    "hash": "3ad0902fbd5031871c09cdceb150d065"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_dit_init_test.py": {
+    "mtime": 1786653715.965464,
+    "hash": "6cccad9b62e9988ecb638ed6273910ec"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lyric_alignment_test.py": {
+    "mtime": 1786653715.9645326,
+    "hash": "6c2d61680d3adc2381b6739b011330a3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_masks.py": {
+    "mtime": 1786653715.9574142,
+    "hash": "0944cdacaa9b3adc98f47a1588324678"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/repaint_step_injection.py": {
+    "mtime": 1786653715.9675636,
+    "hash": "ae3632a60c7455cd199198627e5f9e15"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_request.py": {
+    "mtime": 1786653715.9598126,
+    "hash": "40d5d2f9493d3c89857986f6cf7a454d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_setup.py": {
+    "mtime": 1786653715.9619434,
+    "hash": "b4746fe9355ebec2969f2a4033d0fb68"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lyric_timestamp.py": {
+    "mtime": 1786653715.9649584,
+    "hash": "978c480150c2bf2b002c482928748444"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/diffusion.py": {
+    "mtime": 1786653715.9582589,
+    "hash": "eb4e9f38194f8686ab3aa147e6a7e25e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/batch_prep.py": {
+    "mtime": 1786653715.9544792,
+    "hash": "225d93a2848fe0e59a61f4f73f076fe7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_test.py": {
+    "mtime": 1786653715.9702847,
+    "hash": "bb7e431c810fb622709cc594aade7beb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_vae_encode_native.py": {
+    "mtime": 1786653715.965817,
+    "hash": "e1d756a0650fbeedfe4ce50a989513f7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_flow_edit_test.py": {
+    "mtime": 1786653715.9696336,
+    "hash": "5cb0cf36c4ab5063e367c2b464bbf152"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_execute.py": {
+    "mtime": 1786653715.959167,
+    "hash": "cf9285f0b721b605cea3159df5bbc818"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_text.py": {
+    "mtime": 1786653715.9579294,
+    "hash": "27dc4bc42b32f56ffbff8ade30d24df7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/progress_project_root_test.py": {
+    "mtime": 1786653715.9670966,
+    "hash": "81fa43f5020af200d274bda4f9a0f4f3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/cover_noise_strength_forwarding_test.py": {
+    "mtime": 1786653715.9580436,
+    "hash": "ae4835f71d865333dd55d904e7faf2f0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/repaint_waveform_splice.py": {
+    "mtime": 1786653715.9679859,
+    "hash": "748f97b53dbc1c1d9f41a645d7eca572"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_decode_mixin_test.py": {
+    "mtime": 1786653715.971499,
+    "hash": "edee73f131095ace2f66db2cecedfd41"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_loader.py": {
+    "mtime": 1786653715.960671,
+    "hash": "0c2bc31defeb85746103b20d2c76dd04"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/reference_audio_validation_test.py": {
+    "mtime": 1786653715.967465,
+    "hash": "6d43144ebd58a0fe0291a48a6345a999"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_test.py": {
+    "mtime": 1786653715.9601576,
+    "hash": "81e049215467386fd6f142d36dbfc3b7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/audio_codes.py": {
+    "mtime": 1786653715.9543645,
+    "hash": "4cb95d968d404e51c08784a7241f5fd0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_catalog.py": {
+    "mtime": 1786653715.9603467,
+    "hash": "c32b0371721e9379f1935b1f0c7d090f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_execute_test.py": {
+    "mtime": 1786653715.9592443,
+    "hash": "da45a71492157a5b7bed10cfe8a2ffb5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_flow_edit.py": {
+    "mtime": 1786653715.9691272,
+    "hash": "708a9758790d1da39d817d4842bb4de1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/__init__.py": {
+    "mtime": 1786653715.9541519,
+    "hash": "c20b2a1669f7600adc94d82568c15c39"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_request_test.py": {
+    "mtime": 1786653715.9700148,
+    "hash": "7afb63718d99521d2253c084c3a9b46c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_target.py": {
+    "mtime": 1786653715.9576652,
+    "hash": "4628caafaf06c180b811cf5b9107f66d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_vae_native_test.py": {
+    "mtime": 1786653715.9664574,
+    "hash": "50292a0be3648334b0e525bf4a110091"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_downloads.py": {
+    "mtime": 1786653715.9605458,
+    "hash": "05b9a0c2139fa7f015b8673ab48cb016"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_target_test.py": {
+    "mtime": 1786653715.9578238,
+    "hash": "bef9abb9a2e67c1fd37d7c50d0cafc5b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_decode_test_helpers.py": {
+    "mtime": 1786653715.9716895,
+    "hash": "99825dbca1787565991e33a6e8ae9b0f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_embed.py": {
+    "mtime": 1786653715.9571712,
+    "hash": "70a0ce779df0ae18eec97d2a6b5d3c65"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_vae_decode_native.py": {
+    "mtime": 1786653715.9656339,
+    "hash": "737065eb79c0089735017d6e92e7aa7a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_encode_test.py": {
+    "mtime": 1786653715.972407,
+    "hash": "5d7482cb6ebfa524185199c7ab93b74b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora_manager.py": {
+    "mtime": 1786653715.9640493,
+    "hash": "c98866c23b47f0d32a8fc85fa73287e8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_dit_init.py": {
+    "mtime": 1786653715.9653516,
+    "hash": "cf2e2306e03a87ed2bed099cb2626446"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_vae_init.py": {
+    "mtime": 1786653715.9659746,
+    "hash": "db4d2cf01b4bc1df5a1022bed73855e1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_request.py": {
+    "mtime": 1786653715.9699066,
+    "hash": "584a6685d04f9d06b2421a78fb4d1250"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/metadata_utils.py": {
+    "mtime": 1786653715.9652302,
+    "hash": "c2316517cdf0ecf2275648849a85b21a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/io_audio_test.py": {
+    "mtime": 1786653715.9626048,
+    "hash": "7fce37a99a02622d4ae5c954ff4daf36"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_encode_chunks.py": {
+    "mtime": 1786653715.972029,
+    "hash": "52b5e6adfa17bfb4b0be04643b6509e1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_orchestrator.py": {
+    "mtime": 1786653715.9616294,
+    "hash": "2c95beeab14889d3615d791912375440"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_execute.py": {
+    "mtime": 1786653715.9688463,
+    "hash": "6b31ec3dfc84244d6d66a81e81d0a71a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/prompt_utils.py": {
+    "mtime": 1786653715.96736,
+    "hash": "4381bd3949306e0ab0d84587df841610"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_decode.py": {
+    "mtime": 1786653715.958818,
+    "hash": "a9621dbe3851dd03bb4bd8758462ee63"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora_integration_test.py": {
+    "mtime": 1786653715.9639733,
+    "hash": "7e89c0f24cc8872db5a3168b9f632242"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/task_utils.py": {
+    "mtime": 1786653715.9704466,
+    "hash": "a25b8192f53e89f774d7d8d5159f282f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/progress.py": {
+    "mtime": 1786653715.9669087,
+    "hash": "bb3e3520fe90c7e67639fe7b2957e1cc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/repaint_step_injection_test.py": {
+    "mtime": 1786653715.9678416,
+    "hash": "855744da567521d162195b9600ac4488"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/padding_utils.py": {
+    "mtime": 1786653715.9665926,
+    "hash": "93adf9b2cda0134294ade98724527a96"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/training_preset_test.py": {
+    "mtime": 1786653715.9708016,
+    "hash": "5fdf6cee36d5b79b22eb23aafc5c698c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/repaint_waveform_splice_test.py": {
+    "mtime": 1786653715.9682791,
+    "hash": "b14d336761326b10d499dcc1cd166b77"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_loader_components.py": {
+    "mtime": 1786653715.9611874,
+    "hash": "0c91c0a6c041a80104e3d0381b6e62da"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/mlx_vae_init_test.py": {
+    "mtime": 1786653715.966248,
+    "hash": "cbf8743732d05e51da7e1f2309c1dcb0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_offload_context.py": {
+    "mtime": 1786653715.9615273,
+    "hash": "7958df55a3e1c0c859182079fe7d9985"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_test.py": {
+    "mtime": 1786653715.962128,
+    "hash": "4a8f829c8f7b991eec6ff335bc312014"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_payload_test.py": {
+    "mtime": 1786653715.9597077,
+    "hash": "4d443c3164d755ddd02ff11bdebc1579"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_embed_test.py": {
+    "mtime": 1786653715.957292,
+    "hash": "f7bf33707914fbf3ed8df2978c463aa8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service.py": {
+    "mtime": 1786653715.9602492,
+    "hash": "60768eb4d6a3df6081f5d5ec7d1f575c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_decode_test.py": {
+    "mtime": 1786653715.9589179,
+    "hash": "3b078152fe9acc6cd59bf384f803dfbf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lyric_score.py": {
+    "mtime": 1786653715.9646852,
+    "hash": "d6ee5e7c20117ef9fa91ebbdbc7d4c44"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_request_test.py": {
+    "mtime": 1786653715.9600475,
+    "hash": "70e0b022a74a710e21188e02f2703050"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/_flow_edit_dispatch_test_support.py": {
+    "mtime": 1786653715.9542398,
+    "hash": "efccb4cfb7039dda0ccf45f19091904a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_batch.py": {
+    "mtime": 1786653715.9568114,
+    "hash": "5e288f663386d923213b4cb2c4c02280"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/io_audio.py": {
+    "mtime": 1786653715.9624932,
+    "hash": "fc353593b59188e1b1ab91cb7dce6bb2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_flow_edit_source.py": {
+    "mtime": 1786653715.9692302,
+    "hash": "d5cd2ebb717b84760359ec315a04622d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/service_generate_execute_test.py": {
+    "mtime": 1786653715.9689667,
+    "hash": "092ea9cd4968d058e53ef0f3acb7020e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_batch_test.py": {
+    "mtime": 1786653715.9570427,
+    "hash": "626d4c934664c69a7ee8d9b70b40d44b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music.py": {
+    "mtime": 1786653715.9586773,
+    "hash": "d7f3be2fdd276469c6c662b0cbebb2f6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_decode.py": {
+    "mtime": 1786653715.971046,
+    "hash": "3b87c13d8803d43e679f20378dfe06cb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_memory_transfer.py": {
+    "mtime": 1786653715.9614456,
+    "hash": "57ae5928520dc3348ee68bd5dad43a42"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/resolve_repaint_config_test.py": {
+    "mtime": 1786653715.9683986,
+    "hash": "01e39f22682471979a8860264b0b9259"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/conditioning_masks_test.py": {
+    "mtime": 1786653715.9575436,
+    "hash": "3e89d3140e1bf04b4a25a7b523ec0018"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/generate_music_payload.py": {
+    "mtime": 1786653715.9595182,
+    "hash": "a74cb09158f6cfe6f3ffc9b6e48c956e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/memory_utils.py": {
+    "mtime": 1786653715.965103,
+    "hash": "186833b283d890beee8023099e6dea50"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/vae_decode_chunks_test.py": {
+    "mtime": 1786653715.971362,
+    "hash": "efc452c9c706f541b4668b4b75a3790f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/init_service_memory_basic.py": {
+    "mtime": 1786653715.9613333,
+    "hash": "7cee02dd7d0fdff17678169dd2ae8047"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/diffusion_test.py": {
+    "mtime": 1786653715.958533,
+    "hash": "43bbef79031333a0880b0dcf09e2fc74"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/training_preset.py": {
+    "mtime": 1786653715.9706392,
+    "hash": "f9dbc2852528e3eb1d4343d89b172cfa"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lyric_alignment_common.py": {
+    "mtime": 1786653715.9643917,
+    "hash": "3217ebb67b34ef5f60a0cbb0b1206cf3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/controls_test.py": {
+    "mtime": 1786653715.9633722,
+    "hash": "068c3490edaefae0f5a839be3fa3f322"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/controls.py": {
+    "mtime": 1786653715.9630892,
+    "hash": "b70d194a53056eac5a25990d5e731371"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/registry_builder.py": {
+    "mtime": 1786653715.9637184,
+    "hash": "d66dc68096e14ab7c9a73ca095c0eb7c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/registry_state.py": {
+    "mtime": 1786653715.9638038,
+    "hash": "f25d7054679b847c2b2dd68665fab7fd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/scale_apply.py": {
+    "mtime": 1786653715.9638987,
+    "hash": "fc9abcedb7f7f922a32dfc8d57e43d12"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/__init__.py": {
+    "mtime": 1786653715.9627354,
+    "hash": "8e00b62bbe66f1149c16875c5932b119"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/lifecycle.py": {
+    "mtime": 1786653715.9634957,
+    "hash": "1336681c9cd47461df615982d4aa8969"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/adapter_discovery.py": {
+    "mtime": 1786653715.9628356,
+    "hash": "5d56f366512d2112f54981d940356423"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/core/generation/handler/lora/lifecycle_test.py": {
+    "mtime": 1786653715.9636192,
+    "hash": "06490ecbeea1221ff5e392fba3267a8a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/dataset/__init__.py": {
+    "mtime": 1786653715.9752395,
+    "hash": "e1a863274ee1ab09c2f1321328410793"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/dataset/runtime/__init__.py": {
+    "mtime": 1786653715.9754732,
+    "hash": "05cda16d38aa38e5b5c2d82d879d8fb6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/dataset/builder/__init__.py": {
+    "mtime": 1786653715.9753401,
+    "hash": "eceda8e46502ca16442d8eb8958d3c80"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/configs.py": {
+    "mtime": 1786653716.0262876,
+    "hash": "185ae44deb3cbec8a97ced7070fd94a2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/data_module.py": {
+    "mtime": 1786653716.026369,
+    "hash": "f14b9de0fd01aa9993a6298e3cb4a8cf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/test_lora_utils.py": {
+    "mtime": 1786653716.0292976,
+    "hash": "0b7cf39c8449a84c67e2a403ff87e012"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/__init__.py": {
+    "mtime": 1786653716.026153,
+    "hash": "e399a84754ec31dc01a92974aa960674"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder.py": {
+    "mtime": 1786653716.0265894,
+    "hash": "c00706ddd9400fad3314a1a4b1b4e824"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/data_module_test.py": {
+    "mtime": 1786653716.0265226,
+    "hash": "e50fdc596338ea6c67f447530f72a98c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/lora_injection.py": {
+    "mtime": 1786653716.0290442,
+    "hash": "9fa81e7ae1a18699aaea286569ddc651"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/lora_checkpoint.py": {
+    "mtime": 1786653716.0289097,
+    "hash": "5e43551531b947a76fa980c6c45a031c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/trainer.py": {
+    "mtime": 1786653716.0294597,
+    "hash": "6de38140bfa473c3dcd7601b2a02bdf1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/path_safety.py": {
+    "mtime": 1786653716.029198,
+    "hash": "dd338139a5ac5a65d002b248c62cffde"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/lora_utils.py": {
+    "mtime": 1786653716.0291188,
+    "hash": "7e6d7b823293e48e91ecce88371f0ac3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/lokr_utils.py": {
+    "mtime": 1786653716.028811,
+    "hash": "716d9662e81f7792cc63adf2d8457567"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/update_sample.py": {
+    "mtime": 1786653716.0287085,
+    "hash": "162a3689e7d429d594a8becafd4128d4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/label_utils.py": {
+    "mtime": 1786653716.027327,
+    "hash": "40d6e3e824f7d35a8279fa2eda196148"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_audio.py": {
+    "mtime": 1786653716.027664,
+    "hash": "96048b87142b27a2891a8552ef554cc1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/metadata.py": {
+    "mtime": 1786653716.0274045,
+    "hash": "fafd9fb0c20a36a624f08e6569650948"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_context.py": {
+    "mtime": 1786653716.027731,
+    "hash": "4b906a9fc80da91a5ab81ec2bf8e2ebc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/models.py": {
+    "mtime": 1786653716.0274894,
+    "hash": "bd47c6bafed6ae13b396f35398793395"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess.py": {
+    "mtime": 1786653716.0275893,
+    "hash": "ec72d768b69ad0e09419ba6f973e3a5c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_vae.py": {
+    "mtime": 1786653716.028408,
+    "hash": "a3a8b73fd50d8e4190e6d4a886b23763"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/dataframe.py": {
+    "mtime": 1786653716.0270398,
+    "hash": "9153f9c02cd1d0a25b621cdea28f5ab1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_text.py": {
+    "mtime": 1786653716.028164,
+    "hash": "e01827f13e6355bc52a8c1fe82c6501f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/label_single.py": {
+    "mtime": 1786653716.0272393,
+    "hash": "fdc1e2d24a53c4f5d99968f22bc7aafd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_manifest.py": {
+    "mtime": 1786653716.0280738,
+    "hash": "300cfda9f29e2caabb2bea2d52133600"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/__init__.py": {
+    "mtime": 1786653716.026706,
+    "hash": "ed9a5b6a3f1616b7062215ab2e6ef2e4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/core.py": {
+    "mtime": 1786653716.0269067,
+    "hash": "70ec0ccef1dbc9cbe68afd93ef33bc55"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_utils.py": {
+    "mtime": 1786653716.0282526,
+    "hash": "5af704cb69a51e629136349eeb3c6a5e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/label_all.py": {
+    "mtime": 1786653716.0271091,
+    "hash": "62c1abaeaa51dc39465b96ef227e39d3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/builder.py": {
+    "mtime": 1786653716.0268414,
+    "hash": "6aa8cec23f2a9e7f72327827b3be680b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/audio_io.py": {
+    "mtime": 1786653716.0267825,
+    "hash": "a3a0c453e674962abd3a65d5d6a055ff"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_lyrics.py": {
+    "mtime": 1786653716.027896,
+    "hash": "f31a5cbfdd32592cb92a8f6ee3ab6b80"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/scan.py": {
+    "mtime": 1786653716.028552,
+    "hash": "a81bc268a77ac587ccd2ff83a1c854be"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/preprocess_encoder.py": {
+    "mtime": 1786653716.027812,
+    "hash": "6f3cb2a245c48a180e1b2285e628e375"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/csv_metadata.py": {
+    "mtime": 1786653716.0269752,
+    "hash": "0f5806b6a4a15a3872bead7a8e901169"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training/dataset_builder_modules/serialization.py": {
+    "mtime": 1786653716.0286336,
+    "hash": "40d39edefad7367001eb61c754c8616b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/__init__.py": {
+    "mtime": 1786653716.0020669,
+    "hash": "2fc3cb2b4332ee083679ecdab80d42ca"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/turbo/modeling_acestep_v15_turbo.py": {
+    "mtime": 1786653716.0119321,
+    "hash": "e0040d0caf7e4e5e6d8cac8e33fde3f0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/turbo/configuration_acestep_v15.py": {
+    "mtime": 1786653716.011727,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/turbo/__init__.py": {
+    "mtime": 1786653716.0116282,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_turbo/configuration_acestep_v15.py": {
+    "mtime": 1786653716.0129383,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_turbo/__init__.py": {
+    "mtime": 1786653716.0128229,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_turbo/modeling_acestep_v15_xl_turbo.py": {
+    "mtime": 1786653716.0130582,
+    "hash": "0ae5a28f892583243e3f05c11856122f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_sft/configuration_acestep_v15.py": {
+    "mtime": 1786653716.0125875,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_sft/__init__.py": {
+    "mtime": 1786653716.0124032,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_sft/apg_guidance.py": {
+    "mtime": 1786653716.0125031,
+    "hash": "71924a77c6c24baa7d83e11a7b415902"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_sft/modeling_acestep_v15_xl_base.py": {
+    "mtime": 1786653716.0127242,
+    "hash": "fa64eae1acc792d27a075a32c1833630"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/_flow_edit_test_support.py": {
+    "mtime": 1786653716.008104,
+    "hash": "af96aa5e715895cce318eb82ed30531b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/dcw_loader.py": {
+    "mtime": 1786653716.0086489,
+    "hash": "ed6c75ccb317bf970a188383476e18b4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_helpers_velocity_test.py": {
+    "mtime": 1786653716.0093293,
+    "hash": "fe34488c00f40ed03dd6d1c1a17c4965"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_pipeline_test.py": {
+    "mtime": 1786653716.0095203,
+    "hash": "f67df227a68f834feb7516b140714080"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/configuration_acestep_v15.py": {
+    "mtime": 1786653716.0083659,
+    "hash": "873a69e71ae20a96ff0b25359cff3bcf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/__init__.py": {
+    "mtime": 1786653716.0072234,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/dcw_correction.py": {
+    "mtime": 1786653716.0084953,
+    "hash": "33b8d9495e2f1d0ad85112bbc0ce3802"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_pipeline.py": {
+    "mtime": 1786653716.0094519,
+    "hash": "678056807ccecfbc84b3c3eef513c3d7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit.py": {
+    "mtime": 1786653716.0090122,
+    "hash": "de5f014ac4710a8a563bdebaf02834a3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/dcw_primitives.py": {
+    "mtime": 1786653716.0089269,
+    "hash": "fd8139f3357ae629aff191b837ca83e7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_test.py": {
+    "mtime": 1786653716.0096016,
+    "hash": "50d4ff32f971f5a4bfcc68fff221e71e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_helpers_test.py": {
+    "mtime": 1786653716.0092595,
+    "hash": "207fbb978d7c825a7c4c7272505556b3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/dcw_correction_test.py": {
+    "mtime": 1786653716.008581,
+    "hash": "88f80712d428b045998d5f003e1b02a5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/flow_edit_helpers.py": {
+    "mtime": 1786653716.0091345,
+    "hash": "439a1b7320806a0031e6eae478a51e7f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/common/apg_guidance.py": {
+    "mtime": 1786653716.0082452,
+    "hash": "938a85acafc3715af2f447243dcee868"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_base/configuration_acestep_v15.py": {
+    "mtime": 1786653716.012187,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_base/__init__.py": {
+    "mtime": 1786653716.0120094,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_base/apg_guidance.py": {
+    "mtime": 1786653716.0121093,
+    "hash": "71924a77c6c24baa7d83e11a7b415902"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/xl_base/modeling_acestep_v15_xl_base.py": {
+    "mtime": 1786653716.0123177,
+    "hash": "fa64eae1acc792d27a075a32c1833630"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/sft/configuration_acestep_v15.py": {
+    "mtime": 1786653716.011404,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/sft/__init__.py": {
+    "mtime": 1786653716.0112228,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/sft/modeling_acestep_v15_base.py": {
+    "mtime": 1786653716.0115466,
+    "hash": "8d2f591a8c0bb847f25e877ea6458c58"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/sft/apg_guidance.py": {
+    "mtime": 1786653716.0113297,
+    "hash": "71924a77c6c24baa7d83e11a7b415902"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dit_model.py": {
+    "mtime": 1786653716.0105014,
+    "hash": "ac3d967ae08481c688edb543ba288e86"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dit_convert.py": {
+    "mtime": 1786653716.010173,
+    "hash": "27ecbb61e81338b5070c800ca7b6be29"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dit_model_static_buffers_test.py": {
+    "mtime": 1786653716.0107923,
+    "hash": "3047977b74e33caad73c2165d8a39c7f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dcw_correction_mlx_test.py": {
+    "mtime": 1786653716.0100834,
+    "hash": "4ae23592c8a4122d6a4df9d814809444"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/__init__.py": {
+    "mtime": 1786653716.0097127,
+    "hash": "5f1234d621fa7522abde2c4a86517da5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/vae_convert.py": {
+    "mtime": 1786653716.0110428,
+    "hash": "1d975afac8ef1efada4db9e3d0a2ea6d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dit_generate_sampler_test.py": {
+    "mtime": 1786653716.0104043,
+    "hash": "d5cf916c8a835de931279c223f81e0da"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/vae_model.py": {
+    "mtime": 1786653716.0111532,
+    "hash": "8ce7bcd8b91ee67b02cd22a7dc137281"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dit_generate.py": {
+    "mtime": 1786653716.010291,
+    "hash": "b5015f9956e1b6eb8b8e35235358a3c5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/mlx/dcw_correction_mlx.py": {
+    "mtime": 1786653716.0099819,
+    "hash": "7f7ba5a8f9417bb48b356e5c1067d790"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/base/configuration_acestep_v15.py": {
+    "mtime": 1786653716.0028827,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/base/__init__.py": {
+    "mtime": 1786653716.0021422,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/base/modeling_acestep_v15_base.py": {
+    "mtime": 1786653716.0070577,
+    "hash": "a3ab217314faee395fe08db4b68b87e7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/models/base/apg_guidance.py": {
+    "mtime": 1786653716.002579,
+    "hash": "71924a77c6c24baa7d83e11a7b415902"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/worker_runtime_test.py": {
+    "mtime": 1786653715.9520164,
+    "hash": "3fd8a8358277240d839849dcd8e77d53"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_runtime.py": {
+    "mtime": 1786653715.9515407,
+    "hash": "8250cdc510703dd709e2f7504e2b9482"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_llm_preparation_test.py": {
+    "mtime": 1786653715.93969,
+    "hash": "c08f0512a5ee61e64b66c70c6b93c8f8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/startup_llm_init_test.py": {
+    "mtime": 1786653715.9439852,
+    "hash": "b94269fe842a6280a15a1a08e15eb5d3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/server_cli_test.py": {
+    "mtime": 1786653715.943485,
+    "hash": "b6c35b2de4fc5c0651d5a78e4decbe93"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/log_capture.py": {
+    "mtime": 1786653715.942058,
+    "hash": "462f1e4a09f99be8217c55d48617fc99"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/startup_llm_init.py": {
+    "mtime": 1786653715.94374,
+    "hash": "cd57975274c20d5a66f81c253ec23c86"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_models.py": {
+    "mtime": 1786653715.9487357,
+    "hash": "3cbf8e2803d802d05846b5ebeb882784"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/runtime_helpers_test.py": {
+    "mtime": 1786653715.9433286,
+    "hash": "96acbdfba6df5d0d345af454f42ca778"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/llm_readiness.py": {
+    "mtime": 1786653715.9419715,
+    "hash": "8279ca8f630061ab833470c799d17ab2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/worker_runtime.py": {
+    "mtime": 1786653715.951929,
+    "hash": "4a98352d05bcb11b87fea912bd68daff"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_scan_load_routes.py": {
+    "mtime": 1786653715.9498825,
+    "hash": "0f005194eb9fba186943be2a54c36659"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/runtime_helpers.py": {
+    "mtime": 1786653715.9432166,
+    "hash": "752695003943976549353b3f537a48d7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_result_payload.py": {
+    "mtime": 1786653715.9399548,
+    "hash": "1d22897c30a1995fac5e9e70e7477de4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_analysis_runtime.py": {
+    "mtime": 1786653715.938319,
+    "hash": "222b06b97a49c1a249fe575c87e0f933"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_auto_label_routes_http_test.py": {
+    "mtime": 1786653715.9480782,
+    "hash": "7d7eccf897d0e8b37472dd041cd0e609"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_generation_setup.py": {
+    "mtime": 1786653715.9393878,
+    "hash": "5baa1a84e5d458a63f971139db96520c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_generation_runtime.py": {
+    "mtime": 1786653715.93916,
+    "hash": "391ffd6ea68b2f633b7b633749f8cbfc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_analysis_runtime_test.py": {
+    "mtime": 1786653715.9384665,
+    "hash": "463ff118ac52391964f83e2e31990082"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/route_setup.py": {
+    "mtime": 1786653715.9429736,
+    "hash": "e7e5fc9ed3e8a6b6ba4faf282120a851"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_preprocess_routes.py": {
+    "mtime": 1786653715.9491212,
+    "hash": "73bc7c463da487b1aa36a5dd0a0509ce"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/lifespan_runtime.py": {
+    "mtime": 1786653715.9414675,
+    "hash": "4114b574d6afdde937ab87db60c1af24"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_service_http_test.py": {
+    "mtime": 1786653715.9518087,
+    "hash": "3022ae86ae5f24a5cdc02357e484f5c0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/startup_model_init_test.py": {
+    "mtime": 1786653715.9465804,
+    "hash": "1e6063ab8cc1560dd8f04353f1a55de7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_models.py": {
+    "mtime": 1786653715.9514098,
+    "hash": "dd8b06470fc59086e65bbd0972139817"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_auto_label_status_route.py": {
+    "mtime": 1786653715.9482439,
+    "hash": "3845a8d6c1f3b282af8fe978fe840107"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_preprocess_routes_http_test.py": {
+    "mtime": 1786653715.9493089,
+    "hash": "34150c3007f644cc7854480820bff4d3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/model_download_test.py": {
+    "mtime": 1786653715.9428275,
+    "hash": "c7f4dc5d9986f461dfa5aa55d28b94c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/__init__.py": {
+    "mtime": 1786653715.9338553,
+    "hash": "a615ce540d6d393b649281906dfc6b63"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_service.py": {
+    "mtime": 1786653715.9516726,
+    "hash": "9b9993d2d5a4a12e9411b81a70fd4fe7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_models_test.py": {
+    "mtime": 1786653715.9488864,
+    "hash": "0b47679512f29e10c5e9d1d79acbcc59"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_sample_routes_http_test.py": {
+    "mtime": 1786653715.9496796,
+    "hash": "d18cbff165768f14fc86d759a2ae52be"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_service.py": {
+    "mtime": 1786653715.9503953,
+    "hash": "2ab314aefa00badedd6c009389164bfb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_lora_start_route.py": {
+    "mtime": 1786653715.9511456,
+    "hash": "3b59e08e438bedbb36c0625c1f6b2d29"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_execution_runtime.py": {
+    "mtime": 1786653715.9389274,
+    "hash": "1b8e9e5ca7e83136aed75d6a824a0b45"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/log_capture_test.py": {
+    "mtime": 1786653715.9421499,
+    "hash": "4542ea3f7a3d5b5b2b9ba17a907c9e19"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_runtime_state.py": {
+    "mtime": 1786653715.9401383,
+    "hash": "165079e341468e4cd1d90eafb64ed797"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/server_utils.py": {
+    "mtime": 1786653715.9435744,
+    "hash": "2569ac902d564eff642e30f2b45481c8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/server_cli.py": {
+    "mtime": 1786653715.9434168,
+    "hash": "26df9f1178608604eb5e64991b5ff79a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_llm_preparation.py": {
+    "mtime": 1786653715.939578,
+    "hash": "5a8209a0bc8e597a74998d916a72b1cd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/server_utils_test.py": {
+    "mtime": 1786653715.9436448,
+    "hash": "4f7ff3726405ec8b81ed8ebd96742daf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_runtime_state_test.py": {
+    "mtime": 1786653715.940252,
+    "hash": "2e0d88c180386a321c918939c4836b17"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_generation_runtime_test.py": {
+    "mtime": 1786653715.9392586,
+    "hash": "e4b8080eb8a502f25e0b650825887ee9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_sample_routes.py": {
+    "mtime": 1786653715.9494278,
+    "hash": "035c2331f37103e04f79b54cb5041500"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_service_http_test.py": {
+    "mtime": 1786653715.9506958,
+    "hash": "5dcb6580eeec001dd1fa851fd79b16cf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_auto_label_routes.py": {
+    "mtime": 1786653715.947812,
+    "hash": "7c1142429a980a0bb4f2116f0d5e1d2b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_execution_runtime_test.py": {
+    "mtime": 1786653715.9390736,
+    "hash": "ec605f703bcdfab5458e6262ef392f6d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_auto_label_sync_route.py": {
+    "mtime": 1786653715.9485192,
+    "hash": "f93b6ee4b03b6d5a90fdd8caaccb5bb7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/lifespan_runtime_test.py": {
+    "mtime": 1786653715.9415815,
+    "hash": "a03d97c65e013d8debdc45a8e5d2234a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_status_routes.py": {
+    "mtime": 1786653715.9507887,
+    "hash": "6c7c76d70cf8e925f71def0989e8dd47"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/llm_generation_inputs.py": {
+    "mtime": 1786653715.941714,
+    "hash": "97e45a7a8d4b3759c2f50ec40ddcdbff"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_auto_label_async_route.py": {
+    "mtime": 1786653715.9476879,
+    "hash": "4519b9f128e841b012e5859ac4138866"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/startup_model_init.py": {
+    "mtime": 1786653715.9441812,
+    "hash": "019e2781634be8742441e46501f5094e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_result_payload_test.py": {
+    "mtime": 1786653715.9400287,
+    "hash": "51d250bb7d05edc382e6f4e20f7f290c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_blocking_generation_test.py": {
+    "mtime": 1786653715.938782,
+    "hash": "2366c68793ff8d28751d5ae8637205f1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_status_routes_http_test.py": {
+    "mtime": 1786653715.950898,
+    "hash": "f63ff720aaa6fd8bddf4c2411447be7c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_blocking_generation.py": {
+    "mtime": 1786653715.9386222,
+    "hash": "3b3892286f037c08ed1fbbe1dd9d756c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_lokr_start_route.py": {
+    "mtime": 1786653715.9510262,
+    "hash": "8b39852acee9596507ba5b495b183fec"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/train_api_dataset_scan_load_routes_http_test.py": {
+    "mtime": 1786653715.9502625,
+    "hash": "f4d29fb8fc8dbad18e1ac4ca7035e239"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_model_selection_test.py": {
+    "mtime": 1786653715.9398477,
+    "hash": "d7f816f3a1b22851e00e784e91c8d725"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/route_setup_test.py": {
+    "mtime": 1786653715.9430954,
+    "hash": "ca184ce450e2771fb73101963dce603d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_model_selection.py": {
+    "mtime": 1786653715.9397738,
+    "hash": "b0df8562c2a5bb8c6ea9c7888ee6cacd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/model_download.py": {
+    "mtime": 1786653715.9423294,
+    "hash": "45365b1eda948fbd54c3c0da68d31f29"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/job_generation_setup_test.py": {
+    "mtime": 1786653715.9394975,
+    "hash": "136988965a593628518a5f355630ad47"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/query_result_route_http_test.py": {
+    "mtime": 1786653715.9356532,
+    "hash": "b7aa412da112ff5701b71a6e75a3e587"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/auth.py": {
+    "mtime": 1786653715.934323,
+    "hash": "008ea7872921b01846c20c9bd8d7e8c5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/model_service_routes_test.py": {
+    "mtime": 1786653715.9354465,
+    "hash": "cba1fc2039eb999177699525a06d70a4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/auth_test.py": {
+    "mtime": 1786653715.9343984,
+    "hash": "b37fa1f53faeae0903cd62ed946a62e3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_request_parser_test.py": {
+    "mtime": 1786653715.9374318,
+    "hash": "b9919283f7d6badb977ec623ba172457"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/query_result_service.py": {
+    "mtime": 1786653715.9359415,
+    "hash": "e75f3b1d448e5b2f949fddbf2280364a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_models.py": {
+    "mtime": 1786653715.9366472,
+    "hash": "f44a197fd75acf21d6ae665419a62820"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/model_init_service.py": {
+    "mtime": 1786653715.9348938,
+    "hash": "e8c9b7d31e11ecd56d369bc4f3c76fba"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/sample_format_routes_test.py": {
+    "mtime": 1786653715.9381692,
+    "hash": "324e4147689173d7ab7445aa9de86958"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/model_init_service_test.py": {
+    "mtime": 1786653715.935022,
+    "hash": "b37de573c5e5a507c4e715d7a58f193b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/audio_route.py": {
+    "mtime": 1786653715.934077,
+    "hash": "ea23a96b1142c3d5564285aad965dd02"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_request_builder.py": {
+    "mtime": 1786653715.9371133,
+    "hash": "80139715aa48ed9693d16682c4484b6d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_audio_paths_test.py": {
+    "mtime": 1786653715.936523,
+    "hash": "40409d52a16d3d011028be66ae9e89c3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_route.py": {
+    "mtime": 1786653715.9375045,
+    "hash": "b0c52168eae831db3b8254ef2374db41"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_request_parser.py": {
+    "mtime": 1786653715.9373488,
+    "hash": "142a42e18f8de8d84d498a254a1a3ba6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/query_result_route.py": {
+    "mtime": 1786653715.9355416,
+    "hash": "6bd1b917234e749d5e62a45624de1242"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/__init__.py": {
+    "mtime": 1786653715.9339912,
+    "hash": "3ae2ba7d2c14f103d30cd6477687ce55"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_param_parser_test.py": {
+    "mtime": 1786653715.9369729,
+    "hash": "f515b5be75c27414d4be8d8e27001fae"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/reinitialize_route_http_test.py": {
+    "mtime": 1786653715.936176,
+    "hash": "7a5218d881e63b5e0d369aeab1d1550c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_audio_paths.py": {
+    "mtime": 1786653715.9363904,
+    "hash": "93595c8f48d88dc06baf260ea5cbab2a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/sample_format_routes.py": {
+    "mtime": 1786653715.9379094,
+    "hash": "c58051dd7ed47217412f21f70f5c9f4a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_param_parser.py": {
+    "mtime": 1786653715.936877,
+    "hash": "b05db51522e6ea220f42c092cd3d6a51"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/model_service_routes_http_test.py": {
+    "mtime": 1786653715.9352999,
+    "hash": "b567b0c3fff1b9531f11007dd2889cf4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/query_result_route_test.py": {
+    "mtime": 1786653715.935785,
+    "hash": "cd6e14a121e050a0132fd46d45dcf6bd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/lora_routes_test.py": {
+    "mtime": 1786653715.934743,
+    "hash": "09757b5ea05eaeeeede0403bf138ab1a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/audio_route_http_test.py": {
+    "mtime": 1786653715.9341533,
+    "hash": "6bf96b1120fedb9c542a00f429a65c5d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/reinitialize_route_test.py": {
+    "mtime": 1786653715.936303,
+    "hash": "da26142a71486f5774ae5c4cb0ab2c0a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/sample_format_routes_http_test.py": {
+    "mtime": 1786653715.938039,
+    "hash": "11b15e45b001f1240ce64639a8c72497"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/lora_routes.py": {
+    "mtime": 1786653715.93451,
+    "hash": "fd16d6d634802bda5cd48d3235e424c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/model_service_routes.py": {
+    "mtime": 1786653715.9351625,
+    "hash": "f66ce704b7bf4d703050b55073af3642"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_route_http_test.py": {
+    "mtime": 1786653715.9377882,
+    "hash": "bdbdf35d21f844c2ec00474358e423d2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_models_test.py": {
+    "mtime": 1786653715.9367483,
+    "hash": "737631a4e6efe35b81579a07fefaa96e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/lora_routes_http_test.py": {
+    "mtime": 1786653715.93462,
+    "hash": "b81ed10050ed42535f6ef66445ecd769"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/release_task_request_builder_test.py": {
+    "mtime": 1786653715.9372544,
+    "hash": "70b77d3804176ea83e1c229f5cd4934b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/audio_route_test.py": {
+    "mtime": 1786653715.9342477,
+    "hash": "4bd285ee86335ace7ad92901ff088717"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/http/reinitialize_route.py": {
+    "mtime": 1786653715.9360893,
+    "hash": "83df1baa35bf0da8d905662a1dcc5f52"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/local_cache_updates.py": {
+    "mtime": 1786653715.9405293,
+    "hash": "39fcddfbe13fff3dbc741ea48a341a98"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/store.py": {
+    "mtime": 1786653715.9409182,
+    "hash": "5a88588e05f04dc5c798b61b80e6e086"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/local_cache_updates_test.py": {
+    "mtime": 1786653715.940706,
+    "hash": "3cb38868ea8e621d9ab717847a5fc648"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/worker_loops.py": {
+    "mtime": 1786653715.9412127,
+    "hash": "fafc5408b0edb18824605d34f6911264"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/store_test.py": {
+    "mtime": 1786653715.9410632,
+    "hash": "dd39308f9c025aeab423eae9f0e6994b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/models.py": {
+    "mtime": 1786653715.9407916,
+    "hash": "19288d4b17a4afe8116fa243274f5563"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/test_fakes.py": {
+    "mtime": 1786653715.9411376,
+    "hash": "43ffe48154b110239c75a55feb2b73bd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/__init__.py": {
+    "mtime": 1786653715.9404001,
+    "hash": "56761df7e1a80e0ea0c1cbc5d2a0950f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/api/jobs/worker_loops_test.py": {
+    "mtime": 1786653715.9413528,
+    "hash": "b01d404c31b077f0bf00bbaded9e2aa8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/preprocess_prompt.py": {
+    "mtime": 1786653716.032463,
+    "hash": "2ccab7c8cdb4125e96b6f3127102f30d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/preprocess_discovery.py": {
+    "mtime": 1786653716.0323796,
+    "hash": "c8067f1352c91a749fc9aaf9ff8f3d75"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/configs.py": {
+    "mtime": 1786653716.0308208,
+    "hash": "824b8896cbd772e3ec697fa739012f44"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/trainer_helpers.py": {
+    "mtime": 1786653716.034508,
+    "hash": "0c2255dbaeb50cea0132142fd89e7075"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/preprocess.py": {
+    "mtime": 1786653716.0320659,
+    "hash": "7efe10c3e06adad0ec0909631a867229"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/preprocess_vae.py": {
+    "mtime": 1786653716.0328207,
+    "hash": "b8ba0e0d65a6d46e9d768fc5b11c1632"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/trainer_basic_loop.py": {
+    "mtime": 1786653716.034246,
+    "hash": "47f7440e899d7c6bad05b0339b23b33e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/trainer_helpers_test.py": {
+    "mtime": 1786653716.0347655,
+    "hash": "baad13d1d1620b3d2754502d376055d7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/__init__.py": {
+    "mtime": 1786653716.0296216,
+    "hash": "d70aeeab162e044a9d31376c214d56e0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/make_test_fixtures.py": {
+    "mtime": 1786653716.0315788,
+    "hash": "d9e0e7afd227ed45044942e2b50bc299"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/timestep_sampling.py": {
+    "mtime": 1786653716.0341153,
+    "hash": "57d1ccd5ce049165c285ae5f2c168186"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/trainer_fixed.py": {
+    "mtime": 1786653716.0343645,
+    "hash": "1c014a533422bdb7bfc0440b2b946e8d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/model_discovery.py": {
+    "mtime": 1786653716.0316834,
+    "hash": "ca1faeab8380241490d24f3b788c571f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/estimate.py": {
+    "mtime": 1786653716.0309088,
+    "hash": "ae0d1be161071f410fc05e1fab943a7b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/settings.py": {
+    "mtime": 1786653716.0336988,
+    "hash": "4b54acd259ac00eb4d10bb7944e8d25e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/gpu_utils.py": {
+    "mtime": 1786653716.0314136,
+    "hash": "d9927b77b9d333e0cd816a88e2ff8af4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/fixed_lora_module_precision_test.py": {
+    "mtime": 1786653716.0312395,
+    "hash": "91090ad37b9566c8940f3b818e8cca8d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/model_loader.py": {
+    "mtime": 1786653716.0317922,
+    "hash": "68d69af07a0ea82604c317a8daae7166"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/tensorboard_utils.py": {
+    "mtime": 1786653716.0338323,
+    "hash": "8911fa9f51fe3b48b559d8c20f247607"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/fixed_lora_module.py": {
+    "mtime": 1786653716.0310059,
+    "hash": "f18d3f835fd9360ad635e3c5d07772db"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/trainer_vanilla.py": {
+    "mtime": 1786653716.0348759,
+    "hash": "dc52f9e103ec120f19739776b1e33740"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/optim.py": {
+    "mtime": 1786653716.0319514,
+    "hash": "2341cd5f4bacf38142fdd7e6bbe718b0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_preprocess.py": {
+    "mtime": 1786653716.0357952,
+    "hash": "2a1fd8b7ce04751029ba1e50f64358cc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_estimate.py": {
+    "mtime": 1786653716.035692,
+    "hash": "ca7759309fb21cbab4ceebabce35f551"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/presets.py": {
+    "mtime": 1786653716.0369258,
+    "hash": "57d3fb4fc6c06c2ce4f1a3161e6b8699"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/help_formatter.py": {
+    "mtime": 1786653716.0368016,
+    "hash": "cbb4436049cb835cc185c91854bee169"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/gpu_monitor.py": {
+    "mtime": 1786653716.036691,
+    "hash": "93be5122ad624ec080bf989627768aa9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/prompt_helpers.py": {
+    "mtime": 1786653716.0371487,
+    "hash": "37db039a0afc79d69718bc5a20a05fb5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/__init__.py": {
+    "mtime": 1786653716.0349963,
+    "hash": "a5ba07f305ec123fca23780de62a0ead"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/wizard.py": {
+    "mtime": 1786653716.037517,
+    "hash": "16727b8a317b74e5b7902629220bea31"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/summary.py": {
+    "mtime": 1786653716.0372622,
+    "hash": "eb506940e7b6b93794cf828af465d74c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_train.py": {
+    "mtime": 1786653716.036348,
+    "hash": "abe9f31a6fab3d03f0b1e06caa18e8a8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_train_steps.py": {
+    "mtime": 1786653716.0365882,
+    "hash": "5794ca6b8acd05160a6bfb2490cfb8e8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/wizard_menus.py": {
+    "mtime": 1786653716.0377898,
+    "hash": "d0a5924d30472155b691dc1934d5ad33"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/config_panel.py": {
+    "mtime": 1786653716.0352123,
+    "hash": "b339d5142486725297edb5df24e2c6b1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_setup.py": {
+    "mtime": 1786653716.0360575,
+    "hash": "4db0e46de58415674ebb0ec77d766352"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows.py": {
+    "mtime": 1786653716.035436,
+    "hash": "72b576f8435c1769370393b9dca23cf7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/errors.py": {
+    "mtime": 1786653716.0353365,
+    "hash": "1d331cb58bc23335c3ecf7e0baffbeba"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/flows_common.py": {
+    "mtime": 1786653716.0355513,
+    "hash": "816b6afc63b9c151125856597fb755af"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/progress.py": {
+    "mtime": 1786653716.0370297,
+    "hash": "8370c10fca488705d9ebf1d8ef98d86a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/ui/banner.py": {
+    "mtime": 1786653716.0351067,
+    "hash": "231e5128864edb584b6aa4fc81efa160"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/train_fixed_standalone_test.py": {
+    "mtime": 1786653716.0305388,
+    "hash": "ff3c30f7b69a6baf41182717f692e3d8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/train_vanilla.py": {
+    "mtime": 1786653716.0306497,
+    "hash": "1d486d10fe780c01b36ae77dc0913ae0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/config_builder.py": {
+    "mtime": 1786653716.0302327,
+    "hash": "4dbb4daa55daa3f65ae567045a5a699b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/__init__.py": {
+    "mtime": 1786653716.0297651,
+    "hash": "169dbc0fbb2d53faeed40e09e340bc5a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/common.py": {
+    "mtime": 1786653716.0299356,
+    "hash": "9d560eadf15bde93a902eb4f1bdfc8ec"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/args.py": {
+    "mtime": 1786653716.029872,
+    "hash": "261c392c321a3c3ecaa7108b6739f1af"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/train_fixed.py": {
+    "mtime": 1786653716.0303938,
+    "hash": "3404c86c91229d6a1dcd2c8eaffc7af1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/training_v2/cli/validation.py": {
+    "mtime": 1786653716.0307288,
+    "hash": "f010f88b4e74eca029599efd339f44c8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_providers_test.py": {
+    "mtime": 1786653716.0179086,
+    "hash": "3c1aca71f99be85cbda465ef85d709d3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/passphrase_store_test.py": {
+    "mtime": 1786653716.018866,
+    "hash": "fb1abd38a3dd3b86c6ab9c88429ae183"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_types_test.py": {
+    "mtime": 1786653716.0166948,
+    "hash": "d6a3ada9045a9f4c01f6dc5d590b24a9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_response_parsing_test.py": {
+    "mtime": 1786653716.0165005,
+    "hash": "2bcbf59b6dedc6df24bcf3f3a04ef4f3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_model_discovery.py": {
+    "mtime": 1786653716.0175757,
+    "hash": "b5cda80c78ece53c42d04aee6ae796c3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_model_discovery_test.py": {
+    "mtime": 1786653716.017668,
+    "hash": "258960285d6c42e465c4056915ec2f8e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_runtime_store.py": {
+    "mtime": 1786653716.018058,
+    "hash": "7e3b7165472a818fb913ac5bb020f728"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_captioning_test.py": {
+    "mtime": 1786653716.0171013,
+    "hash": "747345d659e4387b4536f3b2a3057565"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_json_parsing.py": {
+    "mtime": 1786653716.015179,
+    "hash": "a7a9bd2da399d698d94584d77012cb81"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_model_cache.py": {
+    "mtime": 1786653716.0172572,
+    "hash": "6f569fd0782da16aa1ff06d15bff18c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_runtime_store_test.py": {
+    "mtime": 1786653716.0185373,
+    "hash": "e546b8d70c2c28f889f56fee1bd4d07f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/__init__.py": {
+    "mtime": 1786653716.0149798,
+    "hash": "157034c80a88d7522b41995ccad1e487"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_runtime_store_persistence_test.py": {
+    "mtime": 1786653716.0182354,
+    "hash": "be38e698202d033151432b9749e4dc64"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_request_helpers.py": {
+    "mtime": 1786653716.0159438,
+    "hash": "0b5be8ece23e97fc97c08282474faa7e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_model_cache_test.py": {
+    "mtime": 1786653716.0174167,
+    "hash": "f4a4f4da057b0567df68773ac94ae834"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_captioning.py": {
+    "mtime": 1786653716.0167944,
+    "hash": "c909f818276d1f22565762c606778d1d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_types.py": {
+    "mtime": 1786653716.0166008,
+    "hash": "42fa74ed8fef4fa286ddfdd8ac1f9ab6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_protocols_test.py": {
+    "mtime": 1786653716.0156636,
+    "hash": "9879f92183577145f8e1d2c72ea80606"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_response_parsing.py": {
+    "mtime": 1786653716.0164099,
+    "hash": "fd1d6924c4101f8b684b9e7de48a52b8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_providers.py": {
+    "mtime": 1786653716.0178268,
+    "hash": "ea135239b3250b89d6de6db7d8ec9f5d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_lm_captioning_fallback_locale.py": {
+    "mtime": 1786653716.0169907,
+    "hash": "84bea8201aabbdb07e3085c24192c513"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/passphrase_store.py": {
+    "mtime": 1786653716.0187004,
+    "hash": "f5a61df88de829bd3b9789cae7aa919a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_json_parsing_test.py": {
+    "mtime": 1786653716.0154576,
+    "hash": "d43733665bf20e04bea84ee9bffb0590"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_request_helpers_test.py": {
+    "mtime": 1786653716.0160902,
+    "hash": "217dea17bc09500e2ba511ec043a8019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/text_tasks/external_ai_protocols.py": {
+    "mtime": 1786653716.0155606,
+    "hash": "bc71d69d76f10ffc1d121548238fdbbb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-v15-turbo/modeling_acestep_v15_turbo.py": {
+    "mtime": 1786653716.0119321,
+    "hash": "e0040d0caf7e4e5e6d8cac8e33fde3f0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-v15-turbo/configuration_acestep_v15.py": {
+    "mtime": 1786653716.011727,
+    "hash": "1ef3e11eaa5bfd46ccd0c79cf33a5019"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/flow_edit_overlay_smoke.py": {
+    "mtime": 1786653716.126765,
+    "hash": "401752fd0b84522498e81a0ac4cae783"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/check_gpu.py": {
+    "mtime": 1786653716.1265714,
+    "hash": "756030ec3fa1a656c1b8115ee81d4a1e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/fetch-awesome.mjs": {
+    "mtime": 1786653716.1266608,
+    "hash": "0f2dae2f9738a9a77efc5bc9253a525c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/prepare_vae_calibration_data.py": {
+    "mtime": 1786653716.127332,
+    "hash": "a4a5d6ca9c096a1bdafb6281a4faa1a1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/profile_vram.py": {
+    "mtime": 1786653716.1274414,
+    "hash": "421c2c2eb5dd5d759225b501a33fc8ef"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/new_pr_branch.ps1": {
+    "mtime": 1786653716.1272295,
+    "hash": "831b1ecdc4e092e5a737d67a12ec951c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/lora_data_prepare/gemini_caption.py": {
+    "mtime": 1786653716.1270351,
+    "hash": "10a31a7bb9752c4fa716a3b9c02d4195"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/lora_data_prepare/whisper_transcription.py": {
+    "mtime": 1786653716.1271589,
+    "hash": "c31809809fbe1a685280bdf4b9a5e96e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/scripts/lora_data_prepare/elevenlabs_transcription.py": {
+    "mtime": 1786653716.1269164,
+    "hash": "1a92f62d0baabe0e65df6f5b8b6b9893"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/README.md": {
+    "mtime": 1786801701.5773613,
+    "hash": "0045527d192b072ccf4f4d38d716ecb5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/AGENTS.md": {
+    "mtime": 1786653213.256769,
+    "hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/requirements-rocm-linux.txt": {
+    "mtime": 1786653716.1257439,
+    "hash": "f193fab7a2e447a1c0d69e78cf970fc2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/requirements.txt": {
+    "mtime": 1786653716.1261244,
+    "hash": "253fca258bb28129b07cca4c2d624f96"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docker-compose.jetson.yml": {
+    "mtime": 1786653716.0730462,
+    "hash": "79010f3fa6c92b41471173344fddf5df"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/requirements-rocm.txt": {
+    "mtime": 1786653716.1258144,
+    "hash": "7d406f118f04b4a8ee237d33b7b4a284"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/CONTRIBUTING.md": {
+    "mtime": 1786653715.9326646,
+    "hash": "51e0c045c075a009210c9d706e4e97f6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docker-compose.yml": {
+    "mtime": 1786653716.0731187,
+    "hash": "54e744c8871e3589bbb52ea7706e02cf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/README-XPU.md": {
+    "mtime": 1786653715.9331536,
+    "hash": "a6402bb7c34d340b725e6bdf17f598e8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/AGENTS.md": {
+    "mtime": 1786653715.932534,
+    "hash": "24755883e7d90533d6d21343bf7d4cd8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/requirements-xpu.txt": {
+    "mtime": 1786653716.126019,
+    "hash": "2d1fca4eb4d8673dce979ca2af74014b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/SECURITY.md": {
+    "mtime": 1786653715.9333735,
+    "hash": "c3bd629c422e2f7db64c1e722f5000b9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/requirements-sidestep.txt": {
+    "mtime": 1786653716.125918,
+    "hash": "660580cb0fb5dc517a8acdd1685bf7d6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/genres_vocab.txt": {
+    "mtime": 1786653715.9867966,
+    "hash": "ec0d65048ab71162a6af333401266139"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/README.md": {
+    "mtime": 1786653716.01943,
+    "hash": "901cec8bb5af2e086a8bfcc5e8a64487"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/README.md": {
+    "mtime": 1786653934.5225887,
+    "hash": "392f7cf689df1f28103e675da37e78d1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-1.7B/merges.txt": {
+    "mtime": 1786653934.8324862,
+    "hash": "72dacf1de43bc354dc3c521e44ed0b24"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-0.6B/README.md": {
+    "mtime": 1786734973.8429537,
+    "hash": "d28afe8f48650fda4e9050ee22e8f4c4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-0.6B/merges.txt": {
+    "mtime": 1786734975.0927863,
+    "hash": "72dacf1de43bc354dc3c521e44ed0b24"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/Qwen3-Embedding-0.6B/merges.txt": {
+    "mtime": 1786653934.3619573,
+    "hash": "72dacf1de43bc354dc3c521e44ed0b24"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/index.md": {
+    "mtime": 1786653716.078208,
+    "hash": "193f3a084dbc7da800681134a1aedcfb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/INFERENCE.md": {
+    "mtime": 1786653716.0789657,
+    "hash": "13f1bba7008915737e448c980956b38b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/API.md": {
+    "mtime": 1786653716.0783582,
+    "hash": "2d30f0dd44d78e4382d31ccc3dac8eb2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/INSTALL.md": {
+    "mtime": 1786653716.0791006,
+    "hash": "684135715481cda4602026df6c1d3ed9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/GRADIO_GUIDE.md": {
+    "mtime": 1786653716.078646,
+    "hash": "03ccae9c54883ca52cb9cb9b4d252510"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/Tutorial.md": {
+    "mtime": 1786653716.0795987,
+    "hash": "32c767f434ba1d7fb7d7cebda68538c0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/index.md": {
+    "mtime": 1786653716.0797436,
+    "hash": "d787a98dbd314155d30d81a908bbc3ee"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/Openrouter_API_DOC.md": {
+    "mtime": 1786653716.079304,
+    "hash": "53d0c992d1685b5d08572aeea9fd4b5c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/GPU_COMPATIBILITY.md": {
+    "mtime": 1786653716.0784762,
+    "hash": "ba7cf1bdf55e4e9375e62a0d3ff8e715"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ja/LoRA_Training_Tutorial.md": {
+    "mtime": 1786653716.0792093,
+    "hash": "0ff0eb533b297068271c2e8e21c0a41b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Estimation Guide.md": {
+    "mtime": 1786653716.087154,
+    "hash": "e3e4f39044a3a31da6ab1cbc9b09b91a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/The Settings Wizard.md": {
+    "mtime": 1786653716.0878706,
+    "hash": "4542599575ae0609c52527b823a63195"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Model Management.md": {
+    "mtime": 1786653716.0873535,
+    "hash": "0a2b38c050684daa0c61461d3d95c4f4"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/End-to-End Tutorial.md": {
+    "mtime": 1786653716.087064,
+    "hash": "23b07f8b1b7c0c93b5052d24a276c660"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Using Your Adapter.md": {
+    "mtime": 1786653716.088041,
+    "hash": "f2dd225e2b83a762dfdae8b60d41b381"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Dataset Preparation.md": {
+    "mtime": 1786653716.0869684,
+    "hash": "8c8ae7c56ae7ecdeab58cf84fff463f2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/ObsidianREADME.md": {
+    "mtime": 1786653716.0874295,
+    "hash": "5ce2b4f89a84a0963deb927a3dbc087f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/RepositoryREADME.md": {
+    "mtime": 1786653716.087625,
+    "hash": "0356c1122ad8d1cd4a5848749d8bbac8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Getting Started.md": {
+    "mtime": 1786653716.0872602,
+    "hash": "bc44f814470c50d86f627e4e4da75bd7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Windows Notes.md": {
+    "mtime": 1786653716.0881832,
+    "hash": "e9401a5647cbc288679ec4bf368df5f7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Training Guide.md": {
+    "mtime": 1786653716.087968,
+    "hash": "085a09e3bd2cd4f90928ff1b3b0210d9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/VRAM Optimization Guide.md": {
+    "mtime": 1786653716.0881128,
+    "hash": "3f1a08cfdc3948dee5bce8f0e5dc12a3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Shift and Timestep Sampling.md": {
+    "mtime": 1786653716.0877104,
+    "hash": "3dd155ee1db8492f4352e78f4a03e790"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/sidestep/Preset Management.md": {
+    "mtime": 1786653716.0875072,
+    "hash": "0baadf30c5524eef088960539e179335"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/INFERENCE.md": {
+    "mtime": 1786653716.0889091,
+    "hash": "40414f8df8dcd40939e535b13c6c4819"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/API.md": {
+    "mtime": 1786653716.0883803,
+    "hash": "69455e9fa2efcea6c2d46f598e86cfe3"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/INSTALL.md": {
+    "mtime": 1786653716.089035,
+    "hash": "a8dfad771b9b672ad24fd21efff3a9f9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/BENCHMARK.md": {
+    "mtime": 1786653716.0885198,
+    "hash": "06a29e01cf3ff42874db38461b9f7c95"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/GRADIO_GUIDE.md": {
+    "mtime": 1786653716.0887778,
+    "hash": "b94e28cb0629ad564bd07d91e6561ccd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/Tutorial.md": {
+    "mtime": 1786653716.0894234,
+    "hash": "d98ddf9dbeadc5367085a041553ac316"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/index.md": {
+    "mtime": 1786653716.0895395,
+    "hash": "6e0b50103b761f35b6059a72c7a6ac69"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/Openrouter_API_DOC.md": {
+    "mtime": 1786653716.0892615,
+    "hash": "ef632eb38c98e4c60b33cadc5bb3b852"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/GPU_COMPATIBILITY.md": {
+    "mtime": 1786653716.0886497,
+    "hash": "2627efa084d0293606e2a5ed359ed51e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/zh/LoRA_Training_Tutorial.md": {
+    "mtime": 1786653716.0891635,
+    "hash": "3e6848455dcb416c8802cce836df459f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/INFERENCE.md": {
+    "mtime": 1786653716.0805457,
+    "hash": "8a3c1bc629f5c43de09e536f5c442502"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/API.md": {
+    "mtime": 1786653716.080241,
+    "hash": "480f2edbf48e0b05cc656a15f7dc2f5c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/GRADIO_GUIDE.md": {
+    "mtime": 1786653716.0804448,
+    "hash": "a00af37878700de37b9ea9eca1b1b9a0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/Tutorial.md": {
+    "mtime": 1786653716.080855,
+    "hash": "cf2b006b0bc2bcea443afb6acb4146cb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/index.md": {
+    "mtime": 1786653716.0809498,
+    "hash": "c4adbc2bc426c789a70cfd98d7738be6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/Openrouter_API_DOC.md": {
+    "mtime": 1786653716.0807488,
+    "hash": "c5a2d98462a3de8889174f28651e9290"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/GPU_COMPATIBILITY.md": {
+    "mtime": 1786653716.080348,
+    "hash": "dec69c9d6a95578cc4018b82f42d2fbb"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/ko/LoRA_Training_Tutorial.md": {
+    "mtime": 1786653716.0806534,
+    "hash": "61f80a22c3973ff1b80064ffe14a9bff"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/INFERENCE.md": {
+    "mtime": 1786653716.07669,
+    "hash": "0c7dc3b0fceddc4ca048b7cd5f986a5b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/ace_step_musicians_guide.md": {
+    "mtime": 1786653716.078012,
+    "hash": "e68a183d57458571afb147904a384f15"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/ACE-Step1.5-Rocm-Manual-Linux.md": {
+    "mtime": 1786653716.0736084,
+    "hash": "abbfb4b60aeca15b843663bc8a870c88"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/API.md": {
+    "mtime": 1786653716.0737832,
+    "hash": "317b96e58bb509675e6f2e259404a6ac"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/Large_Scale_SFT_Training_Guide.md": {
+    "mtime": 1786653716.0769958,
+    "hash": "a39a1fe912c60e5ff3a8586fbdc6b6c9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/CLI.md": {
+    "mtime": 1786653716.076176,
+    "hash": "68ce9ce29764ec4153c08189b70a5290"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/UI_SUPPORT.md": {
+    "mtime": 1786653716.0778704,
+    "hash": "2c38b9be4f64fa968b8cf3f0034201e7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/GPU_TROUBLESHOOTING.md": {
+    "mtime": 1786653716.0764477,
+    "hash": "35a94fcb8d8f5e875c3fe91c4503a6cd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/ALT_VAE.md": {
+    "mtime": 1786653716.0736828,
+    "hash": "de3dafc42065a19dfe25efa5f88ab91e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/INSTALL.md": {
+    "mtime": 1786653716.0768209,
+    "hash": "a8ad548eacbc4d98d1f9116adf77017e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/BENCHMARK.md": {
+    "mtime": 1786653716.0738792,
+    "hash": "ad4afc9a7e5596767cacd8acc8242210"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/GRADIO_GUIDE.md": {
+    "mtime": 1786653716.0765464,
+    "hash": "87d5b005a18d2da6f565acc01cf3bf3e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/Tutorial.md": {
+    "mtime": 1786653716.0777051,
+    "hash": "f10c27ae827418a61ce3dc521805815e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/index.md": {
+    "mtime": 1786653716.0781462,
+    "hash": "6c2c8840f4ea592550c5969098d60f1c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/Openrouter_API_DOC.md": {
+    "mtime": 1786653716.077438,
+    "hash": "14769e596c1c692f9c7ff3f24ada7309"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/GPU_COMPATIBILITY.md": {
+    "mtime": 1786653716.076353,
+    "hash": "1e1cfaf8c74d52879676bbd76d8ba9e1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/LoRA_Training_Tutorial.md": {
+    "mtime": 1786653716.0772192,
+    "hash": "a0d2856ca8caefab1f4c16a7fd449cee"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/README.md": {
+    "mtime": 1786653715.9332702,
+    "hash": "004b07b698f47321d465a8bbcf351935"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/en/DCW.md": {
+    "mtime": 1786653716.076257,
+    "hash": "fe79129870e7436f87488260e3c5939f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/acestep/third_parts/nano-vllm/assets/logo.png": {
+    "mtime": 1786653716.019966,
+    "hash": "fc306896a97896bac31361174e5cd881"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/03_label_data.jpg": {
+    "mtime": 1786653716.0830278,
+    "hash": "44498eb81118cb32287e43ce916d7ce5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/06_preprocess_tensor.jpg": {
+    "mtime": 1786653716.0842164,
+    "hash": "def257924676f2e63a547a54985f78b7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/04_edit_data.jpg": {
+    "mtime": 1786653716.0835817,
+    "hash": "919b0440a7c615131fb1b801f35b6266"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/07_train.jpg": {
+    "mtime": 1786653716.084726,
+    "hash": "490de9f6aa1e2005fac1990080e64e26"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/00_select_model_to_load.jpg": {
+    "mtime": 1786653716.0812578,
+    "hash": "dee20774782cff52153413389e605763"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/05_save_dataset.jpg": {
+    "mtime": 1786653716.0838895,
+    "hash": "26583860943e9d157c463f001dd0ff06"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/00_select_model_to_load_1.jpg": {
+    "mtime": 1786653716.0818062,
+    "hash": "1d7c311a784687adec5dbfaedc9e35e7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/01_load_dataset_path.jpg": {
+    "mtime": 1786653716.0822215,
+    "hash": "cd51f64db0b96d4ed34235026d25265c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/key-bpm-finder-0.jpg": {
+    "mtime": 1786653716.0864625,
+    "hash": "d89c374c30cfe39a3f6b858de08f1d55"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/02_preview_dataset.jpg": {
+    "mtime": 1786653716.0828006,
+    "hash": "0309ae37105c923a561d0872cec957cf"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/key-bpm-finder-1.jpg": {
+    "mtime": 1786653716.0865843,
+    "hash": "fb715f7dc4f391ace4a7d0016f97bf4e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/pics/08_load_lora.jpg": {
+    "mtime": 1786653716.0849724,
+    "hash": "8a94027b8ddb064d583295138f819fac"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/public/logo.png": {
+    "mtime": 1786653716.0868394,
+    "hash": "74c802623d0ab2a8acbb27e52d5ef6ac"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/docs/public/favicon.svg": {
+    "mtime": 1786653716.0867405,
+    "hash": "e25a116daaa13e3d61d629cc44f9534e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/application_map.png": {
+    "mtime": 1786653716.0667562,
+    "hash": "5d71f3b8796ec3b004ad03545b6912fd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/Logo_StepFun.png": {
+    "mtime": 1786653716.0653727,
+    "hash": "18989b5802bf54e799c3df29dc5d298c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/acestep_logo.png": {
+    "mtime": 1786653716.0656278,
+    "hash": "74c802623d0ab2a8acbb27e52d5ef6ac"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/star.gif": {
+    "mtime": 1786653716.0722747,
+    "hash": "b564f388a184e7ce0e0a070bf651a132"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/ACE-Step_framework.png": {
+    "mtime": 1786653716.0569398,
+    "hash": "8472dcb53f81cc0cead0a9605762a59d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/acemusic-logo.svg": {
+    "mtime": 1786653716.0655138,
+    "hash": "bfec4ffd14e26cc035e8848f16b4cb4a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/model_zoo.png": {
+    "mtime": 1786653716.0675616,
+    "hash": "bba3b0ebb20496c7e41128fc4ea44a7f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/organization_logos.png": {
+    "mtime": 1786653716.0688682,
+    "hash": "0be303a311a96bfa2106738f84f12fde"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/assets/acestudio_logo.png": {
+    "mtime": 1786653716.066017,
+    "hash": "2c04b9b8037aee3057bd28bfdb05b5ae"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/d176dd97-d499-4ccc-b0bf-31738d500e0d.mp3": {
+    "mtime": 1786736106.8107858,
+    "hash": "42966de7de5d034d9c2623b9dfa4c275"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/00a22322-1d7c-494e-b9ae-59debc68f7c1.mp3": {
+    "mtime": 1786800536.0406284,
+    "hash": "d49b7dfd9a7b85fe7eb248bc204a7c77"
+  }
+}

@@ -1,0 +1,2386 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "worker.py",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L1",
+      "id": "worker_py",
+      "community": 0,
+      "norm_label": "worker.py"
+    },
+    {
+      "label": "ensure_reference_audio()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L35",
+      "id": "engine_worker_ensure_reference_audio",
+      "community": 2,
+      "norm_label": "ensure_reference_audio()"
+    },
+    {
+      "label": "utc_now()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L86",
+      "id": "engine_worker_utc_now",
+      "community": 3,
+      "norm_label": "utc_now()"
+    },
+    {
+      "label": "_lock_for()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L90",
+      "id": "engine_worker_lock_for",
+      "community": 3,
+      "norm_label": "_lock_for()"
+    },
+    {
+      "label": "write_json()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L100",
+      "id": "engine_worker_write_json",
+      "community": 3,
+      "norm_label": "write_json()"
+    },
+    {
+      "label": "read_json()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L113",
+      "id": "engine_worker_read_json",
+      "community": 3,
+      "norm_label": "read_json()"
+    },
+    {
+      "label": "physical_memory_gb()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L120",
+      "id": "engine_worker_physical_memory_gb",
+      "community": 0,
+      "norm_label": "physical_memory_gb()"
+    },
+    {
+      "label": "pick_device()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L129",
+      "id": "engine_worker_pick_device",
+      "community": 0,
+      "norm_label": "pick_device()"
+    },
+    {
+      "label": "pick_lm()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L143",
+      "id": "engine_worker_pick_lm",
+      "community": 0,
+      "norm_label": "pick_lm()"
+    },
+    {
+      "label": "pick_backend()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L151",
+      "id": "engine_worker_pick_backend",
+      "community": 0,
+      "norm_label": "pick_backend()"
+    },
+    {
+      "label": "tight_memory()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L158",
+      "id": "engine_worker_tight_memory",
+      "community": 0,
+      "norm_label": "tight_memory()"
+    },
+    {
+      "label": "is_oom()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L162",
+      "id": "engine_worker_is_oom",
+      "community": 2,
+      "norm_label": "is_oom()"
+    },
+    {
+      "label": "release_unified_memory()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L167",
+      "id": "engine_worker_release_unified_memory",
+      "community": 2,
+      "norm_label": "release_unified_memory()"
+    },
+    {
+      "label": "ffmpeg_available()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L194",
+      "id": "engine_worker_ffmpeg_available",
+      "community": 2,
+      "norm_label": "ffmpeg_available()"
+    },
+    {
+      "label": "pick_audio_format()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L205",
+      "id": "engine_worker_pick_audio_format",
+      "community": 2,
+      "norm_label": "pick_audio_format()"
+    },
+    {
+      "label": "persist_song_audio()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L209",
+      "id": "engine_worker_persist_song_audio",
+      "community": 2,
+      "norm_label": "persist_song_audio()"
+    },
+    {
+      "label": "wrap_lm_to_release_memory()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L252",
+      "id": "engine_worker_wrap_lm_to_release_memory",
+      "community": 0,
+      "norm_label": "wrap_lm_to_release_memory()"
+    },
+    {
+      "label": "pick_config()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L267",
+      "id": "engine_worker_pick_config",
+      "community": 0,
+      "norm_label": "pick_config()"
+    },
+    {
+      "label": "start_heartbeat_thread()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L275",
+      "id": "engine_worker_start_heartbeat_thread",
+      "community": 0,
+      "norm_label": "start_heartbeat_thread()"
+    },
+    {
+      "label": "write_heartbeat()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L288",
+      "id": "engine_worker_write_heartbeat",
+      "community": 3,
+      "norm_label": "write_heartbeat()"
+    },
+    {
+      "label": "reset_stale_jobs()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L301",
+      "id": "engine_worker_reset_stale_jobs",
+      "community": 3,
+      "norm_label": "reset_stale_jobs()"
+    },
+    {
+      "label": "next_queued_job()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L311",
+      "id": "engine_worker_next_queued_job",
+      "community": 3,
+      "norm_label": "next_queued_job()"
+    },
+    {
+      "label": "assert_dit_ready()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L320",
+      "id": "engine_worker_assert_dit_ready",
+      "community": 0,
+      "norm_label": "assert_dit_ready()"
+    },
+    {
+      "label": "load_handlers()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L339",
+      "id": "engine_worker_load_handlers",
+      "community": 0,
+      "norm_label": "load_handlers()"
+    },
+    {
+      "label": "build_generation_params()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L446",
+      "id": "engine_worker_build_generation_params",
+      "community": 2,
+      "norm_label": "build_generation_params()"
+    },
+    {
+      "label": "run_job()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L472",
+      "id": "engine_worker_run_job",
+      "community": 2,
+      "norm_label": "run_job()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "worker.py",
+      "source_location": "L603",
+      "id": "engine_worker_main",
+      "community": 3,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Require a readable reference file; convert WebM/Opus to WAV when needed.",
+      "file_type": "rationale",
+      "source_file": "worker.py",
+      "source_location": "L36",
+      "id": "engine_worker_rationale_36",
+      "community": 2,
+      "norm_label": "require a readable reference file; convert webm/opus to wav when needed."
+    },
+    {
+      "label": "test_compose.py",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L1",
+      "id": "test_compose_py",
+      "community": 4,
+      "norm_label": "test_compose.py"
+    },
+    {
+      "label": "test_clip_caption_word_boundary()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L11",
+      "id": "engine_test_compose_test_clip_caption_word_boundary",
+      "community": 4,
+      "norm_label": "test_clip_caption_word_boundary()"
+    },
+    {
+      "label": "test_clip_lyrics_keeps_complete_sections()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L18",
+      "id": "engine_test_compose_test_clip_lyrics_keeps_complete_sections",
+      "community": 10,
+      "norm_label": "test_clip_lyrics_keeps_complete_sections()"
+    },
+    {
+      "label": "test_devanagari_language()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L31",
+      "id": "engine_test_compose_test_devanagari_language",
+      "community": 11,
+      "norm_label": "test_devanagari_language()"
+    },
+    {
+      "label": "test_allows_five_minute_songs()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L37",
+      "id": "engine_test_compose_test_allows_five_minute_songs",
+      "community": 1,
+      "norm_label": "test_allows_five_minute_songs()"
+    },
+    {
+      "label": "test_auto_duration_not_forced_to_cap()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L56",
+      "id": "engine_test_compose_test_auto_duration_not_forced_to_cap",
+      "community": 4,
+      "norm_label": "test_auto_duration_not_forced_to_cap()"
+    },
+    {
+      "label": "test_custom_voice_requires_reference()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L69",
+      "id": "engine_test_compose_test_custom_voice_requires_reference",
+      "community": 4,
+      "norm_label": "test_custom_voice_requires_reference()"
+    },
+    {
+      "label": "test_custom_voice_maps_reference()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L84",
+      "id": "engine_test_compose_test_custom_voice_maps_reference",
+      "community": 4,
+      "norm_label": "test_custom_voice_maps_reference()"
+    },
+    {
+      "label": "test_non_custom_still_thinks()",
+      "file_type": "code",
+      "source_file": "test_compose.py",
+      "source_location": "L103",
+      "id": "engine_test_compose_test_non_custom_still_thinks",
+      "community": 4,
+      "norm_label": "test_non_custom_still_thinks()"
+    },
+    {
+      "label": "compose.py",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L1",
+      "id": "compose_py",
+      "community": 1,
+      "norm_label": "compose.py"
+    },
+    {
+      "label": "lyrics_budget()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L42",
+      "id": "engine_compose_lyrics_budget",
+      "community": 1,
+      "norm_label": "lyrics_budget()"
+    },
+    {
+      "label": "scrub_voice_bias()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L59",
+      "id": "engine_compose_scrub_voice_bias",
+      "community": 9,
+      "norm_label": "scrub_voice_bias()"
+    },
+    {
+      "label": "compose_caption()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L68",
+      "id": "engine_compose_compose_caption",
+      "community": 9,
+      "norm_label": "compose_caption()"
+    },
+    {
+      "label": "influence_to_guidance()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L82",
+      "id": "engine_compose_influence_to_guidance",
+      "community": 1,
+      "norm_label": "influence_to_guidance()"
+    },
+    {
+      "label": "influence_to_lm_cfg()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L87",
+      "id": "engine_compose_influence_to_lm_cfg",
+      "community": 1,
+      "norm_label": "influence_to_lm_cfg()"
+    },
+    {
+      "label": "weirdness_to_temperature()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L92",
+      "id": "engine_compose_weirdness_to_temperature",
+      "community": 1,
+      "norm_label": "weirdness_to_temperature()"
+    },
+    {
+      "label": "weirdness_to_infer_method()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L97",
+      "id": "engine_compose_weirdness_to_infer_method",
+      "community": 1,
+      "norm_label": "weirdness_to_infer_method()"
+    },
+    {
+      "label": "voice_strength_to_cover()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L101",
+      "id": "engine_compose_voice_strength_to_cover",
+      "community": 1,
+      "norm_label": "voice_strength_to_cover()"
+    },
+    {
+      "label": "vocal_language()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L108",
+      "id": "engine_compose_vocal_language",
+      "community": 11,
+      "norm_label": "vocal_language()"
+    },
+    {
+      "label": "clip_caption()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L117",
+      "id": "engine_compose_clip_caption",
+      "community": 4,
+      "norm_label": "clip_caption()"
+    },
+    {
+      "label": "clip_lyrics()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L125",
+      "id": "engine_compose_clip_lyrics",
+      "community": 10,
+      "norm_label": "clip_lyrics()"
+    },
+    {
+      "label": "job_to_params()",
+      "file_type": "code",
+      "source_file": "compose.py",
+      "source_location": "L145",
+      "id": "engine_compose_job_to_params",
+      "community": 1,
+      "norm_label": "job_to_params()"
+    },
+    {
+      "label": "Map studio job fields to ACE-Step GenerationParams values.  This module has no A",
+      "file_type": "rationale",
+      "source_file": "compose.py",
+      "source_location": "L1",
+      "id": "engine_compose_rationale_1",
+      "community": 1,
+      "norm_label": "map studio job fields to ace-step generationparams values.  this module has no a"
+    },
+    {
+      "label": "Remove gendered / register cues so reference audio can steer timbre.",
+      "file_type": "rationale",
+      "source_file": "compose.py",
+      "source_location": "L60",
+      "id": "engine_compose_rationale_60",
+      "community": 9,
+      "norm_label": "remove gendered / register cues so reference audio can steer timbre."
+    },
+    {
+      "label": "download.py",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L1",
+      "id": "download_py",
+      "community": 7,
+      "norm_label": "download.py"
+    },
+    {
+      "label": "_vendor()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L28",
+      "id": "engine_download_vendor",
+      "community": 7,
+      "norm_label": "_vendor()"
+    },
+    {
+      "label": "_ensure_acestep_on_path()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L32",
+      "id": "engine_download_ensure_acestep_on_path",
+      "community": 7,
+      "norm_label": "_ensure_acestep_on_path()"
+    },
+    {
+      "label": "clear_stale_hf_locks()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L38",
+      "id": "engine_download_clear_stale_hf_locks",
+      "community": 7,
+      "norm_label": "clear_stale_hf_locks()"
+    },
+    {
+      "label": "is_valid_safetensors()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L53",
+      "id": "engine_download_is_valid_safetensors",
+      "community": 8,
+      "norm_label": "is_valid_safetensors()"
+    },
+    {
+      "label": "find_corrupt_weight_files()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L69",
+      "id": "engine_download_find_corrupt_weight_files",
+      "community": 6,
+      "norm_label": "find_corrupt_weight_files()"
+    },
+    {
+      "label": "repair_corrupt_weights()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L83",
+      "id": "engine_download_repair_corrupt_weights",
+      "community": 6,
+      "norm_label": "repair_corrupt_weights()"
+    },
+    {
+      "label": "_dir_bytes()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L102",
+      "id": "engine_download_dir_bytes",
+      "community": 5,
+      "norm_label": "_dir_bytes()"
+    },
+    {
+      "label": "_fmt_gb()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L115",
+      "id": "engine_download_fmt_gb",
+      "community": 12,
+      "norm_label": "_fmt_gb()"
+    },
+    {
+      "label": "_print_resume_state()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L119",
+      "id": "engine_download_print_resume_state",
+      "community": 12,
+      "norm_label": "_print_resume_state()"
+    },
+    {
+      "label": "models_ready()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L128",
+      "id": "engine_download_models_ready",
+      "community": 6,
+      "norm_label": "models_ready()"
+    },
+    {
+      "label": "_list_repo_files()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L137",
+      "id": "engine_download_list_repo_files",
+      "community": 5,
+      "norm_label": "_list_repo_files()"
+    },
+    {
+      "label": "_should_skip()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L144",
+      "id": "engine_download_should_skip",
+      "community": 8,
+      "norm_label": "_should_skip()"
+    },
+    {
+      "label": "_download_one()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L154",
+      "id": "engine_download_download_one",
+      "community": 8,
+      "norm_label": "_download_one()"
+    },
+    {
+      "label": "_start_size_watch()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L187",
+      "id": "engine_download_start_size_watch",
+      "community": 5,
+      "norm_label": "_start_size_watch()"
+    },
+    {
+      "label": "ensure_checkpoints()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L206",
+      "id": "engine_download_ensure_checkpoints",
+      "community": 6,
+      "norm_label": "ensure_checkpoints()"
+    },
+    {
+      "label": "lm_ready()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L261",
+      "id": "engine_download_lm_ready",
+      "community": 5,
+      "norm_label": "lm_ready()"
+    },
+    {
+      "label": "ensure_lm()",
+      "file_type": "code",
+      "source_file": "download.py",
+      "source_location": "L277",
+      "id": "engine_download_ensure_lm",
+      "community": 5,
+      "norm_label": "ensure_lm()"
+    },
+    {
+      "label": "Download ACE-Step checkpoints with visible, resumable progress.  ACE-Step's snap",
+      "file_type": "rationale",
+      "source_file": "download.py",
+      "source_location": "L1",
+      "id": "engine_download_rationale_1",
+      "community": 7,
+      "norm_label": "download ace-step checkpoints with visible, resumable progress.  ace-step's snap"
+    },
+    {
+      "label": "Return True when the file has a non-empty JSON safetensors header.",
+      "file_type": "rationale",
+      "source_file": "download.py",
+      "source_location": "L54",
+      "id": "engine_download_rationale_54",
+      "community": 8,
+      "norm_label": "return true when the file has a non-empty json safetensors header."
+    },
+    {
+      "label": "Delete corrupt weight files so the next download replaces them.",
+      "file_type": "rationale",
+      "source_file": "download.py",
+      "source_location": "L84",
+      "id": "engine_download_rationale_84",
+      "community": 6,
+      "norm_label": "delete corrupt weight files so the next download replaces them."
+    },
+    {
+      "label": "Download a separately hosted LM (0.6B / 4B). 1.7B ships in the main snapshot.",
+      "file_type": "rationale",
+      "source_file": "download.py",
+      "source_location": "L278",
+      "id": "engine_download_rationale_278",
+      "community": 5,
+      "norm_label": "download a separately hosted lm (0.6b / 4b). 1.7b ships in the main snapshot."
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "__init__.py",
+      "source_location": "L1",
+      "id": "init_py",
+      "community": 13,
+      "norm_label": "__init__.py"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_ensure_reference_audio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_utc_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_lock_for",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_read_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_physical_memory_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_pick_device",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_pick_lm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_pick_backend",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_tight_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_is_oom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_release_unified_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_ffmpeg_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_pick_audio_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_persist_song_audio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L252",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_wrap_lm_to_release_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_pick_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L275",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_start_heartbeat_thread",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_write_heartbeat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L301",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_reset_stale_jobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L311",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_next_queued_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L320",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_assert_dit_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L339",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_load_handlers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_build_generation_params",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L472",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_run_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L603",
+      "weight": 1.0,
+      "source": "worker_py",
+      "target": "engine_worker_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L498",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_ensure_reference_audio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "engine_worker_rationale_36",
+      "target": "engine_worker_ensure_reference_audio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L291",
+      "weight": 1.0,
+      "source": "engine_worker_write_heartbeat",
+      "target": "engine_worker_utc_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L307",
+      "weight": 1.0,
+      "source": "engine_worker_reset_stale_jobs",
+      "target": "engine_worker_utc_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_utc_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L636",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_utc_now",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "engine_worker_write_json",
+      "target": "engine_worker_lock_for",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "engine_worker_write_heartbeat",
+      "target": "engine_worker_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "engine_worker_reset_stale_jobs",
+      "target": "engine_worker_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L482",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L637",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "engine_worker_reset_stale_jobs",
+      "target": "engine_worker_read_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "engine_worker_next_queued_job",
+      "target": "engine_worker_read_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "engine_worker_tight_memory",
+      "target": "engine_worker_physical_memory_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L352",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_physical_memory_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L351",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_pick_device",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_pick_lm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_pick_backend",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L492",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_tight_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L559",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_is_oom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L557",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_release_unified_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "engine_worker_pick_audio_format",
+      "target": "engine_worker_ffmpeg_available",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L543",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_pick_audio_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L575",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_persist_song_audio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L420",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_wrap_lm_to_release_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L353",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_pick_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L284",
+      "weight": 1.0,
+      "source": "engine_worker_start_heartbeat_thread",
+      "target": "engine_worker_write_heartbeat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L361",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_start_heartbeat_thread",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L422",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_write_heartbeat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L611",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_write_heartbeat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L606",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_reset_stale_jobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L625",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_next_queued_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L394",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_worker_assert_dit_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L484",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_assert_dit_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L609",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_load_handlers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L373",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_download_ensure_checkpoints"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L374",
+      "weight": 1.0,
+      "source": "engine_worker_load_handlers",
+      "target": "engine_download_ensure_lm"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L542",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_worker_build_generation_params",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "worker.py",
+      "source_location": "L631",
+      "weight": 1.0,
+      "source": "engine_worker_main",
+      "target": "engine_worker_run_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L493",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L531",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_compose_clip_caption"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L532",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_compose_compose_caption"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "worker.py",
+      "source_location": "L534",
+      "weight": 1.0,
+      "source": "engine_worker_run_job",
+      "target": "engine_compose_clip_lyrics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_clip_caption_word_boundary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_clip_lyrics_keeps_complete_sections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_devanagari_language",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_allows_five_minute_songs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_auto_duration_not_forced_to_cap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_custom_voice_requires_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_custom_voice_maps_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "test_compose.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "test_compose_py",
+      "target": "engine_test_compose_test_non_custom_still_thinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_clip_caption_word_boundary",
+      "target": "engine_compose_clip_caption"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_clip_lyrics_keeps_complete_sections",
+      "target": "engine_compose_clip_lyrics"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_devanagari_language",
+      "target": "engine_compose_vocal_language"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_allows_five_minute_songs",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_allows_five_minute_songs",
+      "target": "engine_compose_lyrics_budget"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_auto_duration_not_forced_to_cap",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_custom_voice_requires_reference",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_custom_voice_maps_reference",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "test_compose.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "engine_test_compose_test_non_custom_still_thinks",
+      "target": "engine_compose_job_to_params"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_lyrics_budget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_scrub_voice_bias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_compose_caption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_influence_to_guidance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_influence_to_lm_cfg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_weirdness_to_temperature",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_weirdness_to_infer_method",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_voice_strength_to_cover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_vocal_language",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_clip_caption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_clip_lyrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "compose_py",
+      "target": "engine_compose_job_to_params",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "engine_compose_rationale_1",
+      "target": "compose_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_lyrics_budget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "engine_compose_compose_caption",
+      "target": "engine_compose_scrub_voice_bias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "engine_compose_rationale_60",
+      "target": "engine_compose_scrub_voice_bias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_compose_caption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L193",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_influence_to_guidance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_influence_to_lm_cfg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_weirdness_to_temperature",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_weirdness_to_infer_method",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_voice_strength_to_cover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_vocal_language",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_clip_caption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compose.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "engine_compose_job_to_params",
+      "target": "engine_compose_clip_lyrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_vendor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_ensure_acestep_on_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_clear_stale_hf_locks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_find_corrupt_weight_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_repair_corrupt_weights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_dir_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_fmt_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_print_resume_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_models_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_list_repo_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_should_skip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_download_one",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_start_size_watch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_ensure_checkpoints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_lm_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L277",
+      "weight": 1.0,
+      "source": "download_py",
+      "target": "engine_download_ensure_lm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "engine_download_rationale_1",
+      "target": "download_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "engine_download_ensure_acestep_on_path",
+      "target": "engine_download_vendor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "engine_download_models_ready",
+      "target": "engine_download_ensure_acestep_on_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_ensure_acestep_on_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_clear_stale_hf_locks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "engine_download_find_corrupt_weight_files",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "source": "engine_download_should_skip",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "engine_download_download_one",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "engine_download_lm_ready",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "engine_download_rationale_54",
+      "target": "engine_download_is_valid_safetensors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "engine_download_repair_corrupt_weights",
+      "target": "engine_download_find_corrupt_weight_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "engine_download_models_ready",
+      "target": "engine_download_find_corrupt_weight_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_find_corrupt_weight_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_repair_corrupt_weights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "engine_download_rationale_84",
+      "target": "engine_download_repair_corrupt_weights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "engine_download_start_size_watch",
+      "target": "engine_download_dir_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_dir_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_dir_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "engine_download_print_resume_state",
+      "target": "engine_download_fmt_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "engine_download_download_one",
+      "target": "engine_download_fmt_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_fmt_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_fmt_gb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_print_resume_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L220",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_models_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_list_repo_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L297",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_list_repo_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "engine_download_download_one",
+      "target": "engine_download_should_skip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_download_one",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L301",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_download_one",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "source": "engine_download_ensure_checkpoints",
+      "target": "engine_download_start_size_watch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L295",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_start_size_watch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L287",
+      "weight": 1.0,
+      "source": "engine_download_ensure_lm",
+      "target": "engine_download_lm_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "download.py",
+      "source_location": "L278",
+      "weight": 1.0,
+      "source": "engine_download_rationale_278",
+      "target": "engine_download_ensure_lm",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}
