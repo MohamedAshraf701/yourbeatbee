@@ -66,7 +66,7 @@ def test_auto_duration_not_forced_to_cap():
     assert params["duration"] == -1.0
 
 
-def test_custom_voice_requires_reference():
+def test_custom_voice_requires_rvc_model():
     try:
         job_to_params(
             {
@@ -81,23 +81,24 @@ def test_custom_voice_requires_reference():
         pass
 
 
-def test_custom_voice_maps_reference():
+def test_custom_voice_maps_rvc():
     params = job_to_params(
         {
-            "style": "Romantic ballad, solo male vocal only, warm emotional baritone, soft piano",
+            "style": "Romantic ballad, soft piano",
             "lyrics": "[Verse]\nhello",
             "voice": "custom",
             "duration": 60,
-            "referenceAudio": "/tmp/voice.wav",
+            "rvcModelPath": "/tmp/model.pth",
+            "rvcIndexPath": "/tmp/model.index",
             "voiceStrength": 70,
         }
     )
-    assert params["reference_audio"] == "/tmp/voice.wav"
-    assert params["thinking"] is False
-    assert 0.35 <= params["audio_cover_strength"] <= 0.95
-    assert "reference singer" in params["caption"]
-    assert "baritone" not in params["caption"].lower()
-    assert "male vocal" not in params["caption"].lower()
+    assert params["apply_rvc"] is True
+    assert params["rvc_model_path"] == "/tmp/model.pth"
+    assert params["rvc_index_path"] == "/tmp/model.index"
+    assert params["reference_audio"] is None
+    assert params["thinking"] is True
+    assert "lead vocal" in params["caption"].lower()
 
 
 def test_non_custom_still_thinks():
@@ -110,7 +111,8 @@ def test_non_custom_still_thinks():
         }
     )
     assert params["thinking"] is True
-    assert params["reference_audio"] is None
+    assert params["apply_rvc"] is False
+    assert params["rvc_model_path"] is None
 
 
 if __name__ == "__main__":
@@ -119,7 +121,7 @@ if __name__ == "__main__":
     test_devanagari_language()
     test_allows_five_minute_songs()
     test_auto_duration_not_forced_to_cap()
-    test_custom_voice_requires_reference()
-    test_custom_voice_maps_reference()
+    test_custom_voice_requires_rvc_model()
+    test_custom_voice_maps_rvc()
     test_non_custom_still_thinks()
     print("ok")

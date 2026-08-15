@@ -16,8 +16,8 @@
     "hash": "36e686c42135038437bd4bc1c9708682"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/layout.tsx": {
-    "mtime": 1786653669.3108525,
-    "hash": "31702514cf8c88c6d3bf8f52002f06e3"
+    "mtime": 1786810479.4786572,
+    "hash": "f37520884ce3b037deb08154455cb223"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/page.tsx": {
     "mtime": 1786653669.3010015,
@@ -32,20 +32,44 @@
     "hash": "38683416754926e8ca06bea3d90e4368"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/api/health/route.ts": {
-    "mtime": 1786653669.301034,
-    "hash": "078a10f35b0d8e549616de813ed1bf8c"
+    "mtime": 1786807578.6893868,
+    "hash": "25c47140a0aecb69ebb9807706b153e6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/settings/route.ts": {
+    "mtime": 1786806681.1417058,
+    "hash": "3794e39c208e6175fe62600453780b14"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/install/route.ts": {
+    "mtime": 1786806729.8132977,
+    "hash": "13082db1008588059f01b99fbae9ac64"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/status/route.ts": {
+    "mtime": 1786806682.4575346,
+    "hash": "71d7d34f6ff2510f8a2cca6000c97985"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/system/route.ts": {
+    "mtime": 1786806677.3258433,
+    "hash": "bdcd97dac0c12f3f55416fcaa202c3a2"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/presence/route.ts": {
+    "mtime": 1786807560.3753335,
+    "hash": "e37f0482a0b44c944a7113fac5cad3cc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/app/api/setup/engine/route.ts": {
+    "mtime": 1786807578.6893904,
+    "hash": "52cfd76d22ceaedf2f784f96d0683416"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/api/voice/route.ts": {
-    "mtime": 1786801363.217217,
-    "hash": "231bbf5bd488404715e60ce06171d01c"
+    "mtime": 1786804559.770784,
+    "hash": "8fa204f57b91104e3f5f658c30a0e77d"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/api/voice/audio/route.ts": {
-    "mtime": 1786801372.6070445,
-    "hash": "4911f2b81c4493991242604a477581c6"
+    "mtime": 1786804565.0079474,
+    "hash": "76493f74babd786e18fc0e6ee1ebbe23"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/api/generate/route.ts": {
-    "mtime": 1786801363.2157826,
-    "hash": "15339b93f5c2eb7321a16161b0e5ed92"
+    "mtime": 1786804565.0090184,
+    "hash": "392646a52fc74621a65967e0393c2759"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/app/api/jobs/[id]/route.ts": {
     "mtime": 1786653669.3138895,
@@ -56,12 +80,20 @@
     "hash": "676cb26b1b800af72a249a4adfab205a"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/components/voice-setup.tsx": {
-    "mtime": 1786801656.8682475,
-    "hash": "477203a94d7e1a310456459e74b12bce"
+    "mtime": 1786808680.1557887,
+    "hash": "92f38cd4e601bec3f4a8fd5add65278e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/settings-panel.tsx": {
+    "mtime": 1786808454.3209813,
+    "hash": "1fd332be2d4a0743cc0d5a62e5ba0653"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/components/studio.tsx": {
-    "mtime": 1786801700.915951,
-    "hash": "33e3750876b5389524272ce64e46346c"
+    "mtime": 1786811391.5709028,
+    "hash": "650c8b6a8ad73c91aa4fe5546c049cb5"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/setup-wizard.tsx": {
+    "mtime": 1786808503.0215065,
+    "hash": "63c92fe89611b0fc6e8ef5b24cb6e02e"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/components/ui/card.tsx": {
     "mtime": 1786653330.9835055,
@@ -143,53 +175,197 @@
     "mtime": 1786653331.2336178,
     "hash": "0e6e825c43d858d98c9903f4da975382"
   },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/brand-mark.tsx": {
+    "mtime": 1786810489.1228154,
+    "hash": "5ad27c80e274898a05c81588a6f4c4ba"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/now-playing.tsx": {
+    "mtime": 1786809490.5287614,
+    "hash": "326665d34ff9f7bb7c386e027678a998"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/create-workspace.tsx": {
+    "mtime": 1786811452.4532793,
+    "hash": "737babe1a1a495fa23a345781c505a56"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/song-card.tsx": {
+    "mtime": 1786808388.999872,
+    "hash": "1f9c71f052ee96219326d893d92d0f30"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/top-navigation.tsx": {
+    "mtime": 1786810485.1000347,
+    "hash": "b37c70857154880672dd54acce7f52d8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/engine-settings.tsx": {
+    "mtime": 1786811411.3317044,
+    "hash": "ccb0fa6245fbefd960e83ffdf7b14f7e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/song-dna.tsx": {
+    "mtime": 1786811427.1763935,
+    "hash": "cfe456ccc73054887f1f8effca2a3e14"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/song-detail.tsx": {
+    "mtime": 1786810488.4709296,
+    "hash": "a690395e74b9a68402a2df0c88c0f61b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/audio-field.tsx": {
+    "mtime": 1786810489.7575166,
+    "hash": "462d057cb5a669e25d34495a8fda3b5a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/voice-selector.tsx": {
+    "mtime": 1786809436.9457126,
+    "hash": "779a933c71b6a05929e988d4ad4e0fd0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/generate-button.tsx": {
+    "mtime": 1786809478.1827595,
+    "hash": "f333e5aa098da669b9de8f4f68eae36b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/engine-status.tsx": {
+    "mtime": 1786810485.1011257,
+    "hash": "e9b0a433efc364309f57578c651522d0"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/waveform.tsx": {
+    "mtime": 1786809408.1879284,
+    "hash": "bdb715fdc473a2b11cd58f808dacfaed"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/voice-strength.tsx": {
+    "mtime": 1786810490.6286392,
+    "hash": "7b80c4d6fd80ad14e9f7a35564f82ed7"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/library-view.tsx": {
+    "mtime": 1786811411.3333802,
+    "hash": "599ac084593ca19c937259529f9ad8a6"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/types.ts": {
+    "mtime": 1786808260.6015987,
+    "hash": "3782807905d15fee3ee89ad1e211cefd"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/language-selector.tsx": {
+    "mtime": 1786809468.7874424,
+    "hash": "2175ffbe6be843bdca30318cebcb688f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/my-voice-panel.tsx": {
+    "mtime": 1786809457.776399,
+    "hash": "6460d8df686a1ad4a1ea51633da1fc99"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/voice-studio.tsx": {
+    "mtime": 1786809526.352407,
+    "hash": "87dc736aee61c74cbc7789a5b628e07d"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/duration-selector.tsx": {
+    "mtime": 1786809471.8782616,
+    "hash": "aa31e9b46be6dac26bac4b6179537b1a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/generation-state.tsx": {
+    "mtime": 1786811401.3176208,
+    "hash": "de63c377cf227e2043e60119eebaa968"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/lyrics-editor.tsx": {
+    "mtime": 1786811398.9089649,
+    "hash": "f4378d7c82ede95a287624007c19259c"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/app-shell.tsx": {
+    "mtime": 1786809408.1879346,
+    "hash": "1b3be644c640756c1644eb1d64d594fa"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/theme-toggle.tsx": {
+    "mtime": 1786810517.9532547,
+    "hash": "8273e3f97e3402067b1dfd2416246d2a"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/prompt-editor.tsx": {
+    "mtime": 1786809427.379712,
+    "hash": "52b9cf42a99ab9301bd49de4dd5aaa76"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/components/studio/song-artwork.tsx": {
+    "mtime": 1786810507.5641782,
+    "hash": "3241c17a8703c870c9635dc73e347970"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/song-art.ts": {
+    "mtime": 1786809375.6737866,
+    "hash": "c4be8dd0bf187225a7eb01e1d1a86cd1"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/settings.ts": {
+    "mtime": 1786806564.195349,
+    "hash": "d2ac167cb630d1d0ac47021251841051"
+  },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/utils.ts": {
     "mtime": 1786653285.2696009,
     "hash": "5a6fd53fdcf2be529e9cc0b718fde352"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/engine.ts": {
-    "mtime": 1786653669.3108504,
-    "hash": "2c0e631a8748c046bef11eface5ebee8"
+    "mtime": 1786807557.0401337,
+    "hash": "6de970b43adf42edab646c89e4f72149"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/jobs.ts": {
-    "mtime": 1786801372.6071677,
-    "hash": "ee4281e9433d8b40cdc71b8af6962a83"
+    "mtime": 1786807579.3363314,
+    "hash": "e32189ecfdad3b727b226d9315784587"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/engine-supervisor.ts": {
+    "mtime": 1786806834.0026612,
+    "hash": "5e55afbbe0bd9d3d7246db72237e5b17"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/voices.ts": {
-    "mtime": 1786801666.7063487,
-    "hash": "50be150da60d82a3c37e09797e83af9e"
+    "mtime": 1786805475.593504,
+    "hash": "e118e56e4ddddcfa01bca701afb5346e"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/types.ts": {
-    "mtime": 1786801342.2583022,
-    "hash": "056043a292c3cd79df004d36a4219e1c"
+    "mtime": 1786807560.3733246,
+    "hash": "c1688cd08bedb7691ba3d793c9a24a42"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/presence.ts": {
+    "mtime": 1786807577.6837814,
+    "hash": "9e82e341ae1719b105765e9b64f47ec4"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/songs.ts": {
     "mtime": 1786653669.2860446,
     "hash": "2cbb0c4803f5523251ef0c2153e5e837"
   },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/format.ts": {
+    "mtime": 1786808234.7844713,
+    "hash": "b0957f26965e1b2d9f3c07124ce07e3e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/setup-install.ts": {
+    "mtime": 1786806728.2415202,
+    "hash": "80f86fb8dadadd9c5ffa044d28d72ec8"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/models.ts": {
+    "mtime": 1786806561.778893,
+    "hash": "1a58563f946ebd663444a55332d58c06"
+  },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/paths.ts": {
-    "mtime": 1786801339.5845566,
-    "hash": "cf8843c1eeaf4a6cf59f4ef0ae0bec39"
+    "mtime": 1786807565.784028,
+    "hash": "258d207c5419737cba632713f74675a0"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/voice-scripts.ts": {
     "mtime": 1786801622.5533884,
     "hash": "a4dd8e881eed5402a89c66489a6570ea"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/lib/chips.ts": {
-    "mtime": 1786653669.2848132,
-    "hash": "c5354e43afe9a09c5ac8dfbab6105d9e"
+    "mtime": 1786809558.8565624,
+    "hash": "6d54f5abdb449dbb5d4c7ee9b14de621"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/voice-rvc.ts": {
+    "mtime": 1786804745.6045952,
+    "hash": "416b672f0e62e5f3f6b640b1c594c1bc"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/lib/system-info.ts": {
+    "mtime": 1786806735.4427388,
+    "hash": "132e615ac71974f3b57e6622d6b27dad"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/engine/worker.py": {
-    "mtime": 1786801409.8834856,
-    "hash": "bca6fd3edf4e6fa9e22c935e73e24a58"
+    "mtime": 1786807673.9865317,
+    "hash": "33192beea430e1e2a36ee2137d9feeee"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/engine/test_compose.py": {
-    "mtime": 1786801469.6898978,
-    "hash": "d6ccc884a193b6d6808eeb071864b7f1"
+    "mtime": 1786804648.103673,
+    "hash": "7d75c0e24a026980f7979794c1b425ae"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/engine/compose.py": {
-    "mtime": 1786801404.5813243,
-    "hash": "ea2f1d55b60400f4619c1a940fb4c3a6"
+    "mtime": 1786804597.0382628,
+    "hash": "0f01aae194fa4fd50f2d2cd0bd5220b9"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/settings_loader.py": {
+    "mtime": 1786806567.0405202,
+    "hash": "68d0ea0ad7ac380b122cde0e4a01e1e8"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/engine/download.py": {
     "mtime": 1786734922.6714196,
@@ -198,6 +374,14 @@
   "/Users/ashraf/Documents/WorkSpace/musicai/engine/__init__.py": {
     "mtime": 1786653669.284748,
     "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/voice_convert.py": {
+    "mtime": 1786804947.0607705,
+    "hash": "29cd131c880e586d196083dd835d1b12"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/engine/rvc_cli.py": {
+    "mtime": 1786805452.477507,
+    "hash": "5f019c8270f0003cc06740cb2ac79aee"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/profile_inference.py": {
     "mtime": 1786653716.125268,
@@ -2648,8 +2832,8 @@
     "hash": "1a92f62d0baabe0e65df6f5b8b6b9893"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/README.md": {
-    "mtime": 1786801701.5773613,
-    "hash": "0045527d192b072ccf4f4d38d716ecb5"
+    "mtime": 1786806814.3273952,
+    "hash": "82945db12b2ebf18ffba3d72fd3bc3cc"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/AGENTS.md": {
     "mtime": 1786653213.256769,
@@ -3067,9 +3251,37 @@
     "mtime": 1786653716.066017,
     "hash": "2c04b9b8037aee3057bd28bfdb05b5ae"
   },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/140b939d-c053-4590-ad89-59e268473150.mp3": {
+    "mtime": 1786802916.3337,
+    "hash": "a2d2e362170f50bb27a94b23cc398f1e"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/c556d707-6776-4822-895e-0ee63fed1bbb.mp3": {
+    "mtime": 1786803598.6779988,
+    "hash": "fd405d5bf28b8eb055e585e4f23d19c4"
+  },
   "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/d176dd97-d499-4ccc-b0bf-31738d500e0d.mp3": {
     "mtime": 1786736106.8107858,
     "hash": "42966de7de5d034d9c2623b9dfa4c275"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/46091032-eb34-4dff-9767-ddba3c158c6c.mp3": {
+    "mtime": 1786802153.629364,
+    "hash": "f4996b0fdec81cfcd1467a87ffbc2d0b"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/98769472-1e9b-4866-94de-ed440a4b2ead.mp3": {
+    "mtime": 1786806569.4618957,
+    "hash": "4a128ec88b2fceba41b67d251849ea87"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/00f7d9e6-c702-4689-8ea4-8aaa0bb300b7.mp3": {
+    "mtime": 1786803316.849863,
+    "hash": "e7d3148a2a114e2a30616f98cf6f0600"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/d93d9d59-75c4-4966-87c6-32ff3775c428.mp3": {
+    "mtime": 1786807256.885874,
+    "hash": "c2bbbb25e903b2f8b9f59be54f74601f"
+  },
+  "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/b9146d5a-3fc1-41d0-9964-0720370cbc11.mp3": {
+    "mtime": 1786802685.249943,
+    "hash": "c633e6a674b6b33ef89ae5ce4e54ad1c"
   },
   "/Users/ashraf/Documents/WorkSpace/musicai/data/songs/00a22322-1d7c-494e-b9ae-59debc68f7c1.mp3": {
     "mtime": 1786800536.0406284,

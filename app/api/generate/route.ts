@@ -27,14 +27,21 @@ export async function POST(request: Request) {
 
   if (parsed.voice === "custom") {
     const profile = getVoiceProfile()
-    if (!profile.ready || !profile.absolutePath) {
+    if (!profile.ready || !profile.modelPath) {
       return Response.json(
-        { error: "Upload your voice sample first (about 2–3 minutes)." },
+        {
+          error:
+            "Import your RVC voice model first (train on Colab, then upload the zip).",
+        },
         { status: 400 }
       )
     }
-    parsed.referenceAudio = profile.absolutePath
+    parsed.rvcModelPath = profile.modelPath
+    parsed.rvcIndexPath = profile.indexPath
+    parsed.referenceAudio = null
   } else {
+    parsed.rvcModelPath = null
+    parsed.rvcIndexPath = null
     parsed.referenceAudio = null
   }
 

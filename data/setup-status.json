@@ -1,0 +1,9 @@
+{
+  "running": false,
+  "step": "done",
+  "message": "Install finished. You can start the engine.",
+  "error": null,
+  "startedAt": "2026-08-15T15:15:17.999Z",
+  "finishedAt": "2026-08-15T15:15:23.079Z",
+  "logTail": "[setup] ACE-Step / RVC…\n[musicai] ACE-Step already cloned. Pulling latest main...\nAlready up to date.\n[musicai] Installing Python dependencies with uv (Mac / MLX)...\nResolved 176 packages in 827ms\nUninstalled 1 package in 2ms\n - hf-transfer==0.1.9\n[musicai] Creating Python 3.10 venv for My Voice (RVC) at vendor/rvc-env…\nResolved 89 packages in 3ms\nChecked 74 packages in 15ms\n[musicai] Fetching RVC HuBERT / RMVPE weights…\n[musicai] Already have hubert_base.pt\n[musicai] Already have rmvpe.pt\n[musicai] RVC env ready: /Users/ashraf/Documents/WorkSpace/musicai/vendor/rvc-env\n  Smoke test: uv run --directory vendor/rvc-env python -c 'from rvc_python.infer import RVCInference'\n[musicai] Detected ~18GB unified memory.\n[musicai] Hint: studio recommends Turbo DiT + acestep-5Hz-lm-0.6B\n\nSetup complete. Prefer the browser Setup wizard (npm run studio) to pick models and download weights.\nMy Voice: train RVC on Colab → import zip in the studio (data/voices/rvc/).\nNext:\n  npm run studio\n  # or separately: npm run engine   and   npm run dev\n[setup] Downloading DiT checkpoints + LM acestep-5Hz-lm-0.6B…\n[musicai] Checkpoints already on disk and valid.\n[musicai] LM acestep-5Hz-lm-0.6B already on disk (1.28 GB).\n[setup] Done.\n"
+}

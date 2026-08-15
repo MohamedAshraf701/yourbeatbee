@@ -1,0 +1,446 @@
+[musicai] Starting local ACE-Step engine (loads model into RAM)...
+[musicai] config=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B backend=mlx
+[musicai] If weights are missing, files download one-by-one with a progress bar.
+[musicai] Ctrl+C is safe — the next start resumes.
+W0815 20:45:32.214000 23712 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+2026-08-15 20:45:33.183 | WARNING  | acestep.training.trainer:<module>:40 - bitsandbytes not installed. Using standard AdamW.
+[musicai] device=mps backend=mlx model=acestep-v15-turbo lm=acestep-5Hz-lm-0.6B ram≈18.0GB
+[musicai] Checkpoints already on disk and valid.
+[musicai] LM acestep-5Hz-lm-0.6B already on disk (1.28 GB).
+[musicai] Loading DiT / VAE / text encoder into RAM...
+2026-08-15 20:45:33.224 | INFO     | acestep.gpu_config:get_gpu_config:846 - macOS MPS detected (13.3 GB unified memory, tier=tier5). Applying Apple Silicon optimizations: no compile, no quantization, mlx backend, no CPU offload.
+2026-08-15 20:45:33.224 | INFO     | acestep.gpu_config:get_global_gpu_config:1574 - [gpu_config] Save-memory mode enabled via ACESTEP_SAVE_MEMORY=1
+2026-08-15 20:45:33.225 | INFO     | acestep.core.generation.handler.init_service_loader:_load_main_model_from_checkpoint:174 - [initialize_service] Attempting to load model with attention implementation: sdpa
+2026-08-15 20:46:23.686 | INFO     | acestep.core.generation.handler.mlx_dit_init:_init_mlx_dit:34 - [MLX-DiT] Native MLX DiT decoder initialized successfully (mx.compile=False).
+2026-08-15 20:46:32.364 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:75 - [MLX-VAE] Decode/encode compiled with mx.compile().
+2026-08-15 20:46:32.757 | INFO     | acestep.core.generation.handler.mlx_vae_init:_init_mlx_vae:85 - [MLX-VAE] Native MLX VAE initialized (dtype=mlx.core.float32, compiled=True).
+[musicai] DiT ready. [OK] Model initialized successfully on mps
+[musicai] Loading LM (acestep-5Hz-lm-0.6B, backend=mlx)...
+2026-08-15 20:46:32.771 | INFO     | acestep.llm_inference:initialize:609 - loading 5Hz LM tokenizer... it may take 80~90s
+2026-08-15 20:46:44.813 | INFO     | acestep.llm_inference:initialize:613 - 5Hz LM tokenizer loaded successfully in 12.04 seconds
+2026-08-15 20:46:44.813 | INFO     | acestep.llm_inference:initialize:618 - Initializing constrained decoding processor...
+2026-08-15 20:46:44.814 | INFO     | acestep.llm_inference:initialize:624 - Setting constrained decoding max_duration to 480s based on GPU config (tier: tier5)
+2026-08-15 20:46:45.423 | DEBUG    | acestep.constrained_logits_processor:_precompute_audio_code_tokens:577 - Found 1535 audio code tokens with values outside valid range [0, 63999]
+2026-08-15 20:46:47.761 | INFO     | acestep.llm_inference:initialize:632 - Constrained processor initialized in 2.95 seconds
+2026-08-15 20:46:47.761 | INFO     | acestep.llm_inference:initialize:659 - flash_attn not installed: disabling CUDA graph capture for nano-vllm (SDPA fallback uses .item() calls in paged-cache decode that are incompatible with CUDA graph capture)
+2026-08-15 20:46:47.761 | INFO     | acestep.llm_inference:initialize:671 - Triton not available: disabling CUDA graph capture for nano-vllm (CUDA graphs require torch.compile which depends on Triton)
+2026-08-15 20:46:47.773 | INFO     | acestep.llm_inference:initialize:681 - Attempting MLX backend for Apple Silicon acceleration...
+2026-08-15 20:46:47.773 | INFO     | acestep.llm_inference:_load_mlx_model:2947 - Loading MLX model from /Users/ashraf/Documents/WorkSpace/musicai/vendor/ACE-Step-1.5/checkpoints/acestep-5Hz-lm-0.6B
+2026-08-15 20:47:01.088 | INFO     | acestep.llm_inference:_load_mlx_model:3003 - MLX model loaded successfully in 13.31s
+[musicai] LM ready. ✅ 5Hz LM initialized successfully
+[musicai] Model loaded. Watching data/jobs/
+[musicai] d93d9d59-75c4-4966-87c6-32ff3775c428: generate_music duration=-1.0s lyrics=1793 chars voice=female rvc=no caption='Romantic Bollywood cinematic ballad, solo male vocal only, warm emotional baritone, intimate and soulful delivery, 82 BPM, dreamy piano, acoustic guitar, soft strings, subtle tabla, atmospheric pads, cinematic percussion, gradual emotional build, heartfelt vocal expressions, lush reverb, modern Bollywood production, passionate final chorus. No female vocals, no duet'
+mx.metal.clear_cache is deprecated and will be removed in a future version. Use mx.clear_cache instead.
+2026-08-15 20:48:12.056 | INFO     | acestep.inference:generate_music:641 - [generate_music] LLM usage decision: thinking=True, use_cot_caption=False, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=True, use_lm=True
+2026-08-15 20:48:12.057 | INFO     | acestep.inference:generate_music:699 - LM chunk 1/1 (infer_type=llm_dit) (size: 1, seeds: [3115865014])
+2026-08-15 20:48:12.057 | INFO     | acestep.llm_inference:generate_with_stop_condition:1371 - Phase 1: Generating CoT metadata...
+2026-08-15 20:48:12.068 | INFO     | acestep.llm_inference:generate_with_stop_condition:1377 - generate_with_stop_condition: formatted_prompt=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Romantic Bollywood cinematic ballad, solo male vocal only, warm emotional baritone, intimate and soulful delivery, 82 BPM, dreamy piano, acoustic guitar, soft strings, subtle tabla, atmospheric pads, cinematic percussion, gradual emotional build, heartfelt vocal expressions, lush reverb, modern Bollywood production, passionate final chorus. No female vocals, no duet
+
+# Lyric
+[Intro]
+
+Hmmm…
+Teri aankhon mein jo dekha,
+Woh kahaani ban gaya…
+Tu jo mila mujhe,
+Jaise jahaan mera mil gaya…
+
+[Verse 1]
+
+Khamosh raaton mein, tera naam loon,
+Teri hi baaton mein, subah shaam hoon,
+Jo tu muskuraaye, toh dil yeh kahe,
+Tere bina ab kahin aur na rahe…
+
+Teri saanson ki khushboo,
+Meri dhadkan mein basi,
+Tu jo paas ho mere,
+Toh har kami lage hasi…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tera hone laga,
+Jo tha mera kal tak,
+Woh tera hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+Tere saath, chalna hai mujhe,
+Chahe raaste ho kitne bhi anjaan,
+Haath tera, haath mein rahe,
+Bas itni si hai meri daastaan…
+
+[Verse 2]
+
+Bheegi si baarish, tera mera safar,
+Ek chhoti si chhat, aur bheegi nazar,
+Tu kuch na kahe, main samajh loon tujhe,
+Teri khamoshi bhi mohabbat lage…
+
+Tere kandhe pe sar rakh kar,
+Waqt ko rok loon zara,
+Jo pal tere sang guzre,
+Unko bana loon main dua…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tujh mein khone laga,
+Teri har ek aadat se,
+Pyaar hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+[Bridge]
+
+Agar kal badal jaaye,
+Agar duniya chhoot jaaye,
+Tera haath mere haath mein ho,
+Toh dil phir bhi muskuraaye…
+
+Na chaahun main daulat,
+Na chaahun koi aasman,
+Tu rahe mere paas,
+Toh tu hi mera jahaan…
+
+[Final Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har janam hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri dua, tu hi mera armaan…
+
+Tere saath, dhalna hai mujhe,
+Tere saath hi guzre har shaam,
+Aakhri saans tak bas tu rahe,
+Aur tera naam… mere naam ke saath…
+
+[Outro]
+
+Hmmm…
+Tu jo mila…
+Toh sab mil gaya…
+Tere saath…
+Mera jahaan…
+<|im_end|>
+<|im_start|>assistant
+
+2026-08-15 20:48:12.375 | INFO     | acestep.llm_inference:_run_mlx_single_native:3595 - MLX native prefill: 791 tokens in 0.29s (2690.0 tok/s)
+MLX Gen (native):   0%|          | 0/3500 [00:00<?, ?tok/s]MLX Gen (native):   0%|          | 1/3500 [00:00<23:30,  2.48tok/s]MLX Gen (native):   0%|          | 8/3500 [00:00<02:53, 20.12tok/s]MLX Gen (native):   0%|          | 16/3500 [00:00<01:38, 35.52tok/s]MLX Gen (native):   1%|          | 24/3500 [00:00<01:14, 46.59tok/s]MLX Gen (native):   1%|          | 32/3500 [00:00<01:04, 53.91tok/s]MLX Gen (native):   1%|          | 35/3500 [00:00<01:26, 39.94tok/s]
+2026-08-15 20:48:13.263 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 35 tokens in 0.89s (39.5 tok/s) | prefill 0.29s + decode 0.89s = 1.18s total
+2026-08-15 20:48:13.264 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <think>
+bpm: 62
+duration: 250
+keyscale: B♭ major
+language: hi
+timesignature: 4
+<|im_end|>
+2026-08-15 20:48:13.264 | INFO     | acestep.llm_inference:generate_with_stop_condition:1422 - Phase 1 completed in 1.21s. Generated metadata: ['bpm', 'duration', 'keyscale', 'language', 'timesignature']
+2026-08-15 20:48:13.264 | INFO     | acestep.llm_inference:generate_with_stop_condition:1441 - Using CoT-generated duration (250.0s) as Phase 2 target_duration (original was None/unset)
+2026-08-15 20:48:13.264 | INFO     | acestep.llm_inference:generate_with_stop_condition:1482 - Phase 2: Generating audio codes...
+2026-08-15 20:48:13.266 | INFO     | acestep.llm_inference:generate_with_stop_condition:1490 - generate_with_stop_condition: formatted_prompt_with_cot=<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+# Caption
+Romantic Bollywood cinematic ballad, solo male vocal only, warm emotional baritone, intimate and soulful delivery, 82 BPM, dreamy piano, acoustic guitar, soft strings, subtle tabla, atmospheric pads, cinematic percussion, gradual emotional build, heartfelt vocal expressions, lush reverb, modern Bollywood production, passionate final chorus. No female vocals, no duet
+
+# Lyric
+[Intro]
+
+Hmmm…
+Teri aankhon mein jo dekha,
+Woh kahaani ban gaya…
+Tu jo mila mujhe,
+Jaise jahaan mera mil gaya…
+
+[Verse 1]
+
+Khamosh raaton mein, tera naam loon,
+Teri hi baaton mein, subah shaam hoon,
+Jo tu muskuraaye, toh dil yeh kahe,
+Tere bina ab kahin aur na rahe…
+
+Teri saanson ki khushboo,
+Meri dhadkan mein basi,
+Tu jo paas ho mere,
+Toh har kami lage hasi…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tera hone laga,
+Jo tha mera kal tak,
+Woh tera hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+Tere saath, chalna hai mujhe,
+Chahe raaste ho kitne bhi anjaan,
+Haath tera, haath mein rahe,
+Bas itni si hai meri daastaan…
+
+[Verse 2]
+
+Bheegi si baarish, tera mera safar,
+Ek chhoti si chhat, aur bheegi nazar,
+Tu kuch na kahe, main samajh loon tujhe,
+Teri khamoshi bhi mohabbat lage…
+
+Tere kandhe pe sar rakh kar,
+Waqt ko rok loon zara,
+Jo pal tere sang guzre,
+Unko bana loon main dua…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tujh mein khone laga,
+Teri har ek aadat se,
+Pyaar hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+[Bridge]
+
+Agar kal badal jaaye,
+Agar duniya chhoot jaaye,
+Tera haath mere haath mein ho,
+Toh dil phir bhi muskuraaye…
+
+Na chaahun main daulat,
+Na chaahun koi aasman,
+Tu rahe mere paas,
+Toh tu hi mera jahaan…
+
+[Final Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har janam hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri dua, tu hi mera armaan…
+
+Tere saath, dhalna hai mujhe,
+Tere saath hi guzre har shaam,
+Aakhri saans tak bas tu rahe,
+Aur tera naam… mere naam ke saath…
+
+[Outro]
+
+Hmmm…
+Tu jo mila…
+Toh sab mil gaya…
+Tere saath…
+Mera jahaan…
+<|im_end|>
+<|im_start|>assistant
+<think>
+bpm: 62
+duration: 250
+keyscale: B♭ major
+language: hi
+timesignature: 4
+</think>
+
+
+2026-08-15 20:48:13.267 | INFO     | acestep.llm_inference:_run_mlx_single_native:3514 - MLX native: pre-transitioned FSM to CODES_GENERATION (native fast path)
+2026-08-15 20:48:13.268 | INFO     | acestep.llm_inference:_build_unconditional_prompt:395 - CFG unconditional prompt (phase=codes, is_batch=False, negative_prompt='NO USER INPUT'):
+<|im_start|>system
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+<|im_end|>
+<|im_start|>user
+NO USER INPUT<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+
+2026-08-15 20:48:13.506 | INFO     | acestep.llm_inference:_run_mlx_single_native:3571 - MLX native prefill: 860 tokens (cond=827, uncond=33) in 0.24s (3600.6 tok/s)
+MLX CFG Gen (native):   0%|          | 0/1260 [00:00<?, ?tok/s]MLX CFG Gen (native):   1%|          | 7/1260 [00:00<00:20, 60.07tok/s]MLX CFG Gen (native):   1%|          | 14/1260 [00:00<00:22, 55.35tok/s]MLX CFG Gen (native):   2%|▏         | 20/1260 [00:00<00:23, 52.54tok/s]MLX CFG Gen (native):   2%|▏         | 26/1260 [00:00<00:23, 51.79tok/s]MLX CFG Gen (native):   3%|▎         | 32/1260 [00:00<00:23, 51.75tok/s]MLX CFG Gen (native):   3%|▎         | 38/1260 [00:00<00:24, 50.41tok/s]MLX CFG Gen (native):   3%|▎         | 44/1260 [00:00<00:24, 50.27tok/s]MLX CFG Gen (native):   4%|▍         | 50/1260 [00:00<00:24, 49.82tok/s]MLX CFG Gen (native):   4%|▍         | 55/1260 [00:01<00:24, 49.39tok/s]MLX CFG Gen (native):   5%|▍         | 61/1260 [00:01<00:24, 49.66tok/s]MLX CFG Gen (native):   5%|▌         | 67/1260 [00:01<00:23, 50.08tok/s]MLX CFG Gen (native):   6%|▌         | 73/1260 [00:01<00:23, 50.31tok/s]MLX CFG Gen (native):   6%|▋         | 79/1260 [00:01<00:23, 50.11tok/s]MLX CFG Gen (native):   7%|▋         | 85/1260 [00:01<00:23, 49.67tok/s]MLX CFG Gen (native):   7%|▋         | 90/1260 [00:01<00:23, 49.32tok/s]MLX CFG Gen (native):   8%|▊         | 96/1260 [00:01<00:23, 49.53tok/s]MLX CFG Gen (native):   8%|▊         | 102/1260 [00:02<00:23, 49.64tok/s]MLX CFG Gen (native):   8%|▊         | 107/1260 [00:02<00:23, 49.68tok/s]MLX CFG Gen (native):   9%|▉         | 112/1260 [00:02<00:23, 49.55tok/s]MLX CFG Gen (native):   9%|▉         | 118/1260 [00:02<00:22, 49.81tok/s]MLX CFG Gen (native):  10%|▉         | 124/1260 [00:02<00:22, 50.02tok/s]MLX CFG Gen (native):  10%|█         | 129/1260 [00:02<00:22, 49.91tok/s]MLX CFG Gen (native):  11%|█         | 134/1260 [00:02<00:22, 49.63tok/s]MLX CFG Gen (native):  11%|█         | 139/1260 [00:02<00:22, 49.19tok/s]MLX CFG Gen (native):  11%|█▏        | 144/1260 [00:02<00:22, 49.12tok/s]MLX CFG Gen (native):  12%|█▏        | 149/1260 [00:02<00:22, 49.26tok/s]MLX CFG Gen (native):  12%|█▏        | 154/1260 [00:03<00:22, 49.26tok/s]MLX CFG Gen (native):  13%|█▎        | 159/1260 [00:03<00:22, 49.31tok/s]MLX CFG Gen (native):  13%|█▎        | 164/1260 [00:03<00:22, 49.42tok/s]MLX CFG Gen (native):  13%|█▎        | 169/1260 [00:03<00:22, 49.54tok/s]MLX CFG Gen (native):  14%|█▍        | 175/1260 [00:03<00:21, 49.73tok/s]MLX CFG Gen (native):  14%|█▍        | 181/1260 [00:03<00:21, 49.85tok/s]MLX CFG Gen (native):  15%|█▍        | 186/1260 [00:03<00:21, 49.79tok/s]MLX CFG Gen (native):  15%|█▌        | 191/1260 [00:03<00:21, 49.60tok/s]MLX CFG Gen (native):  16%|█▌        | 196/1260 [00:03<00:21, 49.32tok/s]MLX CFG Gen (native):  16%|█▌        | 201/1260 [00:04<00:22, 47.65tok/s]MLX CFG Gen (native):  16%|█▋        | 206/1260 [00:04<00:22, 47.35tok/s]MLX CFG Gen (native):  17%|█▋        | 211/1260 [00:04<00:22, 47.14tok/s]MLX CFG Gen (native):  17%|█▋        | 216/1260 [00:04<00:22, 46.63tok/s]MLX CFG Gen (native):  18%|█▊        | 221/1260 [00:04<00:22, 46.12tok/s]MLX CFG Gen (native):  18%|█▊        | 226/1260 [00:04<00:22, 45.09tok/s]MLX CFG Gen (native):  18%|█▊        | 231/1260 [00:04<00:22, 45.30tok/s]MLX CFG Gen (native):  19%|█▊        | 236/1260 [00:04<00:22, 44.82tok/s]MLX CFG Gen (native):  19%|█▉        | 241/1260 [00:04<00:22, 45.42tok/s]MLX CFG Gen (native):  20%|█▉        | 246/1260 [00:05<00:22, 45.51tok/s]MLX CFG Gen (native):  20%|█▉        | 251/1260 [00:05<00:22, 45.52tok/s]MLX CFG Gen (native):  20%|██        | 256/1260 [00:05<00:22, 45.62tok/s]MLX CFG Gen (native):  21%|██        | 261/1260 [00:05<00:21, 45.48tok/s]MLX CFG Gen (native):  21%|██        | 266/1260 [00:05<00:21, 45.39tok/s]MLX CFG Gen (native):  22%|██▏       | 271/1260 [00:05<00:21, 45.64tok/s]MLX CFG Gen (native):  22%|██▏       | 276/1260 [00:05<00:21, 45.97tok/s]MLX CFG Gen (native):  22%|██▏       | 281/1260 [00:05<00:21, 45.53tok/s]MLX CFG Gen (native):  23%|██▎       | 286/1260 [00:05<00:21, 45.92tok/s]MLX CFG Gen (native):  23%|██▎       | 291/1260 [00:06<00:21, 45.91tok/s]MLX CFG Gen (native):  23%|██▎       | 296/1260 [00:06<00:20, 45.99tok/s]MLX CFG Gen (native):  24%|██▍       | 301/1260 [00:06<00:20, 46.18tok/s]MLX CFG Gen (native):  24%|██▍       | 306/1260 [00:06<00:20, 46.22tok/s]MLX CFG Gen (native):  25%|██▍       | 311/1260 [00:06<00:20, 46.33tok/s]MLX CFG Gen (native):  25%|██▌       | 316/1260 [00:06<00:20, 46.45tok/s]MLX CFG Gen (native):  25%|██▌       | 321/1260 [00:06<00:20, 46.33tok/s]MLX CFG Gen (native):  26%|██▌       | 326/1260 [00:06<00:20, 46.41tok/s]MLX CFG Gen (native):  26%|██▋       | 331/1260 [00:06<00:20, 46.43tok/s]MLX CFG Gen (native):  27%|██▋       | 336/1260 [00:06<00:19, 46.28tok/s]MLX CFG Gen (native):  27%|██▋       | 341/1260 [00:07<00:19, 46.40tok/s]MLX CFG Gen (native):  27%|██▋       | 346/1260 [00:07<00:19, 46.37tok/s]MLX CFG Gen (native):  28%|██▊       | 351/1260 [00:07<00:19, 46.52tok/s]MLX CFG Gen (native):  28%|██▊       | 356/1260 [00:07<00:19, 45.40tok/s]MLX CFG Gen (native):  29%|██▊       | 361/1260 [00:07<00:19, 45.32tok/s]MLX CFG Gen (native):  29%|██▉       | 366/1260 [00:07<00:19, 45.61tok/s]MLX CFG Gen (native):  29%|██▉       | 371/1260 [00:07<00:19, 45.94tok/s]MLX CFG Gen (native):  30%|██▉       | 376/1260 [00:07<00:19, 45.72tok/s]MLX CFG Gen (native):  30%|███       | 381/1260 [00:07<00:19, 45.73tok/s]MLX CFG Gen (native):  31%|███       | 386/1260 [00:08<00:19, 45.83tok/s]MLX CFG Gen (native):  31%|███       | 391/1260 [00:08<00:19, 45.74tok/s]MLX CFG Gen (native):  31%|███▏      | 396/1260 [00:08<00:18, 46.06tok/s]MLX CFG Gen (native):  32%|███▏      | 401/1260 [00:08<00:18, 46.33tok/s]MLX CFG Gen (native):  32%|███▏      | 406/1260 [00:08<00:18, 46.54tok/s]MLX CFG Gen (native):  33%|███▎      | 411/1260 [00:08<00:18, 46.07tok/s]MLX CFG Gen (native):  33%|███▎      | 416/1260 [00:08<00:18, 45.79tok/s]MLX CFG Gen (native):  33%|███▎      | 421/1260 [00:08<00:18, 45.89tok/s]MLX CFG Gen (native):  34%|███▍      | 426/1260 [00:08<00:18, 45.78tok/s]MLX CFG Gen (native):  34%|███▍      | 431/1260 [00:09<00:18, 45.81tok/s]MLX CFG Gen (native):  35%|███▍      | 436/1260 [00:09<00:17, 45.78tok/s]MLX CFG Gen (native):  35%|███▌      | 441/1260 [00:09<00:17, 45.75tok/s]MLX CFG Gen (native):  35%|███▌      | 446/1260 [00:09<00:17, 46.02tok/s]MLX CFG Gen (native):  36%|███▌      | 451/1260 [00:09<00:17, 46.28tok/s]MLX CFG Gen (native):  36%|███▌      | 456/1260 [00:09<00:17, 45.38tok/s]MLX CFG Gen (native):  37%|███▋      | 461/1260 [00:09<00:17, 45.72tok/s]MLX CFG Gen (native):  37%|███▋      | 466/1260 [00:09<00:17, 45.96tok/s]MLX CFG Gen (native):  37%|███▋      | 471/1260 [00:09<00:17, 46.00tok/s]MLX CFG Gen (native):  38%|███▊      | 476/1260 [00:10<00:17, 45.93tok/s]MLX CFG Gen (native):  38%|███▊      | 481/1260 [00:10<00:17, 44.93tok/s]MLX CFG Gen (native):  39%|███▊      | 486/1260 [00:10<00:17, 44.97tok/s]MLX CFG Gen (native):  39%|███▉      | 491/1260 [00:10<00:16, 45.25tok/s]MLX CFG Gen (native):  39%|███▉      | 496/1260 [00:10<00:16, 45.61tok/s]MLX CFG Gen (native):  40%|███▉      | 501/1260 [00:10<00:16, 45.82tok/s]MLX CFG Gen (native):  40%|████      | 506/1260 [00:10<00:16, 46.00tok/s]MLX CFG Gen (native):  41%|████      | 511/1260 [00:10<00:16, 46.00tok/s]MLX CFG Gen (native):  41%|████      | 516/1260 [00:10<00:16, 45.48tok/s]MLX CFG Gen (native):  41%|████▏     | 521/1260 [00:11<00:16, 45.53tok/s]MLX CFG Gen (native):  42%|████▏     | 526/1260 [00:11<00:16, 45.47tok/s]MLX CFG Gen (native):  42%|████▏     | 531/1260 [00:11<00:16, 45.41tok/s]MLX CFG Gen (native):  43%|████▎     | 536/1260 [00:11<00:15, 45.45tok/s]MLX CFG Gen (native):  43%|████▎     | 541/1260 [00:11<00:15, 45.73tok/s]MLX CFG Gen (native):  43%|████▎     | 546/1260 [00:11<00:15, 45.87tok/s]MLX CFG Gen (native):  44%|████▎     | 551/1260 [00:11<00:15, 46.01tok/s]MLX CFG Gen (native):  44%|████▍     | 556/1260 [00:11<00:15, 46.09tok/s]MLX CFG Gen (native):  45%|████▍     | 561/1260 [00:11<00:15, 46.09tok/s]MLX CFG Gen (native):  45%|████▍     | 566/1260 [00:12<00:15, 45.83tok/s]MLX CFG Gen (native):  45%|████▌     | 571/1260 [00:12<00:15, 45.67tok/s]MLX CFG Gen (native):  46%|████▌     | 576/1260 [00:12<00:14, 45.66tok/s]MLX CFG Gen (native):  46%|████▌     | 581/1260 [00:12<00:14, 45.77tok/s]MLX CFG Gen (native):  47%|████▋     | 586/1260 [00:12<00:14, 45.87tok/s]MLX CFG Gen (native):  47%|████▋     | 591/1260 [00:12<00:14, 45.96tok/s]MLX CFG Gen (native):  47%|████▋     | 596/1260 [00:12<00:14, 45.99tok/s]MLX CFG Gen (native):  48%|████▊     | 601/1260 [00:12<00:14, 46.03tok/s]MLX CFG Gen (native):  48%|████▊     | 606/1260 [00:12<00:14, 45.85tok/s]MLX CFG Gen (native):  48%|████▊     | 611/1260 [00:12<00:14, 45.51tok/s]MLX CFG Gen (native):  49%|████▉     | 616/1260 [00:13<00:14, 45.38tok/s]MLX CFG Gen (native):  49%|████▉     | 621/1260 [00:13<00:14, 45.29tok/s]MLX CFG Gen (native):  50%|████▉     | 626/1260 [00:13<00:14, 45.12tok/s]MLX CFG Gen (native):  50%|█████     | 631/1260 [00:13<00:13, 45.30tok/s]MLX CFG Gen (native):  50%|█████     | 636/1260 [00:13<00:13, 45.51tok/s]MLX CFG Gen (native):  51%|█████     | 641/1260 [00:13<00:13, 45.63tok/s]MLX CFG Gen (native):  51%|█████▏    | 646/1260 [00:13<00:13, 45.64tok/s]MLX CFG Gen (native):  52%|█████▏    | 651/1260 [00:13<00:13, 45.55tok/s]MLX CFG Gen (native):  52%|█████▏    | 656/1260 [00:13<00:13, 45.71tok/s]MLX CFG Gen (native):  52%|█████▏    | 661/1260 [00:14<00:13, 45.84tok/s]MLX CFG Gen (native):  53%|█████▎    | 666/1260 [00:14<00:12, 45.88tok/s]MLX CFG Gen (native):  53%|█████▎    | 671/1260 [00:14<00:13, 43.33tok/s]MLX CFG Gen (native):  54%|█████▎    | 676/1260 [00:14<00:13, 44.12tok/s]MLX CFG Gen (native):  54%|█████▍    | 681/1260 [00:14<00:12, 44.76tok/s]MLX CFG Gen (native):  54%|█████▍    | 686/1260 [00:14<00:12, 45.09tok/s]MLX CFG Gen (native):  55%|█████▍    | 691/1260 [00:14<00:12, 44.66tok/s]MLX CFG Gen (native):  55%|█████▌    | 696/1260 [00:14<00:12, 44.58tok/s]MLX CFG Gen (native):  56%|█████▌    | 701/1260 [00:14<00:12, 44.77tok/s]MLX CFG Gen (native):  56%|█████▌    | 706/1260 [00:15<00:12, 44.85tok/s]MLX CFG Gen (native):  56%|█████▋    | 711/1260 [00:15<00:12, 43.84tok/s]MLX CFG Gen (native):  57%|█████▋    | 716/1260 [00:15<00:12, 44.04tok/s]MLX CFG Gen (native):  57%|█████▋    | 721/1260 [00:15<00:12, 44.00tok/s]MLX CFG Gen (native):  58%|█████▊    | 726/1260 [00:15<00:12, 43.83tok/s]MLX CFG Gen (native):  58%|█████▊    | 731/1260 [00:15<00:11, 44.50tok/s]MLX CFG Gen (native):  58%|█████▊    | 736/1260 [00:15<00:11, 44.22tok/s]MLX CFG Gen (native):  59%|█████▉    | 741/1260 [00:15<00:11, 44.03tok/s]MLX CFG Gen (native):  59%|█████▉    | 746/1260 [00:16<00:11, 44.65tok/s]MLX CFG Gen (native):  60%|█████▉    | 751/1260 [00:16<00:11, 45.01tok/s]MLX CFG Gen (native):  60%|██████    | 756/1260 [00:16<00:11, 45.07tok/s]MLX CFG Gen (native):  60%|██████    | 761/1260 [00:16<00:11, 45.24tok/s]MLX CFG Gen (native):  61%|██████    | 766/1260 [00:16<00:10, 45.50tok/s]MLX CFG Gen (native):  61%|██████    | 771/1260 [00:16<00:10, 44.88tok/s]MLX CFG Gen (native):  62%|██████▏   | 776/1260 [00:16<00:10, 45.25tok/s]MLX CFG Gen (native):  62%|██████▏   | 781/1260 [00:16<00:10, 45.51tok/s]MLX CFG Gen (native):  62%|██████▏   | 786/1260 [00:16<00:10, 45.76tok/s]MLX CFG Gen (native):  63%|██████▎   | 791/1260 [00:16<00:10, 45.99tok/s]MLX CFG Gen (native):  63%|██████▎   | 796/1260 [00:17<00:10, 45.74tok/s]MLX CFG Gen (native):  64%|██████▎   | 801/1260 [00:17<00:10, 45.70tok/s]MLX CFG Gen (native):  64%|██████▍   | 806/1260 [00:17<00:10, 45.28tok/s]MLX CFG Gen (native):  64%|██████▍   | 811/1260 [00:17<00:09, 45.38tok/s]MLX CFG Gen (native):  65%|██████▍   | 816/1260 [00:17<00:09, 45.55tok/s]MLX CFG Gen (native):  65%|██████▌   | 821/1260 [00:17<00:09, 45.77tok/s]MLX CFG Gen (native):  66%|██████▌   | 826/1260 [00:17<00:09, 45.94tok/s]MLX CFG Gen (native):  66%|██████▌   | 831/1260 [00:17<00:09, 46.08tok/s]MLX CFG Gen (native):  66%|██████▋   | 836/1260 [00:17<00:09, 46.12tok/s]MLX CFG Gen (native):  67%|██████▋   | 841/1260 [00:18<00:09, 46.10tok/s]MLX CFG Gen (native):  67%|██████▋   | 846/1260 [00:18<00:09, 45.93tok/s]MLX CFG Gen (native):  68%|██████▊   | 851/1260 [00:18<00:08, 45.83tok/s]MLX CFG Gen (native):  68%|██████▊   | 856/1260 [00:18<00:08, 45.55tok/s]MLX CFG Gen (native):  68%|██████▊   | 861/1260 [00:18<00:08, 45.60tok/s]MLX CFG Gen (native):  69%|██████▊   | 866/1260 [00:18<00:08, 45.47tok/s]MLX CFG Gen (native):  69%|██████▉   | 871/1260 [00:18<00:08, 45.61tok/s]MLX CFG Gen (native):  70%|██████▉   | 876/1260 [00:18<00:08, 45.73tok/s]MLX CFG Gen (native):  70%|██████▉   | 881/1260 [00:18<00:08, 45.84tok/s]MLX CFG Gen (native):  70%|███████   | 886/1260 [00:19<00:08, 45.84tok/s]MLX CFG Gen (native):  71%|███████   | 891/1260 [00:19<00:08, 45.58tok/s]MLX CFG Gen (native):  71%|███████   | 896/1260 [00:19<00:08, 45.34tok/s]MLX CFG Gen (native):  72%|███████▏  | 901/1260 [00:19<00:07, 45.42tok/s]MLX CFG Gen (native):  72%|███████▏  | 906/1260 [00:19<00:07, 45.45tok/s]MLX CFG Gen (native):  72%|███████▏  | 911/1260 [00:19<00:07, 45.55tok/s]MLX CFG Gen (native):  73%|███████▎  | 916/1260 [00:19<00:07, 45.67tok/s]MLX CFG Gen (native):  73%|███████▎  | 921/1260 [00:19<00:07, 45.34tok/s]MLX CFG Gen (native):  73%|███████▎  | 926/1260 [00:19<00:07, 45.45tok/s]MLX CFG Gen (native):  74%|███████▍  | 931/1260 [00:20<00:07, 45.61tok/s]MLX CFG Gen (native):  74%|███████▍  | 936/1260 [00:20<00:07, 45.57tok/s]MLX CFG Gen (native):  75%|███████▍  | 941/1260 [00:20<00:07, 45.42tok/s]MLX CFG Gen (native):  75%|███████▌  | 946/1260 [00:20<00:06, 45.46tok/s]MLX CFG Gen (native):  75%|███████▌  | 951/1260 [00:20<00:06, 45.31tok/s]MLX CFG Gen (native):  76%|███████▌  | 956/1260 [00:20<00:06, 45.39tok/s]MLX CFG Gen (native):  76%|███████▋  | 961/1260 [00:20<00:06, 45.50tok/s]MLX CFG Gen (native):  77%|███████▋  | 966/1260 [00:20<00:06, 45.19tok/s]MLX CFG Gen (native):  77%|███████▋  | 971/1260 [00:20<00:06, 44.66tok/s]MLX CFG Gen (native):  77%|███████▋  | 976/1260 [00:21<00:06, 44.98tok/s]MLX CFG Gen (native):  78%|███████▊  | 981/1260 [00:21<00:06, 45.05tok/s]MLX CFG Gen (native):  78%|███████▊  | 986/1260 [00:21<00:06, 45.04tok/s]MLX CFG Gen (native):  79%|███████▊  | 991/1260 [00:21<00:05, 45.04tok/s]MLX CFG Gen (native):  79%|███████▉  | 996/1260 [00:21<00:06, 43.79tok/s]MLX CFG Gen (native):  79%|███████▉  | 1001/1260 [00:21<00:05, 44.09tok/s]MLX CFG Gen (native):  80%|███████▉  | 1006/1260 [00:21<00:05, 44.42tok/s]MLX CFG Gen (native):  80%|████████  | 1011/1260 [00:21<00:05, 44.66tok/s]MLX CFG Gen (native):  81%|████████  | 1016/1260 [00:21<00:05, 44.83tok/s]MLX CFG Gen (native):  81%|████████  | 1021/1260 [00:22<00:05, 44.95tok/s]MLX CFG Gen (native):  81%|████████▏ | 1026/1260 [00:22<00:05, 44.37tok/s]MLX CFG Gen (native):  82%|████████▏ | 1031/1260 [00:22<00:05, 44.38tok/s]MLX CFG Gen (native):  82%|████████▏ | 1036/1260 [00:22<00:05, 44.33tok/s]MLX CFG Gen (native):  83%|████████▎ | 1041/1260 [00:22<00:04, 44.30tok/s]MLX CFG Gen (native):  83%|████████▎ | 1046/1260 [00:22<00:04, 44.44tok/s]MLX CFG Gen (native):  83%|████████▎ | 1051/1260 [00:22<00:04, 44.52tok/s]MLX CFG Gen (native):  84%|████████▍ | 1056/1260 [00:22<00:04, 44.57tok/s]MLX CFG Gen (native):  84%|████████▍ | 1061/1260 [00:22<00:04, 44.67tok/s]MLX CFG Gen (native):  85%|████████▍ | 1066/1260 [00:23<00:04, 44.77tok/s]MLX CFG Gen (native):  85%|████████▌ | 1071/1260 [00:23<00:04, 44.77tok/s]MLX CFG Gen (native):  85%|████████▌ | 1076/1260 [00:23<00:04, 44.64tok/s]MLX CFG Gen (native):  86%|████████▌ | 1081/1260 [00:23<00:04, 44.53tok/s]MLX CFG Gen (native):  86%|████████▌ | 1086/1260 [00:23<00:03, 44.08tok/s]MLX CFG Gen (native):  87%|████████▋ | 1091/1260 [00:23<00:03, 44.21tok/s]MLX CFG Gen (native):  87%|████████▋ | 1096/1260 [00:23<00:03, 44.31tok/s]MLX CFG Gen (native):  87%|████████▋ | 1101/1260 [00:23<00:03, 44.27tok/s]MLX CFG Gen (native):  88%|████████▊ | 1106/1260 [00:23<00:03, 44.26tok/s]MLX CFG Gen (native):  88%|████████▊ | 1111/1260 [00:24<00:03, 44.31tok/s]MLX CFG Gen (native):  89%|████████▊ | 1116/1260 [00:24<00:03, 44.27tok/s]MLX CFG Gen (native):  89%|████████▉ | 1121/1260 [00:24<00:03, 44.09tok/s]MLX CFG Gen (native):  89%|████████▉ | 1126/1260 [00:24<00:03, 44.14tok/s]MLX CFG Gen (native):  90%|████████▉ | 1131/1260 [00:24<00:02, 43.88tok/s]MLX CFG Gen (native):  90%|█████████ | 1136/1260 [00:24<00:02, 43.92tok/s]MLX CFG Gen (native):  91%|█████████ | 1141/1260 [00:24<00:02, 43.95tok/s]MLX CFG Gen (native):  91%|█████████ | 1146/1260 [00:24<00:02, 44.16tok/s]MLX CFG Gen (native):  91%|█████████▏| 1151/1260 [00:24<00:02, 44.30tok/s]MLX CFG Gen (native):  92%|█████████▏| 1156/1260 [00:25<00:02, 44.45tok/s]MLX CFG Gen (native):  92%|█████████▏| 1161/1260 [00:25<00:02, 44.32tok/s]MLX CFG Gen (native):  93%|█████████▎| 1166/1260 [00:25<00:02, 44.17tok/s]MLX CFG Gen (native):  93%|█████████▎| 1171/1260 [00:25<00:02, 44.13tok/s]MLX CFG Gen (native):  93%|█████████▎| 1176/1260 [00:25<00:01, 43.97tok/s]MLX CFG Gen (native):  94%|█████████▎| 1181/1260 [00:25<00:01, 44.06tok/s]MLX CFG Gen (native):  94%|█████████▍| 1186/1260 [00:25<00:01, 44.11tok/s]MLX CFG Gen (native):  95%|█████████▍| 1191/1260 [00:25<00:01, 44.14tok/s]MLX CFG Gen (native):  95%|█████████▍| 1196/1260 [00:26<00:01, 44.27tok/s]MLX CFG Gen (native):  95%|█████████▌| 1201/1260 [00:26<00:01, 44.35tok/s]MLX CFG Gen (native):  96%|█████████▌| 1206/1260 [00:26<00:01, 44.35tok/s]MLX CFG Gen (native):  96%|█████████▌| 1211/1260 [00:26<00:01, 44.28tok/s]MLX CFG Gen (native):  97%|█████████▋| 1216/1260 [00:26<00:00, 44.06tok/s]MLX CFG Gen (native):  97%|█████████▋| 1221/1260 [00:26<00:00, 43.87tok/s]MLX CFG Gen (native):  97%|█████████▋| 1226/1260 [00:26<00:00, 41.88tok/s]MLX CFG Gen (native):  98%|█████████▊| 1231/1260 [00:26<00:00, 41.85tok/s]MLX CFG Gen (native):  98%|█████████▊| 1236/1260 [00:26<00:00, 42.52tok/s]MLX CFG Gen (native):  98%|█████████▊| 1241/1260 [00:27<00:00, 42.60tok/s]MLX CFG Gen (native):  99%|█████████▉| 1246/1260 [00:27<00:00, 42.34tok/s]MLX CFG Gen (native):  99%|█████████▉| 1251/1260 [00:27<00:00, 41.88tok/s]MLX CFG Gen (native):  99%|█████████▉| 1251/1260 [00:27<00:00, 45.81tok/s]
+2026-08-15 20:48:40.816 | INFO     | acestep.llm_inference:_run_mlx_single_native:3711 - MLX native generation complete: 1251 tokens in 27.31s (45.8 tok/s) | prefill 0.24s + decode 27.31s = 27.55s total
+2026-08-15 20:48:40.819 | DEBUG    | acestep.llm_inference:parse_lm_output:2813 - Debug output text: <|audio_code_25319|><|audio_code_35847|><|audio_code_13271|><|audio_code_1991|><|audio_code_11222|><|audio_code_11230|><|audio_code_11717|><|audio_code_58318|><|audio_code_18640|><|audio_code_46022|><|audio_code_40543|><|audio_code_16191|><|audio_code_30606|><|audio_code_16005|><|audio_code_27751|><|audio_code_30303|><|audio_code_28100|><|audio_code_36639|><|audio_code_12415|><|audio_code_27711|><|audio_code_18455|><|audio_code_36773|><|audio_code_18047|><|audio_code_37163|><|audio_code_12605|><|audio_code_51597|><|audio_code_48620|><|audio_code_21064|><|audio_code_46071|><|audio_code_40543|><|audio_code_37703|><|audio_code_36811|><|audio_code_16250|><|audio_code_2197|><|audio_code_25108|><|audio_code_25443|><|audio_code_62787|><|audio_code_26626|><|audio_code_25648|><|audio_code_35882|><|audio_code_17699|><|audio_code_52512|><|audio_code_31552|><|audio_code_15177|><|audio_code_52684|><|audio_code_12674|><|audio_code_31432|><|audio_code_20923|><|audio_code_4879|><|audio_code_38511|><|audio_code_24548|><|audio_code_12414|><|audio_code_7198|><|audio_code_55847|><|audio_code_14143|><|audio_code_397|><|audio_code_12327|><|audio_code_45590|><|audio_code_15423|><|audio_code_51135|><|audio_code_48991|><|audio_code_61015|><|audio_code_38927|><|audio_code_2623|><|audio_code_23967|><|audio_code_28679|><|audio_code_13836|><|audio_code_52992|><|audio_code_26666|><|audio_code_56917|><|audio_code_22896|><|audio_code_28146|><|audio_code_24034|><|audio_code_37362|><|audio_code_20472|><|audio_code_56777|><|audio_code_11155|><|audio_code_40834|><|audio_code_51585|><|audio_code_38272|><|audio_code_24000|><|audio_code_24001|><|audio_code_55872|><|audio_code_48638|><|audio_code_11247|><|audio_code_12726|><|audio_code_49551|><|audio_code_38112|><|audio_code_28187|><|audio_code_35996|><|audio_code_48675|><|audio_code_61341|><|audio_code_31872|><|audio_code_1392|><|audio_code_38824|><|audio_code_25488|><|audio_code_6464|><|audio_code_54760|><|audio_code_38280|><|audio_code_22912|><|audio_code_41970|><|audio_code_3072|><|audio_code_23015|><|audio_code_26289|><|audio_code_22543|><|audio_code_56262|><|audio_code_50792|><|audio_code_32931|><|audio_code_50698|><|audio_code_50817|><|audio_code_2442|><|audio_code_17705|><|audio_code_63368|><|audio_code_22960|><|audio_code_25520|><|audio_code_62920|><|audio_code_20914|><|audio_code_8104|><|audio_code_39872|><|audio_code_20417|><|audio_code_57820|><|audio_code_52768|><|audio_code_18045|><|audio_code_11779|><|audio_code_50472|><|audio_code_46089|><|audio_code_12094|><|audio_code_50150|><|audio_code_19287|><|audio_code_2504|><|audio_code_28026|><|audio_code_1431|><|audio_code_20|><|audio_code_53719|><|audio_code_54843|><|audio_code_25610|><|audio_code_695|><|audio_code_11870|><|audio_code_37377|><|audio_code_11266|><|audio_code_62980|><|audio_code_15967|><|audio_code_62010|><|audio_code_59451|><|audio_code_25519|><|audio_code_11095|><|audio_code_41897|><|audio_code_7552|><|audio_code_4016|><|audio_code_26081|><|audio_code_25552|><|audio_code_19448|><|audio_code_52208|><|audio_code_36312|><|audio_code_25544|><|audio_code_6584|><|audio_code_38824|><|audio_code_25552|><|audio_code_7104|><|audio_code_3983|><|audio_code_1552|><|audio_code_63923|><|audio_code_12239|><|audio_code_52343|><|audio_code_39862|><|audio_code_13521|><|audio_code_63904|><|audio_code_6592|><|audio_code_56296|><|audio_code_5248|><|audio_code_34817|><|audio_code_6688|><|audio_code_10296|><|audio_code_9896|><|audio_code_13504|><|audio_code_35688|><|audio_code_23992|><|audio_code_15346|><|audio_code_50116|><|audio_code_4801|><|audio_code_16194|><|audio_code_13202|><|audio_code_42175|><|audio_code_40375|><|audio_code_4865|><|audio_code_3528|><|audio_code_20968|><|audio_code_53719|><|audio_code_23209|><|audio_code_33595|><|audio_code_1176|><|audio_code_55856|><|audio_code_13504|><|audio_code_59626|><|audio_code_12664|><|audio_code_23546|><|audio_code_19403|><|audio_code_27216|><|audio_code_45466|><|audio_code_25784|><|audio_code_36335|><|audio_code_52164|><|audio_code_5663|><|audio_code_15406|><|audio_code_1144|><|audio_code_3605|><|audio_code_22633|><|audio_code_47417|><|audio_code_2630|><|audio_code_58511|><|audio_code_45375|><|audio_code_11175|><|audio_code_11771|><|audio_code_25208|><|audio_code_63445|><|audio_code_50673|><|audio_code_36815|><|audio_code_63940|><|audio_code_24736|><|audio_code_46949|><|audio_code_58391|><|audio_code_21014|><|audio_code_41996|><|audio_code_8368|><|audio_code_34553|><|audio_code_39044|><|audio_code_40463|><|audio_code_50911|><|audio_code_58455|><|audio_code_51735|><|audio_code_24046|><|audio_code_46542|><|audio_code_31960|><|audio_code_38397|><|audio_code_49059|><|audio_code_10221|><|audio_code_24224|><|audio_code_33726|><|audio_code_27153|><|audio_code_63444|><|audio_code_9723|><|audio_code_10030|><|audio_code_59383|><|audio_code_33426|><|audio_code_53552|><|audio_code_12936|><|audio_code_11498|><|audio_code_25469|><|audio_code_13563|><|audio_code_10488|><|audio_code_28944|><|audio_code_31259|><|audio_code_52686|><|audio_code_16848|><|audio_code_16378|><|audio_code_34536|><|audio_code_39947|><|audio_code_18459|><|audio_code_16318|><|audio_code_60978|><|audio_code_7840|><|audio_code_538|><|audio_code_4920|><|audio_code_48025|><|audio_code_8715|><|audio_code_56258|><|audio_code_21114|><|audio_code_16072|><|audio_code_50361|><|audio_code_16016|><|audio_code_49164|><|audio_code_63447|><|audio_code_12728|><|audio_code_3480|><|audio_code_63976|><|audio_code_27592|><|audio_code_2517|><|audio_code_25999|><|audio_code_6098|><|audio_code_13450|><|audio_code_9199|><|audio_code_18378|><|audio_code_51111|><|audio_code_2231|><|audio_code_33807|><|audio_code_41461|><|audio_code_30213|><|audio_code_63300|><|audio_code_42923|><|audio_code_28344|><|audio_code_62742|><|audio_code_23511|><|audio_code_59239|><|audio_code_58399|><|audio_code_22855|><|audio_code_63925|><|audio_code_25622|><|audio_code_14709|><|audio_code_13920|><|audio_code_260|><|audio_code_40957|><|audio_code_53735|><|audio_code_36548|><|audio_code_36374|><|audio_code_11235|><|audio_code_41574|><|audio_code_54931|><|audio_code_7042|><|audio_code_24224|><|audio_code_4287|><|audio_code_21334|><|audio_code_53686|><|audio_code_167|><|audio_code_1207|><|audio_code_25925|><|audio_code_35551|><|audio_code_37143|><|audio_code_35790|><|audio_code_38223|><|audio_code_49903|><|audio_code_8022|><|audio_code_37719|><|audio_code_36710|><|audio_code_33166|><|audio_code_50447|><|audio_code_37198|><|audio_code_20423|><|audio_code_50375|><|audio_code_37142|><|audio_code_35798|><|audio_code_38167|><|audio_code_37655|><|audio_code_33630|><|audio_code_37701|><|audio_code_12495|><|audio_code_37319|><|audio_code_40411|><|audio_code_46592|><|audio_code_56827|><|audio_code_18400|><|audio_code_22984|><|audio_code_53011|><|audio_code_13241|><|audio_code_25938|><|audio_code_27647|><|audio_code_16208|><|audio_code_37784|><|audio_code_53066|><|audio_code_40952|><|audio_code_54776|><|audio_code_1009|><|audio_code_23026|><|audio_code_50680|><|audio_code_2511|><|audio_code_13119|><|audio_code_63958|><|audio_code_62000|><|audio_code_16321|><|audio_code_58824|><|audio_code_55443|><|audio_code_282|><|audio_code_34418|><|audio_code_28013|><|audio_code_37331|><|audio_code_13244|><|audio_code_13649|><|audio_code_24808|><|audio_code_24042|><|audio_code_35792|><|audio_code_19394|><|audio_code_14282|><|audio_code_4880|><|audio_code_45012|><|audio_code_21413|><|audio_code_1583|><|audio_code_45575|><|audio_code_43271|><|audio_code_8679|><|audio_code_27975|><|audio_code_11775|><|audio_code_27181|><|audio_code_2415|><|audio_code_16471|><|audio_code_3719|><|audio_code_31207|><|audio_code_23315|><|audio_code_37894|><|audio_code_17218|><|audio_code_2296|><|audio_code_62594|><|audio_code_21490|><|audio_code_5079|><|audio_code_15871|><|audio_code_55750|><|audio_code_14464|><|audio_code_34281|><|audio_code_15826|><|audio_code_25081|><|audio_code_2160|><|audio_code_56263|><|audio_code_3103|><|audio_code_24023|><|audio_code_18921|><|audio_code_50125|><|audio_code_48564|><|audio_code_42383|><|audio_code_11205|><|audio_code_20463|><|audio_code_45951|><|audio_code_21999|><|audio_code_24042|><|audio_code_48351|><|audio_code_37343|><|audio_code_2321|><|audio_code_27392|><|audio_code_63459|><|audio_code_443|><|audio_code_176|><|audio_code_31384|><|audio_code_35246|><|audio_code_21299|><|audio_code_62287|><|audio_code_248|><|audio_code_18769|><|audio_code_13448|><|audio_code_12769|><|audio_code_49094|><|audio_code_58342|><|audio_code_17|><|audio_code_8679|><|audio_code_25375|><|audio_code_33846|><|audio_code_967|><|audio_code_58804|><|audio_code_46161|><|audio_code_28472|><|audio_code_25976|><|audio_code_4808|><|audio_code_46075|><|audio_code_40940|><|audio_code_62951|><|audio_code_18696|><|audio_code_48552|><|audio_code_2249|><|audio_code_13240|><|audio_code_62456|><|audio_code_2555|><|audio_code_17870|><|audio_code_25081|><|audio_code_63927|><|audio_code_38422|><|audio_code_19438|><|audio_code_57323|><|audio_code_2656|><|audio_code_6880|><|audio_code_13776|><|audio_code_1629|><|audio_code_63994|><|audio_code_24037|><|audio_code_20431|><|audio_code_2737|><|audio_code_47904|><|audio_code_8260|><|audio_code_57848|><|audio_code_49662|><|audio_code_24019|><|audio_code_25851|><|audio_code_973|><|audio_code_44759|><|audio_code_7677|><|audio_code_38519|><|audio_code_23535|><|audio_code_13512|><|audio_code_1162|><|audio_code_50848|><|audio_code_6848|><|audio_code_13456|><|audio_code_37340|><|audio_code_30015|><|audio_code_23416|><|audio_code_63948|><|audio_code_53755|><|audio_code_35771|><|audio_code_59854|><|audio_code_21382|><|audio_code_15294|><|audio_code_14308|><|audio_code_46079|><|audio_code_47063|><|audio_code_23879|><|audio_code_41342|><|audio_code_13656|><|audio_code_40680|><|audio_code_49282|><|audio_code_44098|><|audio_code_41730|><|audio_code_44865|><|audio_code_44425|><|audio_code_46513|><|audio_code_32129|><|audio_code_24505|><|audio_code_12736|><|audio_code_9600|><|audio_code_12736|><|audio_code_25537|><|audio_code_2542|><|audio_code_13040|><|audio_code_30901|><|audio_code_13512|><|audio_code_18987|><|audio_code_44602|><|audio_code_62926|><|audio_code_1457|><|audio_code_2680|><|audio_code_37393|><|audio_code_46242|><|audio_code_11905|><|audio_code_58325|><|audio_code_24061|><|audio_code_34000|><|audio_code_5504|><|audio_code_2548|><|audio_code_38233|><|audio_code_55196|><|audio_code_23015|><|audio_code_28858|><|audio_code_28333|><|audio_code_25960|><|audio_code_53518|><|audio_code_16329|><|audio_code_57282|><|audio_code_44938|><|audio_code_4152|><|audio_code_50336|><|audio_code_62879|><|audio_code_61309|><|audio_code_38584|><|audio_code_33348|><|audio_code_31376|><|audio_code_21865|><|audio_code_5594|><|audio_code_11258|><|audio_code_11770|><|audio_code_5564|><|audio_code_21991|><|audio_code_18454|><|audio_code_31719|><|audio_code_42147|><|audio_code_248|><|audio_code_18704|><|audio_code_20842|><|audio_code_27032|><|audio_code_2248|><|audio_code_48117|><|audio_code_11239|><|audio_code_52405|><|audio_code_37351|><|audio_code_39706|><|audio_code_63425|><|audio_code_37325|><|audio_code_24002|><|audio_code_16016|><|audio_code_15025|><|audio_code_61885|><|audio_code_495|><|audio_code_58383|><|audio_code_51663|><|audio_code_50159|><|audio_code_39553|><|audio_code_2547|><|audio_code_63832|><|audio_code_48189|><|audio_code_10519|><|audio_code_42046|><|audio_code_23877|><|audio_code_29905|><|audio_code_12488|><|audio_code_58810|><|audio_code_51130|><|audio_code_43977|><|audio_code_21992|><|audio_code_13521|><|audio_code_37922|><|audio_code_7563|><|audio_code_27754|><|audio_code_25784|><|audio_code_27897|><|audio_code_51420|><|audio_code_14465|><|audio_code_22957|><|audio_code_4018|><|audio_code_4856|><|audio_code_60865|><|audio_code_40388|><|audio_code_52515|><|audio_code_53754|><|audio_code_11762|><|audio_code_2618|><|audio_code_32818|><|audio_code_55627|><|audio_code_21640|><|audio_code_12148|><|audio_code_13338|><|audio_code_35952|><|audio_code_28400|><|audio_code_3224|><|audio_code_24932|><|audio_code_57403|><|audio_code_36806|><|audio_code_320|><|audio_code_15024|><|audio_code_1164|><|audio_code_23811|><|audio_code_50408|><|audio_code_4025|><|audio_code_38008|><|audio_code_13850|><|audio_code_1050|><|audio_code_2120|><|audio_code_24240|><|audio_code_14008|><|audio_code_30745|><|audio_code_48040|><|audio_code_8512|><|audio_code_5022|><|audio_code_28480|><|audio_code_52701|><|audio_code_18927|><|audio_code_60951|><|audio_code_20079|><|audio_code_15751|><|audio_code_12159|><|audio_code_55870|><|audio_code_26932|><|audio_code_61428|><|audio_code_58359|><|audio_code_42316|><|audio_code_47023|><|audio_code_15303|><|audio_code_35863|><|audio_code_51654|><|audio_code_5159|><|audio_code_11676|><|audio_code_56480|><|audio_code_56426|><|audio_code_6111|><|audio_code_15236|><|audio_code_16590|><|audio_code_30215|><|audio_code_38142|><|audio_code_10682|><|audio_code_16327|><|audio_code_28408|><|audio_code_4752|><|audio_code_49208|><|audio_code_39257|><|audio_code_26039|><|audio_code_9190|><|audio_code_60951|><|audio_code_51654|><|audio_code_61927|><|audio_code_3199|><|audio_code_43926|><|audio_code_927|><|audio_code_655|><|audio_code_54134|><|audio_code_3551|><|audio_code_647|><|audio_code_51534|><|audio_code_16223|><|audio_code_655|><|audio_code_54102|><|audio_code_3495|><|audio_code_143|><|audio_code_54094|><|audio_code_8559|><|audio_code_775|><|audio_code_2822|><|audio_code_13807|><|audio_code_15357|><|audio_code_26719|><|audio_code_49150|><|audio_code_40800|><|audio_code_34104|><|audio_code_1482|><|audio_code_25528|><|audio_code_3068|><|audio_code_16072|><|audio_code_42863|><|audio_code_33212|><|audio_code_12187|><|audio_code_45024|><|audio_code_8122|><|audio_code_28408|><|audio_code_17889|><|audio_code_4008|><|audio_code_11754|><|audio_code_63430|><|audio_code_6138|><|audio_code_63695|><|audio_code_26078|><|audio_code_15250|><|audio_code_15648|><|audio_code_52709|><|audio_code_772|><|audio_code_33712|><|audio_code_5672|><|audio_code_63487|><|audio_code_23878|><|audio_code_51186|><|audio_code_20951|><|audio_code_4792|><|audio_code_27896|><|audio_code_2540|><|audio_code_23528|><|audio_code_20942|><|audio_code_24004|><|audio_code_15088|><|audio_code_41415|><|audio_code_43023|><|audio_code_13359|><|audio_code_25598|><|audio_code_951|><|audio_code_14903|><|audio_code_46687|><|audio_code_30287|><|audio_code_49263|><|audio_code_20479|><|audio_code_23071|><|audio_code_25598|><|audio_code_38862|><|audio_code_60639|><|audio_code_21125|><|audio_code_49147|><|audio_code_22617|><|audio_code_53432|><|audio_code_45501|><|audio_code_38039|><|audio_code_50647|><|audio_code_53739|><|audio_code_56609|><|audio_code_22003|><|audio_code_7148|><|audio_code_2377|><|audio_code_33987|><|audio_code_12775|><|audio_code_17455|><|audio_code_55749|><|audio_code_18414|><|audio_code_53016|><|audio_code_23958|><|audio_code_28094|><|audio_code_8615|><|audio_code_14215|><|audio_code_25036|><|audio_code_62408|><|audio_code_57812|><|audio_code_48066|><|audio_code_961|><|audio_code_60472|><|audio_code_55809|><|audio_code_4688|><|audio_code_38136|><|audio_code_21472|><|audio_code_13226|><|audio_code_29226|><|audio_code_50232|><|audio_code_4728|><|audio_code_1811|><|audio_code_34078|><|audio_code_59214|><|audio_code_63282|><|audio_code_18880|><|audio_code_5083|><|audio_code_47586|><|audio_code_35820|><|audio_code_1412|><|audio_code_37944|><|audio_code_3080|><|audio_code_30745|><|audio_code_22810|><|audio_code_52809|><|audio_code_2672|><|audio_code_37905|><|audio_code_18625|><|audio_code_40259|><|audio_code_61946|><|audio_code_45565|><|audio_code_27771|><|audio_code_36575|><|audio_code_56632|><|audio_code_35802|><|audio_code_11242|><|audio_code_56260|><|audio_code_5562|><|audio_code_15349|><|audio_code_52170|><|audio_code_3329|><|audio_code_7989|><|audio_code_26785|><|audio_code_55399|><|audio_code_14083|><|audio_code_48638|><|audio_code_14959|><|audio_code_58911|><|audio_code_16582|><|audio_code_29783|><|audio_code_38022|><|audio_code_51142|><|audio_code_11247|><|audio_code_30215|><|audio_code_23755|><|audio_code_40535|><|audio_code_13855|><|audio_code_40966|><|audio_code_44551|><|audio_code_40615|><|audio_code_631|><|audio_code_56772|><|audio_code_6631|><|audio_code_50159|><|audio_code_8629|><|audio_code_1414|><|audio_code_51198|><|audio_code_11751|><|audio_code_28287|><|audio_code_40399|><|audio_code_51198|><|audio_code_871|><|audio_code_5639|><|audio_code_41286|><|audio_code_62935|><|audio_code_63424|><|audio_code_52676|><|audio_code_59842|><|audio_code_53568|><|audio_code_19040|><|audio_code_20924|><|audio_code_8226|><|audio_code_55869|><|audio_code_19208|><|audio_code_9968|><|audio_code_13419|><|audio_code_34|><|audio_code_52761|><|audio_code_51681|><|audio_code_43538|><|audio_code_4054|><|audio_code_28730|><|audio_code_31656|><|audio_code_40096|><|audio_code_24298|><|audio_code_24701|><|audio_code_21438|><|audio_code_48488|><|audio_code_15417|><|audio_code_46056|><|audio_code_2539|><|audio_code_37826|><|audio_code_53560|><|audio_code_5201|><|audio_code_56262|><|audio_code_58903|><|audio_code_50087|><|audio_code_5615|><|audio_code_49359|><|audio_code_62934|><|audio_code_46457|><|audio_code_27360|><|audio_code_39562|><|audio_code_61938|><|audio_code_1959|><|audio_code_28222|><|audio_code_52718|><|audio_code_22966|><|audio_code_50439|><|audio_code_24566|><|audio_code_20359|><|audio_code_50439|><|audio_code_25078|><|audio_code_17799|><|audio_code_40254|><|audio_code_14326|><|audio_code_17223|><|audio_code_40190|><|audio_code_35318|><|audio_code_55839|><|audio_code_21511|><|audio_code_27655|><|audio_code_54319|><|audio_code_11691|><|audio_code_56415|><|audio_code_36798|><|audio_code_2201|><|audio_code_35849|><|audio_code_39874|><|audio_code_52729|><|audio_code_16345|><|audio_code_13961|><|audio_code_20335|><|audio_code_13611|><|audio_code_23830|><|audio_code_23288|><|audio_code_13185|><|audio_code_26248|><|audio_code_61425|><|audio_code_36305|><|audio_code_12738|><|audio_code_20423|><|audio_code_34280|><|audio_code_10991|><|audio_code_39687|><|audio_code_53138|><|audio_code_5563|><|audio_code_5693|><|audio_code_35576|><|audio_code_52896|><|audio_code_22672|><|audio_code_131|><|audio_code_29606|><|audio_code_498|><|audio_code_31175|><|audio_code_3896|><|audio_code_37016|><|audio_code_12763|><|audio_code_23936|><|audio_code_13302|><|audio_code_37317|><|audio_code_13456|><|audio_code_40389|><|audio_code_40743|><|audio_code_10767|><|audio_code_27454|><|audio_code_33214|><|audio_code_60991|><|audio_code_13334|><|audio_code_11031|><|audio_code_30269|><|audio_code_2423|><|audio_code_22|><|audio_code_61383|><|audio_code_51654|><|audio_code_15214|><|audio_code_49191|><|audio_code_26555|><|audio_code_4728|><|audio_code_18911|><|audio_code_35406|><|audio_code_2167|><|audio_code_15230|><|audio_code_45443|><|audio_code_36984|><|audio_code_37361|><|audio_code_785|><|audio_code_49292|><|audio_code_18368|><|audio_code_11223|><|audio_code_27180|><|audio_code_62239|><|audio_code_9848|><|audio_code_20112|><|audio_code_41863|><|audio_code_28095|><|audio_code_59831|><|audio_code_9031|><|audio_code_15231|><|audio_code_62373|><|audio_code_48124|><|audio_code_14855|><|audio_code_23551|><|audio_code_28225|><|audio_code_31912|><|audio_code_25554|><|audio_code_10179|><|audio_code_4728|><|audio_code_57536|><|audio_code_35591|><|audio_code_5502|><|audio_code_50514|><|audio_code_385|><|audio_code_56300|><|audio_code_25824|><|audio_code_19953|><|audio_code_1466|><|audio_code_53658|><|audio_code_2833|><|audio_code_8175|><|audio_code_55991|><|audio_code_47119|><|audio_code_24519|><|audio_code_19012|><|audio_code_9602|><|audio_code_8509|><|audio_code_41696|><|audio_code_28816|><|audio_code_9965|><|audio_code_5307|><|audio_code_37217|><|audio_code_40399|><|audio_code_16520|><|audio_code_63920|><|audio_code_2473|><|audio_code_23539|><|audio_code_9491|><|audio_code_22844|><|audio_code_21991|><|audio_code_24047|><|audio_code_36663|><|audio_code_26527|><|audio_code_58831|><|audio_code_62927|><|audio_code_34105|><|audio_code_28352|><|audio_code_30904|><|audio_code_52181|><|audio_code_35828|><|audio_code_62959|><|audio_code_24736|><|audio_code_25208|><|audio_code_40072|><|audio_code_12753|><|audio_code_11716|><|audio_code_835|><|audio_code_37457|><|audio_code_63426|><|audio_code_55895|><|audio_code_135|><|audio_code_2370|><|audio_code_60789|><|audio_code_14095|><|audio_code_58871|><|audio_code_43959|><|audio_code_23966|><|audio_code_53702|><|audio_code_5557|><|audio_code_806|><|audio_code_26367|><|audio_code_9264|><|audio_code_48689|><|audio_code_55233|><|audio_code_27076|><|audio_code_49089|><|audio_code_5691|><|audio_code_13448|><|audio_code_63256|><|audio_code_54150|><|audio_code_52716|><|audio_code_37368|><|audio_code_25909|><|audio_code_28002|><|audio_code_25833|><|audio_code_22985|><|audio_code_21988|><|audio_code_23968|><|audio_code_50161|><|audio_code_51176|><|audio_code_12736|><|audio_code_56256|><|audio_code_57280|><|audio_code_31184|><|audio_code_25544|><|audio_code_57809|><|audio_code_62939|><|audio_code_45509|><|audio_code_53624|><|audio_code_48581|><|audio_code_37983|><|audio_code_11215|><|audio_code_15299|><|audio_code_10363|><|audio_code_25278|><|audio_code_32807|><|audio_code_51139|><|audio_code_2365|><|audio_code_38022|><|audio_code_38999|><|audio_code_10815|><|audio_code_28102|><|audio_code_9964|><|audio_code_32949|><|audio_code_10806|><|audio_code_12415|><|audio_code_14887|><|audio_code_44047|><|audio_code_25912|><|audio_code_2720|><|audio_code_28171|><|audio_code_55037|><|audio_code_27010|><|audio_code_13193|><|audio_code_62433|><|audio_code_56194|><|audio_code_60372|><|audio_code_28032|><|audio_code_29096|><|audio_code_6008|><|audio_code_61376|><|audio_code_15273|><|audio_code_2528|><|audio_code_60869|><|audio_code_37544|><|audio_code_36035|><|audio_code_62978|><|audio_code_50983|><|audio_code_43101|><|audio_code_38931|><|audio_code_57729|><|audio_code_56777|><|audio_code_14320|><|audio_code_9665|><|audio_code_59867|><|audio_code_35827|><|audio_code_10736|><|audio_code_25544|><|audio_code_13768|><|audio_code_26443|><|audio_code_12758|><|audio_code_10690|><|audio_code_15353|><|audio_code_28609|><|audio_code_24055|><|audio_code_10263|><|audio_code_12711|><|audio_code_2243|><|audio_code_42754|><|audio_code_33258|><|audio_code_19953|><|audio_code_1465|><|audio_code_51690|><|audio_code_58867|><|audio_code_5553|><|audio_code_16328|><|audio_code_21896|><|audio_code_51168|><|audio_code_50664|><|audio_code_53185|><|audio_code_52216|><|audio_code_36320|><|audio_code_63944|><|audio_code_55178|><|audio_code_3543|><|audio_code_20487|><|audio_code_8135|><|audio_code_15408|><|audio_code_54594|><|audio_code_425|><|audio_code_50096|><|audio_code_8649|><|audio_code_6650|><|audio_code_24040|><|audio_code_50664|><|audio_code_63976|><|audio_code_12737|><|audio_code_56256|><|audio_code_57281|><|audio_code_45897|><|audio_code_20456|><|audio_code_12552|><|audio_code_18242|><|audio_code_55831|><|audio_code_20735|><|audio_code_14030|><|audio_code_53480|><|audio_code_23895|><|audio_code_23957|><|audio_code_59333|><|audio_code_10647|><|audio_code_11031|><|audio_code_61902|><|audio_code_431|><|audio_code_40607|><|audio_code_53593|><|audio_code_7808|><|audio_code_30379|><|audio_code_32994|><|audio_code_17633|><|audio_code_18090|><|audio_code_33083|><|audio_code_5490|><|audio_code_31536|><|audio_code_58859|><|audio_code_2350|><|audio_code_49359|><|audio_code_11684|><|audio_code_43108|><|audio_code_26124|><|audio_code_10878|><|audio_code_62333|><|audio_code_10636|><|audio_code_9374|><|audio_code_42517|><|audio_code_15422|><|audio_code_22981|><|audio_code_24854|><|audio_code_12219|><|audio_code_49123|><|audio_code_23501|><|audio_code_16835|><|audio_code_266|><|audio_code_21360|><|audio_code_17863|><|audio_code_38015|><|audio_code_49630|><|audio_code_12600|><|audio_code_12546|><|audio_code_15017|><|audio_code_15163|><|audio_code_51186|><|audio_code_42306|><|audio_code_11465|><|audio_code_11394|><|audio_code_36151|><|audio_code_2452|><|audio_code_15272|><|audio_code_10692|><|audio_code_25031|><|audio_code_36804|><|audio_code_11587|><|audio_code_21928|><|audio_code_30661|><|audio_code_25271|><|audio_code_11758|><|audio_code_4372|><|audio_code_27286|><|audio_code_12990|><|audio_code_25335|><|audio_code_28099|><|audio_code_12430|><|audio_code_11862|><|audio_code_30246|><|audio_code_42751|><|audio_code_12718|><|audio_code_28246|><|audio_code_25605|><|audio_code_12351|><|audio_code_16135|><|audio_code_4878|><|audio_code_50252|><|audio_code_62896|><|audio_code_7170|><|audio_code_25199|><|audio_code_28750|><|audio_code_12479|><|audio_code_42780|><|audio_code_2811|><|audio_code_12587|><|audio_code_26483|><|audio_code_379|><|audio_code_22492|><|audio_code_15237|><|im_end|>
+2026-08-15 20:48:40.819 | INFO     | acestep.llm_inference:generate_with_stop_condition:1650 - Phase 2 completed in 27.55s. Generated 1250 audio codes
+2026-08-15 20:48:40.979 | INFO     | acestep.core.generation.handler.generate_music:generate_music:289 - [generate_music] Turbo model detected: overriding guidance_scale 11.2 -> 1.0 (turbo does not use CFG).
+2026-08-15 20:48:40.979 | INFO     | acestep.core.generation.handler.generate_music:generate_music:304 - [generate_music] Starting generation...
+2026-08-15 20:48:40.979 | INFO     | acestep.core.generation.handler.generate_music:generate_music:307 - [generate_music] Preparing inputs...
+2026-08-15 20:48:40.983 | INFO     | acestep.core.generation.handler.generate_music_request:_prepare_reference_and_source_audio:179 - [generate_music] cover task: no src_audio but audio codes provided, proceeding with codes
+2026-08-15 20:48:44.270 | INFO     | acestep.core.generation.handler.conditioning_target:_prepare_target_latents_and_wavs:78 - [generate_music] Decoding audio codes for item 0...
+2026-08-15 20:48:45.438 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_precomputed_lm_hints:31 - [generate_music] Decoding audio codes for LM hints for item 0...
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - 
+======================================================================
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:
+# Instruction
+Generate audio semantic tokens based on the given conditions:
+
+# Caption
+Romantic Bollywood cinematic ballad, solo male vocal only, warm emotional baritone, intimate and soulful delivery, 82 BPM, dreamy piano, acoustic guitar, soft strings, subtle tabla, atmospheric pads, cinematic percussion, gradual emotional build, heartfelt vocal expressions, lush reverb, modern Bollywood production, passionate final chorus. No female vocals, no duet
+
+# Metas
+- bpm: 62
+- timesignature: 4
+- keyscale: B♭ major
+- duration: 250 seconds
+<|endoftext|>
+
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:
+# Languages
+unknown
+
+# Lyric
+[Intro]
+
+Hmmm…
+Teri aankhon mein jo dekha,
+Woh kahaani ban gaya…
+Tu jo mila mujhe,
+Jaise jahaan mera mil gaya…
+
+[Verse 1]
+
+Khamosh raaton mein, tera naam loon,
+Teri hi baaton mein, subah shaam hoon,
+Jo tu muskuraaye, toh dil yeh kahe,
+Tere bina ab kahin aur na rahe…
+
+Teri saanson ki khushboo,
+Meri dhadkan mein basi,
+Tu jo paas ho mere,
+Toh har kami lage hasi…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tera hone laga,
+Jo tha mera kal tak,
+Woh tera hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+Tere saath, chalna hai mujhe,
+Chahe raaste ho kitne bhi anjaan,
+Haath tera, haath mein rahe,
+Bas itni si hai meri daastaan…
+
+[Verse 2]
+
+Bheegi si baarish, tera mera safar,
+Ek chhoti si chhat, aur bheegi nazar,
+Tu kuch na kahe, main samajh loon tujhe,
+Teri khamoshi bhi mohabbat lage…
+
+Tere kandhe pe sar rakh kar,
+Waqt ko rok loon zara,
+Jo pal tere sang guzre,
+Unko bana loon main dua…
+
+[Pre-Chorus]
+
+Dheere dheere dil mera,
+Tujh mein khone laga,
+Teri har ek aadat se,
+Pyaar hone laga…
+
+[Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har pal hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri subah, tu hi meri shaam…
+
+[Bridge]
+
+Agar kal badal jaaye,
+Agar duniya chhoot jaaye,
+Tera haath mere haath mein ho,
+Toh dil phir bhi muskuraaye…
+
+Na chaahun main daulat,
+Na chaahun koi aasman,
+Tu rahe mere paas,
+Toh tu hi mera jahaan…
+
+[Final Chorus]
+
+Tere saath, jeena hai mujhe,
+Tere saath, har janam hai khubsurat,
+Tu jo mile, toh mil jaaye jahaan,
+Tu hi meri dua, tu hi mera armaan…
+
+Tere saath, dhalna hai mujhe,
+Tere saath hi guzre har shaam,
+Aakhri saans tak bas tu rahe,
+Aur tera naam… mere naam ke saath…
+
+[Outro]
+
+Hmmm…
+Tu jo mila…
+Toh sab mil gaya…
+Tere saath…
+Mera jahaan…<|endoftext|>
+2026-08-15 20:48:45.457 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================
+
+2026-08-15 20:48:45.952 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...
+2026-08-15 20:48:48.596 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...
+2026-08-15 20:48:48.602 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:122 - [preprocess_batch] Inferring non-cover text embeddings...
+2026-08-15 20:48:48.666 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
+Using precomputed LM hints
+MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [00:34<04:03, 34.72s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [00:39<01:41, 16.97s/it]MLX DiT diffusion:  38%|███▊      | 3/8 [00:43<00:55, 11.05s/it]MLX DiT diffusion:  50%|█████     | 4/8 [00:46<00:32,  8.13s/it]MLX DiT diffusion:  62%|██████▎   | 5/8 [00:50<00:19,  6.52s/it]MLX DiT diffusion:  75%|███████▌  | 6/8 [00:54<00:11,  5.57s/it]MLX DiT diffusion:  88%|████████▊ | 7/8 [00:58<00:04,  4.98s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:01<00:00,  4.60s/it]MLX DiT diffusion: 100%|██████████| 8/8 [01:01<00:00,  7.74s/it]
+2026-08-15 20:50:11.839 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:254 - [service_generate] DiT diffusion complete via MLX (61.89s total, 7.736s/step).
+2026-08-15 20:50:11.870 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...
+2026-08-15 20:50:11.882 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 6250, 64]), dtype=torch.float32
+2026-08-15 20:50:11.882 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'diffusion_time_cost': 61.88595509529114, 'diffusion_per_step_time_cost': 7.735744386911392, 'total_time_cost': 61.89331889152527, 'sampler_mode': 'euler', 'offload_time_cost': 0.0}
+2026-08-15 20:50:11.998 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...
+2026-08-15 20:50:12.121 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-15 20:50:12.121 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...
+2026-08-15 20:50:52.334 | INFO     | acestep.core.generation.handler.mlx_vae_decode_native:_mlx_vae_decode:66 - [MLX-VAE] Decoded 1 sample(s), 6250 latent frames -> audio in 40.21s (convert=0.010s, decode=40.19s, dtype=mlx.core.float32)
+2026-08-15 20:50:52.336 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=0.00GB, max=0.00GB
+2026-08-15 20:50:53.649 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...
+2026-08-15 20:50:53.650 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.
+2026-08-15 20:50:53.854 | INFO     | acestep.inference:generate_music:981 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB
+2026-08-15 20:50:53.968 | INFO     | acestep.inference:generate_music:986 - [Normalization] Audio 0 AFTER: Peak=0.8913
+2026-08-15 20:50:56.890 | DEBUG    | acestep.audio_utils:_save_mp3:183 - [AudioSaver] Saved audio to /Users/ashraf/Documents/WorkSpace/musicai/data/songs/ea17c53e-ff79-c539-5693-a4f7d316487a.mp3 (mp3, 48000Hz, 128k)
+[musicai] d93d9d59-75c4-4966-87c6-32ff3775c428: wrote /Users/ashraf/Documents/WorkSpace/musicai/data/songs/d93d9d59-75c4-4966-87c6-32ff3775c428.mp3
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

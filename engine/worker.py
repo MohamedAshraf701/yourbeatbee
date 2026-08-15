@@ -30,6 +30,7 @@ from compose import (  # noqa: E402
     job_to_params,
 )
 from download import ensure_checkpoints, ensure_lm  # noqa: E402
+from settings_loader import load_settings  # noqa: E402
 
 
 def ensure_reference_audio(path_str: str) -> str:
@@ -82,6 +83,21 @@ def ensure_reference_audio(path_str: str) -> str:
 _WRITE_LOCKS: dict[str, threading.Lock] = {}
 _WRITE_LOCKS_GUARD = threading.Lock()
 
+# Shared heartbeat state — background thread keeps updatedAt fresh during long work.
+_HB_LOCK = threading.Lock()
+_HB_STATE: dict[str, object] = {
+    "ready": False,
+    "phase": "starting",
+    "progress": 0,
+    "busy": False,
+    "message": "Starting engine…",
+    "error": None,
+    "device": None,
+    "model": None,
+    "lm": None,
+}
+_HB_STOP: threading.Event | None = None
+
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -117,6 +133,60 @@ def read_json(path: Path) -> dict | None:
         return None
 
 
+def update_heartbeat(**extra: object) -> None:
+    """Merge fields into shared heartbeat state and write immediately."""
+    with _HB_LOCK:
+        _HB_STATE.update(extra)
+        payload = {
+            "updatedAt": utc_now(),
+            "pid": os.getpid(),
+            **dict(_HB_STATE),
+        }
+    try:
+        write_json(ENGINE_FILE, payload)
+    except OSError as exc:
+        print(f"[musicai] heartbeat write skipped: {exc}", file=sys.stderr)
+
+
+def start_heartbeat_thread() -> threading.Event:
+    global _HB_STOP
+    if _HB_STOP is not None:
+        _HB_STOP.set()
+    stop = threading.Event()
+    _HB_STOP = stop
+
+    def loop() -> None:
+        while not stop.wait(3):
+            update_heartbeat()
+
+    thread = threading.Thread(target=loop, daemon=True, name="musicai-heartbeat")
+    thread.start()
+    update_heartbeat()
+    return stop
+
+
+def update_job_progress(
+    path: Path,
+    job: dict,
+    *,
+    phase: str,
+    progress: int,
+    message: str,
+) -> None:
+    job["phase"] = phase
+    job["progress"] = max(0, min(100, int(progress)))
+    job["message"] = message
+    job["updatedAt"] = utc_now()
+    write_json(path, job)
+    update_heartbeat(
+        ready=True,
+        busy=True,
+        phase=phase,
+        progress=job["progress"],
+        message=message,
+        error=None,
+    )
+
 def physical_memory_gb() -> float:
     try:
         pages = os.sysconf("SC_PHYS_PAGES")
@@ -130,11 +200,17 @@ def pick_device() -> str:
     env = os.environ.get("ACESTEP_DEVICE")
     if env:
         return env
+    settings = load_settings()
+    preferred = str(settings.get("device") or "auto").strip().lower()
+    if preferred in {"mps", "cuda", "cpu"}:
+        return preferred
     try:
         import torch
 
         if torch.backends.mps.is_available():
             return "mps"
+        if torch.cuda.is_available():
+            return "cuda"
     except Exception:
         pass
     return "cpu"
@@ -144,7 +220,11 @@ def pick_lm(mem_gb: float) -> str:
     env = os.environ.get("ACESTEP_LM_MODEL_PATH")
     if env:
         return env
-    # 1.7B + turbo DiT OOMs the lyric encoder on ~24GB unified memory.
+    settings = load_settings()
+    preferred = str(settings.get("lmModel") or "").strip()
+    if preferred:
+        return preferred
+    # Align with frontend recommendation table.
     return "acestep-5Hz-lm-1.7B" if mem_gb >= 32 else "acestep-5Hz-lm-0.6B"
 
 
@@ -152,11 +232,29 @@ def pick_backend() -> str:
     env = os.environ.get("ACESTEP_LM_BACKEND")
     if env:
         return env
+    settings = load_settings()
+    preferred = str(settings.get("backend") or "auto").strip().lower()
+    if preferred in {"mlx", "pt"}:
+        return preferred
     return "mlx" if sys.platform == "darwin" else "pt"
 
 
 def tight_memory(device: str) -> bool:
+    settings = load_settings()
+    if settings.get("saveMemory") is False and physical_memory_gb() >= 32:
+        return device == "mps" and physical_memory_gb() < 24
     return device == "mps" and physical_memory_gb() < 32
+
+
+def pick_config() -> str:
+    env = os.environ.get("ACESTEP_CONFIG_PATH")
+    if env:
+        return env
+    settings = load_settings()
+    preferred = str(settings.get("ditModel") or "").strip()
+    if preferred:
+        return preferred
+    return "acestep-v15-turbo"
 
 
 def is_oom(message: object) -> bool:
@@ -264,40 +362,6 @@ def wrap_lm_to_release_memory(llm) -> None:
     llm._musicai_memory_wrapped = True
 
 
-def pick_config() -> str:
-    env = os.environ.get("ACESTEP_CONFIG_PATH")
-    if env:
-        return env
-    # sft is a second multi-GB download and is tight on 12–16GB unified memory.
-    return "acestep-v15-turbo"
-
-
-def start_heartbeat_thread(**extra: object) -> threading.Event:
-    stop = threading.Event()
-
-    def loop() -> None:
-        while not stop.wait(4):
-            write_heartbeat(**extra)
-
-    thread = threading.Thread(target=loop, daemon=True)
-    thread.start()
-    write_heartbeat(**extra)
-    return stop
-
-
-def write_heartbeat(**extra: object) -> None:
-    payload = {
-        "ready": False,
-        "updatedAt": utc_now(),
-        "pid": os.getpid(),
-        **extra,
-    }
-    try:
-        write_json(ENGINE_FILE, payload)
-    except OSError as exc:
-        print(f"[musicai] heartbeat write skipped: {exc}", file=sys.stderr)
-
-
 def reset_stale_jobs() -> None:
     JOBS.mkdir(parents=True, exist_ok=True)
     for path in JOBS.glob("*.json"):
@@ -358,28 +422,39 @@ def load_handlers():
     )
     Path(checkpoint_dir).mkdir(parents=True, exist_ok=True)
 
-    pulse = start_heartbeat_thread(
+    start_heartbeat_thread()
+    update_heartbeat(
         ready=False,
+        busy=True,
+        phase="downloading",
+        progress=5,
         device=device,
         model=config_path,
         lm=lm_model,
         error=None,
-        message="Downloading ACE-Step weights onto this Mac. The file counter can pause for a long time on one large file — that is not a hang.",
+        message="Checking / downloading ACE-Step weights…",
     )
     print(f"[musicai] device={device} backend={backend} model={config_path} lm={lm_model} ram≈{mem_gb:.1f}GB")
     dit = None
     llm = None
     try:
         ensure_checkpoints(Path(checkpoint_dir))
+        update_heartbeat(
+            phase="downloading",
+            progress=25,
+            message=f"Checking LM weights ({lm_model})…",
+        )
         ensure_lm(Path(checkpoint_dir), lm_model)
-        pulse.set()
-        pulse = start_heartbeat_thread(
+        update_heartbeat(
             ready=False,
+            busy=True,
+            phase="loading_dit",
+            progress=40,
             device=device,
             model=config_path,
             lm=lm_model,
             error=None,
-            message="Loading ACE-Step 1.5 into memory on this Mac.",
+            message="Loading DiT / VAE / text encoder into memory…",
         )
         print("[musicai] Loading DiT / VAE / text encoder into RAM...")
 
@@ -394,6 +469,11 @@ def load_handlers():
         assert_dit_ready(dit)
         print(f"[musicai] DiT ready. {dit_msg.splitlines()[0] if dit_msg else ''}")
 
+        update_heartbeat(
+            phase="loading_lm",
+            progress=70,
+            message=f"Loading language model ({lm_model})…",
+        )
         print(f"[musicai] Loading LM ({lm_model}, backend={backend})...")
         llm = LLMHandler()
         llm_msg, llm_ok = llm.initialize(
@@ -406,6 +486,10 @@ def load_handlers():
             # Retry once with PyTorch backend if MLX failed.
             if backend == "mlx":
                 print(f"[musicai] MLX LM init failed ({llm_msg}); retrying with pt...")
+                update_heartbeat(
+                    progress=80,
+                    message="MLX LM failed — retrying with PyTorch…",
+                )
                 llm_msg, llm_ok = llm.initialize(
                     checkpoint_dir=checkpoint_dir,
                     lm_model_path=lm_model,
@@ -419,8 +503,11 @@ def load_handlers():
         print(f"[musicai] LM ready. {llm_msg.splitlines()[0] if llm_msg else ''}")
         wrap_lm_to_release_memory(llm)
     except Exception:
-        write_heartbeat(
+        update_heartbeat(
             ready=False,
+            busy=False,
+            phase="error",
+            progress=0,
             device=device,
             model=config_path,
             lm=lm_model,
@@ -428,11 +515,12 @@ def load_handlers():
             message="Engine failed during model load.",
         )
         raise
-    finally:
-        pulse.set()
 
-    write_heartbeat(
+    update_heartbeat(
         ready=True,
+        busy=False,
+        phase="idle",
+        progress=100,
         device=device,
         model=config_path,
         lm=lm_model,
@@ -479,7 +567,13 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     job_id = job["id"]
     job["status"] = "running"
     job["updatedAt"] = utc_now()
-    write_json(path, job)
+    update_job_progress(
+        path,
+        job,
+        phase="preparing",
+        progress=5,
+        message="Preparing generation…",
+    )
 
     assert_dit_ready(dit)
     if not getattr(llm, "llm_initialized", False):
@@ -494,11 +588,11 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     lyrics = mapped["lyrics"]
     caption = mapped["caption"]
 
-    if mapped.get("reference_audio"):
-        mapped["reference_audio"] = ensure_reference_audio(mapped["reference_audio"])
+    if mapped.get("apply_rvc"):
         print(
-            f"[musicai] {job_id}: My Voice reference OK → {mapped['reference_audio']} "
-            f"(strength={mapped.get('audio_cover_strength')}, thinking={mapped.get('thinking')})"
+            f"[musicai] {job_id}: My Voice RVC model={mapped.get('rvc_model_path')} "
+            f"index={'yes' if mapped.get('rvc_index_path') else 'no'} "
+            f"strength={mapped.get('voice_strength')}"
         )
 
     if original_lyrics and len(original_lyrics) > len(lyrics):
@@ -518,6 +612,13 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
         )
 
     if mapped["needs_sample"]:
+        update_job_progress(
+            path,
+            job,
+            phase="lyrics",
+            progress=15,
+            message="LM is writing lyrics…",
+        )
         print(f"[musicai] {job_id}: no lyrics — asking LM to draft a sample")
         sample = create_sample(
             llm,
@@ -551,13 +652,46 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     print(
         f"[musicai] {job_id}: generate_music duration={mapped['duration']}s "
         f"lyrics={len(lyrics)} chars voice={job.get('voice')} "
-        f"ref={'yes' if mapped.get('reference_audio') else 'no'} "
+        f"rvc={'yes' if mapped.get('apply_rvc') else 'no'} "
         f"caption={caption!r}"
     )
+    update_job_progress(
+        path,
+        job,
+        phase="generating",
+        progress=30,
+        message="Generating song (diffusion) — this can take several minutes…",
+    )
     release_unified_memory()
-    result = generate_music(dit, llm, params, config, save_dir=str(SONGS))
+    gen_stop = threading.Event()
+
+    def creep_progress() -> None:
+        pct = 30
+        while not gen_stop.wait(8):
+            pct = min(68, pct + 2)
+            update_job_progress(
+                path,
+                job,
+                phase="generating",
+                progress=pct,
+                message="Generating song (diffusion) — this can take several minutes…",
+            )
+
+    creep = threading.Thread(target=creep_progress, daemon=True)
+    creep.start()
+    try:
+        result = generate_music(dit, llm, params, config, save_dir=str(SONGS))
+    finally:
+        gen_stop.set()
     if (not result.success or not result.audios) and is_oom(result.error or result.status_message) and job["tight_memory"]:
         print(f"[musicai] {job_id}: MPS OOM — retrying with shorter lyrics and 90s duration")
+        update_job_progress(
+            path,
+            job,
+            phase="generating",
+            progress=45,
+            message="Out of memory — retrying with shorter song…",
+        )
         lyrics = clip_lyrics(lyrics, 1000)
         caption = clip_caption(caption, 300)
         mapped["duration"] = 90.0
@@ -571,8 +705,38 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     if not result.success or not result.audios:
         raise RuntimeError(result.error or result.status_message or "generation failed")
 
+    update_job_progress(
+        path,
+        job,
+        phase="saving",
+        progress=75,
+        message="Saving audio…",
+    )
     audio = result.audios[0]
     dest = persist_song_audio(audio, job_id, audio_format)
+
+    if mapped.get("apply_rvc"):
+        from voice_convert import apply_rvc_to_song
+
+        model_path = Path(mapped["rvc_model_path"])
+        index_raw = mapped.get("rvc_index_path")
+        index_path = Path(index_raw) if index_raw else None
+        print(f"[musicai] {job_id}: releasing ACE-Step caches before RVC…")
+        update_job_progress(
+            path,
+            job,
+            phase="rvc",
+            progress=82,
+            message="My Voice: separating stems + RVC convert…",
+        )
+        release_unified_memory()
+        apply_rvc_to_song(
+            dest,
+            model_path,
+            index_path if index_path and index_path.is_file() else None,
+            int(mapped.get("voice_strength") or 75),
+        )
+        release_unified_memory()
 
     song = {
         "id": job_id,
@@ -595,9 +759,43 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     job["status"] = "done"
     job["songId"] = job_id
     job["error"] = None
+    job["phase"] = "done"
+    job["progress"] = 100
+    job["message"] = "Song ready."
     job["updatedAt"] = utc_now()
     write_json(path, job)
+    update_heartbeat(
+        ready=True,
+        busy=False,
+        phase="idle",
+        progress=100,
+        message="Model loaded on this Mac.",
+        error=None,
+    )
     print(f"[musicai] {job_id}: wrote {dest}")
+
+
+def studio_idle_should_exit() -> bool:
+    """Exit when the studio UI has been gone long enough and no jobs are active."""
+    presence = DATA / "studio-presence.json"
+    if not presence.is_file():
+        return False
+    try:
+        data = json.loads(presence.read_text(encoding="utf-8"))
+        last = data.get("lastSeenAt")
+        if not last:
+            return False
+        seen = datetime.fromisoformat(str(last).replace("Z", "+00:00"))
+        age = (datetime.now(timezone.utc) - seen.astimezone(timezone.utc)).total_seconds()
+        if age < 90:
+            return False
+    except Exception:
+        return False
+    for path in JOBS.glob("*.json"):
+        job = read_json(path)
+        if job and job.get("status") in {"queued", "running"}:
+            return False
+    return True
 
 
 def main() -> int:
@@ -608,14 +806,29 @@ def main() -> int:
     try:
         dit, llm, device, model, lm = load_handlers()
     except Exception as exc:
-        write_heartbeat(ready=False, error=str(exc))
+        update_heartbeat(ready=False, busy=False, phase="error", error=str(exc))
         print(f"[musicai] failed to load model: {exc}", file=sys.stderr)
         traceback.print_exc()
         return 1
 
     while True:
-        write_heartbeat(
+        if studio_idle_should_exit():
+            print("[musicai] Studio UI idle — unloading engine to free memory.")
+            update_heartbeat(
+                ready=False,
+                busy=False,
+                phase="stopped",
+                progress=0,
+                message="Engine stopped (studio closed).",
+                error=None,
+            )
+            return 0
+
+        update_heartbeat(
             ready=True,
+            busy=False,
+            phase="idle",
+            progress=100,
             device=device,
             model=model,
             lm=lm,
@@ -633,8 +846,18 @@ def main() -> int:
             traceback.print_exc()
             job["status"] = "error"
             job["error"] = str(exc)
+            job["phase"] = "error"
+            job["message"] = str(exc)
             job["updatedAt"] = utc_now()
             write_json(path, job)
+            update_heartbeat(
+                ready=True,
+                busy=False,
+                phase="idle",
+                progress=100,
+                message="Model loaded on this Mac.",
+                error=None,
+            )
 
 
 if __name__ == "__main__":

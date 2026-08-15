@@ -44,3 +44,8 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# My Voice RVC isolated env
+vendor/rvc-env/
+data/models/rvc/
+data/voices/

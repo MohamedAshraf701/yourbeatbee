@@ -12,7 +12,8 @@ VOICE_TAGS = {
     "male": "male vocal",
     "female": "female vocal",
     "instrumental": None,
-    "custom": "solo vocal matching the reference singer timbre",
+    # Clear lead vocal for post-RVC conversion (identity comes from RVC, not ACE-Step).
+    "custom": "clear solo lead vocal, natural singing, dry close-mic vocal take",
 }
 
 # Style prompts often force a stock singer ("male baritone") that fights My Voice.
@@ -158,11 +159,12 @@ def job_to_params(job: dict[str, Any]) -> dict[str, Any]:
     tight_memory = bool(job.get("tight_memory", False))
     instrumental = voice == "instrumental"
     custom_voice = voice == "custom"
-    reference_audio = (job.get("referenceAudio") or job.get("reference_audio") or "").strip() or None
-    voice_strength = int(job.get("voiceStrength", job.get("voice_strength", 55)))
+    voice_strength = int(job.get("voiceStrength", job.get("voice_strength", 75)))
+    rvc_model = (job.get("rvcModelPath") or job.get("rvc_model_path") or "").strip() or None
+    rvc_index = (job.get("rvcIndexPath") or job.get("rvc_index_path") or "").strip() or None
 
-    if custom_voice and not reference_audio:
-        raise ValueError("custom voice requires referenceAudio path")
+    if custom_voice and not rvc_model:
+        raise ValueError("custom voice requires an imported RVC model (rvcModelPath)")
 
     if instrumental and not lyrics:
         lyrics = "[Instrumental]"
@@ -181,9 +183,9 @@ def job_to_params(job: dict[str, Any]) -> dict[str, Any]:
     lyrics = clip_lyrics(lyrics, lyrics_limit)
     language = vocal_language(job.get("language") or "auto", lyrics)
 
-    # My Voice: never let the LM invent audio codes. Those switch the run into
-    # "cover from codes" and drown out the reference singer timbre.
-    thinking = False if custom_voice else True
+    # Generate a normal song first; RVC converts vocals afterward.
+    # Keep thinking on for musical quality (codes don't fight identity anymore).
+    thinking = True
 
     return {
         "caption": clip_caption(compose_caption(style, voice), caption_limit),
@@ -199,7 +201,7 @@ def job_to_params(job: dict[str, Any]) -> dict[str, Any]:
         "infer_method": weirdness_to_infer_method(weirdness),
         "thinking": thinking,
         "use_cot_caption": False,
-        "use_cot_language": language == "unknown" and not custom_voice,
+        "use_cot_language": language == "unknown",
         "use_cot_metas": True,
         "inference_steps": 8 if (fast or tight_memory) else 32,
         "task_type": "text2music",
@@ -207,6 +209,10 @@ def job_to_params(job: dict[str, Any]) -> dict[str, Any]:
         "sample_query": style.strip() or "original song with vocals and instrumentation",
         "tight_memory": tight_memory,
         "lyrics_limit": lyrics_limit,
-        "reference_audio": reference_audio if custom_voice else None,
-        "audio_cover_strength": voice_strength_to_cover(voice_strength) if custom_voice else 0.0,
+        "reference_audio": None,
+        "audio_cover_strength": 0.0,
+        "rvc_model_path": rvc_model if custom_voice else None,
+        "rvc_index_path": rvc_index if custom_voice else None,
+        "voice_strength": voice_strength if custom_voice else 0,
+        "apply_rvc": custom_voice,
     }

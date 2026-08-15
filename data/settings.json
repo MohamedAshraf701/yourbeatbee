@@ -1,0 +1,14 @@
+{
+  "setupComplete": true,
+  "ditModel": "acestep-v15-turbo",
+  "lmModel": "acestep-5Hz-lm-0.6B",
+  "backend": "mlx",
+  "device": "mps",
+  "saveMemory": true,
+  "recommended": {
+    "ditModel": "acestep-v15-turbo",
+    "lmModel": "acestep-5Hz-lm-0.6B",
+    "reason": "Apple Silicon with ~18GB RAM — use Turbo + 0.6B LM."
+  },
+  "updatedAt": "2026-08-15T15:15:27.082Z"
+}

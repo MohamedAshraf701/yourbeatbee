@@ -14,7 +14,10 @@ export type GenerateInput = {
   seed: number
   fast: boolean
   voiceStrength: number
+  /** @deprecated Mic reference — My Voice now uses imported RVC models. */
   referenceAudio: string | null
+  rvcModelPath: string | null
+  rvcIndexPath: string | null
 }
 
 export type Job = GenerateInput & {
@@ -24,6 +27,10 @@ export type Job = GenerateInput & {
   songId?: string
   createdAt: string
   updatedAt: string
+  /** 0–100 while queued/running */
+  progress?: number
+  phase?: string
+  message?: string
 }
 
 export type Song = {
@@ -52,12 +59,46 @@ export type EngineHealth = {
   error?: string
   message?: string
   updatedAt?: string
+  /** Engine process is alive (even if model still loading). */
+  alive?: boolean
+  busy?: boolean
+  phase?: string
+  progress?: number
+  needsSetup?: boolean
+  settings?: {
+    setupComplete: boolean
+    ditModel: string
+    lmModel: string
+    backend: string
+    device: string
+    saveMemory: boolean
+  }
+  system?: {
+    os: string
+    arch: string
+    ramGb: number
+    device: string
+    backend: string
+    cudaVramGb: number | null
+    vendorReady: boolean
+    rvcReady: boolean
+  }
+  recommendation?: {
+    ditModel: string
+    lmModel: string
+    reason: string
+    warnings: string[]
+    advancedLm: string | null
+  }
 }
 
 export type VoiceProfileInfo = {
   ready: boolean
+  kind?: "rvc" | null
   filename: string | null
   originalName: string | null
   sizeBytes: number | null
   uploadedAt: string | null
+  format?: string | null
+  hasIndex?: boolean
 }

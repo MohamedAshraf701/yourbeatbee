@@ -43,7 +43,7 @@ export function validateGenerateInput(body: unknown): GenerateInput | string {
 
   const influence = Number(input.influence ?? 50)
   const weirdness = Number(input.weirdness ?? 30)
-  const voiceStrength = Number(input.voiceStrength ?? 55)
+  const voiceStrength = Number(input.voiceStrength ?? 75)
   if (!Number.isFinite(influence) || influence < 0 || influence > 100) {
     return "Style influence must be 0–100."
   }
@@ -85,6 +85,8 @@ export function validateGenerateInput(body: unknown): GenerateInput | string {
     fast: Boolean(input.fast),
     voiceStrength,
     referenceAudio: null,
+    rvcModelPath: null,
+    rvcIndexPath: null,
   }
 }
 
@@ -95,6 +97,9 @@ export function createJob(input: GenerateInput): Job {
     ...input,
     id: randomUUID(),
     status: "queued",
+    progress: 0,
+    phase: "queued",
+    message: "Waiting for the local engine…",
     createdAt: now,
     updatedAt: now,
   }

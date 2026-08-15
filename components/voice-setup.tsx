@@ -1,18 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { MicIcon, RotateCcwIcon, SquareIcon } from "lucide-react"
+import { ExternalLinkIcon, UploadIcon } from "lucide-react"
 import { toast } from "sonner"
 
-import {
-  MIN_VOICE_SECONDS,
-  TARGET_VOICE_SECONDS,
-  VOICE_SCRIPTS,
-  type VoiceScript,
-} from "@/lib/voice-scripts"
+import { RVC_TRAIN_GUIDE_URL } from "@/lib/voice-rvc"
 import type { VoiceProfileInfo } from "@/lib/types"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Spinner } from "@/components/ui/spinner"
 import {
   Dialog,
   DialogContent,
@@ -21,34 +15,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { Spinner } from "@/components/ui/spinner"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
-type Step = "script" | "ready" | "record" | "review"
-
-function pickMimeType() {
-  const types = [
-    "audio/webm;codecs=opus",
-    "audio/webm",
-    "audio/mp4",
-    "audio/ogg;codecs=opus",
-  ]
-  for (const type of types) {
-    if (
-      typeof MediaRecorder !== "undefined" &&
-      MediaRecorder.isTypeSupported(type)
-    ) {
-      return type
-    }
-  }
-  return ""
-}
-
-function formatTime(totalSeconds: number) {
-  const minutes = Math.floor(totalSeconds / 60)
-  const seconds = totalSeconds % 60
-  return `${minutes}:${String(seconds).padStart(2, "0")}`
-}
+type Step = "guide" | "import"
 
 export function VoiceSetupDialog({
   open,
@@ -59,452 +27,202 @@ export function VoiceSetupDialog({
   onOpenChange: (open: boolean) => void
   onSaved: (profile: VoiceProfileInfo) => void
 }) {
-  const [step, setStep] = React.useState<Step>("script")
-  const [scriptId, setScriptId] = React.useState(VOICE_SCRIPTS[0]!.id)
-  const [lineIndex, setLineIndex] = React.useState(0)
-  const [elapsed, setElapsed] = React.useState(0)
-  const [countdown, setCountdown] = React.useState<number | null>(null)
+  const [step, setStep] = React.useState<Step>("guide")
   const [saving, setSaving] = React.useState(false)
-  const [previewUrl, setPreviewUrl] = React.useState<string | null>(null)
-  const [blob, setBlob] = React.useState<Blob | null>(null)
+  const [fileName, setFileName] = React.useState<string | null>(null)
+  const [indexName, setIndexName] = React.useState<string | null>(null)
+  const fileRef = React.useRef<HTMLInputElement>(null)
+  const indexRef = React.useRef<HTMLInputElement>(null)
+  const modelFileRef = React.useRef<File | null>(null)
+  const indexFileRef = React.useRef<File | null>(null)
 
-  const mediaRef = React.useRef<MediaStream | null>(null)
-  const recorderRef = React.useRef<MediaRecorder | null>(null)
-  const chunksRef = React.useRef<BlobPart[]>([])
-  const timerRef = React.useRef<number | null>(null)
-  const lineTimerRef = React.useRef<number | null>(null)
-
-  const script = VOICE_SCRIPTS.find((item) => item.id === scriptId) ?? VOICE_SCRIPTS[0]!
-
-  const cleanupStream = React.useCallback(() => {
-    if (timerRef.current) {
-      window.clearInterval(timerRef.current)
-      timerRef.current = null
-    }
-    if (lineTimerRef.current) {
-      window.clearInterval(lineTimerRef.current)
-      lineTimerRef.current = null
-    }
-    recorderRef.current = null
-    mediaRef.current?.getTracks().forEach((track) => track.stop())
-    mediaRef.current = null
-  }, [])
-
-  const resetSession = React.useCallback(() => {
-    cleanupStream()
-    setElapsed(0)
-    setLineIndex(0)
-    setCountdown(null)
-    setBlob(null)
-    setPreviewUrl((prev) => {
-      if (prev) {
-        URL.revokeObjectURL(prev)
-      }
-      return null
-    })
-  }, [cleanupStream])
-
-  React.useEffect(() => {
-    if (!open) {
-      resetSession()
-      setStep("script")
-      return
-    }
-  }, [open, resetSession])
-
-  React.useEffect(() => {
-    return () => {
-      cleanupStream()
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl)
-      }
-    }
-  }, [cleanupStream, previewUrl])
-
-  function stopRecording() {
-    const recorder = recorderRef.current
-    if (recorder && recorder.state !== "inactive") {
-      recorder.stop()
-    }
-    if (timerRef.current) {
-      window.clearInterval(timerRef.current)
-      timerRef.current = null
-    }
-    if (lineTimerRef.current) {
-      window.clearInterval(lineTimerRef.current)
-      lineTimerRef.current = null
-    }
+  function resetLocal() {
+    setStep("guide")
+    setSaving(false)
+    setFileName(null)
+    setIndexName(null)
+    modelFileRef.current = null
+    indexFileRef.current = null
   }
 
-  async function startRecording() {
-    resetSession()
-    setStep("record")
-    setCountdown(3)
-
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: {
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true,
-        },
-      })
-      mediaRef.current = stream
-
-      await new Promise<void>((resolve) => {
-        let remaining = 3
-        setCountdown(remaining)
-        const tick = window.setInterval(() => {
-          remaining -= 1
-          if (remaining <= 0) {
-            window.clearInterval(tick)
-            setCountdown(null)
-            resolve()
-            return
-          }
-          setCountdown(remaining)
-        }, 1000)
-      })
-
-      const mimeType = pickMimeType()
-      const recorder = mimeType
-        ? new MediaRecorder(stream, { mimeType })
-        : new MediaRecorder(stream)
-      recorderRef.current = recorder
-      chunksRef.current = []
-
-      recorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          chunksRef.current.push(event.data)
-        }
-      }
-      recorder.onstop = () => {
-        const type = recorder.mimeType || mimeType || "audio/webm"
-        const nextBlob = new Blob(chunksRef.current, { type })
-        setBlob(nextBlob)
-        setPreviewUrl((prev) => {
-          if (prev) {
-            URL.revokeObjectURL(prev)
-          }
-          return URL.createObjectURL(nextBlob)
-        })
-        mediaRef.current?.getTracks().forEach((track) => track.stop())
-        mediaRef.current = null
-        setStep("review")
-      }
-
-      recorder.start(1000)
-      setElapsed(0)
-      setLineIndex(0)
-
-      timerRef.current = window.setInterval(() => {
-        setElapsed((value) => {
-          const next = value + 1
-          if (next >= TARGET_VOICE_SECONDS + 30) {
-            stopRecording()
-          }
-          return next
-        })
-      }, 1000)
-
-      // Advance lyric lines every ~9 seconds while singing.
-      lineTimerRef.current = window.setInterval(() => {
-        setLineIndex((index) =>
-          Math.min(index + 1, Math.max(0, script.lines.length - 1))
-        )
-      }, 9000)
-    } catch {
-      cleanupStream()
-      setStep("ready")
-      toast.error("Microphone permission is required to set up your voice.")
-    }
+  function handleOpenChange(next: boolean) {
+    if (!next) resetLocal()
+    onOpenChange(next)
   }
 
-  async function saveRecording() {
-    if (!blob) {
+  async function onImport() {
+    const file = modelFileRef.current
+    if (!file) {
+      toast.error("Choose a voice model zip or .pth file first.")
       return
     }
-    if (elapsed < MIN_VOICE_SECONDS) {
-      toast.error(
-        `Sing for at least ${Math.ceil(MIN_VOICE_SECONDS / 60)} minutes. You recorded ${formatTime(elapsed)}.`
-      )
-      return
-    }
-
     setSaving(true)
     try {
-      const extension = blob.type.includes("mp4")
-        ? "m4a"
-        : blob.type.includes("ogg")
-          ? "ogg"
-          : "webm"
-      const file = new File([blob], `my-voice.${extension}`, {
-        type: blob.type || "audio/webm",
-      })
-      const body = new FormData()
-      body.set("file", file)
-      const res = await fetch("/api/voice", { method: "POST", body })
+      const form = new FormData()
+      form.set("file", file)
+      if (indexFileRef.current) {
+        form.set("index", indexFileRef.current)
+      }
+      const res = await fetch("/api/voice", { method: "POST", body: form })
       const data = await res.json()
       if (!res.ok) {
-        toast.error(data.error || "Could not save voice.")
-        return
+        throw new Error(data.error || "Import failed")
       }
-      onSaved(data as VoiceProfileInfo)
-      onOpenChange(false)
-      toast.success("Voice saved. You can generate with My Voice now.")
-    } catch {
-      toast.error("Could not save voice.")
+      onSaved({
+        ready: Boolean(data.ready),
+        kind: data.kind ?? "rvc",
+        filename: data.filename ?? null,
+        originalName: data.originalName ?? null,
+        sizeBytes: data.sizeBytes ?? null,
+        uploadedAt: data.uploadedAt ?? null,
+        format: data.format ?? null,
+        hasIndex: Boolean(data.hasIndex),
+      })
+      toast.success("Voice model imported. Generate with My Voice.")
+      handleOpenChange(false)
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Import failed")
     } finally {
       setSaving(false)
     }
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-xl gap-0 p-0 sm:max-w-xl">
-        <DialogHeader className="border-b border-border/60 px-6 py-5">
-          <DialogTitle>Set up My Voice</DialogTitle>
-          <DialogDescription>
-            Sing the guided lines clearly for about 2–3 minutes. We convert that
-            recording into a voice reference that steers the singer&apos;s
-            timbre — it won&apos;t be a perfect clone of you.
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogContent className="max-w-xl gap-0 border-border bg-elevated p-0 sm:max-w-xl">
+        <DialogHeader className="border-b border-border px-6 py-5">
+          <DialogTitle className="text-lg font-medium tracking-tight">
+            Import Voice Model
+          </DialogTitle>
+          <DialogDescription className="text-text-secondary">
+            Use your own voice in generated songs. Your model stays on this
+            device.
           </DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col gap-5 px-6 py-5">
-          {step === "script" ? (
-            <ScriptStep
-              script={script}
-              scriptId={scriptId}
-              onScriptId={setScriptId}
-              onContinue={() => setStep("ready")}
-            />
-          ) : null}
-
-          {step === "ready" ? (
-            <ReadyStep
-              script={script}
-              onBack={() => setStep("script")}
-              onStart={() => void startRecording()}
-            />
-          ) : null}
-
-          {step === "record" ? (
-            <RecordStep
-              script={script}
-              lineIndex={lineIndex}
-              elapsed={elapsed}
-              countdown={countdown}
-              onStop={stopRecording}
-            />
-          ) : null}
-
-          {step === "review" ? (
-            <ReviewStep
-              elapsed={elapsed}
-              previewUrl={previewUrl}
-              saving={saving}
-              onRetake={() => {
-                resetSession()
-                setStep("ready")
-              }}
-              onSave={() => void saveRecording()}
-            />
-          ) : null}
-        </div>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-function ScriptStep({
-  script,
-  scriptId,
-  onScriptId,
-  onContinue,
-}: {
-  script: VoiceScript
-  scriptId: string
-  onScriptId: (id: string) => void
-  onContinue: () => void
-}) {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-2">
-        <p className="text-sm font-medium">Choose a script</p>
-        <ToggleGroup
-          value={[scriptId]}
-          onValueChange={(value) => {
-            if (value[0]) {
-              onScriptId(value[0])
-            }
-          }}
-          spacing={2}
-        >
-          {VOICE_SCRIPTS.map((item) => (
-            <ToggleGroupItem key={item.id} value={item.id}>
-              {item.label}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
-      </div>
-      <p className="text-xs text-muted-foreground">{script.tip}</p>
-      <div className="max-h-48 overflow-y-auto rounded-lg border border-border/60 p-3">
-        <ol className="flex flex-col gap-2 text-sm text-muted-foreground">
-          {script.lines.slice(0, 5).map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-          <li>…</li>
-        </ol>
-      </div>
-      <DialogFooter className="px-0">
-        <Button type="button" onClick={onContinue}>
-          Continue
-        </Button>
-      </DialogFooter>
-    </div>
-  )
-}
-
-function ReadyStep({
-  script,
-  onBack,
-  onStart,
-}: {
-  script: VoiceScript
-  onBack: () => void
-  onStart: () => void
-}) {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="rounded-lg border border-border/60 bg-muted/20 p-4">
-        <p className="text-sm font-medium">Before you start</p>
-        <ul className="mt-2 flex flex-col gap-1.5 text-sm text-muted-foreground">
-          <li>Quiet room, phone or laptop mic is fine</li>
-          <li>Sing the lines on screen — don’t whisper</li>
-          <li>Keep going for about {Math.round(TARGET_VOICE_SECONDS / 60)} minutes</li>
-          <li>Script: {script.label}</li>
-        </ul>
-      </div>
-      <DialogFooter className="gap-2 px-0 sm:justify-between">
-        <Button type="button" variant="ghost" onClick={onBack}>
-          Back
-        </Button>
-        <Button type="button" onClick={onStart}>
-          <MicIcon data-icon="inline-start" />
-          Start recording
-        </Button>
-      </DialogFooter>
-    </div>
-  )
-}
-
-function RecordStep({
-  script,
-  lineIndex,
-  elapsed,
-  countdown,
-  onStop,
-}: {
-  script: VoiceScript
-  lineIndex: number
-  elapsed: number
-  countdown: number | null
-  onStop: () => void
-}) {
-  const current = script.lines[lineIndex] ?? script.lines.at(-1) ?? ""
-  const upcoming = script.lines[lineIndex + 1]
-
-  return (
-    <div className="flex flex-col gap-5">
-      <div className="flex items-center justify-between gap-3">
-        <Badge variant="secondary">
-          {countdown !== null ? "Get ready" : "Recording"}
-        </Badge>
-        <p className="font-mono text-sm tabular-nums text-muted-foreground">
-          {formatTime(elapsed)} / ~{formatTime(TARGET_VOICE_SECONDS)}
-        </p>
-      </div>
-
-      {countdown !== null ? (
-        <div className="flex min-h-40 items-center justify-center">
-          <p className="font-heading text-6xl tracking-tight">{countdown}</p>
-        </div>
-      ) : (
-        <div className="flex min-h-40 flex-col justify-center gap-3 rounded-xl border border-border/70 bg-muted/15 p-5 text-center">
-          <p className="text-xs tracking-[0.18em] text-muted-foreground uppercase">
-            Sing this line
-          </p>
-          <p className="font-heading text-xl leading-snug md:text-2xl">
-            {current}
-          </p>
-          {upcoming ? (
-            <p className="text-sm text-muted-foreground">Next: {upcoming}</p>
+          {step === "guide" ? (
+            <div className="flex flex-col gap-4 text-sm leading-relaxed text-text-secondary">
+              <ol className="list-decimal space-y-3 pl-5 text-foreground">
+                <li>
+                  Record about <strong>10–15 minutes</strong> of clean solo
+                  singing.
+                </li>
+                <li>
+                  Train a voice model on a GPU (Colab or desktop WebUI).
+                </li>
+                <li>Download the export zip, then import it here.</li>
+              </ol>
+              <details className="rounded-xl border border-border bg-surface px-4 py-3 text-xs text-text-muted">
+                <summary className="cursor-pointer text-text-secondary hover:text-foreground">
+                  Advanced details
+                </summary>
+                <p className="mt-2 leading-relaxed">
+                  Uses RVC v2 models (<code>.pth</code> + optional{" "}
+                  <code>.index</code>). Training needs CUDA — not this Mac.
+                  Conversion after each song runs locally.
+                </p>
+                <a
+                  href={RVC_TRAIN_GUIDE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-bee hover:underline"
+                >
+                  <ExternalLinkIcon className="size-3.5" />
+                  Open training guide
+                </a>
+              </details>
+            </div>
           ) : (
-            <p className="text-sm text-muted-foreground">
-              Last lines — keep singing until you stop.
-            </p>
+            <div className="flex flex-col gap-4">
+              <p className="text-sm text-text-secondary">
+                Prefer a zip export. Or upload <code>.pth</code> and optional
+                index separately.
+              </p>
+              <input
+                ref={fileRef}
+                type="file"
+                accept=".zip,.pth,application/zip"
+                className="hidden"
+                onChange={(e) => {
+                  const f = e.target.files?.[0] ?? null
+                  modelFileRef.current = f
+                  setFileName(f?.name ?? null)
+                }}
+              />
+              <input
+                ref={indexRef}
+                type="file"
+                accept=".index"
+                className="hidden"
+                onChange={(e) => {
+                  const f = e.target.files?.[0] ?? null
+                  indexFileRef.current = f
+                  setIndexName(f?.name ?? null)
+                }}
+              />
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => fileRef.current?.click()}
+                  className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2.5 text-sm text-text-secondary hover:text-foreground"
+                >
+                  <UploadIcon className="size-4" />
+                  {fileName || "Choose zip or .pth"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => indexRef.current?.click()}
+                  className="rounded-xl px-4 py-2.5 text-sm text-text-muted hover:text-foreground"
+                >
+                  {indexName || "Optional .index"}
+                </button>
+              </div>
+              <p className="text-xs text-text-muted">Supported: RVC model · ZIP</p>
+            </div>
           )}
         </div>
-      )}
 
-      <DialogFooter className="px-0">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={onStop}
-          disabled={countdown !== null}
-        >
-          <SquareIcon data-icon="inline-start" />
-          Stop & review
-        </Button>
-      </DialogFooter>
-    </div>
-  )
-}
-
-function ReviewStep({
-  elapsed,
-  previewUrl,
-  saving,
-  onRetake,
-  onSave,
-}: {
-  elapsed: number
-  previewUrl: string | null
-  saving: boolean
-  onRetake: () => void
-  onSave: () => void
-}) {
-  const longEnough = elapsed >= MIN_VOICE_SECONDS
-
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <Badge variant={longEnough ? "secondary" : "outline"}>
-          {formatTime(elapsed)} recorded
-        </Badge>
-        {!longEnough ? (
-          <p className="text-xs text-muted-foreground">
-            Aim for at least {formatTime(MIN_VOICE_SECONDS)}. Retake if needed.
-          </p>
-        ) : (
-          <p className="text-xs text-muted-foreground">Sounds good — save it.</p>
-        )}
-      </div>
-      {previewUrl ? (
-        <audio className="w-full" controls src={previewUrl} />
-      ) : null}
-      <DialogFooter className="gap-2 px-0 sm:justify-between">
-        <Button type="button" variant="ghost" onClick={onRetake} disabled={saving}>
-          <RotateCcwIcon data-icon="inline-start" />
-          Retake
-        </Button>
-        <Button type="button" onClick={onSave} disabled={saving || !longEnough}>
-          {saving ? <Spinner data-icon="inline-start" /> : null}
-          {saving ? "Saving…" : "Save voice"}
-        </Button>
-      </DialogFooter>
-    </div>
+        <DialogFooter className="border-t border-border px-6 py-4">
+          {step === "guide" ? (
+            <>
+              <button
+                type="button"
+                onClick={() => handleOpenChange(false)}
+                className="rounded-xl px-4 py-2.5 text-sm text-text-secondary hover:text-foreground"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => setStep("import")}
+                className="rounded-xl bg-bee px-4 py-2.5 text-sm font-medium text-primary-foreground"
+              >
+                I have a model — import
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={() => setStep("guide")}
+                className="rounded-xl px-4 py-2.5 text-sm text-text-secondary hover:text-foreground"
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                disabled={saving || !fileName}
+                onClick={() => void onImport()}
+                className="inline-flex items-center gap-2 rounded-xl bg-bee px-4 py-2.5 text-sm font-medium text-primary-foreground disabled:opacity-40"
+              >
+                {saving ? <Spinner className="size-3.5" /> : null}
+                {saving ? "Importing…" : "Import model"}
+              </button>
+            </>
+          )}
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }

@@ -11,10 +11,11 @@
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
     "setup:engine": "bash scripts/setup-engine.sh",
+    "setup:rvc": "bash scripts/setup-rvc.sh",
     "download:models": "bash scripts/download-models.sh",
     "repair:text-encoder": "bash scripts/repair-text-encoder.sh",
     "engine": "bash scripts/start-engine.sh",
-    "studio": "concurrently -k -n web,engine -c cyan,magenta \"npm run dev\" \"npm run engine\""
+    "studio": "concurrently -n web,engine -c cyan,magenta \"npm run dev\" \"npm run engine\""
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

@@ -14,11 +14,16 @@ export function dataPaths() {
     songs: path.join(root, "data", "songs"),
     voices: path.join(root, "data", "voices"),
     engine: path.join(root, "data", "engine.json"),
+    settings: path.join(root, "data", "settings.json"),
+    setupStatus: path.join(root, "data", "setup-status.json"),
+    supervisor: path.join(root, "data", "engine-supervisor.json"),
+    presence: path.join(root, "data", "studio-presence.json"),
   }
 }
 
 export function ensureDataDirs() {
-  const { jobs, songs, voices } = dataPaths()
+  const { jobs, songs, voices, data } = dataPaths()
+  mkdirSync(data, { recursive: true })
   mkdirSync(jobs, { recursive: true })
   mkdirSync(songs, { recursive: true })
   mkdirSync(voices, { recursive: true })
