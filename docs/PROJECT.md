@@ -1,7 +1,8 @@
 # YourBeatBee (MusicAI) — Project Documentation
 
 **Product name in the UI:** YourBeatBee  
-**Repository / package name:** `musicai`  
+**Repository:** [https://github.com/MohamedAshraf701/yourbeatbee](https://github.com/MohamedAshraf701/yourbeatbee)  
+**Package name:** `musicai`  
 **Version:** 0.0.1  
 
 This document explains what the project is, how it works, how it was built, how to run it, and which technologies it uses.
@@ -251,8 +252,8 @@ musicai/
 ### Recommended (open source)
 
 ```bash
-git clone <your-repo-url> musicai
-cd musicai
+git clone https://github.com/MohamedAshraf701/yourbeatbee.git
+cd yourbeatbee
 npm install
 npm run studio
 ```
