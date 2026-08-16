@@ -410,6 +410,14 @@ export function Studio({ initialSongs = [] }: { initialSongs?: Song[] }) {
           progress={progress}
           current={current}
           engineNotice={engineNotice}
+          engineLabel={
+            health?.settings?.engineFamily === "heartmula"
+              ? "HeartMuLa"
+              : health?.engineFamily === "heartmula"
+                ? "HeartMuLa"
+                : "ACE-Step"
+          }
+          onOpenEngine={() => setView("engine")}
         />
       ) : null}
 

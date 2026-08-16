@@ -10,21 +10,28 @@ import {
   type BackendId,
   type DeviceId,
   type DitModelId,
+  type EngineFamilyId,
+  type HeartmulaVersionId,
   type LmModelId,
   type ModelRecommendation,
   isDitModel,
+  isEngineFamily,
   isLmModel,
 } from "@/lib/models"
 import { dataPaths, ensureDataDirs } from "@/lib/paths"
 
 export type StudioSettings = {
   setupComplete: boolean
+  engineFamily: EngineFamilyId
   ditModel: DitModelId
   lmModel: LmModelId
   backend: BackendId
   device: DeviceId
   saveMemory: boolean
+  heartmulaVersion: HeartmulaVersionId
+  heartmulaLazyLoad: boolean
   recommended: {
+    engineFamily: EngineFamilyId
     ditModel: DitModelId
     lmModel: LmModelId
     reason: string
@@ -34,11 +41,14 @@ export type StudioSettings = {
 
 const DEFAULTS: Omit<StudioSettings, "updatedAt"> = {
   setupComplete: false,
+  engineFamily: "ace",
   ditModel: "acestep-v15-turbo",
   lmModel: "acestep-5Hz-lm-0.6B",
   backend: "auto",
   device: "auto",
   saveMemory: true,
+  heartmulaVersion: "3B",
+  heartmulaLazyLoad: true,
   recommended: null,
 }
 
@@ -53,6 +63,10 @@ function writeAtomic(file: string, payload: unknown) {
 }
 
 function normalize(raw: Partial<StudioSettings> | null): StudioSettings {
+  const engineFamily =
+    raw?.engineFamily && isEngineFamily(raw.engineFamily)
+      ? raw.engineFamily
+      : DEFAULTS.engineFamily
   const ditModel =
     raw?.ditModel && isDitModel(raw.ditModel)
       ? raw.ditModel
@@ -70,16 +84,24 @@ function normalize(raw: Partial<StudioSettings> | null): StudioSettings {
     raw?.device === "auto"
       ? raw.device
       : DEFAULTS.device
+  const heartmulaVersion =
+    raw?.heartmulaVersion === "3B" ? "3B" : DEFAULTS.heartmulaVersion
 
   return {
     setupComplete: Boolean(raw?.setupComplete),
+    engineFamily,
     ditModel,
     lmModel,
     backend,
     device,
     saveMemory: raw?.saveMemory !== false,
+    heartmulaVersion,
+    heartmulaLazyLoad: raw?.heartmulaLazyLoad !== false,
     recommended: raw?.recommended
       ? {
+          engineFamily: isEngineFamily(raw.recommended.engineFamily)
+            ? raw.recommended.engineFamily
+            : engineFamily,
           ditModel: isDitModel(raw.recommended.ditModel)
             ? raw.recommended.ditModel
             : ditModel,
@@ -100,7 +122,9 @@ export function getSettings(): StudioSettings {
     return { ...DEFAULTS, updatedAt: new Date().toISOString() }
   }
   try {
-    const raw = JSON.parse(readFileSync(settingsPath(), "utf8")) as Partial<StudioSettings>
+    const raw = JSON.parse(
+      readFileSync(settingsPath(), "utf8")
+    ) as Partial<StudioSettings>
     return normalize(raw)
   } catch {
     return { ...DEFAULTS, updatedAt: new Date().toISOString() }
@@ -119,13 +143,14 @@ export function saveSettings(
     recommended:
       recommendation != null
         ? {
+            engineFamily: recommendation.engineFamily,
             ditModel: recommendation.ditModel,
             lmModel: recommendation.lmModel,
             reason: recommendation.reason,
           }
-        : (patch.recommended !== undefined
-            ? patch.recommended
-            : current.recommended),
+        : patch.recommended !== undefined
+          ? patch.recommended
+          : current.recommended,
     updatedAt: new Date().toISOString(),
   })
   writeAtomic(settingsPath(), next)

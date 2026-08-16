@@ -14,14 +14,19 @@ export async function GET() {
   const supervisor = getEngineSupervisorStatus()
   const { system, recommendation } = probeSystemWithRecommendation()
   const setup = readSetupStatus()
+  const familyReady =
+    settings.engineFamily === "heartmula"
+      ? system.heartmulaReady
+      : system.vendorReady
   return Response.json({
     ...health,
+    engineFamily: settings.engineFamily,
     settings,
     supervisor,
     system,
     recommendation,
     setup,
     autoStop,
-    needsSetup: !settings.setupComplete || !system.vendorReady,
+    needsSetup: !settings.setupComplete || !familyReady,
   })
 }

@@ -807,6 +807,7 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
         "seed": audio.get("params", {}).get("seed", mapped["seed"]),
         "caption": caption,
         "audioFile": dest.name,
+        "engineFamily": "ace",
         "createdAt": utc_now(),
     }
     write_json(SONGS / f"{job_id}.json", song)
@@ -830,8 +831,106 @@ def run_job(dit, llm, path: Path, job: dict, device: str) -> None:
     print(f"[musicai] {job_id}: wrote {dest}")
 
 
+def active_engine_family(job: dict | None = None) -> str:
+    if job and job.get("engineFamily") in {"ace", "heartmula"}:
+        return str(job["engineFamily"])
+    settings = load_settings()
+    family = (settings.get("engineFamily") or os.environ.get("MUSICAI_ENGINE_FAMILY") or "ace")
+    family = str(family).strip().lower()
+    return family if family in {"ace", "heartmula"} else "ace"
+
+
+def run_job_heartmula(path: Path, job: dict) -> None:
+    from heartmula_runner import run_heartmula_job
+
+    job_id = job["id"]
+    job["status"] = "running"
+    job["updatedAt"] = utc_now()
+    update_job_progress(
+        path,
+        job,
+        phase="preparing",
+        progress=5,
+        message="Preparing HeartMuLa generation…",
+    )
+
+    settings = load_settings()
+
+    def progress(*, phase: str, progress: int, message: str) -> None:
+        update_job_progress(path, job, phase=phase, progress=progress, message=message)
+
+    result = run_heartmula_job(
+        job,
+        settings=settings,
+        songs_dir=SONGS,
+        work_dir=DATA / "tmp" / "heartmula",
+        update_progress=progress,
+    )
+    dest: Path = result["audio_path"]
+
+    song = {
+        "id": job_id,
+        "style": job.get("style") or "",
+        "lyrics": result["lyrics"],
+        "voice": job.get("voice") or "female",
+        "language": job.get("language") or "auto",
+        "influence": job.get("influence", 50),
+        "weirdness": job.get("weirdness", 30),
+        "voiceStrength": job.get("voiceStrength", 55),
+        "duration": job.get("duration", -1),
+        "bpm": job.get("bpm"),
+        "seed": job.get("seed", -1),
+        "caption": result["caption"],
+        "audioFile": dest.name,
+        "engineFamily": "heartmula",
+        "createdAt": utc_now(),
+    }
+    write_json(SONGS / f"{job_id}.json", song)
+
+    job["status"] = "done"
+    job["songId"] = job_id
+    job["error"] = None
+    job["phase"] = "done"
+    job["progress"] = 100
+    job["message"] = "Song ready."
+    job["updatedAt"] = utc_now()
+    write_json(path, job)
+    update_heartbeat(
+        ready=True,
+        busy=False,
+        phase="idle",
+        progress=100,
+        message="HeartMuLa ready.",
+        error=None,
+        model=result.get("model"),
+        device=result.get("device"),
+    )
+    print(f"[musicai] {job_id}: HeartMuLa wrote {dest}")
+
+
+def studio_managed() -> bool:
+    """True when `npm run studio` owns the engine via engine-loop.sh."""
+    marker = DATA / "studio-managed"
+    if not marker.is_file():
+        return False
+    try:
+        pid = int(marker.read_text(encoding="utf-8").strip())
+        if pid <= 0:
+            return False
+        os.kill(pid, 0)
+        return True
+    except Exception:
+        return False
+
+
 def studio_idle_should_exit() -> bool:
-    """Exit when the studio UI has been gone long enough and no jobs are active."""
+    """Exit when the studio UI has been gone long enough and no jobs are active.
+
+    Under `npm run studio`, the engine-loop owns lifecycle — do not self-exit on
+    idle or the loop will immediately respawn (restart fight).
+    """
+    if studio_managed():
+        return False
     presence = DATA / "studio-presence.json"
     if not presence.is_file():
         return False
@@ -860,6 +959,102 @@ def main() -> int:
     write_pid_file()
     reset_stale_jobs()
 
+    family = active_engine_family()
+    print(f"[musicai] Engine family: {family}")
+
+    if family == "heartmula":
+        return main_heartmula()
+    return main_ace()
+
+
+def main_heartmula() -> int:
+    settings = load_settings()
+    model = f"HeartMuLa-oss-{settings.get('heartmulaVersion') or '3B'}"
+    try:
+        import torch
+
+        if not torch.cuda.is_available():
+            mps = bool(
+                getattr(torch.backends, "mps", None)
+                and torch.backends.mps.is_available()
+            )
+            if mps:
+                print(
+                    "[musicai] HeartMuLa on Apple MPS (experimental). "
+                    "Lazy-load on; prefer ≥24GB RAM."
+                )
+            else:
+                print(
+                    "[musicai] WARNING: No CUDA/MPS. HeartMuLa on CPU is impractical — "
+                    "prefer ACE-Step on this machine."
+                )
+    except Exception:
+        pass
+    update_heartbeat(
+        ready=True,
+        busy=False,
+        phase="idle",
+        progress=100,
+        device=settings.get("device") or "auto",
+        model=model,
+        lm=None,
+        error=None,
+        message="HeartMuLa ready (loads weights per job).",
+        engineFamily="heartmula",
+    )
+    print("[musicai] HeartMuLa worker ready. Watching data/jobs/")
+
+    while True:
+        if _SHUTDOWN.is_set() or studio_idle_should_exit():
+            why = "signal" if _SHUTDOWN.is_set() else "studio idle"
+            print(f"[musicai] Unloading engine ({why}) to free memory.")
+            update_heartbeat(
+                ready=False,
+                busy=False,
+                phase="stopped",
+                progress=0,
+                message="Engine stopped (studio closed).",
+                error=None,
+            )
+            clear_pid_file()
+            return 0
+
+        update_heartbeat(
+            ready=True,
+            busy=False,
+            phase="idle",
+            progress=100,
+            model=model,
+            error=None,
+            message="HeartMuLa ready.",
+            engineFamily="heartmula",
+        )
+        pending = next_queued_job()
+        if pending is None:
+            time.sleep(1)
+            continue
+        path, job = pending
+        try:
+            run_job_heartmula(path, job)
+        except Exception as exc:
+            traceback.print_exc()
+            job["status"] = "error"
+            job["error"] = str(exc)
+            job["phase"] = "error"
+            job["message"] = str(exc)
+            job["updatedAt"] = utc_now()
+            write_json(path, job)
+            update_heartbeat(
+                ready=True,
+                busy=False,
+                phase="idle",
+                progress=100,
+                message="HeartMuLa ready.",
+                error=None,
+            )
+
+
+def main_ace() -> int:
     try:
         dit, llm, device, model, lm = load_handlers()
     except Exception as exc:
@@ -894,6 +1089,7 @@ def main() -> int:
             lm=lm,
             error=None,
             message="Model loaded on this Mac.",
+            engineFamily="ace",
         )
         pending = next_queued_job()
         if pending is None:

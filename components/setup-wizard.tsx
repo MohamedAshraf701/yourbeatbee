@@ -3,8 +3,8 @@
 import * as React from "react"
 import { toast } from "sonner"
 
-import { DIT_MODELS, LM_MODELS } from "@/lib/models"
-import type { DitModelId, LmModelId } from "@/lib/models"
+import { DIT_MODELS, ENGINE_FAMILIES, LM_MODELS } from "@/lib/models"
+import type { DitModelId, EngineFamilyId, LmModelId } from "@/lib/models"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -26,15 +26,18 @@ type SystemInfo = {
   backend: string
   cudaVramGb: number | null
   vendorReady: boolean
+  heartmulaReady: boolean
   rvcReady: boolean
 }
 
 type Recommendation = {
+  engineFamily: EngineFamilyId
   ditModel: DitModelId
   lmModel: LmModelId
   backend: string
   device: string
   saveMemory: boolean
+  heartmulaLazyLoad: boolean
   reason: string
   warnings: string[]
   advancedLm: LmModelId | null
@@ -66,6 +69,8 @@ export function SetupWizard({
     React.useState<Recommendation | null>(null)
   const [ditModel, setDitModel] = React.useState<DitModelId>("acestep-v15-turbo")
   const [lmModel, setLmModel] = React.useState<LmModelId>("acestep-5Hz-lm-0.6B")
+  const [engineFamily, setEngineFamily] =
+    React.useState<EngineFamilyId>("ace")
   const [status, setStatus] = React.useState<SetupStatus | null>(null)
   const [engineMsg, setEngineMsg] = React.useState("")
   const [loadPct, setLoadPct] = React.useState<number | null>(null)
@@ -94,6 +99,7 @@ export function SetupWizard({
       setRecommendation(rec)
       setDitModel(rec.ditModel)
       setLmModel(rec.lmModel)
+      setEngineFamily(rec.engineFamily || "ace")
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Probe failed")
     } finally {
@@ -139,7 +145,12 @@ export function SetupWizard({
       const res = await fetch("/api/setup/install", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ditModel, lmModel, mode: "full" }),
+        body: JSON.stringify({
+          engineFamily,
+          ditModel,
+          lmModel,
+          mode: "full",
+        }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -162,11 +173,14 @@ export function SetupWizard({
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          engineFamily,
           ditModel,
           lmModel,
           backend: recommendation?.backend ?? "auto",
           device: recommendation?.device ?? "auto",
           saveMemory: recommendation?.saveMemory ?? true,
+          heartmulaLazyLoad: recommendation?.heartmulaLazyLoad ?? true,
+          heartmulaVersion: "3B",
           setupComplete: true,
         }),
       })
@@ -291,20 +305,37 @@ export function SetupWizard({
           {step === "models" ? (
             <div className="flex flex-col gap-5">
               <ModelPicker
-                title="DiT"
-                options={DIT_MODELS}
-                value={ditModel}
-                recommended={recommendation?.ditModel}
-                onChange={(id) => setDitModel(id as DitModelId)}
+                title="Generation engine"
+                options={ENGINE_FAMILIES}
+                value={engineFamily}
+                recommended={recommendation?.engineFamily}
+                onChange={(id) => setEngineFamily(id as EngineFamilyId)}
               />
-              <ModelPicker
-                title="Language model"
-                options={LM_MODELS}
-                value={lmModel}
-                recommended={recommendation?.lmModel}
-                advanced={recommendation?.advancedLm ?? undefined}
-                onChange={(id) => setLmModel(id as LmModelId)}
-              />
+              {engineFamily === "ace" ? (
+                <>
+                  <ModelPicker
+                    title="DiT"
+                    options={DIT_MODELS}
+                    value={ditModel}
+                    recommended={recommendation?.ditModel}
+                    onChange={(id) => setDitModel(id as DitModelId)}
+                  />
+                  <ModelPicker
+                    title="Language model"
+                    options={LM_MODELS}
+                    value={lmModel}
+                    recommended={recommendation?.lmModel}
+                    advanced={recommendation?.advancedLm ?? undefined}
+                    onChange={(id) => setLmModel(id as LmModelId)}
+                  />
+                </>
+              ) : (
+                <p className="rounded-lg border border-border/60 bg-muted/40 px-3 py-2 text-sm leading-relaxed text-text-secondary">
+                  HeartMuLa uses the open 3B happy-new-year checkpoint +
+                  HeartCodec. Prefer a CUDA GPU; enable lazy-load on smaller
+                  cards after install.
+                </p>
+              )}
             </div>
           ) : null}
 
@@ -330,9 +361,13 @@ export function SetupWizard({
           {step === "engine" ? (
             <div className="flex flex-col gap-3 text-sm">
               <p>
-                Install finished. Start the engine with your selected models (
-                {ditModel.replace("acestep-", "")} +{" "}
-                {lmModel.replace("acestep-5Hz-lm-", "")}).
+                Install finished. Start the{" "}
+                {engineFamily === "heartmula" ? "HeartMuLa" : "ACE-Step"}{" "}
+                engine
+                {engineFamily === "ace"
+                  ? ` (${ditModel.replace("acestep-", "")} + ${lmModel.replace("acestep-5Hz-lm-", "")})`
+                  : " (3B + HeartCodec)"}
+                .
               </p>
               {engineMsg ? (
                 <p className="flex items-center gap-2 text-muted-foreground">

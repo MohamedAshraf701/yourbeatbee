@@ -16,7 +16,9 @@
     "repair:text-encoder": "bash scripts/repair-text-encoder.sh",
     "engine": "bash scripts/start-engine.sh",
     "engine:stop": "bash scripts/kill-engine.sh",
-    "studio": "bash scripts/studio.sh"
+    "studio": "bash scripts/studio.sh",
+    "setup:heartmula": "bash scripts/setup-heartmula.sh",
+    "download:heartmula": "bash scripts/download-heartmula.sh"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

@@ -1759,3 +1759,7 @@ Aaj bhi tujhse pyaar hai.<|endoftext|>
 2026-08-16 04:29:08.705 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:161 - [service_generate] Generating audio... (DiT backend: MLX (native))
 MLX DiT diffusion:   0%|          | 0/8 [00:00<?, ?it/s]MLX DiT diffusion:  12%|█▎        | 1/8 [01:59<13:59, 119.92s/it]MLX DiT diffusion:  25%|██▌       | 2/8 [03:41<10:56, 109.42s/it]/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[musicai] Engine unloaded.
+[musicai] Starting HeartMuLa engine (loads 3B + codec into memory)…
+[musicai] ckpt=/Users/ashraf/Documents/WorkSpace/musicai/vendor/heartlib/ckpt
+[musicai] Ctrl+C unloads the engine.

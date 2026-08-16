@@ -2,7 +2,7 @@
 
 **Local AI music studio** — turn an idea, lyrics, and a voice into an original song **on your own machine**.
 
-Built for open-source users who want studio-quality text-to-music without sending prompts to a cloud API. Powered by **[ACE-Step 1.5](https://github.com/ACE-Step/ACE-Step-1.5)** (MLX / MPS on Apple Silicon). Optional **My Voice** via imported RVC models.
+Built for open-source users who want studio-quality text-to-music without sending prompts to a cloud API. Choose between two local engines: **[ACE-Step 1.5](https://github.com/ACE-Step/ACE-Step-1.5)** (best on Apple Silicon MLX/MPS) or **[HeartMuLa](https://github.com/HeartMuLa/heartlib)** (strong lyric control; best on CUDA). Optional **My Voice** via imported RVC models.
 
 **Repository:** [github.com/MohamedAshraf701/yourbeatbee](https://github.com/MohamedAshraf701/yourbeatbee)
 
@@ -121,19 +121,27 @@ npm run studio
 ```
 
 1. Open **[http://localhost:3000](http://localhost:3000)**  
-2. Complete the **Setup** wizard (detect hardware → pick DiT / LM → install → start engine)  
+2. Complete the **Setup** wizard (detect hardware → pick **ACE-Step or HeartMuLa** → install → start engine)  
 3. Wait until the engine badge shows **ready**  
 4. Go to **Create** and generate your first song  
 
 `npm run studio` starts the Next.js UI and the Python engine together. Stopping it (Ctrl+C) unloads the engine so model RAM is freed. Starting studio again first clears any leftover workers so memory does not stack.
+
+Switch engines anytime under **Engine** (Apply & restart). Only the active family is loaded into memory.
 
 ### Optional CLI setup
 
 Power users can install from the terminal instead of (or before) the wizard:
 
 ```bash
-npm run setup:engine       # clone ACE-Step, uv sync, RVC env
-npm run download:models    # download weights with progress bars
+# ACE-Step (Mac-friendly default)
+npm run setup:engine
+npm run download:models
+
+# HeartMuLa (CUDA preferred)
+npm run setup:heartmula
+npm run download:heartmula
+
 npm run studio
 ```
 
@@ -168,7 +176,7 @@ musicai/
 ├── public/screenshots/  # README screenshots
 ├── docs/PROJECT.md      # Full project documentation
 ├── data/                # Runtime (jobs, songs, settings) — local
-└── vendor/              # ACE-Step + rvc-env after setup — local
+└── vendor/              # ACE-Step, heartlib, rvc-env after setup — local
 ```
 
 ---
@@ -179,17 +187,28 @@ musicai/
 |--------|----------------|
 | `npm run studio` | UI + engine together (unloads engine on exit) |
 | `npm run dev` | Next.js only |
-| `npm run engine` | Start ACE-Step worker |
+| `npm run engine` | Start worker for the **active** engine family |
 | `npm run engine:stop` | Force-unload engine / free RAM |
 | `npm run setup:engine` | Clone ACE-Step, sync deps, setup RVC |
+| `npm run setup:heartmula` | Clone HeartMuLa heartlib + venv |
 | `npm run setup:rvc` | RVC / Demucs env only |
-| `npm run download:models` | Download DiT / LM weights |
+| `npm run download:models` | Download ACE-Step DiT / LM weights |
+| `npm run download:heartmula` | Download HeartMuLa 3B + HeartCodec |
 | `npm run typecheck` | TypeScript check |
 | `npm run lint` / `format` | ESLint / Prettier |
 
 ---
 
 ## Model recommendations (Setup)
+
+| Machine | Engine | Notes |
+|---------|--------|--------|
+| Apple Silicon (MPS) | **ACE-Step** | Turbo + 0.6B / 1.7B by RAM. HeartMuLa is CUDA-oriented. |
+| CUDA ≥ 16GB VRAM | **HeartMuLa** (or ACE-Step) | HeartMuLa 3B + Codec; ACE Turbo + 1.7B also fine |
+| CUDA &lt; 16GB VRAM | HeartMuLa + lazy-load, or ACE 0.6B | Enable lazy-load in Engine settings |
+| CPU-only | ACE-Step 0.6B | Slow; HeartMuLa not practical |
+
+### ACE-Step DiT / LM
 
 | Machine | DiT | LM |
 |---------|-----|-----|
@@ -199,7 +218,7 @@ musicai/
 | CUDA ≥ 16GB VRAM | Turbo | 1.7B |
 | Low VRAM / CPU | Turbo | 0.6B |
 
-Choices are saved in `data/settings.json`. Env vars like `ACESTEP_LM_MODEL_PATH` still override when set — see [docs/PROJECT.md](docs/PROJECT.md).
+Choices are saved in `data/settings.json` (`engineFamily`: `ace` \| `heartmula`). Env vars like `ACESTEP_LM_MODEL_PATH` still override ACE when set — see [docs/PROJECT.md](docs/PROJECT.md).
 
 ---
 
@@ -257,6 +276,7 @@ Suggested flow:
 
 - **YourBeatBee / studio app code** in this repo — use under the terms you publish with the repository.  
 - **ACE-Step** — MIT (see `vendor/ACE-Step-1.5/LICENSE` after setup).  
+- **HeartMuLa / heartlib** — see upstream license in `vendor/heartlib` after setup.  
 - **Generated audio** — treat as AI-assisted; verify originality and rights before commercial use.  
 - **Imported RVC models** — you are responsible for training data consent and likeness rights.
 
