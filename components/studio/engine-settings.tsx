@@ -3,8 +3,14 @@
 import * as React from "react"
 import { toast } from "sonner"
 
-import { DIT_MODELS, LM_MODELS } from "@/lib/models"
-import type { BackendId, DeviceId, DitModelId, LmModelId } from "@/lib/models"
+import { DIT_MODELS, ENGINE_FAMILIES, LM_MODELS } from "@/lib/models"
+import type {
+  BackendId,
+  DeviceId,
+  DitModelId,
+  EngineFamilyId,
+  LmModelId,
+} from "@/lib/models"
 import type { EngineHealth } from "@/lib/types"
 import { Spinner } from "@/components/ui/spinner"
 import { cn } from "@/lib/utils"
@@ -26,8 +32,7 @@ export function EngineSettingsView({
           AI.
         </h1>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-text-secondary">
-          Configure the models powering your studio — kept readable for
-          musicians, with technical detail when you need it.
+          Choose ACE-Step or HeartMuLa, then tune the models for this machine.
         </p>
       </header>
       <EngineSettingsForm health={health} onOpenWizard={onOpenWizard} />
@@ -44,11 +49,14 @@ export function EngineSettingsForm({
   onOpenWizard: () => void
   onDone?: () => void
 }) {
+  const [engineFamily, setEngineFamily] =
+    React.useState<EngineFamilyId>("ace")
   const [ditModel, setDitModel] = React.useState<DitModelId>("acestep-v15-turbo")
   const [lmModel, setLmModel] = React.useState<LmModelId>("acestep-5Hz-lm-0.6B")
   const [backend, setBackend] = React.useState<BackendId>("auto")
   const [device, setDevice] = React.useState<DeviceId>("auto")
   const [saveMemory, setSaveMemory] = React.useState(true)
+  const [heartmulaLazyLoad, setHeartmulaLazyLoad] = React.useState(true)
   const [busy, setBusy] = React.useState(false)
   const [downloadLog, setDownloadLog] = React.useState("")
   const [showAdvanced, setShowAdvanced] = React.useState(false)
@@ -59,11 +67,15 @@ export function EngineSettingsForm({
         const res = await fetch("/api/setup/settings")
         const data = await res.json()
         if (!res.ok) return
+        if (data.engineFamily === "ace" || data.engineFamily === "heartmula") {
+          setEngineFamily(data.engineFamily)
+        }
         setDitModel(data.ditModel)
         setLmModel(data.lmModel)
         setBackend(data.backend)
         setDevice(data.device)
         setSaveMemory(Boolean(data.saveMemory))
+        setHeartmulaLazyLoad(data.heartmulaLazyLoad !== false)
       } catch {
         // ignore
       }
@@ -114,11 +126,14 @@ export function EngineSettingsForm({
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          engineFamily,
           ditModel,
           lmModel,
           backend,
           device,
           saveMemory,
+          heartmulaVersion: "3B",
+          heartmulaLazyLoad,
           setupComplete: true,
         }),
       })
@@ -131,7 +146,12 @@ export function EngineSettingsForm({
         const installRes = await fetch("/api/setup/install", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ditModel, lmModel, mode: "models" }),
+          body: JSON.stringify({
+            engineFamily,
+            ditModel,
+            lmModel,
+            mode: "models",
+          }),
         })
         const installData = await installRes.json()
         if (!installRes.ok) {
@@ -169,70 +189,139 @@ export function EngineSettingsForm({
 
   const recommendation = health?.recommendation
   const ready = Boolean(health?.ready)
+  const isHeart = engineFamily === "heartmula"
+  const familyReady = isHeart
+    ? Boolean(health?.system?.heartmulaReady)
+    : Boolean(health?.system?.vendorReady)
 
   return (
     <div className="flex max-w-2xl flex-col gap-12">
       <div className="flex items-center gap-3 border-b border-border pb-6">
         <span
           className={
-            ready ? "size-2 rounded-full bg-bee" : "size-2 rounded-full bg-text-muted"
+            ready
+              ? "size-2 rounded-full bg-bee"
+              : "size-2 rounded-full bg-text-muted"
           }
         />
-        <p className="meta-caps">{ready ? "Ready" : health?.alive ? "Loading" : "Offline"}</p>
+        <p className="meta-caps">
+          {ready ? "Ready" : health?.alive ? "Loading" : "Offline"}
+        </p>
         {health?.system ? (
           <p className="meta-caps ml-auto text-text-muted">
-            {health.system.backend.toUpperCase()} · {health.system.device.toUpperCase()}
+            {health.system.backend.toUpperCase()} ·{" "}
+            {health.system.device.toUpperCase()}
           </p>
         ) : null}
       </div>
 
       <section className="flex flex-col gap-3">
-        <p className="meta-caps">Music model</p>
+        <p className="meta-caps">Generation engine</p>
         <ModelRows
-          options={DIT_MODELS.map((m) => ({
-            ...m,
-            description: m.id.includes("turbo")
-              ? "Faster generation · Lower memory"
-              : "Stronger style following · More memory",
+          options={ENGINE_FAMILIES.map((m) => ({
+            id: m.id,
+            label: m.label,
+            blurb: m.blurb,
+            description: m.hint,
           }))}
-          value={ditModel}
-          recommended={recommendation?.ditModel}
-          onChange={(id) => setDitModel(id as DitModelId)}
+          value={engineFamily}
+          recommended={recommendation?.engineFamily}
+          onChange={(id) => setEngineFamily(id as EngineFamilyId)}
         />
+        {!familyReady ? (
+          <p className="text-xs text-text-muted">
+            {isHeart
+              ? "HeartMuLa not installed yet — use Download & apply or the setup wizard."
+              : "ACE-Step not installed yet — use Download & apply or the setup wizard."}
+          </p>
+        ) : null}
+        {isHeart && health?.system?.device === "mps" ? (
+          <p className="rounded-xl border border-bee/30 bg-bee/5 px-3 py-2 text-xs text-foreground">
+            HeartMuLa on Apple MPS is experimental. Keep lazy-load on, prefer
+            ≥24GB unified memory, and close other heavy apps. CUDA is still the
+            upstream-supported path.
+          </p>
+        ) : null}
       </section>
 
-      <section className="flex flex-col gap-3">
-        <p className="meta-caps">Language model</p>
-        <ModelRows
-          options={LM_MODELS.map((m) => ({
-            ...m,
-            description: m.id.includes("0.6B")
-              ? "Optimized for Apple Silicon"
-              : m.id.includes("1.7B")
-                ? "Higher quality"
-                : "Highest quality · Needs more memory",
-          }))}
-          value={lmModel}
-          recommended={recommendation?.lmModel}
-          advanced={recommendation?.advancedLm ?? undefined}
-          onChange={(id) => setLmModel(id as LmModelId)}
-        />
-      </section>
+      {isHeart ? (
+        <>
+          <section className="flex flex-col gap-2 border-y border-border py-6">
+            <p className="meta-caps">HeartMuLa version</p>
+            <p className="text-base font-medium tracking-tight">
+              3B happy-new-year
+            </p>
+            <p className="text-xs text-text-muted">
+              Best open lyric control + quality from HeartMuLa. 7B not released
+              upstream yet.
+            </p>
+          </section>
+          <label className="flex cursor-pointer items-start gap-3 border-b border-border pb-6">
+            <input
+              type="checkbox"
+              checked={heartmulaLazyLoad}
+              onChange={(e) => setHeartmulaLazyLoad(e.target.checked)}
+              className="mt-1 size-4 accent-bee"
+            />
+            <span>
+              <span className="meta-caps text-foreground">Lazy load</span>
+              <span className="mt-1 block text-xs text-text-muted">
+                Load modules on demand to save VRAM (recommended under ~16GB)
+              </span>
+            </span>
+          </label>
+        </>
+      ) : (
+        <>
+          <section className="flex flex-col gap-3">
+            <p className="meta-caps">Music model</p>
+            <ModelRows
+              options={DIT_MODELS.map((m) => ({
+                ...m,
+                description: m.id.includes("turbo")
+                  ? "Faster generation · Lower memory"
+                  : "Stronger style following · More memory",
+              }))}
+              value={ditModel}
+              recommended={recommendation?.ditModel}
+              onChange={(id) => setDitModel(id as DitModelId)}
+            />
+          </section>
 
-      <label className="flex cursor-pointer items-start gap-3 border-y border-border py-6">
-        <input
-          type="checkbox"
-          checked={saveMemory}
-          onChange={(e) => setSaveMemory(e.target.checked)}
-          className="mt-1 size-4 accent-bee"
-        />
-        <span>
-          <span className="meta-caps text-foreground">Memory optimized</span>
-          <span className="mt-1 block text-xs text-text-muted">
-            Recommended on Apple Silicon
-          </span>
-        </span>
-      </label>
+          <section className="flex flex-col gap-3">
+            <p className="meta-caps">Language model</p>
+            <ModelRows
+              options={LM_MODELS.map((m) => ({
+                ...m,
+                description: m.id.includes("0.6B")
+                  ? "Optimized for Apple Silicon"
+                  : m.id.includes("1.7B")
+                    ? "Higher quality"
+                    : "Highest quality · Needs more memory",
+              }))}
+              value={lmModel}
+              recommended={recommendation?.lmModel}
+              advanced={recommendation?.advancedLm ?? undefined}
+              onChange={(id) => setLmModel(id as LmModelId)}
+            />
+          </section>
+
+          <label className="flex cursor-pointer items-start gap-3 border-y border-border py-6">
+            <input
+              type="checkbox"
+              checked={saveMemory}
+              onChange={(e) => setSaveMemory(e.target.checked)}
+              className="mt-1 size-4 accent-bee"
+            />
+            <span>
+              <span className="meta-caps text-foreground">Memory optimized</span>
+              <span className="mt-1 block text-xs text-text-muted">
+                Recommended on Apple Silicon
+              </span>
+            </span>
+          </label>
+        </>
+      )}
 
       <div>
         <button
@@ -269,16 +358,26 @@ export function EngineSettingsForm({
             </div>
             <dl className="grid gap-2 text-xs text-text-secondary">
               <div className="flex justify-between gap-4">
-                <dt className="text-text-muted">DiT id</dt>
-                <dd className="truncate font-mono">{ditModel}</dd>
+                <dt className="text-text-muted">Family</dt>
+                <dd className="truncate font-mono">{engineFamily}</dd>
               </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-text-muted">LM id</dt>
-                <dd className="truncate font-mono">{lmModel}</dd>
-              </div>
+              {!isHeart ? (
+                <>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-text-muted">DiT id</dt>
+                    <dd className="truncate font-mono">{ditModel}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-text-muted">LM id</dt>
+                    <dd className="truncate font-mono">{lmModel}</dd>
+                  </div>
+                </>
+              ) : null}
               <div className="flex justify-between gap-4">
                 <dt className="text-text-muted">Loaded</dt>
-                <dd className="truncate font-mono">{health?.lm || "—"}</dd>
+                <dd className="truncate font-mono">
+                  {health?.model || health?.lm || "—"}
+                </dd>
               </div>
             </dl>
           </div>
@@ -380,7 +479,9 @@ function ModelRows({
                   selected ? "bg-bee" : "bg-transparent ring-1 ring-foreground/25"
                 )}
               />
-              <span className="text-base font-medium tracking-tight">{opt.label}</span>
+              <span className="text-base font-medium tracking-tight">
+                {opt.label}
+              </span>
               {recommended === opt.id ? (
                 <span className="meta-caps text-bee">Recommended</span>
               ) : null}

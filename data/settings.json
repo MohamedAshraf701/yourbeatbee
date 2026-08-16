@@ -1,14 +1,18 @@
 {
   "setupComplete": true,
+  "engineFamily": "heartmula",
   "ditModel": "acestep-v15-turbo",
   "lmModel": "acestep-5Hz-lm-0.6B",
   "backend": "mlx",
   "device": "mps",
   "saveMemory": true,
+  "heartmulaVersion": "3B",
+  "heartmulaLazyLoad": true,
   "recommended": {
+    "engineFamily": "ace",
     "ditModel": "acestep-v15-turbo",
     "lmModel": "acestep-5Hz-lm-0.6B",
-    "reason": "Apple Silicon with ~18GB RAM — use Turbo + 0.6B LM."
+    "reason": "Apple Silicon with ~18GB RAM — ACE-Step Turbo + 0.6B LM."
   },
-  "updatedAt": "2026-08-15T22:26:45.873Z"
+  "updatedAt": "2026-08-16T17:33:10.435Z"
 }

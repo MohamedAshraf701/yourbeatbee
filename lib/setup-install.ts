@@ -10,7 +10,7 @@ import { spawn } from "node:child_process"
 import path from "node:path"
 
 import { dataPaths, ensureDataDirs, projectRoot } from "@/lib/paths"
-import type { DitModelId, LmModelId } from "@/lib/models"
+import type { DitModelId, EngineFamilyId, LmModelId } from "@/lib/models"
 
 export type SetupStatus = {
   running: boolean
@@ -53,6 +53,7 @@ function writeStatus(patch: Partial<SetupStatus>) {
 }
 
 export function startInstallPipeline(opts: {
+  engineFamily?: EngineFamilyId
   ditModel: DitModelId
   lmModel: LmModelId
   /** full = clone/sync + download; models = download weights only */
@@ -64,16 +65,21 @@ export function startInstallPipeline(opts: {
   }
 
   const mode = opts.mode ?? "full"
+  const family = opts.engineFamily ?? "ace"
   const root = projectRoot()
   const logPath = path.join(dataPaths().data, "setup.log")
   mkdirSync(dataPaths().data, { recursive: true })
   writeFileSync(logPath, "", { flag: "a" })
 
+  const isHeart = family === "heartmula"
   writeStatus({
     running: true,
     step: mode === "models" ? "download" : "install",
-    message:
-      mode === "models"
+    message: isHeart
+      ? mode === "models"
+        ? "Downloading HeartMuLa 3B + HeartCodec…"
+        : "Installing HeartMuLa heartlib and downloading weights…"
+      : mode === "models"
         ? `Downloading ${opts.ditModel} + ${opts.lmModel}…`
         : "Installing ACE-Step, RVC env, and downloading models…",
     error: null,
@@ -82,8 +88,27 @@ export function startInstallPipeline(opts: {
     logTail: "",
   })
 
-  const script =
-    mode === "models"
+  const script = isHeart
+    ? mode === "models"
+      ? `
+set -euo pipefail
+ROOT="${root}"
+cd "$ROOT"
+echo "[setup] Downloading HeartMuLa weights…"
+bash scripts/download-heartmula.sh
+echo "[setup] Done."
+`
+      : `
+set -euo pipefail
+ROOT="${root}"
+cd "$ROOT"
+echo "[setup] HeartMuLa heartlib…"
+bash scripts/setup-heartmula.sh
+echo "[setup] Downloading HeartMuLa weights…"
+bash scripts/download-heartmula.sh
+echo "[setup] Done."
+`
+    : mode === "models"
       ? `
 set -euo pipefail
 ROOT="${root}"
@@ -149,7 +174,6 @@ echo "[setup] Done."
     }
   })
 
-  // Poll log into status periodically while running
   const timer = setInterval(() => {
     const st = readSetupStatus()
     if (!st.running) {
@@ -169,5 +193,19 @@ echo "[setup] Done."
 
 export function vendorInstalled(): boolean {
   const vendor = path.join(projectRoot(), "vendor", "ACE-Step-1.5")
-  return existsSync(path.join(vendor, "pyproject.toml")) || existsSync(path.join(vendor, ".git"))
+  return (
+    existsSync(path.join(vendor, "pyproject.toml")) ||
+    existsSync(path.join(vendor, ".git"))
+  )
+}
+
+export function heartmulaInstalled(): boolean {
+  const heart = path.join(projectRoot(), "vendor", "heartlib")
+  const ckpt = path.join(heart, "ckpt")
+  return (
+    (existsSync(path.join(heart, "pyproject.toml")) ||
+      existsSync(path.join(heart, ".git"))) &&
+    existsSync(path.join(ckpt, "HeartMuLa-oss-3B")) &&
+    existsSync(path.join(ckpt, "HeartCodec-oss"))
+  )
 }

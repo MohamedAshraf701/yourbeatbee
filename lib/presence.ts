@@ -8,7 +8,10 @@ import {
 
 import { dataPaths, ensureDataDirs } from "@/lib/paths"
 import { listJobs } from "@/lib/jobs"
-import { stopEngineProcess } from "@/lib/engine-supervisor"
+import {
+  isStudioManagedProcess,
+  stopEngineProcess,
+} from "@/lib/engine-supervisor"
 
 /** Stop engine if studio tab has been gone this long (ms). */
 export const PRESENCE_IDLE_MS = 90_000
@@ -74,6 +77,12 @@ export function maybeAutoStopEngine(): {
   stopped: boolean
   reason: string | null
 } {
+  // `npm run studio` owns the engine via engine-loop; killing it here only
+  // causes an immediate respawn. Unload happens on Ctrl+C / studio exit.
+  if (isStudioManagedProcess()) {
+    return { stopped: false, reason: "studio_managed" }
+  }
+
   const age = presenceAgeMs()
   if (age === null) {
     return { stopped: false, reason: null }

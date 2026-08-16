@@ -3,6 +3,7 @@ import { readFileSync, readdirSync, writeFileSync, renameSync } from "node:fs"
 import path from "node:path"
 
 import { dataPaths, ensureDataDirs, isSafeId } from "@/lib/paths"
+import { getSettings } from "@/lib/settings"
 import type { GenerateInput, Job } from "@/lib/types"
 
 function jobPath(id: string) {
@@ -50,7 +51,11 @@ export function validateGenerateInput(body: unknown): GenerateInput | string {
   if (!Number.isFinite(weirdness) || weirdness < 0 || weirdness > 100) {
     return "Weirdness must be 0–100."
   }
-  if (!Number.isFinite(voiceStrength) || voiceStrength < 0 || voiceStrength > 100) {
+  if (
+    !Number.isFinite(voiceStrength) ||
+    voiceStrength < 0 ||
+    voiceStrength > 100
+  ) {
     return "Voice strength must be 0–100."
   }
 
@@ -67,10 +72,13 @@ export function validateGenerateInput(body: unknown): GenerateInput | string {
     }
   }
 
-  const seed = input.seed === undefined || input.seed === "" ? -1 : Number(input.seed)
+  const seed =
+    input.seed === undefined || input.seed === "" ? -1 : Number(input.seed)
   if (!Number.isFinite(seed) || !Number.isInteger(seed)) {
     return "Seed must be an integer."
   }
+
+  const settings = getSettings()
 
   return {
     style,
@@ -87,6 +95,7 @@ export function validateGenerateInput(body: unknown): GenerateInput | string {
     referenceAudio: null,
     rvcModelPath: null,
     rvcIndexPath: null,
+    engineFamily: settings.engineFamily,
   }
 }
 
@@ -95,6 +104,7 @@ export function createJob(input: GenerateInput): Job {
   const now = new Date().toISOString()
   const job: Job = {
     ...input,
+    engineFamily: input.engineFamily || getSettings().engineFamily,
     id: randomUUID(),
     status: "queued",
     progress: 0,

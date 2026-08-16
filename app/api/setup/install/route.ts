@@ -1,4 +1,4 @@
-import { isDitModel, isLmModel } from "@/lib/models"
+import { isDitModel, isEngineFamily, isLmModel } from "@/lib/models"
 import { saveSettings } from "@/lib/settings"
 import { startInstallPipeline, readSetupStatus } from "@/lib/setup-install"
 import { recommendModels } from "@/lib/models"
@@ -17,6 +17,10 @@ export async function POST(request: Request) {
   const system = probeSystem()
   const recommendation = recommendModels(system)
 
+  const engineFamily =
+    typeof input.engineFamily === "string" && isEngineFamily(input.engineFamily)
+      ? input.engineFamily
+      : recommendation.engineFamily
   const ditModel =
     typeof input.ditModel === "string" && isDitModel(input.ditModel)
       ? input.ditModel
@@ -28,11 +32,13 @@ export async function POST(request: Request) {
 
   saveSettings(
     {
+      engineFamily,
       ditModel,
       lmModel,
       backend: recommendation.backend,
       device: recommendation.device,
       saveMemory: recommendation.saveMemory,
+      heartmulaLazyLoad: recommendation.heartmulaLazyLoad,
       setupComplete: false,
     },
     recommendation
@@ -40,7 +46,12 @@ export async function POST(request: Request) {
 
   const mode =
     input.mode === "models" || input.mode === "full" ? input.mode : "full"
-  const status = startInstallPipeline({ ditModel, lmModel, mode })
+  const status = startInstallPipeline({
+    engineFamily,
+    ditModel,
+    lmModel,
+    mode,
+  })
   return Response.json(status)
 }
 

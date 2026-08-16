@@ -53,6 +53,8 @@ export function CreateWorkspace({
   progress,
   current,
   engineNotice,
+  engineLabel,
+  onOpenEngine,
 }: {
   style: string
   onStyleChange: (v: string) => void
@@ -89,6 +91,8 @@ export function CreateWorkspace({
   progress: number
   current: Song | null
   engineNotice: React.ReactNode
+  engineLabel?: string
+  onOpenEngine?: () => void
 }) {
   return (
     <div className="flex flex-col gap-0">
@@ -101,6 +105,16 @@ export function CreateWorkspace({
             Local music studio
           </p>
 
+          {engineLabel ? (
+            <button
+              type="button"
+              onClick={onOpenEngine}
+              className="meta-caps w-fit text-bee transition-colors hover:underline reveal-up"
+              style={{ animationDelay: "80ms" }}
+            >
+              Engine · {engineLabel}
+            </button>
+          ) : null}
           <h1 className="display-hero">
             {HERO_LINES.map((line, li) => (
               <span

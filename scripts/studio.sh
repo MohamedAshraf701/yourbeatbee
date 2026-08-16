@@ -16,10 +16,11 @@ trap cleanup EXIT INT TERM HUP
 bash "$ROOT/scripts/kill-engine.sh" || true
 
 echo "[musicai] Starting studio (web + engine). Ctrl+C unloads the engine."
+# Do not use --kill-others: Apply & restart / Stop in the UI kill the
+# engine worker on purpose; that must not tear down the Next.js process.
+# engine-loop respawns the worker so terminal logs keep flowing.
 npx concurrently \
   -n web,engine \
   -c cyan,magenta \
-  --kill-others \
-  --kill-signal SIGTERM \
   "npm run dev" \
-  "npm run engine"
+  "bash scripts/engine-loop.sh"

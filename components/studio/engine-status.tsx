@@ -120,24 +120,45 @@ export function EngineStatus({
 
           <dl className="mt-5 grid grid-cols-2 gap-3 text-xs">
             <div>
-              <dt className="meta-caps">Backend</dt>
-              <dd className="mt-1">{backend}</dd>
+              <dt className="meta-caps">Engine</dt>
+              <dd className="mt-1">
+                {settings?.engineFamily === "heartmula" ||
+                health?.engineFamily === "heartmula"
+                  ? "HeartMuLa"
+                  : "ACE-Step"}
+              </dd>
             </div>
             <div>
               <dt className="meta-caps">Device</dt>
               <dd className="mt-1">{device}</dd>
             </div>
+            {settings?.engineFamily === "heartmula" ||
+            health?.engineFamily === "heartmula" ? (
+              <div className="col-span-2">
+                <dt className="meta-caps">Model</dt>
+                <dd className="mt-1">
+                  {health?.model || "HeartMuLa-oss-3B"}
+                </dd>
+              </div>
+            ) : (
+              <>
+                <div>
+                  <dt className="meta-caps">DiT</dt>
+                  <dd className="mt-1">
+                    {ditDisplayName(settings?.ditModel || health?.model)}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="meta-caps">LM</dt>
+                  <dd className="mt-1">
+                    {lmDisplayName(settings?.lmModel || health?.lm)}
+                  </dd>
+                </div>
+              </>
+            )}
             <div>
-              <dt className="meta-caps">DiT</dt>
-              <dd className="mt-1">
-                {ditDisplayName(settings?.ditModel || health?.model)}
-              </dd>
-            </div>
-            <div>
-              <dt className="meta-caps">LM</dt>
-              <dd className="mt-1">
-                {lmDisplayName(settings?.lmModel || health?.lm)}
-              </dd>
+              <dt className="meta-caps">Backend</dt>
+              <dd className="mt-1">{backend}</dd>
             </div>
           </dl>
 

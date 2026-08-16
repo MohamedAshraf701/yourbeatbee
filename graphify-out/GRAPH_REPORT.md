@@ -1,12 +1,12 @@
 # Graph Report - musicai  (2026-08-16)
 
 ## Corpus Check
-- 711 files · ~2,918,173 words
+- 725 files · ~3,054,924 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 9731 nodes · 14514 edges · 233 communities detected
-- Extraction: 82% EXTRACTED · 18% INFERRED · 0% AMBIGUOUS · INFERRED: 2632 edges (avg confidence: 0.72)
+- 9929 nodes · 14877 edges · 233 communities detected
+- Extraction: 82% EXTRACTED · 18% INFERRED · 0% AMBIGUOUS · INFERRED: 2658 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -135,7 +135,6 @@
 - [[_COMMUNITY_Community 122|Community 122]]
 - [[_COMMUNITY_Community 123|Community 123]]
 - [[_COMMUNITY_Community 124|Community 124]]
-- [[_COMMUNITY_Community 125|Community 125]]
 - [[_COMMUNITY_Community 126|Community 126]]
 - [[_COMMUNITY_Community 127|Community 127]]
 - [[_COMMUNITY_Community 128|Community 128]]
@@ -165,12 +164,11 @@
 - [[_COMMUNITY_Community 152|Community 152]]
 - [[_COMMUNITY_Community 153|Community 153]]
 - [[_COMMUNITY_Community 154|Community 154]]
-- [[_COMMUNITY_Community 167|Community 167]]
+- [[_COMMUNITY_Community 155|Community 155]]
 - [[_COMMUNITY_Community 169|Community 169]]
-- [[_COMMUNITY_Community 170|Community 170]]
 - [[_COMMUNITY_Community 171|Community 171]]
+- [[_COMMUNITY_Community 172|Community 172]]
 - [[_COMMUNITY_Community 173|Community 173]]
-- [[_COMMUNITY_Community 174|Community 174]]
 - [[_COMMUNITY_Community 175|Community 175]]
 - [[_COMMUNITY_Community 176|Community 176]]
 - [[_COMMUNITY_Community 177|Community 177]]
@@ -197,8 +195,8 @@
 - [[_COMMUNITY_Community 198|Community 198]]
 - [[_COMMUNITY_Community 199|Community 199]]
 - [[_COMMUNITY_Community 200|Community 200]]
+- [[_COMMUNITY_Community 201|Community 201]]
 - [[_COMMUNITY_Community 202|Community 202]]
-- [[_COMMUNITY_Community 203|Community 203]]
 - [[_COMMUNITY_Community 204|Community 204]]
 - [[_COMMUNITY_Community 205|Community 205]]
 - [[_COMMUNITY_Community 206|Community 206]]
@@ -218,12 +216,12 @@
 - [[_COMMUNITY_Community 220|Community 220]]
 - [[_COMMUNITY_Community 221|Community 221]]
 - [[_COMMUNITY_Community 222|Community 222]]
-- [[_COMMUNITY_Community 228|Community 228]]
-- [[_COMMUNITY_Community 231|Community 231]]
-- [[_COMMUNITY_Community 232|Community 232]]
+- [[_COMMUNITY_Community 223|Community 223]]
+- [[_COMMUNITY_Community 224|Community 224]]
+- [[_COMMUNITY_Community 230|Community 230]]
 - [[_COMMUNITY_Community 233|Community 233]]
+- [[_COMMUNITY_Community 234|Community 234]]
 - [[_COMMUNITY_Community 235|Community 235]]
-- [[_COMMUNITY_Community 236|Community 236]]
 - [[_COMMUNITY_Community 237|Community 237]]
 - [[_COMMUNITY_Community 238|Community 238]]
 - [[_COMMUNITY_Community 239|Community 239]]
@@ -243,6 +241,8 @@
 - [[_COMMUNITY_Community 253|Community 253]]
 - [[_COMMUNITY_Community 254|Community 254]]
 - [[_COMMUNITY_Community 255|Community 255]]
+- [[_COMMUNITY_Community 256|Community 256]]
+- [[_COMMUNITY_Community 257|Community 257]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `DCWCorrector` - 109 edges
@@ -272,43 +272,43 @@
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
-Nodes (375): AceStepConfig, r"""     This is the configuration class to store the configuration of a [`AceSt, AceStepAttention, AceStepAudioTokenizer, AceStepConditionEncoder, AceStepConditionGenerationModel, AceStepDiTLayer, AceStepDiTModel (+367 more)
+Nodes (381): AceStepConfig, r"""     This is the configuration class to store the configuration of a [`AceSt, AceStepAttention, AceStepAudioTokenizer, AceStepConditionEncoder, AceStepConditionGenerationModel, AceStepDiTLayer, AceStepDiTModel (+373 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.01
-Nodes (433): generate_examples(), Generate examples using LM and save to JSON files          Args:         num_exa, _cleanup_dir(), load_example_config(), PreciseTimer, High-precision timer with GPU synchronization for accurate timing., Remove temporary directory silently., Load configuration from example JSON file, applying CLI overrides. (+425 more)
+Nodes (411): generate_examples(), Generate examples using LM and save to JSON files          Args:         num_exa, load_example_config(), Load configuration from example JSON file, applying CLI overrides., Run a single tier test with the given configuration.      Args:         sim_gb:, _run_single_tier_test(), main(), AudioSaver (+403 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.01
-Nodes (282): auto_detect_backend(), build_parser(), _cleanup_handlers(), _get_vram_info_str(), initialize_handlers(), load_env_config(), main(), _print_batch_boundary_summary() (+274 more)
+Nodes (290): auto_detect_backend(), build_parser(), _cleanup_dir(), _cleanup_handlers(), _get_vram_info_str(), initialize_handlers(), load_env_config(), main() (+282 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.01
-Nodes (293): _cleanup_gpu(), _dispatch(), _has_subcommand(), main(), Entry point for Side-Step training CLI.      When invoked with a subcommand (``p, Run the two-pass preprocessing pipeline., Run gradient sensitivity estimation., Check if sys.argv contains a recognized subcommand or --help. (+285 more)
+Nodes (201): MetadataConstrainedLogitsProcessor, Extract genres from the user's caption that match entries in the vocabulary., Recursively collect all complete genres under a trie node.         Limited depth, Precompute mapping from characters to token IDs and token decoded texts., Initialize the constrained logits processor.                  This processor sho, Check if genres vocab file has been updated and reload if necessary., Get the trie node for a given prefix.         Returns None if the prefix is not, Check if the given text is a complete genre in the vocabulary. (+193 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.01
-Nodes (215): build_configs(), Config-object construction for ACE-Step Training V2 CLI.  Reads model ``config.j, Find config.json for *variant*, supporting custom folder names.      Checks the, Construct adapter config and TrainingConfigV2 from parsed CLI args.      Returns, _resolve_model_config_path(), _HandlerShim, Minimal shim satisfying the ``LoRATrainer`` constructor.      The original train, Dataset (+207 more)
+Nodes (215): CoreMixin, DataframeMixin, Dataset, get_audio_duration(), load_caption_file(), load_json_metadata(), load_lyrics_file(), Read a text file; return (content.strip(), True) if present and non-empty. (+207 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.01
-Nodes (220): _configure_cpu_threads(), configure_cpu_threads_if_needed(), debug_end(), debug_end_for(), debug_end_verbose_for(), debug_log(), debug_log_for(), debug_log_verbose_for() (+212 more)
+Nodes (293): _cleanup_gpu(), _dispatch(), _has_subcommand(), main(), Entry point for Side-Step training CLI.      When invoked with a subcommand (``p, Run the two-pass preprocessing pipeline., Run gradient sensitivity estimation., Check if sys.argv contains a recognized subcommand or --help. (+285 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.01
-Nodes (171): MetadataConstrainedLogitsProcessor, Extract genres from the user's caption that match entries in the vocabulary., Recursively collect all complete genres under a trie node.         Limited depth, Precompute mapping from characters to token IDs and token decoded texts., Initialize the constrained logits processor.                  This processor sho, Check if genres vocab file has been updated and reload if necessary., Get the trie node for a given prefix.         Returns None if the prefix is not, Check if the given text is a complete genre in the vocabulary. (+163 more)
+Nodes (222): build_configs(), Config-object construction for ACE-Step Training V2 CLI.  Reads model ``config.j, Find config.json for *variant*, supporting custom folder names.      Checks the, Construct adapter config and TrainingConfigV2 from parsed CLI args.      Returns, _resolve_model_config_path(), _HandlerShim, Minimal shim satisfying the ``LoRATrainer`` constructor.      The original train, LoKRConfig (+214 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.01
-Nodes (183): create_help_button(), MdToHtmlTests, Markdown conversion unit tests for help-content rendering., Tests for the lightweight Markdown-to-HTML converter., ## headings become <h3> tags., ### headings become <h4> tags., **bold** becomes <strong>., *italic* becomes <em>. (+175 more)
+Nodes (198): create_help_button(), MdToHtmlTests, Markdown conversion unit tests for help-content rendering., Tests for the lightweight Markdown-to-HTML converter., ## headings become <h3> tags., ### headings become <h4> tags., **bold** becomes <strong>., *italic* becomes <em>. (+190 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.01
-Nodes (148): _is_mlx_available(), ConditioningTargetMixin, GenerateMusicExecuteMixin, AudioCodesMixin, Audio-code parsing and conversion helpers for handler decomposition., Mixin containing audio-code parsing and latent conversion helpers.      Depends, Extract integer audio codes from tokens like ``<|audio_code_123|>``., Convert serialized audio-code string into 25Hz latents. (+140 more)
+Nodes (195): _apply_optional_defaults(), _build_meta_dict(), _configure_logging(), _default_instruction_for_task(), _edit_formatted_prompt_via_file(), _expand_audio_path(), _extract_caption_lyrics_from_formatted_prompt(), _extract_cot_metadata_from_formatted_prompt() (+187 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.01
-Nodes (195): _apply_optional_defaults(), _build_meta_dict(), _configure_logging(), _default_instruction_for_task(), _edit_formatted_prompt_via_file(), _expand_audio_path(), _extract_caption_lyrics_from_formatted_prompt(), _extract_cot_metadata_from_formatted_prompt() (+187 more)
+Nodes (139): _is_mlx_available(), ConditioningBatchMixin, GenerateMusicExecuteMixin, AudioCodesMixin, Audio-code parsing and conversion helpers for handler decomposition., Mixin containing audio-code parsing and latent conversion helpers.      Depends, Extract integer audio codes from tokens like ``<|audio_code_123|>``., Convert serialized audio-code string into 25Hz latents. (+131 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.01
@@ -319,24 +319,24 @@ Cohesion: 0.01
 Nodes (161): Generation Input Handlers Module — Facade.  Re-exports all public symbols from t, Generation package intent: music generation orchestration, params, and diffusion, build_user_metadata(), convert_lm_params(), _parse_positive_duration_seconds(), Shared parameter-normalization helpers for generation LLM actions., Build constrained-decoding metadata from optional manual inputs., Convert UI LM controls to inference-compatible top-k/top-p values. (+153 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.01
-Nodes (137): RuntimeError, extract_balanced_json_objects(), extract_json_block(), extract_labelled_plan_fields(), iter_json_candidates(), load_plan_json_object(), normalize_model_content(), JSON parsing helpers for external AI text-task responses. (+129 more)
+Cohesion: 0.02
+Nodes (160): _configure_cpu_threads(), configure_cpu_threads_if_needed(), debug_end(), debug_end_for(), debug_end_verbose_for(), debug_log(), debug_log_for(), debug_log_verbose_for() (+152 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.02
-Nodes (136): Gradio UI Event Handlers Module Main entry point for setting up all event handle, Setup generation/results event wiring for the Gradio UI.      Args:         demo, Setup event handlers for the training tab (dataset builder and LoRA training), setup_event_handlers(), setup_training_event_handlers(), I18nHelpKeysTests, I18n key-coverage tests for help-content strings., Verify that all language files contain the required help.* keys. (+128 more)
+Cohesion: 0.01
+Nodes (118): _Builder, HTTP integration tests for dataset preprocess routes., GET /v1/dataset/preprocess_status/{task_id} should return wrapped task payload., Return API-compatible response envelope for tests., Require fixed bearer token for test requests., Minimal sample test double for preprocess route logic., Store labeled marker consumed by preprocess route filtering., Dataset builder test double for preprocess route behavior. (+110 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.01
-Nodes (121): _Builder, HTTP integration tests for dataset preprocess routes., GET /v1/dataset/preprocess_status/{task_id} should return wrapped task payload., Return API-compatible response envelope for tests., Require fixed bearer token for test requests., Minimal sample test double for preprocess route logic., Store labeled marker consumed by preprocess route filtering., Dataset builder test double for preprocess route behavior. (+113 more)
+Nodes (122): create_openrouter_router(), Create OpenRouter-compatible API router.      Args:         app_state_getter: Ca, configure_api_routes(), Application route and middleware registration helpers for API server., Configure middleware, compatibility router, and all API route modules., Unit tests for API route setup helper wiring., Behavior tests for middleware and route registration orchestration., RouteSetupTests (+114 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.02
-Nodes (45): SettingsPanel(), onVisible(), ping(), ThemeProvider(), formatTime(), handleOpenChange(), onImport(), pickMimeType() (+37 more)
+Nodes (111): extract_balanced_json_objects(), extract_json_block(), extract_labelled_plan_fields(), iter_json_candidates(), load_plan_json_object(), normalize_model_content(), JSON parsing helpers for external AI text-task responses., Apply small non-destructive repairs for common JSON defects. (+103 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.02
-Nodes (111): create_openrouter_router(), Create OpenRouter-compatible API router.      Args:         app_state_getter: Ca, configure_api_routes(), Application route and middleware registration helpers for API server., Configure middleware, compatibility router, and all API route modules., Unit tests for API route setup helper wiring., Behavior tests for middleware and route registration orchestration., RouteSetupTests (+103 more)
+Nodes (45): SettingsPanel(), onVisible(), ping(), ThemeProvider(), formatTime(), handleOpenChange(), onImport(), pickMimeType() (+37 more)
 
 ### Community 17 - "Community 17"
 Cohesion: 0.02
@@ -344,91 +344,91 @@ Nodes (79): _Host, InitServiceMixinTests, _load_init_service_module(), Unit test
 
 ### Community 18 - "Community 18"
 Cohesion: 0.02
-Nodes (88): flowedit_sampling_loop(), apply_cfg_branch(), apply_velocity_clamp(), apply_velocity_ema(), build_timestep_schedule(), draw_fwd_noise(), pack_for_cfg(), Helper primitives for ``flow_edit.flowedit_sampling_loop`` (#1156).  Split out p (+80 more)
+Nodes (81): DiffusionMixin, DiffusionMixin, Mixin containing diffusion execution helpers.      Required host attributes:, Run the MLX diffusion loop and return generated latents.          Args:, DiffusionMixinTests, _Host, _IterableTimesteps, apply_mlx_dcw() (+73 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.02
-Nodes (94): get_dcw_defaults_for_think(), Think-aware DCW default values shared by Gradio event handlers., Return DCW defaults for the current Think state.      Args:         think_enable, Update DCW controls to defaults for the current Think state.      Args:, DcwDefaultTests, Unit tests for small generation UI helper functions., Validate Think-aware DCW default selection., Think mode should use the LM-tuned DCW defaults. (+86 more)
+Nodes (47): AutomaticSpeechRecognitionPipeline, HeartCodecConfig, HeartCodec, _create_causal_mask(), HeartMuLa, _index_causal_mask(), _multinomial_sample_one_no_sync(), _prepare_transformer() (+39 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.02
-Nodes (95): _format_vtt_timestamp(), generate_lrc_handler(), lrc_to_vtt_file(), parse_lrc_to_subtitles(), LRC parsing, VTT conversion, subtitle updates, and LRC file I/O.  Handles all LR, Format seconds to VTT timestamp ``HH:MM:SS.mmm``., Convert LRC text to a VTT subtitle file and return its path.      Args:, Update Audio component subtitles from LRC text via a VTT file.      Args: (+87 more)
+Nodes (94): get_dcw_defaults_for_think(), Think-aware DCW default values shared by Gradio event handlers., Return DCW defaults for the current Think state.      Args:         think_enable, Update DCW controls to defaults for the current Think state.      Args:, DcwDefaultTests, Unit tests for small generation UI helper functions., Validate Think-aware DCW default selection., Think mode should use the LM-tuned DCW defaults. (+86 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.02
-Nodes (75): FakeDecoder, FakeModel, FakeSetScaleModule, LoraHandlerIntegrationTests, MinimalHandler, LoraManagerMixin, LoRA management mixin for AceStepHandler., LoRA management behavior mixed into AceStepHandler.      Expected host attribute (+67 more)
+Nodes (95): _format_vtt_timestamp(), generate_lrc_handler(), lrc_to_vtt_file(), parse_lrc_to_subtitles(), LRC parsing, VTT conversion, subtitle updates, and LRC file I/O.  Handles all LR, Format seconds to VTT timestamp ``HH:MM:SS.mmm``., Convert LRC text to a VTT subtitle file and return its path.      Args:, Update Audio component subtitles from LRC text via a VTT file.      Args: (+87 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.03
-Nodes (53): FSMState, # IMPORTANT: Only consider tokens that actually match the beginning of remaining, Constrained Logits Processor for ACE-Step Language Model  This module implements, # NOTE: Do NOT override next_state here when stop_at_reasoning=True, # IMPORTANT: State machine generates "bpm:" (no space), but tokenizer sees "bpm:, # IMPORTANT: After state transition, if new state is a fixed_strings state,, # IMPORTANT: After state transition, if new state is a fixed_strings state,, # IMPORTANT: After state transition, if new state is a fixed_strings state, (+45 more)
+Cohesion: 0.02
+Nodes (82): apply_velocity_clamp(), apply_velocity_ema(), build_timestep_schedule(), draw_fwd_noise(), pack_for_cfg(), Helper primitives for ``flow_edit.flowedit_sampling_loop`` (#1156).  Split out p, Capture the running averages so the inner n_avg loop can reset them.      APG's, Reset to pre-step state and advance once with the averaged diff.      ``avg_diff (+74 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.05
-Nodes (85): Page(), GET(), Studio(), GET(), POST(), POST(), GET(), GET() (+77 more)
+Nodes (92): Page(), GET(), Studio(), GET(), POST(), POST(), GET(), GET() (+84 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.03
-Nodes (66): Training Event Handlers Module — Facade.  Re-exports all public symbols from the, auto_label_all(), get_sample_preview(), Dataset operations for the training UI.  Contains handlers for scanning director, Get preview data for a specific sample.      Returns:         Tuple of (audio_pa, Save edits to a sample.      Returns:         Tuple of (table_data, status, buil, Update dataset settings.      Returns:         Updated builder_state., Scan a directory for audio files.      Returns:         Tuple of (table_data, st (+58 more)
+Nodes (92): Gradio UI Event Handlers Module Main entry point for setting up all event handle, Setup generation/results event wiring for the Gradio UI.      Args:         demo, Setup event handlers for the training tab (dataset builder and LoRA training), setup_event_handlers(), setup_training_event_handlers(), build_auto_checkbox_inputs(), build_auto_checkbox_outputs(), build_mode_ui_outputs() (+84 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.03
-Nodes (67): ConditioningMaskMixin, ConditioningMaskMixin, Chunk-mask and source-latent helpers for batch conditioning., Create chunk masks/spans, source latents, and repaint injection mask.          R, Mixin containing repaint mask/span and source-latent builders.      Depends on h, _build(), ConditioningMaskLegoBehaviorTests, _Host (+59 more)
+Nodes (53): FSMState, # IMPORTANT: Only consider tokens that actually match the beginning of remaining, Constrained Logits Processor for ACE-Step Language Model  This module implements, # NOTE: Do NOT override next_state here when stop_at_reasoning=True, # IMPORTANT: State machine generates "bpm:" (no space), but tokenizer sees "bpm:, # IMPORTANT: After state transition, if new state is a fixed_strings state,, # IMPORTANT: After state transition, if new state is a fixed_strings state,, # IMPORTANT: After state transition, if new state is a fixed_strings state, (+45 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.03
-Nodes (58): GenerateMusicRequestMixin, GenerateMusicRequestMixin, Input and preflight helpers for ``generate_music`` orchestration., Prepare reference/source audio tensors and return early error payload when inval, Prepare normalized ``generate_music`` inputs before service execution., Return a callable progress callback, defaulting to no-op., Prepare service inputs (batch text, repaint spans, and optional code hints)., Return standardized error payload when model components are unavailable. (+50 more)
+Cohesion: 0.02
+Nodes (88): create_app(), _get_project_root(), _load_all_examples(), _load_project_env(), main(), FastAPI server for ACE-Step V1.5.  Endpoints: - POST /release_task          Crea, Wrap response data in standard format., Load all example data files from the examples directory. (+80 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.04
-Nodes (96): clip_caption(), clip_lyrics(), compose_caption(), duration_for_lyrics(), _echo_tail(), influence_to_guidance(), influence_to_lm_cfg(), job_to_params() (+88 more)
+Cohesion: 0.03
+Nodes (67): ConditioningMaskMixin, ConditioningMaskMixin, Chunk-mask and source-latent helpers for batch conditioning., Create chunk masks/spans, source latents, and repaint injection mask.          R, Mixin containing repaint mask/span and source-latent builders.      Depends on h, _build(), ConditioningMaskLegoBehaviorTests, _Host (+59 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.03
-Nodes (64): build_optimizer(), build_scheduler(), Side-Step Optimizer & Scheduler Factories  Provides ``build_optimizer()`` and ``, Create a learning rate scheduler from a string key.      Args:         n_restart, Create an optimizer from a string key.      Falls back to AdamW when an optional, is_tensorboard_available(), Extended TensorBoard Logging for ACE-Step Training V2  Provides helpers for:, Log estimation gradient sensitivity scores. (+56 more)
+Cohesion: 0.04
+Nodes (103): clip_caption(), clip_lyrics(), compose_caption(), duration_for_lyrics(), _echo_tail(), influence_to_guidance(), influence_to_lm_cfg(), job_to_params() (+95 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.03
-Nodes (73): cleanup_job_temp_files(), ensure_models_initialized(), Runtime state helpers for API job execution flow., Ensure models are initialized, loading them lazily on first request if needed., Persist non-terminal job progress state in optional local cache.      Args:, Delete temporary upload files tracked for a completed job.      Args:         ap, Persist final job result state in optional local cache.      Args:         app_s, JobRuntimeStateTests (+65 more)
+Nodes (58): GenerateMusicRequestMixin, GenerateMusicRequestMixin, Input and preflight helpers for ``generate_music`` orchestration., Prepare reference/source audio tensors and return early error payload when inval, Prepare normalized ``generate_music`` inputs before service execution., Return a callable progress callback, defaulting to no-op., Prepare service inputs (batch text, repaint spans, and optional code hints)., Return standardized error payload when model components are unavailable. (+50 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.03
-Nodes (53): apply_fade(), generate_uuid_from_audio_data(), generate_uuid_from_params(), get_audio_file_hash(), get_lora_weights_hash(), normalize_audio(), Audio saving and transcoding utility module  Independent audio file operations o, Apply linear fade in and/or fade out to audio data.      Args:         audio_dat (+45 more)
+Nodes (73): cleanup_job_temp_files(), ensure_models_initialized(), Runtime state helpers for API job execution flow., Ensure models are initialized, loading them lazily on first request if needed., Persist non-terminal job progress state in optional local cache.      Args:, Delete temporary upload files tracked for a completed job.      Args:         ap, Persist final job result state in optional local cache.      Args:         app_s, JobRuntimeStateTests (+65 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.04
-Nodes (38): SiluAndMul, Attention, _debug_log(), Store key/value into paged KV cache. Uses Triton kernel when available., Print debug message if NANOVLLM_DEBUG is enabled, SDPA replacement for flash_attn_varlen_func during prefill.      Splits packed s, SDPA prefill with paged KV cache (prefix caching case).      Args:         q: [t, SDPA replacement for flash_attn_with_kvcache during decode.      For each sequen (+30 more)
+Cohesion: 0.03
+Nodes (52): FakeDecoder, FakeModel, FakeSetScaleModule, LoraHandlerIntegrationTests, MinimalHandler, LoraManagerMixin, LoRA management mixin for AceStepHandler., LoRA management behavior mixed into AceStepHandler.      Expected host attribute (+44 more)
 
 ### Community 32 - "Community 32"
+Cohesion: 0.05
+Nodes (39): SiluAndMul, Attention, _debug_log(), Store key/value into paged KV cache. Uses Triton kernel when available., Print debug message if NANOVLLM_DEBUG is enabled, SDPA replacement for flash_attn_varlen_func during prefill.      Splits packed s, SDPA prefill with paged KV cache (prefix caching case).      Args:         q: [t, SDPA replacement for flash_attn_with_kvcache during decode.      For each sequen (+31 more)
+
+### Community 33 - "Community 33"
+Cohesion: 0.03
+Nodes (53): apply_fade(), generate_uuid_from_audio_data(), generate_uuid_from_params(), get_audio_file_hash(), get_lora_weights_hash(), normalize_audio(), Audio saving and transcoding utility module  Independent audio file operations o, Apply linear fade in and/or fade out to audio data.      Args:         audio_dat (+45 more)
+
+### Community 34 - "Community 34"
 Cohesion: 0.02
 Nodes (52): _load_module(), Unit tests for model_downloader.get_project_root and get_checkpoints_dir., ACESTEP_CHECKPOINTS_DIR takes precedence over ACESTEP_PROJECT_ROOT., ACESTEP_CHECKPOINTS_DIR expands ~ to the user's home directory., Programmatic custom_dir takes highest precedence over env vars., Tests for model_downloader.check_main_model_exists()., Load model_downloader directly without importing heavy dependencies., check_main_model_exists rejects partial main-model component directories. (+44 more)
 
-### Community 33 - "Community 33"
+### Community 35 - "Community 35"
 Cohesion: 0.04
 Nodes (48): BatchManagementBackgroundTests, Unit tests for ``generate_next_batch_background`` behavior., Background Auto-LRC should copy LRC/subtitle lists into queue entry., Tests for background AutoGen batch generation flow., Background exceptions should produce warning and mark batch as error., Disabled AutoGen should not trigger generation or queue mutations., Empty inner generator should return error state instead of indexing None., On MPS, empty_cache must be called before generation to release memory. (+40 more)
 
-### Community 34 - "Community 34"
+### Community 36 - "Community 36"
 Cohesion: 0.03
 Nodes (53): get_generation_mode_choices(), get_model_type_ui_settings(), get_ui_control_config(), _has_token(), is_pure_base_model(), is_sft_model(), is_xl_model(), Model configuration and UI control settings for generation handlers.  Contains f (+45 more)
 
-### Community 35 - "Community 35"
-Cohesion: 0.03
-Nodes (52): maybe_handle_analysis_only_modes(), Analysis-mode runtime helpers for API job generation., Run analysis-only branches and return response payload when handled.      Args:, JobAnalysisRuntimeTests, Unit tests for analysis-only runtime helpers., extract_codes_only should raise ValueError when src_audio is not provided., Behavior tests for analysis-only and full-analysis runtime branches., extract_codes_only should raise RuntimeError when audio extraction fails. (+44 more)
-
-### Community 36 - "Community 36"
+### Community 37 - "Community 37"
 Cohesion: 0.04
 Nodes (48): Exception, IoAudioMixin, _numpy_to_channels_first(), Audio IO and normalization helpers for handler decomposition., Load and normalize reference audio, then sample 3x10s segments.          Args:, Read an audio file, with torchaudio fallback for formats unsupported by soundfil, Load and normalize source audio for remix/extract flows.          Args:, Mixin containing audio file loading and normalization helpers.      Depends on h (+40 more)
 
-### Community 37 - "Community 37"
-Cohesion: 0.03
-Nodes (52): create_app(), _get_project_root(), _load_all_examples(), _load_project_env(), main(), FastAPI server for ACE-Step V1.5.  Endpoints: - POST /release_task          Crea, Wrap response data in standard format., Load all example data files from the examples directory. (+44 more)
-
 ### Community 38 - "Community 38"
-Cohesion: 0.03
-Nodes (53): _FailingLlm, _FakeHandler, _FakeLlm, _FakeStore, ModelServiceRoutesHttpTests, HTTP integration tests for model service routes., GET /v1/stats without token should return HTTP 401., GET /v1/models without token should return HTTP 401. (+45 more)
+Cohesion: 0.04
+Nodes (46): ApiAutoDurationTests, build_generation_setup must pass auto-sentinel for LM auto-calculation., When audio_duration is None, params.duration should be the auto-sentinel (-1)., Zero duration should get the auto-sentinel for LM auto-calculation., Negative duration (-1) should pass as auto-sentinel for LM auto-calculation., When audio_duration is explicitly set, it should be preserved., build_generation_setup(), Generation parameter/config assembly helpers for API job execution. (+38 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.04
-Nodes (45): DiffusionMixin, DiffusionMixin, Mixin containing diffusion execution helpers.      Required host attributes:, Run the MLX diffusion loop and return generated latents.          Args:, DiffusionMixinTests, _Host, _IterableTimesteps, apply_mlx_dcw() (+37 more)
+Nodes (44): I18nHelpKeysTests, I18n key-coverage tests for help-content strings., Verify that all language files contain the required help.* keys., English JSON must have a top-level 'help' key., Every language with a help section must contain all required keys., Help values must be non-empty strings., i18n t() resolves help.* keys to actual content, not the key., available_languages_info() (+36 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.04
@@ -436,7 +436,7 @@ Nodes (37): LoRA management implementation modules., collect_adapter_names(), ge
 
 ### Community 41 - "Community 41"
 Cohesion: 0.04
-Nodes (36): _apply_rotary_pos_emb(), _create_sliding_window_mask(), MLXAttention, MLXCrossAttentionCache, MLXDiTDecoder, MLXDiTLayer, MLXRotaryEmbedding, MLXSwiGLUMLP (+28 more)
+Nodes (41): maybe_handle_analysis_only_modes(), Analysis-mode runtime helpers for API job generation., Run analysis-only branches and return response payload when handled.      Args:, JobAnalysisRuntimeTests, Unit tests for analysis-only runtime helpers., extract_codes_only should raise ValueError when src_audio is not provided., Behavior tests for analysis-only and full-analysis runtime branches., extract_codes_only should raise RuntimeError when audio extraction fails. (+33 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.04
@@ -459,36 +459,36 @@ Cohesion: 0.05
 Nodes (45): build_external_model_choice(), ExternalProviderProfile, get_external_base_url_preset_choices(), get_external_base_url_preset_value(), get_external_provider_choices(), get_external_provider_profile(), Provider profiles for external LM setup and picker integration., Return provider dropdown choices as ``(label, value)`` pairs. (+37 more)
 
 ### Community 47 - "Community 47"
-Cohesion: 0.05
-Nodes (39): freeze_non_lora_parameters(), get_dit_target_modules(), inject_lora_into_dit(), LoRA Injection Utilities for ACE-Step  Provides functions for injecting LoRA ada, Get the list of module names in the DiT decoder that can have LoRA applied., Freeze all non-LoRA parameters in the model.      Args:         model: The model, Safely call enable_input_require_grads on the decoder.      This helper wraps th, Inject LoRA adapters into the DiT decoder of the model.      Args:         model (+31 more)
-
-### Community 48 - "Community 48"
 Cohesion: 0.04
 Nodes (39): Async auto-label route registration for training dataset APIs., Register the asynchronous auto-label route., register_training_dataset_auto_label_async_route(), _Builder, _Metadata, HTTP integration tests for dataset auto-label route registration., Return successful label status without mutating sample data., HTTP tests covering extracted auto-label route behavior. (+31 more)
 
-### Community 49 - "Community 49"
+### Community 48 - "Community 48"
 Cohesion: 0.04
 Nodes (35): GenerateMusicMixin, GenerateMusicMixinTests, _Host, _load_generate_music_module(), Tests for extracted ``generate_music`` orchestration behavior.  The module loads, Return deterministic readiness error payload., Capture task resolution args and return deterministic task/instruction., Capture runtime args and return deterministic runtime state. (+27 more)
 
-### Community 50 - "Community 50"
+### Community 49 - "Community 49"
 Cohesion: 0.04
 Nodes (29): _DummyDecoder, _DummyHandler, LifecycleTests, Tests for LoRA/LoKr lifecycle loading behavior., LoKr directory should bypass PEFT config-file requirement., Invalid adapter error should mention both LoRA and LoKr expectations., adapter_config.json without peft_type should return a clear error message., adapter_config.json with peft_type present should return None. (+21 more)
 
-### Community 51 - "Community 51"
+### Community 50 - "Community 50"
 Cohesion: 0.04
 Nodes (30): AutoCheckboxTests, _FakeDitHandler, GenerationHandlersTests, LoadMetadataLmCodesTests, LoadMetadataMp3SanitizationTests, Unit tests for generation input event handlers., Minimal DiT handler stub for analyze-src-audio tests., Store a configurable conversion return value for test scenarios. (+22 more)
 
-### Community 52 - "Community 52"
+### Community 51 - "Community 51"
 Cohesion: 0.06
 Nodes (23): GenerateMusicMixin, Top-level ``generate_music`` orchestration mixin.  This module provides the publ, Check free VRAM headroom before attempting service_generate.          Model weig, Generate audio from text/reference inputs and return response payload., Convert repaint mode and strength into concrete numeric parameters.      Higher, Coordinate request prep, service execution, decode, and payload assembly.      T, Ensure all decoder parameters are on ``self.device`` and ``self.dtype``., _resolve_repaint_config() (+15 more)
 
+### Community 52 - "Community 52"
+Cohesion: 0.05
+Nodes (42): _audio_to_base64_url(), _base64_to_temp_file(), _build_openrouter_response(), _cleanup_temp_paths(), _extract_tagged_content(), _format_lm_content(), _generate_completion_id(), _get_model_id() (+34 more)
+
 ### Community 53 - "Community 53"
-Cohesion: 0.04
-Nodes (30): GenerateMusicDecodeMixin, _FakeDecodeOutput, _FakeVae, GenerateMusicDecodeMixinTests, _Host, _load_generate_music_decode_module(), Tests for extracted ``generate_music`` decode helper mixin behavior., Provide no-op cache clear helper for decode tests. (+22 more)
+Cohesion: 0.06
+Nodes (30): freeze_non_lora_parameters(), get_dit_target_modules(), LoRA Injection Utilities for ACE-Step  Provides functions for injecting LoRA ada, Get the list of module names in the DiT decoder that can have LoRA applied., Freeze all non-LoRA parameters in the model.      Args:         model: The model, Safely call enable_input_require_grads on the decoder.      This helper wraps th, Unwrap PEFT/Fabric wrappers from a model/decoder to retrieve the base DiT module, _safe_enable_input_require_grads() (+22 more)
 
 ### Community 54 - "Community 54"
 Cohesion: 0.05
-Nodes (42): _audio_to_base64_url(), _base64_to_temp_file(), _build_openrouter_response(), _cleanup_temp_paths(), _extract_tagged_content(), _format_lm_content(), _generate_completion_id(), _get_model_id() (+34 more)
+Nodes (31): _LoadEmptyBuilder, _Metadata, HTTP integration tests for dataset scan/load route registration., Return empty samples with a status message., Return zero labeled samples for completeness., HTTP tests covering extracted scan/load route behavior., Create app/client pair with scan/load routes only., POST /v1/dataset/scan should keep state updates and wrapped sample payload behav (+23 more)
 
 ### Community 55 - "Community 55"
 Cohesion: 0.06
@@ -503,108 +503,108 @@ Cohesion: 0.05
 Nodes (27): get_local_cache(), LocalCache, Local cache module to replace Redis  Uses diskcache as backend, provides Redis-c, Get remaining time to live (seconds)         Note: diskcache does not directly s, Close cache connection, Get or create the global :class:`LocalCache` singleton.      Thread safety is ha, Local cache implementation with Redis-compatible API.     Uses diskcache as back, Set key-value pair          Args:             name: Key name             value: (+19 more)
 
 ### Community 58 - "Community 58"
-Cohesion: 0.05
-Nodes (28): _Builder, _Metadata, HTTP integration tests for dataset route registration behavior., Dataset builder test double backing route behavior., Initialize deterministic sample data and call-capture hooks., Return deterministic labeled count., Capture label invocation arguments and return success status., No-op runtime manager replacement for route tests. (+20 more)
-
-### Community 59 - "Community 59"
 Cohesion: 0.07
 Nodes (26): Canonical parameter aliasing and parsing helpers for release-task requests., Parse dict-or-JSON-string values into dictionaries., Locate and parse first metadata field from known alias keys., Get parameter by canonical name from all known request sources., Get parameter as string with fallback default., Get parameter as integer with fallback default., Get parameter as float with fallback default., Get parameter as bool with fallback default. (+18 more)
 
-### Community 60 - "Community 60"
+### Community 59 - "Community 59"
 Cohesion: 0.07
 Nodes (23): Input normalization and batch preparation helpers for service generation., Prepare normalized service-generation inputs before diffusion execution., Normalize ``seed`` into a per-item list or ``None`` for random sampling., Normalize scalar/list generation inputs and clamp turbo infer steps., ServiceGenerateRequestMixin, _Host, Unit tests for service-generation request normalization helpers., Lyrics list should be truncated to match caption batch size. (+15 more)
 
-### Community 61 - "Community 61"
+### Community 60 - "Community 60"
 Cohesion: 0.1
 Nodes (19): FakeHandler, make_flow_edit_ctx(), make_payload(), Shared test fixtures for flow-edit overlay dispatch tests (#1156).  Underscored, Minimal handler stand-in exposing the surface the overlay needs., dispatch_flow_edit_overlay(), Flow-edit overlay dispatch on text2music task (issue #1156).  The user's ``capti, Run paired flow-edit on top of text2music dispatch.      Builds source text/lyri (+11 more)
 
-### Community 62 - "Community 62"
+### Community 61 - "Community 61"
 Cohesion: 0.07
 Nodes (27): HTTP integration tests for the /v1/reinitialize route., Return an ``api_server``-compatible response envelope dict., Validate a fixed bearer token and return ``None`` on success., Integration tests for reinitialize route using real HTTP requests., Create a test app with route registration and return TestClient., POST /v1/reinitialize should preserve legacy raw HTTP 500 when handler is missin, POST /v1/reinitialize without token should return HTTP 401., POST /v1/reinitialize should return wrapped success payload when initialized. (+19 more)
 
-### Community 63 - "Community 63"
+### Community 62 - "Community 62"
 Cohesion: 0.07
 Nodes (20): ConditioningEmbedMixin, ConditioningEmbedMixin, Reference/text embedding preprocessing helpers for conditioned generation., Mixin containing reference/text embedding preprocessing steps.      Depends on h, Infer packed reference-audio latents and order mask., Infer text-token embeddings via text encoder., Infer lyric-token embeddings via text encoder embedding table., Preprocess an already prepared batch for DiT model input. (+12 more)
 
-### Community 64 - "Community 64"
+### Community 63 - "Community 63"
 Cohesion: 0.08
 Nodes (18): MLXAutoEncoderOobleck, MLXOobleckDecoder, MLXOobleckDecoderBlock, MLXOobleckEncoder, MLXOobleckEncoderBlock, MLXOobleckResidualUnit, MLXSnake1d, Snake -> strided ConvTranspose1d up -> 3 residual units (dilations 1, 3, 9). (+10 more)
 
-### Community 65 - "Community 65"
+### Community 64 - "Community 64"
 Cohesion: 0.08
 Nodes (21): install_log_capture(), LogBuffer, Log capture utilities for API progress/status endpoints., Initialize buffer with default waiting status., Capture latest non-empty stripped message., No-op flush to satisfy file-like API expectations., Stderr proxy forwarding writes to original stderr and log buffer., Initialize stderr proxy references. (+13 more)
+
+### Community 65 - "Community 65"
+Cohesion: 0.08
+Nodes (22): _FakeStore, _map_status(), QueryResultRouteHttpTests, HTTP integration tests for query-result route behavior., POST /query_result should preserve extract-codes payload with audio_codes field., Return an ``api_server``-compatible response envelope dict., POST /query_result should accept form payloads and parse task IDs from JSON text, POST /query_result should return an empty result list when task IDs are omitted. (+14 more)
 
 ### Community 66 - "Community 66"
 Cohesion: 0.08
 Nodes (20): _FakeParser, _FakeStore, HTTP integration tests for release-task route registration., POST /release_task should return HTTP 401 when auth token is missing., POST /release_task should enqueue job and return wrapped queued payload., POST /release_task should return HTTP 429 when queue capacity is exhausted., Minimal parser stub exposing typed accessors used by route dependencies., POST /release_task should return HTTP 415 for unsupported content type. (+12 more)
 
 ### Community 67 - "Community 67"
+Cohesion: 0.08
+Nodes (26): RuntimeError, _add_model_id(), _build_auth_headers(), _build_model_list_urls(), discover_external_models(), ExternalModelDiscoveryError, _extract_model_ids(), Provider-aware model discovery helpers for external LM setup. (+18 more)
+
+### Community 68 - "Community 68"
 Cohesion: 0.09
 Nodes (14): apply_repaint_boundary_blend(), apply_repaint_step_injection(), build_soft_repaint_mask(), Step-level repaint injection and boundary blending for diffusion loops., Replace non-repaint regions of xt with noised source latents.      At each diffu, Build a soft float mask with linear crossfade at repaint boundaries.      The cr, Blend generated latents with source at repaint boundaries.      Args:         x_, Unit tests for repaint step injection and boundary blending. (+6 more)
 
-### Community 68 - "Community 68"
+### Community 69 - "Community 69"
 Cohesion: 0.08
 Nodes (20): _FakeHandler, LoraRoutesHttpTests, HTTP integration tests for LoRA route registration., POST /v1/lora/toggle should keep HTTP 200 with wrapped code=400 on failure., GET /v1/lora/status should return HTTP 500 when handler model is missing., GET /v1/lora/status without token should return HTTP 401 from dependency., Return response envelope matching API server contract., Require a fixed bearer token for integration tests. (+12 more)
 
-### Community 69 - "Community 69"
+### Community 70 - "Community 70"
 Cohesion: 0.07
 Nodes (22): _build_generation_info(), clear_audio_outputs_for_new_generation(), Generation info formatting and shared constants.  Provides timing summary constr, Return pre-generation output updates without remounting audio players.      In G, Build a compact generation timing summary.      Args:         lm_metadata: LM-ge, BuildGenerationInfoTests, ClearAudioOutputsTests, ConstantsTests (+14 more)
 
-### Community 70 - "Community 70"
+### Community 71 - "Community 71"
 Cohesion: 0.08
 Nodes (20): _build_fake_mx_core(), _FakeMlxVae, _load_handler_module(), MlxVaeInitMixinTests, Unit tests for extracted MLX VAE initialization mixin., Load a handler mixin module for isolated tests.      Args:         filename: Mod, Behavior tests for extracted ``MlxVaeInitMixin``., It returns False and leaves MLX VAE flags unset when unavailable. (+12 more)
 
-### Community 71 - "Community 71"
+### Community 72 - "Community 72"
 Cohesion: 0.09
 Nodes (18): build_generate_music_request(), Helpers for building release-task request models from parsed inputs., Build request-model payload for ``/release_task``.      Args:         parser: Re, _FakeParser, Unit tests for release-task request-model builder helpers., Minimal parser stub exposing typed accessors used by request builder., Builder should include audio_code_string and cover_noise_strength in payload., Store deterministic key/value pairs for parser methods. (+10 more)
 
-### Community 72 - "Community 72"
+### Community 73 - "Community 73"
 Cohesion: 0.1
 Nodes (21): Differential Correction in Wavelet domain (DCW) for flow-matching sampling.  Imp, Apply the configured DCW correction.          Args:             x_next: Latent p, _LazyWavelet, Lazy loader for ``pytorch_wavelets`` DWT1D modules used by DCW.  Splitting this, Lazy loader for ``pytorch_wavelets`` DWT1D modules.      We cache one ``DWT1DFor, Return ``(dwt, iwt)`` for the requested device/dtype/wavelet.          Returns `, _bct_to_btc(), _btc_to_bct() (+13 more)
 
-### Community 73 - "Community 73"
+### Community 74 - "Community 74"
 Cohesion: 0.11
 Nodes (20): determine_legacy_torch_fix(), evaluate_legacy_torch_fix(), legacy_torch_fix_probe_exit_code(), LegacyTorchFixDecision, Launcher compatibility helpers for hardware-specific startup fixes., Decision payload for whether launcher should apply legacy torch fix.      Attrib, Evaluate legacy GPU compatibility using an injected torch-like module.      Args, Determine whether legacy torch compatibility patch is required.      Args: (+12 more)
 
-### Community 74 - "Community 74"
+### Community 75 - "Community 75"
 Cohesion: 0.09
 Nodes (19): load_module_ast(), Shared AST parsing helpers for wiring contract tests., Return constant key value from a simple subscript expression., Return the parsed AST module for the provided source path., subscript_key(), GenerationMetadataFileWiringTests, Unit tests for generation metadata file wiring contracts., Register helper should reference load-metadata and auto-uncheck handlers. (+11 more)
 
-### Community 75 - "Community 75"
+### Community 76 - "Community 76"
 Cohesion: 0.08
 Nodes (19): call_name(), collect_generation_section_keys_used_by_wiring(), collect_return_dict_keys(), load_module(), AST utility helpers for generation interface decomposition contract tests., Parse and return AST for a generation interface module.      Args:         modul, Extract a simple call-target name from an AST call function node.      Args:, Collect string keys from dict literals assigned/returned in a function.      Arg (+11 more)
 
-### Community 76 - "Community 76"
-Cohesion: 0.08
-Nodes (12): ConditioningBatchMixin, ConditioningBatchMixin, Batch-conditioning orchestration helpers for handler decomposition., Mixin containing batch preparation orchestration.      Depends on host members:, Prepare model-ready conditioning batch tensors and metadata.          Args:, ConditioningBatchMixinTests, _Host, Unit tests for batch-conditioning orchestration mixin. (+4 more)
-
 ### Community 77 - "Community 77"
+Cohesion: 0.1
+Nodes (20): _FakeStore, _get_endpoint(), _map_status(), QueryResultRouteTests, Unit tests for query-result route registration and helper behavior., Route should serialize store record payload when cache miss occurs., Route should preserve legacy missing-task response contract., Route should treat non-list cache JSON payloads as failed cache entries. (+12 more)
+
+### Community 78 - "Community 78"
 Cohesion: 0.08
 Nodes (18): call_name(), collect_return_dict_keys(), collect_training_section_keys_used_by_wiring(), load_module(), AST utility helpers for training interface decomposition contract tests., Parse and return AST for an interfaces module., Extract a simple call-target name from an AST call function node., Collect string keys from dict literals assigned/updated/returned in a function. (+10 more)
 
-### Community 78 - "Community 78"
+### Community 79 - "Community 79"
 Cohesion: 0.1
 Nodes (18): AutoLabelRequest, Return stable sample payload list for dataset endpoints., Request payload for auto-labeling dataset samples., _serialize_samples(), _Builder, Unit tests for training dataset request models and serialization helpers., Lightweight sample object for serializer tests., Store sample attributes used by the serializer helper. (+10 more)
 
-### Community 79 - "Community 79"
+### Community 80 - "Community 80"
 Cohesion: 0.1
 Nodes (16): _Host, _load_training_preset_module(), Unit tests for training-preset switching behavior., It returns a failure message when initialize_service reports failure., Load training_preset module directly from file to avoid package side effects., It forwards ``prefer_source=None`` and default ``use_mlx_dit=True`` when missing, It preserves cached init parameters while forcing quantization only in call args, Minimal host object exposing TrainingPresetMixin for focused unit testing. (+8 more)
 
-### Community 80 - "Community 80"
+### Community 81 - "Community 81"
 Cohesion: 0.08
 Nodes (15): _DoneEvent, _FakeJobQueue, _FakeStore, Shared unittest fakes for API job helper tests., Initialize task_done call counter., Record one task completion., In-memory store stub for worker helper tests., Initialize store with optional record. (+7 more)
 
-### Community 81 - "Community 81"
+### Community 82 - "Community 82"
 Cohesion: 0.16
 Nodes (7): main(), print_ramp_summary(), print_stats(), ACE-Step OpenRouter API 压力测试脚本  支持并发测试，用于测试服务的最大 QPS 和性能表现。  Usage:     # 基本测试 -, RequestResult, StressTester, StressTestStats
 
-### Community 82 - "Community 82"
-Cohesion: 0.11
-Nodes (17): InitServiceWrapperDeviceResolutionTests, InitServiceWrapperPathTests, QuantizationSelectionTests, Unit tests for service_init.init_service_wrapper checkpoint path handling., Verify init_service_wrapper passes project_root (not checkpoint dir) to initiali, Verify that 'auto' device is not written back to llm_handler when init_llm=False, Import service_init lazily to avoid heavy transitive imports., Import service_init lazily to avoid heavy transitive imports. (+9 more)
-
 ### Community 83 - "Community 83"
 Cohesion: 0.11
-Nodes (15): get_audio_player_preferences_head(), _load_preferences_script(), Frontend audio-player preference helpers for the Gradio UI., Load the external audio-preferences JavaScript asset.      Returns:         Java, Return Gradio head HTML that injects audio preference behavior.      Returns:, AudioPlayerPreferencesHeadTests, _load_module(), Unit tests for audio player preference head-script generation. (+7 more)
+Nodes (17): InitServiceWrapperDeviceResolutionTests, InitServiceWrapperPathTests, QuantizationSelectionTests, Unit tests for service_init.init_service_wrapper checkpoint path handling., Verify init_service_wrapper passes project_root (not checkpoint dir) to initiali, Verify that 'auto' device is not written back to llm_handler when init_llm=False, Import service_init lazily to avoid heavy transitive imports., Import service_init lazily to avoid heavy transitive imports. (+9 more)
 
 ### Community 84 - "Community 84"
 Cohesion: 0.18
@@ -639,12 +639,12 @@ Cohesion: 0.13
 Nodes (13): GenerateMusicPayloadMixin, GenerateMusicPayloadMixinTests, _Host, _load_generate_music_payload_module(), Tests for extracted ``generate_music`` success-payload builder behavior.  The mo, It handles absent optional output keys and no progress callback., Payload builder must not remove keys from the caller's outputs dict., It ensures every tensor in extra_outputs is on CPU. (+5 more)
 
 ### Community 92 - "Community 92"
-Cohesion: 0.17
-Nodes (11): GetEffectiveFreeVramGbTests, _make_torch_cuda_mock(), Tests for ``get_effective_free_vram_gb`` in ``gpu_config``.  Validates that the, Returns device_free + allocator_cache when both are non-zero., Returns 0 when device free is 0 and all reserved memory is allocated., Returns 0 when no CUDA device is present., Debug MAX_CUDA_VRAM cap limits reported free to the simulated budget., Build a ``torch`` mock whose ``.cuda`` reports deterministic memory stats. (+3 more)
-
-### Community 93 - "Community 93"
 Cohesion: 0.11
 Nodes (17): all_reduce(), barrier(), destroy_process_group(), gather(), get_rank(), get_world_size(), initialize_distributed(), is_initialized() (+9 more)
+
+### Community 93 - "Community 93"
+Cohesion: 0.17
+Nodes (11): GetEffectiveFreeVramGbTests, _make_torch_cuda_mock(), Tests for ``get_effective_free_vram_gb`` in ``gpu_config``.  Validates that the, Returns device_free + allocator_cache when both are non-zero., Returns 0 when device free is 0 and all reserved memory is allocated., Returns 0 when no CUDA device is present., Debug MAX_CUDA_VRAM cap limits reported free to the simulated budget., Build a ``torch`` mock whose ``.cuda`` reports deterministic memory stats. (+3 more)
 
 ### Community 94 - "Community 94"
 Cohesion: 0.11
@@ -770,661 +770,661 @@ Nodes (5): generate_fixtures(), generate_single_sample(), main(), Generate a sin
 Cohesion: 0.5
 Nodes (4): convert_and_load(), convert_decoder_weights(), Convert PyTorch decoder weights to a list of (name, mx.array) pairs     suitable, Convert PyTorch decoder weights and load them into an MLX decoder.      Args:
 
-### Community 125 - "Community 125"
+### Community 126 - "Community 126"
 Cohesion: 0.5
 Nodes (3): ensure_gradio_mocked(), Shared helpers for help-content unit tests., Ensure a mock gradio module exists for package imports in tests.
 
-### Community 126 - "Community 126"
+### Community 127 - "Community 127"
 Cohesion: 0.5
 Nodes (3): build_simple_prompt(), Prompt builder for ACE-Step preprocessing.  Builds the ``SFT_GEN_PROMPT``-format, Build a text prompt from sample metadata.      Mimics the upstream ``build_text_
 
-### Community 127 - "Community 127"
+### Community 128 - "Community 128"
 Cohesion: 0.5
 Nodes (3): Tiled VAE encoding for long audio during preprocessing.  Processes audio in over, Encode audio through the VAE using overlap-discard tiling.      Processes long a, tiled_vae_encode()
 
-### Community 128 - "Community 128"
+### Community 129 - "Community 129"
 Cohesion: 0.67
 Nodes (1): Load MusicAI studio settings for the engine worker.
 
-### Community 129 - "Community 129"
+### Community 130 - "Community 130"
 Cohesion: 0.67
 Nodes (1): API package intent: external service boundary (transport, auth, request lifecycl
 
-### Community 130 - "Community 130"
+### Community 131 - "Community 131"
 Cohesion: 1.0
 Nodes (2): main(), process_audio()
 
-### Community 131 - "Community 131"
+### Community 132 - "Community 132"
 Cohesion: 1.0
 Nodes (1): Constants for ACE-Step Centralized constants used across the codebase
 
-### Community 132 - "Community 132"
+### Community 133 - "Community 133"
 Cohesion: 1.0
 Nodes (1): Compatibility shim for split help-content test modules.  This file is intentiona
 
-### Community 133 - "Community 133"
+### Community 134 - "Community 134"
 Cohesion: 1.0
 Nodes (1): Gradio package: web UI composition for ACE-Step controls and outputs.
 
-### Community 134 - "Community 134"
+### Community 135 - "Community 135"
 Cohesion: 1.0
 Nodes (1): Results Handlers Facade  Thin re-export layer that preserves the original ``resu
 
-### Community 135 - "Community 135"
+### Community 136 - "Community 136"
 Cohesion: 1.0
 Nodes (1): Results sub-package.  Focused modules for result handling, scoring, batch manage
 
-### Community 136 - "Community 136"
+### Community 137 - "Community 137"
 Cohesion: 1.0
 Nodes (1): Results batch-management facade.  This thin compatibility module re-exports deco
 
-### Community 137 - "Community 137"
+### Community 138 - "Community 138"
 Cohesion: 1.0
 Nodes (1): UI i18n package: localization loading and translation helpers.
 
-### Community 138 - "Community 138"
+### Community 139 - "Community 139"
 Cohesion: 1.0
 Nodes (1): Core package intent: framework-agnostic domain logic for generation and inferenc
 
-### Community 139 - "Community 139"
+### Community 140 - "Community 140"
 Cohesion: 1.0
 Nodes (1): LLM package intent: text inference contracts, provider adapters, and routing.
 
-### Community 140 - "Community 140"
+### Community 141 - "Community 141"
 Cohesion: 1.0
 Nodes (1): System package intent: shared infra helpers (GPU config, models, cache, constant
 
-### Community 141 - "Community 141"
+### Community 142 - "Community 142"
 Cohesion: 1.0
 Nodes (1): Audio package intent: reusable audio IO, transforms, and codec utilities.
 
-### Community 142 - "Community 142"
+### Community 143 - "Community 143"
 Cohesion: 1.0
 Nodes (1): Scoring package: alignment and quality metrics for generated outputs.
 
-### Community 143 - "Community 143"
+### Community 144 - "Community 144"
 Cohesion: 1.0
 Nodes (1): Dataset package intent: dataset lifecycle modules for runtime and build-time usa
 
-### Community 144 - "Community 144"
+### Community 145 - "Community 145"
 Cohesion: 1.0
 Nodes (1): Dataset runtime package intent: dataset access/operations used during app execut
 
-### Community 145 - "Community 145"
+### Community 146 - "Community 146"
 Cohesion: 1.0
 Nodes (1): Dataset builder package intent: offline dataset scanning, preprocessing, and ser
 
-### Community 146 - "Community 146"
+### Community 147 - "Community 147"
 Cohesion: 1.0
 Nodes (1): Dataset Builder for LoRA Training (facade).  This module preserves the public AP
 
-### Community 147 - "Community 147"
+### Community 148 - "Community 148"
 Cohesion: 1.0
 Nodes (1): Compatibility facade for LLM request preparation helpers.
 
-### Community 148 - "Community 148"
+### Community 149 - "Community 149"
 Cohesion: 1.0
 Nodes (1): HTTP package intent: web app assembly, routes, schemas, and middleware.
 
-### Community 149 - "Community 149"
+### Community 150 - "Community 150"
 Cohesion: 1.0
 Nodes (1): Jobs package: async task execution, queueing, and job state tracking.
 
-### Community 150 - "Community 150"
+### Community 151 - "Community 151"
 Cohesion: 1.0
 Nodes (1): ACE-Step Training V2 (Side-Step) -- Corrected LoRA Fine-Tuning CLI  Non-destruct
 
-### Community 151 - "Community 151"
+### Community 152 - "Community 152"
 Cohesion: 1.0
 Nodes (1): Wizard flow builders -- facade module.  Re-exports ``wizard_train``, ``wizard_pr
 
-### Community 152 - "Community 152"
+### Community 153 - "Community 153"
 Cohesion: 1.0
 Nodes (1): CLI package for ACE-Step Training V2.  Provides shared argparse helpers and per-
 
-### Community 153 - "Community 153"
+### Community 154 - "Community 154"
 Cohesion: 1.0
 Nodes (1): Backward-compatible re-exports for ACE-Step Training V2 CLI.  Split structure:
 
-### Community 154 - "Community 154"
+### Community 155 - "Community 155"
 Cohesion: 1.0
 Nodes (1): Helpers for optional external text-model configuration flows.
 
-### Community 167 - "Community 167"
+### Community 169 - "Community 169"
 Cohesion: 1.0
 Nodes (1): Time a code section with GPU synchronization.
 
-### Community 169 - "Community 169"
+### Community 171 - "Community 171"
 Cohesion: 1.0
 Nodes (1): Replicate the audio_params building logic from inference.py.
 
-### Community 170 - "Community 170"
+### Community 172 - "Community 172"
 Cohesion: 1.0
 Nodes (1): Initialization should avoid nano-vllm when the Windows Triton preflight fails.
 
-### Community 171 - "Community 171"
+### Community 173 - "Community 173"
 Cohesion: 1.0
 Nodes (1): Initialization should still fall back when vLLM returns a Triton-specific error
 
-### Community 173 - "Community 173"
+### Community 175 - "Community 175"
 Cohesion: 1.0
 Nodes (1): Check if MLX framework is available (Apple Silicon).          Delegates to the c
 
-### Community 174 - "Community 174"
+### Community 176 - "Community 176"
 Cohesion: 1.0
 Nodes (1): Context manager to load a model to GPU and offload it back to CPU after use.
 
-### Community 175 - "Community 175"
+### Community 177 - "Community 177"
 Cohesion: 1.0
 Nodes (1): Post-process caption to remove YAML multi-line formatting.         Converts YAML
 
-### Community 176 - "Community 176"
+### Community 178 - "Community 178"
 Cohesion: 1.0
 Nodes (1): When task_type is text2music, src_audio passed to handler must be None.
 
-### Community 177 - "Community 177"
+### Community 179 - "Community 179"
 Cohesion: 1.0
 Nodes (1): Load all i18n language JSON files for help-key assertions.
 
-### Community 178 - "Community 178"
+### Community 180 - "Community 180"
 Cohesion: 1.0
 Nodes (1): Concurrent store/get on dict fallback must not raise.
 
-### Community 179 - "Community 179"
+### Community 181 - "Community 181"
 Cohesion: 1.0
 Nodes (1): Reject conversion output that has no serialized audio-code tokens.
 
-### Community 180 - "Community 180"
+### Community 182 - "Community 182"
 Cohesion: 1.0
 Nodes (1): Pass valid audio codes through to LM understanding.
 
-### Community 181 - "Community 181"
+### Community 183 - "Community 183"
 Cohesion: 1.0
 Nodes (1): Verify that init_service_wrapper preserves current batch_size when provided.
 
-### Community 182 - "Community 182"
+### Community 184 - "Community 184"
 Cohesion: 1.0
 Nodes (1): Verify that init_service_wrapper uses default batch_size when current_batch_size
 
-### Community 183 - "Community 183"
+### Community 185 - "Community 185"
 Cohesion: 1.0
 Nodes (1): Invalid audio upload should emit warning toast and clear component value.
 
-### Community 184 - "Community 184"
+### Community 186 - "Community 186"
 Cohesion: 1.0
 Nodes (1): Valid audio upload should pass through unchanged without warning.
 
-### Community 185 - "Community 185"
+### Community 187 - "Community 187"
 Cohesion: 1.0
 Nodes (1): Source-role validation should surface a source-specific toast message.
 
-### Community 186 - "Community 186"
+### Community 188 - "Community 188"
 Cohesion: 1.0
 Nodes (1): Successful sample creation should populate generation fields and mode switch.
 
-### Community 187 - "Community 187"
+### Community 189 - "Community 189"
 Cohesion: 1.0
 Nodes (1): Caption formatting should return lm-not-initialized status when LM is unavailabl
 
-### Community 188 - "Community 188"
+### Community 190 - "Community 190"
 Cohesion: 1.0
 Nodes (1): Lyrics-only formatting should strip wrapper quotes from returned lyrics.
 
-### Community 189 - "Community 189"
+### Community 191 - "Community 191"
 Cohesion: 1.0
 Nodes (1): Full sample formatting should return 9 outputs with language at index 5.
 
-### Community 190 - "Community 190"
+### Community 192 - "Community 192"
 Cohesion: 1.0
 Nodes (1): When JSON has thinking=True AND non-empty audio_codes, think should be False.
 
-### Community 191 - "Community 191"
+### Community 193 - "Community 193"
 Cohesion: 1.0
 Nodes (1): When JSON has thinking=True AND empty audio_codes, think stays True.
 
-### Community 192 - "Community 192"
+### Community 194 - "Community 194"
 Cohesion: 1.0
 Nodes (1): Uppercase MP3 metadata should be normalized to the UI-compatible values.
 
-### Community 193 - "Community 193"
+### Community 195 - "Community 195"
 Cohesion: 1.0
 Nodes (1): Invalid MP3 metadata should fall back to the supported defaults.
 
-### Community 194 - "Community 194"
+### Community 196 - "Community 196"
 Cohesion: 1.0
 Nodes (1): Storing a new batch should move CUDA tensors to CPU, freeing VRAM.
 
-### Community 195 - "Community 195"
+### Community 197 - "Community 197"
 Cohesion: 1.0
 Nodes (1): Return kwargs for direct assertion in tests.
 
-### Community 196 - "Community 196"
+### Community 198 - "Community 198"
 Cohesion: 1.0
 Nodes (1): init_service_wrapper must NOT pass the checkpoint dropdown value as project_root
 
-### Community 197 - "Community 197"
+### Community 199 - "Community 199"
 Cohesion: 1.0
 Nodes (1): The project_root passed to initialize_service should be the parent of checkpoint
 
-### Community 198 - "Community 198"
+### Community 200 - "Community 200"
 Cohesion: 1.0
 Nodes (1): Calling init_service_wrapper with init_llm=False must not overwrite llm_handler.
 
-### Community 199 - "Community 199"
+### Community 201 - "Community 201"
 Cohesion: 1.0
 Nodes (1): When init_llm=True and device='auto', initialize() must be called with 'auto' de
 
-### Community 200 - "Community 200"
+### Community 202 - "Community 202"
 Cohesion: 1.0
 Nodes (1): Legacy CUDA restrictions should override a requested vllm backend.
 
-### Community 202 - "Community 202"
+### Community 204 - "Community 204"
 Cohesion: 1.0
 Nodes (1): Sample tokens from logits with optional top-k and top-p filtering.
 
-### Community 203 - "Community 203"
+### Community 205 - "Community 205"
 Cohesion: 1.0
 Nodes (1): Keep only adapter-agnostic targets when no adapter names are discoverable.
 
-### Community 204 - "Community 204"
+### Community 206 - "Community 206"
 Cohesion: 1.0
 Nodes (1): Generate music latents and metadata from text/audio conditioning inputs.
 
-### Community 205 - "Community 205"
+### Community 207 - "Community 207"
 Cohesion: 1.0
 Nodes (1): Inject a fallback ``__len__`` implementation for torch.compile introspection.
 
-### Community 206 - "Community 206"
+### Community 208 - "Community 208"
 Cohesion: 1.0
 Nodes (1): Format initialize_service status output for UI/API consumers.
 
-### Community 207 - "Community 207"
+### Community 209 - "Community 209"
 Cohesion: 1.0
 Nodes (1): Generate LRC timestamps by aligning decoder cross-attention to lyric tokens.
 
-### Community 208 - "Community 208"
+### Community 210 - "Community 210"
 Cohesion: 1.0
 Nodes (1): Return a torchao quantization config object for the requested mode.
 
-### Community 209 - "Community 209"
+### Community 211 - "Community 211"
 Cohesion: 1.0
 Nodes (1): It returns None (pass) when offload_to_cpu is True, regardless of free VRAM.
 
-### Community 210 - "Community 210"
+### Community 212 - "Community 212"
 Cohesion: 1.0
 Nodes (1): It returns error payload when offload is off and free VRAM is insufficient.
 
-### Community 211 - "Community 211"
+### Community 213 - "Community 213"
 Cohesion: 1.0
 Nodes (1): It returns None when offload is off but free VRAM exceeds estimate.
 
-### Community 212 - "Community 212"
+### Community 214 - "Community 214"
 Cohesion: 1.0
 Nodes (1): It returns None when CUDA is not available (CPU/MPS/XPU).
 
-### Community 213 - "Community 213"
+### Community 215 - "Community 215"
 Cohesion: 1.0
 Nodes (1): Sync model-side python files when checkpoint code metadata diverges.
 
-### Community 214 - "Community 214"
+### Community 216 - "Community 216"
 Cohesion: 1.0
 Nodes (1): AAC file should be readable via torchaudio fallback.
 
-### Community 215 - "Community 215"
+### Community 217 - "Community 217"
 Cohesion: 1.0
 Nodes (1): Build fake MLX VAE from PyTorch VAE placeholder.
 
-### Community 216 - "Community 216"
+### Community 218 - "Community 218"
 Cohesion: 1.0
 Nodes (1): Load a model to device for the context and offload back to CPU on exit.
 
-### Community 217 - "Community 217"
+### Community 219 - "Community 219"
 Cohesion: 1.0
 Nodes (1): Provide no-op model context manager for decode tests.
 
-### Community 218 - "Community 218"
+### Community 220 - "Community 220"
 Cohesion: 1.0
 Nodes (1): Calculate lyric alignment scores for pure-noise and regressed-latent inputs.
 
-### Community 219 - "Community 219"
+### Community 221 - "Community 221"
 Cohesion: 1.0
 Nodes (1): Convert numpy audio array to channels-first torch tensor.
 
-### Community 220 - "Community 220"
+### Community 222 - "Community 222"
 Cohesion: 1.0
 Nodes (1): Return the AffineQuantizedTensor class from torchao, or None if unavailable.
 
-### Community 221 - "Community 221"
+### Community 223 - "Community 223"
 Cohesion: 1.0
 Nodes (1): Return current process RSS in megabytes.          Uses ``/proc/self/statm`` on L
 
-### Community 222 - "Community 222"
+### Community 224 - "Community 224"
 Cohesion: 1.0
 Nodes (1): Create from dictionary.          Handles backward compatibility for datasets wit
 
-### Community 228 - "Community 228"
+### Community 230 - "Community 230"
 Cohesion: 1.0
 Nodes (1): ``True`` if the corrector will actually modify the latent.
 
-### Community 231 - "Community 231"
+### Community 233 - "Community 233"
 Cohesion: 1.0
 Nodes (1): Repeat KV heads for GQA: [B, n_kv, L, D] -> [B, n_kv*n_rep, L, D].
 
-### Community 232 - "Community 232"
+### Community 234 - "Community 234"
 Cohesion: 1.0
 Nodes (1): Construct from an AceStepConfig (transformers PretrainedConfig).
 
-### Community 233 - "Community 233"
+### Community 235 - "Community 235"
 Cohesion: 1.0
 Nodes (1): Construct from a PyTorch ``AutoencoderOobleck`` instance's config.
 
-### Community 235 - "Community 235"
+### Community 237 - "Community 237"
 Cohesion: 1.0
 Nodes (1): Worker orchestration should start tasks, process queue items, and stop cleanly.
 
-### Community 236 - "Community 236"
+### Community 238 - "Community 238"
 Cohesion: 1.0
 Nodes (1): Return module device string when available.
 
-### Community 237 - "Community 237"
+### Community 239 - "Community 239"
 Cohesion: 1.0
 Nodes (1): Move a module to a target device/dtype when possible.
 
-### Community 238 - "Community 238"
+### Community 240 - "Community 240"
 Cohesion: 1.0
 Nodes (1): Helper should initialize LLM with recommended model when auto mode is active.
 
-### Community 239 - "Community 239"
+### Community 241 - "Community 241"
 Cohesion: 1.0
 Nodes (1): Map legacy payload fields to current request field names.
 
-### Community 240 - "Community 240"
+### Community 242 - "Community 242"
 Cohesion: 1.0
 Nodes (1): Helper should skip model initialization when ACESTEP_NO_INIT resolves true.
 
-### Community 241 - "Community 241"
+### Community 243 - "Community 243"
 Cohesion: 1.0
 Nodes (1): Default behavior should skip model loading (lazy-load on first request).
 
-### Community 242 - "Community 242"
+### Community 244 - "Community 244"
 Cohesion: 1.0
 Nodes (1): Helper should initialize primary DiT and then call LLM startup helper         wh
 
-### Community 243 - "Community 243"
+### Community 245 - "Community 245"
 Cohesion: 1.0
 Nodes (1): Helper should raise and persist init error when primary DiT fails.
 
-### Community 244 - "Community 244"
+### Community 246 - "Community 246"
 Cohesion: 1.0
 Nodes (1): Cache helper wrappers should forward parameters unchanged.
 
-### Community 245 - "Community 245"
+### Community 247 - "Community 247"
 Cohesion: 1.0
 Nodes (1): POST /v1/dataset/auto_label should accept retired chunk/batch aliases.
 
-### Community 246 - "Community 246"
+### Community 248 - "Community 248"
 Cohesion: 1.0
 Nodes (1): Bootstrap helper should initialize default app.state runtime fields.
 
-### Community 247 - "Community 247"
+### Community 249 - "Community 249"
 Cohesion: 1.0
 Nodes (1): Bootstrap helper should create extra handlers when secondary config paths exist.
 
-### Community 248 - "Community 248"
+### Community 250 - "Community 250"
 Cohesion: 1.0
 Nodes (1): Setup should add CORS, include router, and invoke all route registrars once.
 
-### Community 249 - "Community 249"
+### Community 251 - "Community 251"
 Cohesion: 1.0
 Nodes (1): Return the resolved TensorBoard log directory.
 
-### Community 250 - "Community 250"
+### Community 252 - "Community 252"
 Cohesion: 1.0
 Nodes (1): Load config from a JSON file.
 
-### Community 251 - "Community 251"
+### Community 253 - "Community 253"
 Cohesion: 1.0
 Nodes (1): Auto-detect GPU and load the decoder model.          Returns:             A tupl
 
-### Community 252 - "Community 252"
+### Community 254 - "Community 254"
 Cohesion: 1.0
 Nodes (1): Construct handler + LoRATrainer and yield training updates.          Yields:
 
-### Community 253 - "Community 253"
+### Community 255 - "Community 255"
 Cohesion: 1.0
 Nodes (1): ``True`` when VRAM monitoring is possible.
 
-### Community 254 - "Community 254"
+### Community 256 - "Community 256"
 Cohesion: 1.0
 Nodes (1): Ollama `/api/tags` responses should yield model names.
 
-### Community 255 - "Community 255"
+### Community 257 - "Community 257"
 Cohesion: 1.0
 Nodes (1): Discovery should not call urlopen for unsupported URL schemes.
 
 ## Knowledge Gaps
-- **4154 isolated node(s):** `Require a readable reference file; convert WebM/Opus to WAV when needed.`, `SIGTERM/SIGINT — unload ASAP so stacked studio runs do not keep RAM.`, `Merge fields into shared heartbeat state and write immediately.`, `Exit when the studio UI has been gone long enough and no jobs are active.`, `Incomplete endings become full stops; no dual echo lines.` (+4149 more)
+- **4173 isolated node(s):** `Require a readable reference file; convert WebM/Opus to WAV when needed.`, `SIGTERM/SIGINT — unload ASAP so stacked studio runs do not keep RAM.`, `Merge fields into shared heartbeat state and write immediately.`, `Exit when the studio UI has been gone long enough and no jobs are active.      U`, `Incomplete endings become full stops; no dual echo lines.` (+4168 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 128`** (3 nodes): `load_settings()`, `settings_loader.py`, `Load MusicAI studio settings for the engine worker.`
+- **Thin community `Community 129`** (3 nodes): `load_settings()`, `settings_loader.py`, `Load MusicAI studio settings for the engine worker.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 129`** (3 nodes): `API package intent: external service boundary (transport, auth, request lifecycl`, `__init__.py`, `__init__.py`
+- **Thin community `Community 130`** (3 nodes): `API package intent: external service boundary (transport, auth, request lifecycl`, `__init__.py`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 130`** (3 nodes): `main()`, `process_audio()`, `prepare_vae_calibration_data.py`
+- **Thin community `Community 131`** (3 nodes): `main()`, `process_audio()`, `prepare_vae_calibration_data.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 131`** (2 nodes): `Constants for ACE-Step Centralized constants used across the codebase`, `constants.py`
+- **Thin community `Community 132`** (2 nodes): `Constants for ACE-Step Centralized constants used across the codebase`, `constants.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 132`** (2 nodes): `Compatibility shim for split help-content test modules.  This file is intentiona`, `help_content_test.py`
+- **Thin community `Community 133`** (2 nodes): `Compatibility shim for split help-content test modules.  This file is intentiona`, `help_content_test.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 133`** (2 nodes): `Gradio package: web UI composition for ACE-Step controls and outputs.`, `__init__.py`
+- **Thin community `Community 134`** (2 nodes): `Gradio package: web UI composition for ACE-Step controls and outputs.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 134`** (2 nodes): `Results Handlers Facade  Thin re-export layer that preserves the original ``resu`, `results_handlers.py`
+- **Thin community `Community 135`** (2 nodes): `Results Handlers Facade  Thin re-export layer that preserves the original ``resu`, `results_handlers.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 135`** (2 nodes): `Results sub-package.  Focused modules for result handling, scoring, batch manage`, `__init__.py`
+- **Thin community `Community 136`** (2 nodes): `Results sub-package.  Focused modules for result handling, scoring, batch manage`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 136`** (2 nodes): `Results batch-management facade.  This thin compatibility module re-exports deco`, `batch_management.py`
+- **Thin community `Community 137`** (2 nodes): `Results batch-management facade.  This thin compatibility module re-exports deco`, `batch_management.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 137`** (2 nodes): `UI i18n package: localization loading and translation helpers.`, `__init__.py`
+- **Thin community `Community 138`** (2 nodes): `UI i18n package: localization loading and translation helpers.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 138`** (2 nodes): `Core package intent: framework-agnostic domain logic for generation and inferenc`, `__init__.py`
+- **Thin community `Community 139`** (2 nodes): `Core package intent: framework-agnostic domain logic for generation and inferenc`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 139`** (2 nodes): `LLM package intent: text inference contracts, provider adapters, and routing.`, `__init__.py`
+- **Thin community `Community 140`** (2 nodes): `LLM package intent: text inference contracts, provider adapters, and routing.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 140`** (2 nodes): `System package intent: shared infra helpers (GPU config, models, cache, constant`, `__init__.py`
+- **Thin community `Community 141`** (2 nodes): `System package intent: shared infra helpers (GPU config, models, cache, constant`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 141`** (2 nodes): `Audio package intent: reusable audio IO, transforms, and codec utilities.`, `__init__.py`
+- **Thin community `Community 142`** (2 nodes): `Audio package intent: reusable audio IO, transforms, and codec utilities.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 142`** (2 nodes): `Scoring package: alignment and quality metrics for generated outputs.`, `__init__.py`
+- **Thin community `Community 143`** (2 nodes): `Scoring package: alignment and quality metrics for generated outputs.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 143`** (2 nodes): `Dataset package intent: dataset lifecycle modules for runtime and build-time usa`, `__init__.py`
+- **Thin community `Community 144`** (2 nodes): `Dataset package intent: dataset lifecycle modules for runtime and build-time usa`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 144`** (2 nodes): `Dataset runtime package intent: dataset access/operations used during app execut`, `__init__.py`
+- **Thin community `Community 145`** (2 nodes): `Dataset runtime package intent: dataset access/operations used during app execut`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 145`** (2 nodes): `Dataset builder package intent: offline dataset scanning, preprocessing, and ser`, `__init__.py`
+- **Thin community `Community 146`** (2 nodes): `Dataset builder package intent: offline dataset scanning, preprocessing, and ser`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 146`** (2 nodes): `Dataset Builder for LoRA Training (facade).  This module preserves the public AP`, `dataset_builder.py`
+- **Thin community `Community 147`** (2 nodes): `Dataset Builder for LoRA Training (facade).  This module preserves the public AP`, `dataset_builder.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 147`** (2 nodes): `Compatibility facade for LLM request preparation helpers.`, `job_llm_preparation.py`
+- **Thin community `Community 148`** (2 nodes): `Compatibility facade for LLM request preparation helpers.`, `job_llm_preparation.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 148`** (2 nodes): `HTTP package intent: web app assembly, routes, schemas, and middleware.`, `__init__.py`
+- **Thin community `Community 149`** (2 nodes): `HTTP package intent: web app assembly, routes, schemas, and middleware.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 149`** (2 nodes): `Jobs package: async task execution, queueing, and job state tracking.`, `__init__.py`
+- **Thin community `Community 150`** (2 nodes): `Jobs package: async task execution, queueing, and job state tracking.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 150`** (2 nodes): `ACE-Step Training V2 (Side-Step) -- Corrected LoRA Fine-Tuning CLI  Non-destruct`, `__init__.py`
+- **Thin community `Community 151`** (2 nodes): `ACE-Step Training V2 (Side-Step) -- Corrected LoRA Fine-Tuning CLI  Non-destruct`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 151`** (2 nodes): `Wizard flow builders -- facade module.  Re-exports ``wizard_train``, ``wizard_pr`, `flows.py`
+- **Thin community `Community 152`** (2 nodes): `Wizard flow builders -- facade module.  Re-exports ``wizard_train``, ``wizard_pr`, `flows.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 152`** (2 nodes): `CLI package for ACE-Step Training V2.  Provides shared argparse helpers and per-`, `__init__.py`
+- **Thin community `Community 153`** (2 nodes): `CLI package for ACE-Step Training V2.  Provides shared argparse helpers and per-`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 153`** (2 nodes): `Backward-compatible re-exports for ACE-Step Training V2 CLI.  Split structure:`, `common.py`
+- **Thin community `Community 154`** (2 nodes): `Backward-compatible re-exports for ACE-Step Training V2 CLI.  Split structure:`, `common.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 154`** (2 nodes): `Helpers for optional external text-model configuration flows.`, `__init__.py`
+- **Thin community `Community 155`** (2 nodes): `Helpers for optional external text-model configuration flows.`, `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 167`** (1 nodes): `Time a code section with GPU synchronization.`
+- **Thin community `Community 169`** (1 nodes): `Time a code section with GPU synchronization.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 169`** (1 nodes): `Replicate the audio_params building logic from inference.py.`
+- **Thin community `Community 171`** (1 nodes): `Replicate the audio_params building logic from inference.py.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 170`** (1 nodes): `Initialization should avoid nano-vllm when the Windows Triton preflight fails.`
+- **Thin community `Community 172`** (1 nodes): `Initialization should avoid nano-vllm when the Windows Triton preflight fails.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 171`** (1 nodes): `Initialization should still fall back when vLLM returns a Triton-specific error`
+- **Thin community `Community 173`** (1 nodes): `Initialization should still fall back when vLLM returns a Triton-specific error`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 173`** (1 nodes): `Check if MLX framework is available (Apple Silicon).          Delegates to the c`
+- **Thin community `Community 175`** (1 nodes): `Check if MLX framework is available (Apple Silicon).          Delegates to the c`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 174`** (1 nodes): `Context manager to load a model to GPU and offload it back to CPU after use.`
+- **Thin community `Community 176`** (1 nodes): `Context manager to load a model to GPU and offload it back to CPU after use.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 175`** (1 nodes): `Post-process caption to remove YAML multi-line formatting.         Converts YAML`
+- **Thin community `Community 177`** (1 nodes): `Post-process caption to remove YAML multi-line formatting.         Converts YAML`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 176`** (1 nodes): `When task_type is text2music, src_audio passed to handler must be None.`
+- **Thin community `Community 178`** (1 nodes): `When task_type is text2music, src_audio passed to handler must be None.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 177`** (1 nodes): `Load all i18n language JSON files for help-key assertions.`
+- **Thin community `Community 179`** (1 nodes): `Load all i18n language JSON files for help-key assertions.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 178`** (1 nodes): `Concurrent store/get on dict fallback must not raise.`
+- **Thin community `Community 180`** (1 nodes): `Concurrent store/get on dict fallback must not raise.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 179`** (1 nodes): `Reject conversion output that has no serialized audio-code tokens.`
+- **Thin community `Community 181`** (1 nodes): `Reject conversion output that has no serialized audio-code tokens.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 180`** (1 nodes): `Pass valid audio codes through to LM understanding.`
+- **Thin community `Community 182`** (1 nodes): `Pass valid audio codes through to LM understanding.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 181`** (1 nodes): `Verify that init_service_wrapper preserves current batch_size when provided.`
+- **Thin community `Community 183`** (1 nodes): `Verify that init_service_wrapper preserves current batch_size when provided.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 182`** (1 nodes): `Verify that init_service_wrapper uses default batch_size when current_batch_size`
+- **Thin community `Community 184`** (1 nodes): `Verify that init_service_wrapper uses default batch_size when current_batch_size`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 183`** (1 nodes): `Invalid audio upload should emit warning toast and clear component value.`
+- **Thin community `Community 185`** (1 nodes): `Invalid audio upload should emit warning toast and clear component value.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 184`** (1 nodes): `Valid audio upload should pass through unchanged without warning.`
+- **Thin community `Community 186`** (1 nodes): `Valid audio upload should pass through unchanged without warning.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 185`** (1 nodes): `Source-role validation should surface a source-specific toast message.`
+- **Thin community `Community 187`** (1 nodes): `Source-role validation should surface a source-specific toast message.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 186`** (1 nodes): `Successful sample creation should populate generation fields and mode switch.`
+- **Thin community `Community 188`** (1 nodes): `Successful sample creation should populate generation fields and mode switch.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 187`** (1 nodes): `Caption formatting should return lm-not-initialized status when LM is unavailabl`
+- **Thin community `Community 189`** (1 nodes): `Caption formatting should return lm-not-initialized status when LM is unavailabl`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 188`** (1 nodes): `Lyrics-only formatting should strip wrapper quotes from returned lyrics.`
+- **Thin community `Community 190`** (1 nodes): `Lyrics-only formatting should strip wrapper quotes from returned lyrics.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 189`** (1 nodes): `Full sample formatting should return 9 outputs with language at index 5.`
+- **Thin community `Community 191`** (1 nodes): `Full sample formatting should return 9 outputs with language at index 5.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 190`** (1 nodes): `When JSON has thinking=True AND non-empty audio_codes, think should be False.`
+- **Thin community `Community 192`** (1 nodes): `When JSON has thinking=True AND non-empty audio_codes, think should be False.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 191`** (1 nodes): `When JSON has thinking=True AND empty audio_codes, think stays True.`
+- **Thin community `Community 193`** (1 nodes): `When JSON has thinking=True AND empty audio_codes, think stays True.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 192`** (1 nodes): `Uppercase MP3 metadata should be normalized to the UI-compatible values.`
+- **Thin community `Community 194`** (1 nodes): `Uppercase MP3 metadata should be normalized to the UI-compatible values.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 193`** (1 nodes): `Invalid MP3 metadata should fall back to the supported defaults.`
+- **Thin community `Community 195`** (1 nodes): `Invalid MP3 metadata should fall back to the supported defaults.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 194`** (1 nodes): `Storing a new batch should move CUDA tensors to CPU, freeing VRAM.`
+- **Thin community `Community 196`** (1 nodes): `Storing a new batch should move CUDA tensors to CPU, freeing VRAM.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 195`** (1 nodes): `Return kwargs for direct assertion in tests.`
+- **Thin community `Community 197`** (1 nodes): `Return kwargs for direct assertion in tests.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 196`** (1 nodes): `init_service_wrapper must NOT pass the checkpoint dropdown value as project_root`
+- **Thin community `Community 198`** (1 nodes): `init_service_wrapper must NOT pass the checkpoint dropdown value as project_root`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 197`** (1 nodes): `The project_root passed to initialize_service should be the parent of checkpoint`
+- **Thin community `Community 199`** (1 nodes): `The project_root passed to initialize_service should be the parent of checkpoint`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 198`** (1 nodes): `Calling init_service_wrapper with init_llm=False must not overwrite llm_handler.`
+- **Thin community `Community 200`** (1 nodes): `Calling init_service_wrapper with init_llm=False must not overwrite llm_handler.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 199`** (1 nodes): `When init_llm=True and device='auto', initialize() must be called with 'auto' de`
+- **Thin community `Community 201`** (1 nodes): `When init_llm=True and device='auto', initialize() must be called with 'auto' de`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 200`** (1 nodes): `Legacy CUDA restrictions should override a requested vllm backend.`
+- **Thin community `Community 202`** (1 nodes): `Legacy CUDA restrictions should override a requested vllm backend.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 202`** (1 nodes): `Sample tokens from logits with optional top-k and top-p filtering.`
+- **Thin community `Community 204`** (1 nodes): `Sample tokens from logits with optional top-k and top-p filtering.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 203`** (1 nodes): `Keep only adapter-agnostic targets when no adapter names are discoverable.`
+- **Thin community `Community 205`** (1 nodes): `Keep only adapter-agnostic targets when no adapter names are discoverable.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 204`** (1 nodes): `Generate music latents and metadata from text/audio conditioning inputs.`
+- **Thin community `Community 206`** (1 nodes): `Generate music latents and metadata from text/audio conditioning inputs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 205`** (1 nodes): `Inject a fallback ``__len__`` implementation for torch.compile introspection.`
+- **Thin community `Community 207`** (1 nodes): `Inject a fallback ``__len__`` implementation for torch.compile introspection.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 206`** (1 nodes): `Format initialize_service status output for UI/API consumers.`
+- **Thin community `Community 208`** (1 nodes): `Format initialize_service status output for UI/API consumers.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 207`** (1 nodes): `Generate LRC timestamps by aligning decoder cross-attention to lyric tokens.`
+- **Thin community `Community 209`** (1 nodes): `Generate LRC timestamps by aligning decoder cross-attention to lyric tokens.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 208`** (1 nodes): `Return a torchao quantization config object for the requested mode.`
+- **Thin community `Community 210`** (1 nodes): `Return a torchao quantization config object for the requested mode.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 209`** (1 nodes): `It returns None (pass) when offload_to_cpu is True, regardless of free VRAM.`
+- **Thin community `Community 211`** (1 nodes): `It returns None (pass) when offload_to_cpu is True, regardless of free VRAM.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 210`** (1 nodes): `It returns error payload when offload is off and free VRAM is insufficient.`
+- **Thin community `Community 212`** (1 nodes): `It returns error payload when offload is off and free VRAM is insufficient.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 211`** (1 nodes): `It returns None when offload is off but free VRAM exceeds estimate.`
+- **Thin community `Community 213`** (1 nodes): `It returns None when offload is off but free VRAM exceeds estimate.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 212`** (1 nodes): `It returns None when CUDA is not available (CPU/MPS/XPU).`
+- **Thin community `Community 214`** (1 nodes): `It returns None when CUDA is not available (CPU/MPS/XPU).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 213`** (1 nodes): `Sync model-side python files when checkpoint code metadata diverges.`
+- **Thin community `Community 215`** (1 nodes): `Sync model-side python files when checkpoint code metadata diverges.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 214`** (1 nodes): `AAC file should be readable via torchaudio fallback.`
+- **Thin community `Community 216`** (1 nodes): `AAC file should be readable via torchaudio fallback.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 215`** (1 nodes): `Build fake MLX VAE from PyTorch VAE placeholder.`
+- **Thin community `Community 217`** (1 nodes): `Build fake MLX VAE from PyTorch VAE placeholder.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 216`** (1 nodes): `Load a model to device for the context and offload back to CPU on exit.`
+- **Thin community `Community 218`** (1 nodes): `Load a model to device for the context and offload back to CPU on exit.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 217`** (1 nodes): `Provide no-op model context manager for decode tests.`
+- **Thin community `Community 219`** (1 nodes): `Provide no-op model context manager for decode tests.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 218`** (1 nodes): `Calculate lyric alignment scores for pure-noise and regressed-latent inputs.`
+- **Thin community `Community 220`** (1 nodes): `Calculate lyric alignment scores for pure-noise and regressed-latent inputs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 219`** (1 nodes): `Convert numpy audio array to channels-first torch tensor.`
+- **Thin community `Community 221`** (1 nodes): `Convert numpy audio array to channels-first torch tensor.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 220`** (1 nodes): `Return the AffineQuantizedTensor class from torchao, or None if unavailable.`
+- **Thin community `Community 222`** (1 nodes): `Return the AffineQuantizedTensor class from torchao, or None if unavailable.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 221`** (1 nodes): `Return current process RSS in megabytes.          Uses ``/proc/self/statm`` on L`
+- **Thin community `Community 223`** (1 nodes): `Return current process RSS in megabytes.          Uses ``/proc/self/statm`` on L`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 222`** (1 nodes): `Create from dictionary.          Handles backward compatibility for datasets wit`
+- **Thin community `Community 224`** (1 nodes): `Create from dictionary.          Handles backward compatibility for datasets wit`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 228`** (1 nodes): ```True`` if the corrector will actually modify the latent.`
+- **Thin community `Community 230`** (1 nodes): ```True`` if the corrector will actually modify the latent.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 231`** (1 nodes): `Repeat KV heads for GQA: [B, n_kv, L, D] -> [B, n_kv*n_rep, L, D].`
+- **Thin community `Community 233`** (1 nodes): `Repeat KV heads for GQA: [B, n_kv, L, D] -> [B, n_kv*n_rep, L, D].`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 232`** (1 nodes): `Construct from an AceStepConfig (transformers PretrainedConfig).`
+- **Thin community `Community 234`** (1 nodes): `Construct from an AceStepConfig (transformers PretrainedConfig).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 233`** (1 nodes): `Construct from a PyTorch ``AutoencoderOobleck`` instance's config.`
+- **Thin community `Community 235`** (1 nodes): `Construct from a PyTorch ``AutoencoderOobleck`` instance's config.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 235`** (1 nodes): `Worker orchestration should start tasks, process queue items, and stop cleanly.`
+- **Thin community `Community 237`** (1 nodes): `Worker orchestration should start tasks, process queue items, and stop cleanly.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 236`** (1 nodes): `Return module device string when available.`
+- **Thin community `Community 238`** (1 nodes): `Return module device string when available.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 237`** (1 nodes): `Move a module to a target device/dtype when possible.`
+- **Thin community `Community 239`** (1 nodes): `Move a module to a target device/dtype when possible.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 238`** (1 nodes): `Helper should initialize LLM with recommended model when auto mode is active.`
+- **Thin community `Community 240`** (1 nodes): `Helper should initialize LLM with recommended model when auto mode is active.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 239`** (1 nodes): `Map legacy payload fields to current request field names.`
+- **Thin community `Community 241`** (1 nodes): `Map legacy payload fields to current request field names.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 240`** (1 nodes): `Helper should skip model initialization when ACESTEP_NO_INIT resolves true.`
+- **Thin community `Community 242`** (1 nodes): `Helper should skip model initialization when ACESTEP_NO_INIT resolves true.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 241`** (1 nodes): `Default behavior should skip model loading (lazy-load on first request).`
+- **Thin community `Community 243`** (1 nodes): `Default behavior should skip model loading (lazy-load on first request).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 242`** (1 nodes): `Helper should initialize primary DiT and then call LLM startup helper         wh`
+- **Thin community `Community 244`** (1 nodes): `Helper should initialize primary DiT and then call LLM startup helper         wh`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 243`** (1 nodes): `Helper should raise and persist init error when primary DiT fails.`
+- **Thin community `Community 245`** (1 nodes): `Helper should raise and persist init error when primary DiT fails.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 244`** (1 nodes): `Cache helper wrappers should forward parameters unchanged.`
+- **Thin community `Community 246`** (1 nodes): `Cache helper wrappers should forward parameters unchanged.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 245`** (1 nodes): `POST /v1/dataset/auto_label should accept retired chunk/batch aliases.`
+- **Thin community `Community 247`** (1 nodes): `POST /v1/dataset/auto_label should accept retired chunk/batch aliases.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 246`** (1 nodes): `Bootstrap helper should initialize default app.state runtime fields.`
+- **Thin community `Community 248`** (1 nodes): `Bootstrap helper should initialize default app.state runtime fields.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 247`** (1 nodes): `Bootstrap helper should create extra handlers when secondary config paths exist.`
+- **Thin community `Community 249`** (1 nodes): `Bootstrap helper should create extra handlers when secondary config paths exist.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 248`** (1 nodes): `Setup should add CORS, include router, and invoke all route registrars once.`
+- **Thin community `Community 250`** (1 nodes): `Setup should add CORS, include router, and invoke all route registrars once.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 249`** (1 nodes): `Return the resolved TensorBoard log directory.`
+- **Thin community `Community 251`** (1 nodes): `Return the resolved TensorBoard log directory.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 250`** (1 nodes): `Load config from a JSON file.`
+- **Thin community `Community 252`** (1 nodes): `Load config from a JSON file.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 251`** (1 nodes): `Auto-detect GPU and load the decoder model.          Returns:             A tupl`
+- **Thin community `Community 253`** (1 nodes): `Auto-detect GPU and load the decoder model.          Returns:             A tupl`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 252`** (1 nodes): `Construct handler + LoRATrainer and yield training updates.          Yields:`
+- **Thin community `Community 254`** (1 nodes): `Construct handler + LoRATrainer and yield training updates.          Yields:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 253`** (1 nodes): ```True`` when VRAM monitoring is possible.`
+- **Thin community `Community 255`** (1 nodes): ```True`` when VRAM monitoring is possible.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 254`** (1 nodes): `Ollama `/api/tags` responses should yield model names.`
+- **Thin community `Community 256`** (1 nodes): `Ollama `/api/tags` responses should yield model names.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 255`** (1 nodes): `Discovery should not call urlopen for unsupported URL schemes.`
+- **Thin community `Community 257`** (1 nodes): `Discovery should not call urlopen for unsupported URL schemes.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `AceStepHandler` connect `Community 1` to `Community 2`, `Community 5`, `Community 6`, `Community 8`, `Community 9`, `Community 10`, `Community 17`, `Community 21`, `Community 25`, `Community 26`, `Community 27`, `Community 36`, `Community 39`, `Community 49`, `Community 53`, `Community 60`, `Community 63`, `Community 70`, `Community 76`, `Community 79`, `Community 90`, `Community 91`, `Community 102`?**
-  _High betweenness centrality (0.262) - this node is a cross-community bridge._
-- **Why does `LLMHandler` connect `Community 1` to `Community 97`, `Community 2`, `Community 6`, `Community 9`, `Community 22`, `Community 27`?**
-  _High betweenness centrality (0.170) - this node is a cross-community bridge._
-- **Why does `generate_with_progress()` connect `Community 1` to `Community 2`, `Community 69`, `Community 11`, `Community 107`, `Community 19`, `Community 20`?**
-  _High betweenness centrality (0.105) - this node is a cross-community bridge._
+- **Why does `AceStepHandler` connect `Community 1` to `Community 2`, `Community 3`, `Community 4`, `Community 8`, `Community 9`, `Community 10`, `Community 17`, `Community 18`, `Community 27`, `Community 28`, `Community 29`, `Community 31`, `Community 37`, `Community 38`, `Community 48`, `Community 59`, `Community 62`, `Community 71`, `Community 80`, `Community 90`, `Community 91`, `Community 102`?**
+  _High betweenness centrality (0.240) - this node is a cross-community bridge._
+- **Why does `LLMHandler` connect `Community 1` to `Community 97`, `Community 2`, `Community 3`, `Community 38`, `Community 8`, `Community 25`, `Community 28`?**
+  _High betweenness centrality (0.162) - this node is a cross-community bridge._
+- **Why does `Qwen3ForCausalLM` connect `Community 32` to `Community 12`?**
+  _High betweenness centrality (0.118) - this node is a cross-community bridge._
 - **Are the 105 inferred relationships involving `DCWCorrector` (e.g. with `TimestepEmbedding` and `AceStepAttention`) actually correct?**
   _`DCWCorrector` has 105 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 54 inferred relationships involving `LLMHandler` (e.g. with `PreciseTimer` and `ChatMessage`) actually correct?**

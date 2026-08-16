@@ -75,13 +75,15 @@ export function SongDNA({
     bpm === ""
       ? 50
       : Math.min(100, Math.max(0, ((Number(bpm) || 120) - 60) / 1.8))
-  const energyProxy = Math.round((influence * 0.45 + (100 - weirdness) * 0.2 + tempoValue * 0.35))
 
   return (
     <section className="flex flex-col gap-8">
       <div>
         <p className="meta-caps text-bee">04 — Song DNA</p>
         <h2 className="display-section mt-2">Shape the sound</h2>
+        <p className="mt-2 max-w-md text-sm text-text-muted">
+          These controls go to the model: style adherence, creativity, and tempo.
+        </p>
       </div>
 
       <div
@@ -115,22 +117,6 @@ export function SongDNA({
             label="Style lock"
             value={influence}
             onChange={onInfluenceChange}
-          />
-          <DnaRow
-            id="cinematic"
-            label="Drama"
-            value={Math.max(0, 100 - weirdness + Math.round(influence * 0.15))}
-            onChange={(v) => onWeirdnessChange(Math.max(0, Math.min(100, 100 - v)))}
-          />
-          <DnaRow
-            id="energy"
-            label="Energy"
-            value={energyProxy}
-            onChange={(v) => {
-              onInfluenceChange(Math.min(100, Math.round(v * 0.7 + 15)))
-              const bpmN = Math.round(70 + v * 1.1)
-              onBpmChange(String(bpmN))
-            }}
           />
           <DnaRow
             id="weirdness"

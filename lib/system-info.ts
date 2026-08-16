@@ -56,11 +56,22 @@ function detectDevice(): SystemSnapshot["device"] {
 export function probeSystem(): SystemSnapshot {
   const root = projectRoot()
   const vendor = path.join(root, "vendor", "ACE-Step-1.5")
+  const heart = path.join(root, "vendor", "heartlib")
+  const heartCkpt = path.join(heart, "ckpt")
   const rvc = path.join(root, "vendor", "rvc-env", "pyproject.toml")
   const device = detectDevice()
   const cudaVramGb = device === "cuda" ? detectCudaVramGb() : null
   const backend: SystemSnapshot["backend"] =
     device === "mps" ? "mlx" : "pt"
+
+  const heartmulaReady =
+    (existsSync(path.join(heart, "pyproject.toml")) ||
+      existsSync(path.join(heart, "setup.py")) ||
+      existsSync(path.join(heart, ".git"))) &&
+    existsSync(path.join(heartCkpt, "HeartMuLa-oss-3B")) &&
+    existsSync(path.join(heartCkpt, "HeartCodec-oss")) &&
+    (existsSync(path.join(heartCkpt, "tokenizer.json")) ||
+      existsSync(path.join(heartCkpt, "gen_config.json")))
 
   return {
     os: `${process.platform} ${os.release()}`,
@@ -69,7 +80,10 @@ export function probeSystem(): SystemSnapshot {
     device,
     backend,
     cudaVramGb,
-    vendorReady: existsSync(path.join(vendor, ".git")) || existsSync(path.join(vendor, "pyproject.toml")),
+    vendorReady:
+      existsSync(path.join(vendor, ".git")) ||
+      existsSync(path.join(vendor, "pyproject.toml")),
+    heartmulaReady,
     rvcReady: existsSync(rvc),
   }
 }

@@ -2,18 +2,9 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-VENDOR="$ROOT/vendor/ACE-Step-1.5"
+ACE_VENDOR="$ROOT/vendor/ACE-Step-1.5"
+HEART_VENDOR="$ROOT/vendor/heartlib"
 SETTINGS="$ROOT/data/settings.json"
-
-if [ ! -d "$VENDOR" ]; then
-  echo "ACE-Step is not installed. Complete Setup in the studio UI, or run: npm run setup:engine" >&2
-  exit 1
-fi
-
-if ! command -v uv >/dev/null 2>&1; then
-  echo "uv is required. Install it from https://docs.astral.sh/uv/" >&2
-  exit 1
-fi
 
 mkdir -p "$ROOT/data/jobs" "$ROOT/data/songs"
 
@@ -23,19 +14,53 @@ export TOKENIZERS_PARALLELISM=false
 export HF_HUB_ENABLE_HF_TRANSFER=0
 export HF_HUB_DISABLE_TELEMETRY=1
 
-# Prefer data/settings.json (studio UI). Env vars still win when already set.
+FAMILY="ace"
 if [ -f "$SETTINGS" ] && command -v python3 >/dev/null 2>&1; then
-  eval "$(
-    python3 - <<'PY'
-import json, os, shlex
-from pathlib import Path
-root = Path(os.environ.get("ROOT") or ".")
-# ROOT not in env — infer from settings path via argv-less cwd; script sets ROOT before eval via export below
-PY
-  )" 2>/dev/null || true
+  FAMILY="$(
+    python3 -c "import json; print(json.load(open('$SETTINGS')).get('engineFamily') or 'ace')" 2>/dev/null || echo ace
+  )"
+fi
+FAMILY="$(echo "$FAMILY" | tr '[:upper:]' '[:lower:]')"
+
+# Never stack multiple workers (each holds tens of GB). Kill leftovers first.
+bash "$ROOT/scripts/kill-engine.sh" || true
+
+  if [ "$FAMILY" = "heartmula" ]; then
+  if [ ! -d "$HEART_VENDOR" ]; then
+    echo "HeartMuLa is not installed. Complete Setup in the studio UI, or run: bash scripts/setup-heartmula.sh" >&2
+    exit 1
+  fi
+  if [ ! -x "$HEART_VENDOR/.venv/bin/python" ]; then
+    echo "HeartMuLa venv missing. Run: bash scripts/setup-heartmula.sh" >&2
+    exit 1
+  fi
+  if [ ! -d "$HEART_VENDOR/ckpt/HeartMuLa-oss-3B" ] || [ ! -d "$HEART_VENDOR/ckpt/HeartCodec-oss" ]; then
+    echo "HeartMuLa weights missing. Run: bash scripts/download-heartmula.sh" >&2
+    exit 1
+  fi
+  echo "[musicai] Starting HeartMuLa engine (loads 3B + codec into memory)…"
+  echo "[musicai] ckpt=$HEART_VENDOR/ckpt"
+  echo "[musicai] Ctrl+C unloads the engine."
+  export MUSICAI_ENGINE_FAMILY=heartmula
+  export HEARTMULA_CKPT="$HEART_VENDOR/ckpt"
+  # Allow large MPS allocations (HeartMuLa 3B); runner also skips transformers warmup.
+  export PYTORCH_MPS_HIGH_WATERMARK_RATIO="${PYTORCH_MPS_HIGH_WATERMARK_RATIO:-0.0}"
+  export PYTHONPATH="$ROOT/engine:${HEART_VENDOR}:${PYTHONPATH:-}"
+  cd "$HEART_VENDOR"
+  exec "$HEART_VENDOR/.venv/bin/python" "$ROOT/engine/worker.py"
 fi
 
-# Apply settings file without requiring jq
+# ——— ACE-Step path ———
+if [ ! -d "$ACE_VENDOR" ]; then
+  echo "ACE-Step is not installed. Complete Setup in the studio UI, or run: npm run setup:engine" >&2
+  exit 1
+fi
+
+if ! command -v uv >/dev/null 2>&1; then
+  echo "uv is required. Install it from https://docs.astral.sh/uv/" >&2
+  exit 1
+fi
+
 if [ -f "$SETTINGS" ]; then
   DIT="$(python3 -c "import json; d=json.load(open('$SETTINGS')); print(d.get('ditModel') or '')" 2>/dev/null || true)"
   LM="$(python3 -c "import json; d=json.load(open('$SETTINGS')); print(d.get('lmModel') or '')" 2>/dev/null || true)"
@@ -63,23 +88,19 @@ if [ -f "$SETTINGS" ]; then
   fi
 fi
 
-# Fallbacks only when neither settings nor env set values
 export ACESTEP_CONFIG_PATH="${ACESTEP_CONFIG_PATH:-acestep-v15-turbo}"
 if [ "$(uname -s)" = "Darwin" ]; then
   export ACESTEP_LM_BACKEND="${ACESTEP_LM_BACKEND:-mlx}"
 else
   export ACESTEP_LM_BACKEND="${ACESTEP_LM_BACKEND:-pt}"
 fi
-# Do not force 0.6B — worker/settings choose based on RAM when unset
 export ACESTEP_SAVE_MEMORY="${ACESTEP_SAVE_MEMORY:-1}"
+export MUSICAI_ENGINE_FAMILY=ace
 
 echo "[musicai] Starting local ACE-Step engine (loads model into RAM)..."
 echo "[musicai] config=${ACESTEP_CONFIG_PATH} lm=${ACESTEP_LM_MODEL_PATH:-auto} backend=${ACESTEP_LM_BACKEND}"
 echo "[musicai] If weights are missing, files download one-by-one with a progress bar."
 echo "[musicai] Ctrl+C is safe — the next start resumes."
 
-# Never stack multiple workers (each holds tens of GB). Kill leftovers first.
-bash "$ROOT/scripts/kill-engine.sh" || true
-
-cd "$VENDOR"
+cd "$ACE_VENDOR"
 exec uv run python "$ROOT/engine/worker.py"
